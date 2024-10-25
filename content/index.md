@@ -1,5 +1,5 @@
 ---
-title: Welcome to hzFishy's Unreal Engine Notes !
+title: Welcome to hzFishy's Game Dev Notes !
 ---
 My notes related to UE and other game dev and design stuff.
 This is where I store stuff so i can find them later if i forget.

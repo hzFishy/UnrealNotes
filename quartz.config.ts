@@ -8,7 +8,7 @@ import * as Plugin from "./quartz/plugins"
  */
 const config: QuartzConfig = {
   configuration: {
-    pageTitle: "hzFishy's Unreal Engine Notes",
+    pageTitle: "hzFishy's Game Dev Notes",
     pageTitleSuffix: "",
     enableSPA: true,
     enablePopovers: true,
