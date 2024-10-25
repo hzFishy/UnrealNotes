@@ -1,0 +1,1 @@
+Notes of practices i noted.
