@@ -1,3 +1,6 @@
 ---
 title: Welcome to hzFishy's Unreal Engine Notes !
 ---
+This is where I store stuff so i can find them later if i forget.
+
+It is not really meant to be read by anyone, but i'll be happy if it can be useful for others !
