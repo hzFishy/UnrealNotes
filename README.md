@@ -1,1 +1,1 @@
-# [Website](https://uenotes.hzfishy.fr)
+# [Website](https://notes.hzfishy.fr)
