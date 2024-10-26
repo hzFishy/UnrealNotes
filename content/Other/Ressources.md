@@ -18,7 +18,6 @@
 - [Multiplayer Post 2](https://www.factorio.com/blog/post/fff-149)
 - [Multiplayer Post 3](https://www.factorio.com/blog/post/fff-151)
 - [Belts optimization](https://www.factorio.com/blog/post/fff-176)
-- 
 # Design
 ## Subnautica
 - [Subnautica Postmortem](https://www.youtube.com/watch?v=fkjY_R7zQsM) - ✅
