@@ -2,6 +2,8 @@
 It seems that the listen server can see client character animations lag, this is because by default clients send data to the server at a high frequency (because clients may have a high framerate).
 To fix this the idea is to cap the max update frequency.
 
+(thanks to Kaos)
+
 ```ini title="DefaultGame.ini"
 [/Script/Engine.GameNetworkManager]
 TotalNetBandwidth=960000
