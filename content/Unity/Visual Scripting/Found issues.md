@@ -1,5 +1,11 @@
 
+- ==Variable & event names are identified by literal string==
+
 - ==Variable & event names cannot be edited across all instances== (must be edited by hand)
+
+- ==Events cannot return params==
+
+- Must specify trigger event node inputs count
 
 - Wildcard pins type are not updated after connecting a known type
 
@@ -12,4 +18,20 @@
 - ==Adding object variables to prefab is broken==
 	- If you add a object variable to the prefab definition, already placed instances will not be updated (resulting in missing object variables)
 	- same issue with default value
+
+- ==Broken node search==:
+	- No contextual search
+	- If dragging from pin, can hide possible nodes (I recommended always searching from nothing, in some simple cases like with bools, ints, floats or flow control it works)
+
+- Weird parallelism for execution
+	- I saw a checked value becoming false after a check IN THE SAME execution flow (in one case for now)
+		- Details:
+			- OnUpdate:
+				- Check if `MyVar` is true, if true:
+					- Do stuff
+					- Do more stuff <<-- ERROR ! `MyVar` was now false (like if it was updated in a parallel process)
+		- Solution: Each time i needed to do something that required `MyVar` to be true, i checked it before
+	- In another case a game object returned from a collision event was becoming null after a single node execution (caching it fixed the issue)
+
+- Nested graphs cannot have multiple output triggers (But its allowed to create multiple ones ?)
 
