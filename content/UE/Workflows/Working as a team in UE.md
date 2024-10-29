@@ -207,7 +207,7 @@ protected:
    - if its a custom K2 node, check `UK2Node` class
 - Use `UDeveloperSettings` to make project-wide settings, easier to define and change than using an Actor/Data Asset/Components/... in most cases
    - Example of a Inventory System Settings:
-   - ![image](https://github.com/user-attachments/assets/bd2b0eee-2bd1-4d26-a4f4-28e79da26f6a)
+		![[Pasted image 20241029005348.png]]
 
 
 ## VCS
