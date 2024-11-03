@@ -38,6 +38,8 @@
 ## Collisions
 - [Collision Data in UE5: Practical Tips for Managing Collision Settings & Queries | Unreal Fest 2023](https://www.youtube.com/watch?v=xIQI6nXFygA) - ✅
 
+## Other
+- [Riot’s Multi-Game Unreal-Based Development Ecosystem](https://www.youtube.com/watch?v=9xxwQVdwcTQ)
 # Other
 - [How do Graphics Cards Work? Exploring GPU Architecture](https://youtu.be/h9Z4oGN89MU?si=z3AdGAJ59PL7S1Ek)
 
