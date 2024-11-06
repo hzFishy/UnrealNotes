@@ -18,6 +18,8 @@
 - [Multiplayer Post 2](https://www.factorio.com/blog/post/fff-149)
 - [Multiplayer Post 3](https://www.factorio.com/blog/post/fff-151)
 - [Belts optimization](https://www.factorio.com/blog/post/fff-176)
+
+
 # Design
 ## Subnautica
 - [Subnautica Postmortem](https://www.youtube.com/watch?v=fkjY_R7zQsM) - ✅
@@ -27,21 +29,6 @@
 - [Design Of Subnautica](https://youtu.be/7R-x9NSBS2Y?si=YuXyl_Sf6CUwaG8A) - ✅
    - [Slides](https://www.dropbox.com/scl/fi/o68bxot64106z5dtikblt/TheDesignOfSubnautica.zip?rlkey=toichzfxzgnl05jcwlc6do92a&dl=0)
 
-# UE
-## Optimizing
-- [Aggregating Ticks to Manage Scale in Sea of Thieves | Unreal Fest Europe 2019 | Unreal Engine](https://www.youtube.com/watch?v=CBP5bpwkO54)
-- [How Small Open Doors Can Lead to Better CPU Utilization and Bigger Games | Unreal Fest 2024](https://www.youtube.com/watch?v=JaCf2Qmvy18)
-## Chaos
-- [Causing Chaos: The Future of Physics and Destruction | Unreal Fest Europe 2019](https://www.youtube.com/watch?v=mwbSi2R49ZY)
-## Mover
-- [An Introduction to the Mover Plugin | Unreal Fest 2024](https://www.youtube.com/watch?v=P4IKS5k47Wg)
-## Collisions
-- [Collision Data in UE5: Practical Tips for Managing Collision Settings & Queries | Unreal Fest 2023](https://www.youtube.com/watch?v=xIQI6nXFygA) - ✅
 
-## Other
-- [Riot’s Multi-Game Unreal-Based Development Ecosystem](https://www.youtube.com/watch?v=9xxwQVdwcTQ)
 # Other
 - [How do Graphics Cards Work? Exploring GPU Architecture](https://youtu.be/h9Z4oGN89MU?si=z3AdGAJ59PL7S1Ek)
-
-
-
