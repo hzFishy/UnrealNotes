@@ -1,5 +1,9 @@
 
 # Global
+
+## Character Movement Component
+- [How the CMC works under the hood](https://www.youtube.com/watch?v=urkLwpnAjO0&list=PLXJlkahwiwPmeABEhjwIALvxRSZkzoQpk)
+
 ## Optimizing
 - [Aggregating Ticks to Manage Scale in Sea of Thieves | Unreal Fest Europe 2019 | Unreal Engine](https://www.youtube.com/watch?v=CBP5bpwkO54)
 - [How Small Open Doors Can Lead to Better CPU Utilization and Bigger Games | Unreal Fest 2024](https://www.youtube.com/watch?v=JaCf2Qmvy18)
