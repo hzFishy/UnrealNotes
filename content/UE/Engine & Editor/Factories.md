@@ -1,6 +1,6 @@
 
 # Actor Factories
-**Actor** Factory classes allows you do do custom behavior when drag and dropping your assets into the level.
+**Actor** Factory classes allows you to do custom behavior when drag and dropping your assets into the level.
 
 Editor example : When you drag and drop a Static Mesh asset into a level, the editor is spawning a Static Mesh Actor and setting the static mesh to the asset your just dropped.
 
