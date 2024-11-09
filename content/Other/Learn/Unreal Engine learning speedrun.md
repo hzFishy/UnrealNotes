@@ -301,7 +301,7 @@ Here is a list of the most used variables types.
 
 ### Events, Functions & Macros
 
-Sometimes you need a piece of code in multiple places. Instead of duplicating it, the best is to transform it into a event, function or macro. But what is the difference ?.
+Sometimes you need a piece of code in multiple places. Instead of duplicating it, the best is to transform it into a event, function or macro. But what is the difference ?
 
 Mainly:
 - Events are used for thing that don't return anything and that can execute in parallel.
