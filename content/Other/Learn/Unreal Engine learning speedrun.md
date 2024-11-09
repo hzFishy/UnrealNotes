@@ -229,15 +229,16 @@ Here is a list of the most used variables types.
 > [!Info] Struct type
 > A struct is a container of other variables (also known as members/properties).
 > > [!tip] Custom structs
+> > 
 > > You can make you own custom structs
 > > - Create a `Structure` asset <br>![[Pasted image 20241109184701.png]]
 > > - Add the members you want (you can set a default value for each of them) <br> ![[Pasted image 20241109185227.png|350]]
 >
-> > [!tip] Making/Breaking structs
-> > You can `Make` and `Break` any struct. This is very useful in some cases. <br>![[Pasted image 20241109185113.png|350]]
-> > <br>You can break any struct pin by clicking on `Split Struct Pin` after right clicking on it.
+> > [!tip] Making/Breaking structs 
 > > 
-![[Pasted image 20241109185821.png|250]] ![[Pasted image 20241109185715.png|250]]
+> > You can `Make` and `Break` any struct. This is very useful in some cases. <br>![[Pasted image 20241109185113.png|350]]
+> > <br>You can break any struct pin by clicking on `Split Struct Pin` after right clicking on it. <br>
+> > ![[Pasted image 20241109185821.png|250]] ![[Pasted image 20241109185715.png|250]]
 
 > [!Info] Containers (`Single`, `Array`, `Set` or `Map`)
 > For almost every variables types, you can decide if your variable *container* type is `Single`, `Array`, `Set` or `Map`. <br>
@@ -283,13 +284,13 @@ Here is a list of the most used variables types.
 > It is possible to convert one type to another. This conversion occurs in a node.
 > UE will sometimes do it automatically when you try to drag a pin to another, otherwise you just have to look in the context menu for the conversion between type `x` and `y`. The syntax is usually `x to y`.
 > 
-> For example, here, the `integer` type is converted to a `string`:
+> For example, here, the `integer` type is converted to a `string`: <br>
 > ![[Pasted image 20241109191622.png|150]]
 
 > [!tip] Variable options
-> For each variable you declare in `My Blueprint` panel you can set extra options.
-> ![[Pasted image 20241109192006.png]]
-> More details on what each option does [here](https://dev.epicgames.com/documentation/en-us/unreal-engine/blueprint-variables-in-unreal-engine#variablesinthemyblueprinttab).
+> For each variable you declare in `My Blueprint` panel you can set extra options. <br>
+> ![[Pasted image 20241109192006.png|400]]
+> <br>More details on what each option does [here](https://dev.epicgames.com/documentation/en-us/unreal-engine/blueprint-variables-in-unreal-engine#variablesinthemyblueprinttab).
 
 > [!Info] More
 > You can find [here](https://dev.epicgames.com/documentation/en-us/unreal-engine/blueprint-variables-in-unreal-engine?application_version=5.5) more details about blueprint variables.
@@ -299,7 +300,7 @@ Here is a list of the most used variables types.
 
 Sometimes you need a piece of code in multiple places. Instead of duplicating it, the best is to transform it into a event, function or macro. But what is the difference ?.
 
-Mainly
+Mainly:
 - Events are used for thing that don't return anything and that can execute in parallel.
 - Functions are used if you need output values.
 - Macros are used if you need to use *time* nodes or if you want multiple exec output pins. 
@@ -313,16 +314,16 @@ Mainly
 > [!tip] Overriding
 > You can override a function in a parent class if the function is public and exposed.
 > For example, the `Actor` has those function overridable by default: <br>
-> ![[Pasted image 20241109193658.png]]
+> ![[Pasted image 20241109193658.png|200]]
 > 
 > You can get events from exposed function by clicking on a actor or scene component and scrolling down in the details panel
-> ![[Pasted image 20241109200944.png]]
+> ![[Pasted image 20241109200944.png|300]]
 > <br>Here i selected my Box component and clicked on the `+` next to `On Component Begin Overlap`
-> ![[Pasted image 20241109201057.png]]
+> ![[Pasted image 20241109201057.png|600]]
 
 
 > [!tip] Collapsing
-> You can collapse code into a graph, function or macro to gain time. <br> ![[Pasted image 20241109193436.png|500]]
+> You can collapse code into a graph, function or macro to gain time. <br> ![[Pasted image 20241109193436.png|450]]
 > 
 
 ### Context Menu
