@@ -136,6 +136,7 @@ You can extend any Actor class with `Actor Components`,  `Scene Components` or `
 > If you are new to programming or if you don't know what a `class`, `child` or `parent` is please read [[Classes and inheritance]] before going any further !
 
 ![[Pasted image 20241107215637.png]] 
+*[Image source](https://dev.epicgames.com/community/learning/tutorials/ryZ7/unreal-engine-begin-play-blueprints?source=0w)*
 
 > [!example] Actor
 > "Actor is the base class for an Object that can be placed or spawned in a level. Actors may contain a collection of Actor Components, which can be used to control how actors move, how they are rendered, etc." - [UE Docs](https://dev.epicgames.com/documentation/en-us/unreal-engine/API/Runtime/Engine/GameFramework/AActor)
@@ -439,7 +440,9 @@ More resources if you want to go further
 > - [Cedric's Multiplayer Network Compendium](https://cedric-neukirchen.net/docs/category/multiplayer-network-compendium/)
 
 
-> [!abstract] Great YouTube channels
+> [!abstract] YouTube channels
 > - [Mathew Wadstein](https://www.youtube.com/@MathewWadsteinTutorials)
 > - [Ryan Laley](https://www.youtube.com/@RyanLaley)
 
+> [!warning] YouTube warning
+> Sadly, a lot of UE YouTube content about programming (and mostly for BP) shows wrong/bad ways to program or use UE features. <br> If you want to keep using YouTube as your main learning tool (not recommended), please try to understand *why* a youtuber tells you something, and don't follow him like a sheep :).
