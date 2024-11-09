@@ -121,7 +121,7 @@ a {
 }
 
 .page {
-  max-width: calc(#{map-get($breakpoints, desktop)} + 300px);
+  max-width: calc(#{map-get($breakpoints, desktop)} + 600px);
   margin: 0 auto;
   & article {
     & > h1 {
@@ -586,4 +586,11 @@ iframe.pdf {
   height: 100%;
   width: 100%;
   border-radius: 5px;
+}
+
+
+article h1, article h2, article h3
+{
+	color: $darkContentHeaderColor;
+	text-shadow: 0px 0px 4px #3470EB;
 }
