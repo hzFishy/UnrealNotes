@@ -168,11 +168,11 @@ You can extend any Actor class with `Actor Components`,  `Scene Components` or `
 >  > [!tip] *Persists between levels*
 
 > [!example] HUD
-> "Base class of the heads-up display. This has a canvas and a debug canvas on which primitives can be drawn." - [UE Docs](https://dev.epicgames.com/documentation/en-us/unreal-engine/API/Runtime/Engine/GameFramework/AHUD)
+> "Base class of the heads-up display. This has a canvas and a debug canvas on which primitives can be drawn." - [UE Docs](https://dev.epicgames.com/documentation/en-us/unreal-engine/API/Runtime/Engine/GameFramework/AHUD) <br>
 > The HUD class can be used as a isolated area to manage to create, show, hide and destroy UserWidgets.
 
 > [!example] User Widget
-> "UserWidgets are used in Epic Games' UI System, called **Unreal Motion Graphics** (UMG)." - [Cedric](https://cedric-neukirchen.net/docs/multiplayer-compendium/common-classes/userwidget/)
+> "UserWidgets are used in Epic Games' UI System, called **Unreal Motion Graphics** (UMG)." - [Cedric](https://cedric-neukirchen.net/docs/multiplayer-compendium/common-classes/userwidget/)<br>
 > This is the class you will use to display text, menus, inputs and more.
 
 > [!Info] To go further ...
