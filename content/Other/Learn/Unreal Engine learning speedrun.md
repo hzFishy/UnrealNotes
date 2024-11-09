@@ -257,10 +257,10 @@ Here is a list of the most used variables types.
 > **Map**<br> A map is like a dictionary in other languages. A map contains a list of pair of keys and an associated value. To obtain a value you must therefore give the correct key, there is no order in a map.
 > All keys must be unique.
 > 
-> On the left the key (Key) and on the right the associated value (Value).
-> ![[Pasted image 20241109190907.png]] <br> ![[Pasted image 20241109190933.png]]
+> On the left the key (Key) and on the right the associated value (Value). <br>
+> ![[Pasted image 20241109190907.png]]<br>![[Pasted image 20241109190933.png]]
 > 
-> To get a value, you use the `Find` node
+> To get a value, you use the `Find` node <br>
 > ![[Pasted image 20241109191114.png|350]]
 > - Red: The key to use
 > - Green: The returned value (if found)
