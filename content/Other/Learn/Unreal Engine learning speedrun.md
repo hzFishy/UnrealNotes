@@ -112,20 +112,22 @@ The Blueprint layer is built on top of the C++ layer, either on already existing
 
 A Blueprint is an asset that inherits from a class, for example `Actor` (`AActor` being the real C++ name). In a blueprint you can already see/edit what is exposed from C++ (for example variables or components).
 
-### Actor Blueprint hierarchy
+### Actor blueprint hierarchy
 Unlike other engines like Unity, you don't create a empty "Game Object" then add components. <br>In UE you create a new blueprint asset, and this blueprint can already hold logic.
 
 > [!Warning]
 > You can only create new blueprints from the content browser or using the Quick Add tool.
-> This means that you can't make a unique blueprint classes/instances directly in a level, it must exist in the Content Browser.
+> This means that you can't make a **new** and unique blueprint classes/instances directly in a level, it must exist in the Content Browser.
 
-You can extend any Actor class it with `Actor Components` or `Scene Components`.
+You can extend any Actor class with `Actor Components`,  `Scene Components` or `Interfaces`.
 - A `Actor Component` don't have any transform, it's just a block of whatever logic attached to your actor.
 - A `Scene Component` is the same as an `Actor Component` but it has a transform and must be attached somewhere on your Actor (at the root of the actor or on any other `Scene Component`), it also support sockets.
+- For `Interface` see [[Classes and inheritance#Interfaces]]
 
 > [!Info]
 > More about Actors in [[#Main classes]]
 ## Structure
+==TODO==
 > Check the graph or watch the video about the basics of engine structure [here](https://dev.epicgames.com/community/learning/tutorials/98E/unreal-engine-begin-play-engine-structure?source=0w)
 
 ## Main classes
@@ -251,7 +253,7 @@ Here is a list of the most used variables types.
 > 
 > 
 > **Set** <br> A set is very similar to the array, but ...
-> - ... a set cannot contain the same value twice.
+> - ... all entries needs to be unique
 > - ... there is no order in a set, it's like if you add a marble to a bag of marbles, you know what you added but you don't know how they got mixed up. So if you convert your set to an array, and try to get the value at index 0, you probably won't get the first element you previously added.
 > 
 > **Map**<br> A map is like a dictionary in other languages. A map contains a list of pair of keys and an associated value. To obtain a value you must therefore give the correct key, there is no order in a map.
@@ -262,9 +264,9 @@ Here is a list of the most used variables types.
 > 
 > To get a value, you use the `Find` node <br>
 > ![[Pasted image 20241109191114.png|350]]
-> - Red: The key to use
-> - Green: The returned value (if found)
-> - Blue: `True` if the value is found, `False` if the value wasn't found
+> - Red square : The key to use
+> - Green square: The returned value (if found)
+> - Blue square: `True` if the value is found, `False` if the value wasn't found
 
 > [!tip] Reading and writing (`Get`/`Set`)
 > When you use a variable, you either read its value (`Get`), or you write a new value (`Set`). <br>
@@ -305,11 +307,11 @@ Mainly:
 - Functions are used if you need output values.
 - Macros are used if you need to use *time* nodes or if you want multiple exec output pins. 
 
-| Type     | <div style="width:80px">Exec inputs</div> | <div style="width:100px">Type inputs</div> | <div style="width:100px">Exec outputs</div> | <div style="width:100px">Type outputs</div> | <div style="width:150px">Access</div>  | <div style="width:250px">Other</div>                                                                          |
-| -------- | ----------------------------------------- | ------------------------------------------ | ------------------------------------------- | ------------------------------------------- | -------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
-| Event    | One                                       | One or multiple                            | None                                        | None                                        | Can be called from anywhere if public. | The execution flow does not wait for the "end" of the event, it calls the event then continues in parallel    |
-| Function | One                                       | One or multiple                            | One                                         | One or multiple                             | Can be called from anywhere if public. | Cannot contain any *time* nodes *(Delay, Cooldown, ...)*. <br> Can be overridden in parent classes if public. |
-| Macro    | Multiple                                  | One or multiple                            | One or multiple                             | One or multiple                             | Can only be called inside the class.   |                                                                                                               |
+| Type     | <div style="width:80px">Exec inputs</div> | <div style="width:100px">Variables inputs</div> | <div style="width:100px">Exec outputs</div> | <div style="width:100px">Variables outputs</div> | <div style="width:150px">Access</div>  | <div style="width:250px">Other</div>                                                                         |
+| -------- | ----------------------------------------- | ----------------------------------------------- | ------------------------------------------- | ------------------------------------------------ | -------------------------------------- | ------------------------------------------------------------------------------------------------------------ |
+| Event    | One                                       | One or multiple                                 | None                                        | None                                             | Can be called from anywhere if public. | The execution flow does not wait for the "end" of the event, it calls the event then continues in parallel   |
+| Function | One                                       | One or multiple                                 | One                                         | One or multiple                                  | Can be called from anywhere if public. | Cannot contain any *time* nodes *(Delay, Cooldown, ...)*. <br>Can be overridden in parent classes if public. |
+| Macro    | Multiple                                  | One or multiple                                 | One or multiple                             | One or multiple                                  | Can only be called inside the class.   |                                                                                                              |
 
 > [!tip] Overriding
 > You can override a function in a parent class if the function is public and exposed.
@@ -398,6 +400,15 @@ This is possible with execution and variables *lines*. Once created you can move
 > [!info]
 > Categories are also displayed in the context menu. <br> ![[Pasted image 20241108230458.png]]
 
+
+# Debugging
+==TODO==
+
+**Breakpoints**
+==TODO==
+
+**Watch**
+==TODO==
 # Miscellaneous
 
 ## Modeling tool
