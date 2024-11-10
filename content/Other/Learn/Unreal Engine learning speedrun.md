@@ -347,7 +347,7 @@ Mainly:
 | Function | One                                       | One or multiple                                 | One                                         | One or multiple                                  | Can be called from anywhere if public. | Cannot contain any *time* nodes *(Delay, Cooldown, ...)*. <br>Can be overridden in parent classes if public. |
 | Macro    | Multiple                                  | One or multiple                                 | One or multiple                             | One or multiple                                  | Can only be called inside the class.   |                                                                                                              |
 
-> [!tip]- Overriding
+> [!tip]- Overriding functions
 > You can override a function in a parent class if the function is public and exposed.
 > For example, the `Actor` has those function overridable by default: <br>
 > ![[Pasted image 20241109193658.png|200]]
@@ -359,7 +359,7 @@ Mainly:
 > > ![[Pasted image 20241110110735.png|350]] <br>
 > > ![[Pasted image 20241110110740.png|350]]
 
-> [!tip]- Collapsing nodes
+> [!tip]- Collapsing nodes into graphs, functions or macros
 > You can collapse code into a graph, function or macro to gain time. <br> ![[Pasted image 20241109193436.png|450]]
 > 
 
@@ -380,16 +380,16 @@ For example, you would use a delegate when the player's health changes to update
 > [!Info]- Code example
 > Let's say we want to call some code with `Print Text` inside our Level Blueprint when our player health change.
 > 
-> **Inside player class:**
-> Calling the delegate
+> **Inside player class:** <br>
+> Calling the delegate<br>
 > ![[Pasted image 20241110143106.png|350]]
 > 
-> **Inside level blueprint:**
-> Getting the player and binding an event to it
+> **Inside level blueprint:**<br>
+> Getting the player and binding an event to it<br>
 > ![[Pasted image 20241110143124.png]]
 > 
-> **Result:**
-> After I pressed `Tab` my breakpoint was hit, meaning the level blueprint correctly binded `OnHealthChanged_Event` to the `OnHealthChanged` event dispatcher.
+> **Result:**<br>
+> After I pressed `Tab` my breakpoint was hit, meaning the level blueprint correctly binded `OnHealthChanged_Event` to the `OnHealthChanged` event dispatcher.<br>
 > ![[Pasted image 20241110143347.png]]
 
 > [!tip]- How to use in a graph
