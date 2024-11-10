@@ -236,7 +236,7 @@ Here is a list of the most used variables types.
 > This is easily done using the `Format` node: <br>
 > ![[Pasted image 20241110105200.png]]
 > ![[Pasted image 20241110105151.png|550]]<br>
-> Here the `result` will be `Apple costs 3`.
+> Here the `result` will be `Apple costs 3`. <br>
 > **For each `{...}` in the `Format` input a new input pin will appear**
 
 > [!Info]- `Enum` type
