@@ -465,7 +465,7 @@ In UE, you can use the `Print String` or `Print Text` nodes.<br>
 > More details [here](https://dev.epicgames.com/documentation/en-us/unreal-engine/blueprint-debugging-example-in-unreal-engine)
 
 > [!warning]
-> - Breakpoints placed on events won't be triggered.
+> - Breakpoints placed on event nodes won't be triggered.
 > - You can only place breakpoints on impure nodes.
 
 > [!Info] More
