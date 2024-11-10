@@ -164,7 +164,7 @@ You can find PIE settings here: <br>
 
 > [!example] Actor
 > "Actor is the base class for an Object that can be placed or spawned in a level. Actors may contain a collection of Actor Components, which can be used to control how actors move, how they are rendered, etc." - [UE Docs](https://dev.epicgames.com/documentation/en-us/unreal-engine/API/Runtime/Engine/GameFramework/AActor)
-> > [!info] About persistence
+> > [!info]- About persistence
 > > Most actors (and objects) doesn't persist between levels (which usually means losing data).
 > > There is a custom solution to make any actor transferred to the new target level, but the easiest way is to store the persistent data on classes that are already persistent (see persistent classes below).
 
@@ -179,11 +179,10 @@ You can find PIE settings here: <br>
 
 > [!example] Player State
 > "A Player State is created for every player. Player States should contain game relevant information about the player, such as score, etc." - [UE Docs](https://dev.epicgames.com/documentation/en-us/unreal-engine/API/Runtime/Engine/GameFramework/APlayerState)
->  > [!tip] *Persists between levels*
+>  > [!tip] *Gets recreated on level change but values are copied to new level*
 
 > [!example] Game Mode
 > "Defines the game being played. It governs the game rules, scoring, what actors are allowed to exist in this game type, and who may enter the game." - [UE Docs](https://dev.epicgames.com/documentation/en-us/unreal-engine/API/Runtime/Engine/GameFramework/AGameModeBase)
-> > [!tip] *Persists between levels*
 
 > [!example] Game State
 > "Is a class that manages the game's global state, and is spawned by the Game Mode." -  [UE Docs](https://dev.epicgames.com/documentation/en-us/unreal-engine/API/Runtime/Engine/GameFramework/AGameStateBase)
