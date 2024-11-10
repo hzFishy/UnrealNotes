@@ -1,7 +1,9 @@
-The goal of this page it to teach how Unreal Engine, Blueprints and visual scripting works.
+The goal of this page it to teach you how Unreal Engine, Blueprints and visual scripting works.
 Everything here should be understandable by someone who never programmed or used Unreal Engine.
 
-This page has a lot of content, you can easily navigate between categories using the Table of Contents on the right.
+This page has a lot of content, you can easily navigate between categories using the Table of Contents on the right. If something is overwhelming you, you can skip it and come back later.
+
+A lot of stuff such as tips are collapsed, I've done this to make the page more readable and easy to navigate, it doesn't mean that it's not important !
 
 > [!Info]  For C++ users
 > If you want to learn more about how to work with C++ in UE, I would recommend checking [Laura's C++ speedrun blog post](https://landelare.github.io/2023/01/07/cpp-speedrun.html).
