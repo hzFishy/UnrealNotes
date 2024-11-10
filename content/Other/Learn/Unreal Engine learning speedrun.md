@@ -1,4 +1,5 @@
-This speedrun is aimed to learn the basics of Unreal Engine with some blueprint & visual scripting basics. <br>
+The goal of this page it to teach how Unreal Engine, Blueprints and visual scripting works.
+
 This page has a lot of content, you can easily navigate between categories using the Table of Contents on the right.
 
 > [!Info]  About C++
