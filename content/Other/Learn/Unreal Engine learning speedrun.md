@@ -1,8 +1,9 @@
 The goal of this page it to teach how Unreal Engine, Blueprints and visual scripting works.
+Everything here should be understandable by someone who never programmed or used Unreal Engine.
 
 This page has a lot of content, you can easily navigate between categories using the Table of Contents on the right.
 
-> [!Info]  About C++
+> [!Info]  For C++ users
 > If you want to learn more about how to work with C++ in UE, I would recommend checking [Laura's C++ speedrun blog post](https://landelare.github.io/2023/01/07/cpp-speedrun.html).
 # Access & getting started
 Download Unreal Engine from the Epic Games launcher:
@@ -531,4 +532,3 @@ More resources if you want to go further
 > > [!warning] YouTube warning
 > > 
 > > Sadly, a lot of UE YouTube content about programming (and mostly for BP) shows wrong/bad ways to program or use UE features. <br> If you want to keep using YouTube as your main learning tool (not recommended), please try to understand *why* a youtuber tells you something, and don't follow him like a sheep 🧠.
-
