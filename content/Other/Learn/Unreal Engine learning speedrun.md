@@ -5,8 +5,15 @@ This page has a lot of content, you can easily navigate between categories using
 
 A lot of stuff such as tips are collapsed, I've done this to make the page more readable and easy to navigate, it doesn't mean that it's not important !
 
-> [!Info]  For C++ users
+> [!Info]- For C++ users
 > If you want to learn more about how to work with C++ in UE, I would recommend checking [Laura's C++ speedrun blog post](https://landelare.github.io/2023/01/07/cpp-speedrun.html).
+
+> [!info]- For Unity users
+> You might want to check out [this](https://dev.epicgames.com/documentation/en-us/unreal-engine/unreal-engine-for-unity-developers) official documentation about "UE to Unity"
+
+> [!warning]
+> This page is in active writing and review phase, images, sentences, or other content might change over time for a better experience.
+> I will also add more content over time (check `TODO`s to know the most upcoming ones)
 # Access & getting started
 Download Unreal Engine from the Epic Games launcher:
 - Click on "Unreal Engine" on the left side bar
@@ -20,6 +27,9 @@ Once you launched a engine version you will be able to load a existing project o
 > You can directly open a existing UE project with the correct engine version from the "My Projects" area
 
 Other UE stuff such as your assets from your Fab library are accessible below the engine version, if some are missing try to refresh using the refresh button.
+
+> [!tip]- Templates
+> UE offers various templates to start your project.
 
 # Interface anatomy
 Here are the main components of the UE interface: 
@@ -322,7 +332,7 @@ Here is a list of the most used variables types.
 > You can find [here](https://dev.epicgames.com/documentation/en-us/unreal-engine/blueprint-variables-in-unreal-engine?application_version=5.5) more details about blueprint variables.
 
 
-### Events, Functions & Macros
+### Events, Functions, Macros & Event Dispatchers
 
 Sometimes you need a piece of code in multiple places. Instead of duplicating it, the best is to transform it into a event, function or macro. But what is the difference ?
 
@@ -349,14 +359,49 @@ Mainly:
 > > ![[Pasted image 20241110110735.png|350]] <br>
 > > ![[Pasted image 20241110110740.png|350]]
 
-> [!tip]- Actor & Component delegates
-> You can get events from exposed function by clicking on a actor or scene component and scrolling down in the details panel. <br>
-> Here i selected my Box component and clicked on the `+` next to `On Component Begin Overlap`
-> ![[Pasted image 20241109200944.png|300]] ![[Pasted image 20241109201057.png|600]]
-
 > [!tip]- Collapsing nodes
 > You can collapse code into a graph, function or macro to gain time. <br> ![[Pasted image 20241109193436.png|450]]
 > 
+
+For event dispatchers, it's a bit special, in blueprints it's called `Event Dispatchers` but it's known in programming as delegates.
+See a delegate like a special event that you can "call"  (known as broadcast) and "bind to" (known as subscribe). It's very useful if you want to send an event to anyone interested in it.
+Delegates are **instance dependent** (you subscribe to a delegate of a object instance), they can have multiple inputs and can't return anything.
+
+For example, you would use a delegate when the player's health changes to update your UI (meaning the UI subscribed/binded itself to your player class).
+
+> [!info]- Delegate & Event Dispatcher vocabulary
+> | Name in general programming | Name in UE | <div style="width:500px">Usage</div> |
+> | --- | --- | --- |
+> | Broadcast | Call | Sends the event to anyone subscribed/binded to it |
+> | Subscribe/Bind | Bind | Tells the delegate that we want the given event to be fired when a broadcast/call occurs |
+> | Unsubscribe/Unbind | Unbind | - Removes the given function for the delegate, the event won't fire anymore on broadcast/call. <br>- For the `Unbind All` version this will removed **all** binded events of this delegate |
+> | Callback | Event | This is the binded event/function called when the delegate is broadcasted/called |
+
+> [!Info]- Code example
+> Let's say we want to call some code with `Print Text` inside our Level Blueprint when our player health change.
+> 
+> **Inside player class:**
+> Calling the delegate
+> ![[Pasted image 20241110143106.png|350]]
+> 
+> **Inside level blueprint:**
+> Getting the player and binding an event to it
+> ![[Pasted image 20241110143124.png]]
+> 
+> **Result:**
+> After I pressed `Tab` my breakpoint was hit, meaning the level blueprint correctly binded `OnHealthChanged_Event` to the `OnHealthChanged` event dispatcher.
+> ![[Pasted image 20241110143347.png]]
+
+> [!tip]- How to use in a graph
+> If the event dispatcher declared in the graph where you want to call/bind/assign, you can simply drag & drop your event dispatcher from `My Blueprint` panel and release in the graph, this options will show: <br>
+> ![[Pasted image 20241110140828.png]]
+> <br> Otherwise, from the context menu you can type your Event Dispatcher name and you will find the same options (without the "Event" one):<br>
+> ![[Pasted image 20241110141104.png]]
+
+> [!tip]- Actor & Component delegates
+> You can get a delegate callback by clicking on a actor or scene component and scrolling down in the details panel. <br>
+> Here i selected my Box component and clicked on the `+` next to `On Component Begin Overlap`
+> ![[Pasted image 20241109200944.png|300]] ![[Pasted image 20241109201057.png|600]]
 
 ### Context Menu
 
@@ -471,6 +516,7 @@ In UE, you can use the `Print String` or `Print Text` nodes.<br>
 > [!warning]
 > - Breakpoints placed on event nodes won't be triggered.
 > - You can only place breakpoints on impure nodes.
+> - Depending on your hardware, UE can crash if you keep it paused to long on one breakpoint
 
 > [!Info] More
 > More about the breakpoint features [here](https://dev.epicgames.com/documentation/en-us/unreal-engine/blueprint-debugging-example-in-unreal-engine)
@@ -503,20 +549,30 @@ The watch feature works with breakpoints, it allows you to see a value of a pin 
 > [!tip]- Modeling tool
 > ==TODO==
 
+## Input Systems
+UE has two input systems, the first one is old and should not be used if you use a engine version greater than 5.0.
+The second one was officially introduced in 5.1, named "Enhanced Input System". And like the name says, it's a lot more powerful than the previous one.
+
+The default characters in the **First Person** and **Third Person** templates already uses the Enhanced Input system, it's a good idea to check how it's all setup before doing it from scratch
+
+> [!info] More about Enhanced Input
+> More can be found about the Enhanced Input System in the [Official Documentation](https://dev.epicgames.com/documentation/en-us/unreal-engine/enhanced-input-in-unreal-engine)
 # Training exercises
 So now that you read all of that, you need some practice to be sure your understood everything AND to learn even more !
 
 If you already have some projects ideas and the listed exercises seems to boring for you, don't hesitate to directly start to learn by doing your project. <br>**But be careful !** Don't overkill yourself with a very big game that will probably make you hate UE (because what you have to learn will be to big for a new UE user). <br>Start with something "small" or "medium", something that you like and can be scaled up when you will have more knowledge and motivation to make a great game !
 
-> [!abstract] List of exercises
-> ==TODO==
+> [!abstract] Exercises
+> - [Your First Hour in Unreal Engine 5.0(Official)](https://dev.epicgames.com/community/learning/courses/ZpX/your-first-hour-in-unreal-engine-5/E7L/introduction-to-your-first-hour-in-unreal-engine-5)
+> - [Build a Third Person Character from Scratch (Official)](https://dev.epicgames.com/community/learning/courses/kry/build-a-third-person-character-from-scratch/mDv/build-a-third-person-character-from-scratch-introduction)
 
 # More
-More resources if you want to go further
+More resources and tools if you want to go further
 
 > [!abstract] Useful links
 > **In my notes**
 > - [[Shortcuts & tricks]]
+> - [[Classes and inheritance]]
 > 
 > **Official**
 > - [Beginplay - Engine breakdown](https://dev.epicgames.com/community/learning/paths/0w/unreal-engine-beginplay)
@@ -527,6 +583,18 @@ More resources if you want to go further
 > - [Unreal Source Discord Server](https://discord.gg/unrealsource)
 > - [Cedric's Multiplayer Network Compendium](https://cedric-neukirchen.net/docs/category/multiplayer-network-compendium/)
 
+> [!abstract] Tools & plugins
+> A list of some of tools and plugins I used a lot when working with Blueprints (mostly free).
+>
+> **Tools:**
+> - [BlueprintUE](https://blueprintue.com/): A easy way to preview and share code with a link 
+> 
+> **Fab plugins:**
+> - [Auto Size Comments](https://www.fab.com/listings/fdb7e77d-be37-4feb-a6c9-60e317c10ad): Adds cool features to comment groups
+> - [Live Blueprint Debugger](https://www.fab.com/listings/5f8748e9-6f95-480e-9a03-375157fd8bad): More debugging power
+> - [Math Extension Nodes and Functions](https://www.fab.com/listings/eb43bd3c-40be-459d-bc14-0e0fd6919681): Add math nodes for types with no default math operations support. 
+> - [[Blueprint] Array Helper](https://www.fab.com/listings/87af7b30-1635-4321-b1df-6e1f459cf855): A bunch of new nodes to do operations on arrays.
+> - [Sorting Array](https://www.fab.com/listings/129f2b52-3fb0-4003-a93d-62922643cbde): Sort array nodes
 
 > [!abstract] Recommended YouTube channels
 > - [Mathew Wadstein](https://www.youtube.com/@MathewWadsteinTutorials)
