@@ -13,6 +13,7 @@ All the keys can be changed in the editor settings
 # Blueprint
 - Search `Nodes, keywords, variables, ...` (Ctrl + F)
 - Rename (F2)
+- Toggle breakpoint (F9)
 - Variable (Get) `Place a GETTER of the dragged variable` (Hold Ctrl while dragging)
 - Variable (Set) `Place a SETTER of the dragged variable` (Hold Alt while dragging)
 - Branch `Place a Branch node` (B)

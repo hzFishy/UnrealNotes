@@ -15,13 +15,13 @@ Once you launched a engine version you will be able to load a existing project o
 > [!tip]
 > You can directly open a existing UE project with the correct engine version from the "My Projects" area
 
-Other UE stuff such as your assets from your Fab library are accessible below the engine version, if some are missing try to refresh using the refresh button
+Other UE stuff such as your assets from your Fab library are accessible below the engine version, if some are missing try to refresh using the refresh button.
 
 # Interface anatomy
 Here are the main components of the UE interface: 
 ## Global
 
-![[Screenshot_31.png]]
+![[Screenshot_31b.png]]
 
 
 > [!example] Top bar (1)
@@ -37,7 +37,6 @@ Here are the main components of the UE interface:
 > It serves as your primary tool for managing assets, such as meshes, textures, materials, and blueprints
 
 ## Viewport & Level
-
 ![[Screenshot_32.png]]
 > [!example] Viewport (1)
 > A view of the level
@@ -56,6 +55,10 @@ Here are the main components of the UE interface:
 > - **(3E)** Play control & settings.
 > - **(3F)** Packaging options.
 > - **(3G)** More settings.
+> >[!tip] Scalability settings
+> >
+> >You can change the viewport scalability settings (also known as quality settings)<br>![[Pasted image 20241110090524.png|350]]
+> ><br>If the settings are different from High, you can change them from the top left of the viewport.<br>![[Pasted image 20241110090649.png]]
 
 > [!example] Inner top bar left (4)
 > ![[Pasted image 20241107214259.png]]
@@ -66,6 +69,7 @@ Here are the main components of the UE interface:
 
 > [!example] Inner top bar right (5)
 > ![[Pasted image 20241107214438.png]]
+> <br>Left to right:
 > - Edit mode (Select, Move, Rotate, Scale)
 > - Pivot mode (Global/Local)
 > - Surface snapping
@@ -126,6 +130,12 @@ You can extend any Actor class with `Actor Components`,  `Scene Components` or `
 
 > [!Info]
 > More about Actors in [[#Main classes]]
+
+### Playing in editor
+When you test your game in the editor (!= packaged build), you are in **PIE** (Play In Editor). <br>
+You can find PIE settings here: <br>
+![[Pasted image 20241110110229.png|350]]
+
 ## Structure
 ==TODO==
 > Check the graph or watch the video about the basics of engine structure [here](https://dev.epicgames.com/community/learning/tutorials/98E/unreal-engine-begin-play-engine-structure?source=0w)
@@ -188,20 +198,26 @@ Here is a list of the most used variables types.
 
 | <div style="width:150px">Name & color</div> | <div style="width:300px">Description</div>                                                          | <div style="width:300px">Example of values</div> |
 | ------------------------------------------- | --------------------------------------------------------------------------------------------------- | ------------------------------------------------ |
-| ![[Pasted image 20241109130249.png]]        | A boolean                                                                                           | `True` or `False`                                |
-| ![[Pasted image 20241109130255.png]]        | A integer number (equivalent to `int32`)                                                            | `-1`, `5`, `9521`                                |
-| ![[Pasted image 20241109130301.png]]        | A floating-point number                                                                             | `0`, `3,45`, `-0.1`                              |
-| ![[Pasted image 20241109160626.png]]        | A character container, useful to mute (edit) at runtime.                                            | `""`, `"Hello"`,`"Hello World!"`                 |
-| ![[Pasted image 20241109160631.png]]        | Same as a `String`, but not meant to be mutable. Mostly used for the localization system.           | English: `Hello`, French: `"Bonjour"`            |
-| ![[Pasted image 20241109160635.png]]        | A engine struct (`x`,`y`,`z`), mostly used for locations or directions.                             | `(0,0,0)`, `(3,-5,1)`                            |
-| ![[Pasted image 20241109160639.png]]        | A engine struct (`x`,`y`,`z`), used for rotations.                                                  | `(0,0,0)`, `(3,-5,1)`                            |
-| ![[Pasted image 20241109160644.png]]        | A engine struct, contains a Vector (for location), Rotator (for rotation) and a Vector (for scale). | `((100,50,0),(0,-90,0),(1,1,1))`                 |
-| ![[Pasted image 20241109171409.png]]        | A reference to an instance of a object.                                                             | `Null`, `Light`, `Actor`, `Camera`               |
+| ![[Pasted image 20241109130249.png\|100]]   | A boolean                                                                                           | `True` or `False`                                |
+| ![[Pasted image 20241109130255.png\|100]]   | A integer number (equivalent to `int32`)                                                            | `-1`, `5`, `9521`                                |
+| ![[Pasted image 20241109130301.png\|100]]   | A floating-point number                                                                             | `0`, `3,45`, `-0.1`                              |
+| ![[Pasted image 20241109160626.png\|100]]   | A character container, useful to mute (edit) at runtime.                                            | `""`, `"Hello"`,`"Hello World!"`                 |
+| ![[Pasted image 20241109160631.png\|100]]   | Same as a `String`, but not meant to be mutable. Mostly used for the localization system.           | English: `Hello`, French: `"Bonjour"`            |
+| ![[Pasted image 20241109160635.png\|100]]   | A engine struct (`x`,`y`,`z`), mostly used for locations or directions.                             | `(0,0,0)`, `(3,-5,1)`                            |
+| ![[Pasted image 20241109160639.png\|100]]   | A engine struct (`x`,`y`,`z`), used for rotations.                                                  | `(0,0,0)`, `(3,-5,1)`                            |
+| ![[Pasted image 20241109160644.png\|100]]   | A engine struct, contains a Vector (for location), Rotator (for rotation) and a Vector (for scale). | `((100,50,0),(0,-90,0),(1,1,1))`                 |
+| ![[Pasted image 20241109171409.png\|100]]   | A reference to an instance of a object.                                                             | `Null`, `Light`, `Actor`, `Camera`               |
 
-> [!tip] Variable color
+> [!info] Reading and writing (`Get`/`Set`)
+> When you use a variable, you either read its value (`Get`), or you write a new value (`Set`). <br>
+> You can `Get` or `Set` a variable by typing `Get My Variable Name` or `Set My Variable Name` (You need to have the correct context to make it appear).
+> 
+> To place a `Get` node of your variable from the `My Blueprint` tab, hold `Ctrl` while dragging then release. To place a `Set` node hold `Alt` while dragging then release.
+
+> [!info] Variable color
 > Depending on the variable type, the pin and line color will be different. <br> ![[Pasted image 20241109171524.png|350]]
 
-> [!Info] More on the Object type
+> [!Info]- More on the `Object` type
 > The `Object` variable type has 4 "sub types". <br>
 > ![[Pasted image 20241109170522.png]]
 > - `Object Reference`: A reference to an instance of a object.
@@ -213,7 +229,17 @@ Here is a list of the most used variables types.
 > - `Soft Object Reference`: A soft reference to an instance of a object.
 > - `Soft Class Reference`: A soft reference to a class of a object.
 
-> [!Info] Enum type
+> [!info]- More on the `Text` type
+> When using a text variable, you can easily format it.
+> For example, lets say we have an item struct, it holds the item name and price. We want to display in a shop dialogue text "`<Item name>` costs `<item price>`".
+> 
+> This is easily done using the `Format` node: <br>
+> ![[Pasted image 20241110105200.png]]
+> ![[Pasted image 20241110105151.png|550]]<br>
+> Here the `result` will be `Apple costs 3`.
+> **For each `{...}` in the `Format` input a new input pin will appear**
+
+> [!Info]- `Enum` type
 >Enums are used to give names to constants, which makes the code easier to read and maintain.
 >Use enums when you have values that you know aren't going to change, like month days, days, colors, deck of cards, etc.
 >
@@ -228,8 +254,7 @@ Here is a list of the most used variables types.
 > >- Add the values you want <br> ![[Pasted image 20241109173634.png|450]]
 > >- Use them where you want <br> ![[Pasted image 20241109173708.png|450]]
  
-
-> [!Info] Struct type
+> [!Info]- `Struct` type
 > A struct is a container of other variables (also known as members/properties).
 > > [!tip] Custom structs
 > > 
@@ -243,7 +268,7 @@ Here is a list of the most used variables types.
 > > <br>You can break any struct pin by clicking on `Split Struct Pin` after right clicking on it. <br>
 > > ![[Pasted image 20241109185821.png|250]] ![[Pasted image 20241109185715.png|250]]
 
-> [!Info] Containers (`Single`, `Array`, `Set` or `Map`)
+> [!Info]- Containers (`Single`, `Array`, `Set` or `Map`)
 > For almost every variables types, you can decide if your variable *container* type is `Single`, `Array`, `Set` or `Map`. <br>
 > ![[Pasted image 20241109190356.png|200]] <br>
 > By default it's `Single`, as the name implies, it contains only one value.
@@ -269,13 +294,7 @@ Here is a list of the most used variables types.
 > - Green square: The returned value (if found)
 > - Blue square: `True` if the value is found, `False` if the value wasn't found
 
-> [!tip] Reading and writing (`Get`/`Set`)
-> When you use a variable, you either read its value (`Get`), or you write a new value (`Set`). <br>
-> You can `Get` or `Set` a variable by typing `Get My Variable Name` or `Set My Variable Name` (You need to have the correct context to make it appear).
-> 
-> To place a `Get` node of your variable from the `My Blueprint` tab, hold `Ctrl` while dragging then release. To place a `Set` node hold `Alt` while dragging then release.
-
-> [!tip] Promoting a pin to a variable
+> [!tip]- Promoting a pin to a variable
 > You can also create variables by using **Promote to Variable**. <br>
 > ![[Pasted image 20241109171952.png]]
 > <br>By right-clicking the **New Light Color** pin and selecting **Promote to Variable**, we can assign a variable as the **New Light Color** value. <br>
@@ -283,14 +302,14 @@ Here is a list of the most used variables types.
 > 
 > *From [UE Docs](https://dev.epicgames.com/documentation/en-us/unreal-engine/blueprint-variables-in-unreal-engine?application_version=5.5)*
 
-> [!tip] Converting between different types
+> [!tip]- Converting between different types
 > It is possible to convert one type to another. This conversion occurs in a node.
 > UE will sometimes do it automatically when you try to drag a pin to another, otherwise you just have to look in the context menu for the conversion between type `x` and `y`. The syntax is usually `x to y`.
 > 
 > For example, here, the `integer` type is converted to a `string`: <br>
 > ![[Pasted image 20241109191622.png|150]]
 
-> [!tip] Variable options
+> [!tip]- Variable options
 > For each variable you declare in `My Blueprint` panel you can set extra options. <br>
 > ![[Pasted image 20241109192006.png|400]]
 > <br>More details on what each option does [here](https://dev.epicgames.com/documentation/en-us/unreal-engine/blueprint-variables-in-unreal-engine#variablesinthemyblueprinttab).
@@ -314,18 +333,24 @@ Mainly:
 | Function | One                                       | One or multiple                                 | One                                         | One or multiple                                  | Can be called from anywhere if public. | Cannot contain any *time* nodes *(Delay, Cooldown, ...)*. <br>Can be overridden in parent classes if public. |
 | Macro    | Multiple                                  | One or multiple                                 | One or multiple                             | One or multiple                                  | Can only be called inside the class.   |                                                                                                              |
 
-> [!tip] Overriding
+> [!tip]- Overriding
 > You can override a function in a parent class if the function is public and exposed.
 > For example, the `Actor` has those function overridable by default: <br>
 > ![[Pasted image 20241109193658.png|200]]
-> 
-> You can get events from exposed function by clicking on a actor or scene component and scrolling down in the details panel
-> ![[Pasted image 20241109200944.png|300]]
-> <br>Here i selected my Box component and clicked on the `+` next to `On Component Begin Overlap`
-> ![[Pasted image 20241109201057.png|600]]
+>
+> > [!warning]
+> > 
+> > When you override a function, this means that the code in the parent(s) function(s) **won't** be called.
+> > If you want to **add** code in your child class, but still execute code in your parent function implementation, add the `Super` node (can be called at any order).
+> > ![[Pasted image 20241110110735.png|350]] <br>
+> > ![[Pasted image 20241110110740.png|350]]
 
+> [!tip]- Actor & Component delegates
+> You can get events from exposed function by clicking on a actor or scene component and scrolling down in the details panel. <br>
+> Here i selected my Box component and clicked on the `+` next to `On Component Begin Overlap`
+> ![[Pasted image 20241109200944.png|300]] ![[Pasted image 20241109201057.png|600]]
 
-> [!tip] Collapsing
+> [!tip]- Collapsing nodes
 > You can collapse code into a graph, function or macro to gain time. <br> ![[Pasted image 20241109193436.png|450]]
 > 
 
@@ -335,7 +360,8 @@ The context menu is what is shown when your right click in a BP graph.
 
 **Filter** <br>
 Depending on where you right click (and what you were dragging), the options are different, because UE filters out any actions for you that are "unrelated/don't make sense".
-> [!tip] Toggle the filter
+
+> [!tip]- Toggle filtering
 > You can deactivate/reactivate this filter at the top right.
 > 
 > ![[Pasted image 20241108221533.png|250]]
@@ -350,11 +376,9 @@ UE saves you time, you don't need to type the full name of each node to get it. 
 > 
 > This works with Add (`+`), Substract (`-`), Multiply (`*`), Divide (`/`) and more !
 
-Some keywords are premade (mostly for engine nodes), but you can add yours in the `Keywords` entry.
-> [!info] Example with a custom function
-> ![[Pasted image 20241108223933.png]] </br>
-> ![[Pasted image 20241108223943.png]] </br>
->![[Pasted image 20241108223951.png]]
+> [!tip]- Custom keywords
+> Some keywords are premade (mostly for engine nodes), but you can add yours in the `Keywords` entry.
+> <br>![[Pasted image 20241108223933.png]]<br>![[Pasted image 20241108223943.png]]<br>![[Pasted image 20241108223951.png]]
 
 
 ### Organizing nodes
@@ -364,16 +388,14 @@ The most known one is **comments** ! In UE you can comment individual nodes, or 
 
 **Individual node comment** <br>
 Hover your node then click on the little bubble to show it (and do the same if you want to hide it).
+<br>![[Pasted image 20241108225005.png|300]] ![[Pasted image 20241108224851.png|300]]
 
-![[Pasted image 20241108225005.png|300]]
-
-![[Pasted image 20241108224851.png|300]]
-
-> [!tip]
+> [!tip]- Pinning a comment
 > You can make a comment always displayed in a graph by pinning it, even when zoomed out.
 > 
 > ![[Pasted image 20241108225115.png]]
 > ![[Pasted image 20241108225121.png]]
+
 
 **Group comment** <br>
 You can make a group by pressing the group key (`C` key by default), if you want to make a group around already placed nodes, drag an area with your mouse then press the group key.
@@ -381,7 +403,7 @@ You can make a group by pressing the group key (`C` key by default), if you want
 ![[Pasted image 20241108225351.png|400]]
  ![[Pasted image 20241108225405.png|400]]
 
-> [!info] Custom Group Color
+> [!tip]- Custom Group Color
 > You can change a group color **individually** in the details panel (with the group selected). There is also other settings.
 > ![[Pasted image 20241108225753.png]]
 > 
@@ -391,29 +413,91 @@ You can make a group by pressing the group key (`C` key by default), if you want
 **Reroute nodes** <br>
 Sometimes you will have lines that will overlap each other or with nodes. With a double click on the line you can create a `Reroute Node`. <br>
 This is possible with execution and variables *lines*. Once created you can move reroute nodes wherever you want.
-<br>**Before:** <br>![[Pasted image 20241108230129.png|700]]
-<br>**After:** <br>![[Pasted image 20241108230143.png|700]]
+
+> [!info]- Example
+> **Before:** <br>![[Pasted image 20241108230129.png|700]]
+> <br>**After:** <br>![[Pasted image 20241108230143.png|700]]
+
 
 **Categories**<br>
- In order to better organize your variables, functions and macros, you can create categories and an infinite number of subcategories.
+ In order to better organize your variables, functions and macros, you can create categories and an infinite number of subcategories. <br>
  ![[Pasted image 20241108230416.png]]
 
 > [!info]
 > Categories are also displayed in the context menu. <br> ![[Pasted image 20241108230458.png]]
 
 
-# Debugging
-==TODO==
+### Debugging
+Once you finished coding something, you will test it, and if it goes wrong (or if you want to be sure everything works as planned) you will **debug** your code.
+<br>Debugging is the process of identifying and removing errors or unwanted behaviors.
+Blueprint debugging features are disabled in packaged builds.
+
+**Print** <br>
+The most common way to debug is to `Print` something.
+In UE, you can use the `Print String` or `Print Text` nodes.<br>
+*Print Text is recommended if you want to print runtime values (from variables for example)*
+![[Pasted image 20241110105613.png|500]]
+
+> [!info] Print to Screen & Print to Log
+> - **Screen:** Will show on the top left of your PIE window.
+> - **Log:** Will show in the Output Log.
 
 **Breakpoints**
-==TODO==
+> [!quote] From [UE Docs](https://dev.epicgames.com/documentation/en-us/unreal-engine/blueprint-debugging-example-in-unreal-engine)
+> "Blueprint debugging is a powerful feature that provides the functionality to pause the execution of a game during Play In Editor (**PIE**) [...]. When debugging, you can step through any graph of a Blueprint or Level Blueprint through the use of Breakpoints."
 
-**Watch**
-==TODO==
+> [!info]- Example
+> For example, I placed a breakpoint on the cast node <br>
+> ![[Pasted image 20241110102013.png|500]]
+> <br>If I play and overlap with the box, my game will pause and the graph with the breakpoint will open
+> <br>![[Pasted image 20241110102144.png|500]]
+> <br>If you hover the pins you will be able to see what data is contained
+> ![[Pasted image 20241110102257.png|650]]
+
+> [!info]- How to place breakpoints
+> All breakpoint options are available when you right click on a node. <br>
+> ![[Pasted image 20241110101948.png|300]]
+> <br>To quickly toggle a breakpoint on a node you can use the shortcut (`F9` by default).
+
+> [!Info]- Execution control
+> When a breakpoint is hit, your game is pause, which means you can decide what you want to do next.
+> <br>![[Pasted image 20241110104414.png]] <br>
+> More details [here](https://dev.epicgames.com/documentation/en-us/unreal-engine/blueprint-debugging-example-in-unreal-engine)
+
+> [!warning]
+> - Breakpoints placed on events won't be triggered.
+> - You can only place breakpoints on impure nodes.
+
+> [!Info] More
+> More about the breakpoint features [here](https://dev.epicgames.com/documentation/en-us/unreal-engine/blueprint-debugging-example-in-unreal-engine)
+
+**Watch** <br>
+The watch feature works with breakpoints, it allows you to see a value of a pin **without hovering it manually**.
+
+> [!info]- Example
+> Here I am watching the value of `Delta Seconds` and my `Time` variable
+> <br>![[Pasted image 20241110103726.png|600]]<br>
+> When I press play and the breakpoint is hit, here is what i have:
+> <br>![[Pasted image 20241110103806.png|600]] <br>
+> After a few seconds, here is what I have:
+> <br>![[Pasted image 20241110103834.png|600]]
+
+> [!info]- How to start/stop watching a value
+> To watch a pin you must right click on it and click on `Watch This Value`.
+> <br>![[Pasted image 20241110103400.png]] <br>
+> To stop watching a value, rich click on the pin and click on `Stop Watching This Value`. Or click on the lens (🔍) icon.
+
 # Miscellaneous
 
-## Modeling tool
-==TODO==
+## Viewport tools
+
+> [!tip]- Fast duplicating
+> If you select an object in the viewport, then hold `Alt` and drag a axis (location, rotation or scale) this will duplicate the selected object and let you move/rotate/scale the new one.
+> > [!info] Example
+> > <br>![[FastDuplicating.gif|400]]
+
+> [!tip]- Modeling tool
+> ==TODO==
 
 # Training exercises
 So now that you read all of that, you need some practice to be sure your understood everything AND to learn even more !
@@ -440,9 +524,10 @@ More resources if you want to go further
 > - [Cedric's Multiplayer Network Compendium](https://cedric-neukirchen.net/docs/category/multiplayer-network-compendium/)
 
 
-> [!abstract] YouTube channels
+> [!abstract] Recommended YouTube channels
 > - [Mathew Wadstein](https://www.youtube.com/@MathewWadsteinTutorials)
 > - [Ryan Laley](https://www.youtube.com/@RyanLaley)
+> > [!warning] YouTube warning
+> > 
+> > Sadly, a lot of UE YouTube content about programming (and mostly for BP) shows wrong/bad ways to program or use UE features. <br> If you want to keep using YouTube as your main learning tool (not recommended), please try to understand *why* a youtuber tells you something, and don't follow him like a sheep 🧠.
 
-> [!warning] YouTube warning
-> Sadly, a lot of UE YouTube content about programming (and mostly for BP) shows wrong/bad ways to program or use UE features. <br> If you want to keep using YouTube as your main learning tool (not recommended), please try to understand *why* a youtuber tells you something, and don't follow him like a sheep :).
