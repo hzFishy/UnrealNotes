@@ -32,6 +32,11 @@ By default, if you use/retrieve a variable, function, etc., from a class within 
 
 However, to use/retrieve variables, functions, etc., from a class externally *(for example, if we want a trap to reduce the player's health (from the `Player` class) by 1 when the player enters the trapped zone)*, we need a **reference** to an instance of the class we want to access (In our example, the `Trap`class wants access to an instance of the `Player` class).
 
+> [!error]- UE Blueprint Casting warning
+> When you cast to a Blueprint class in UE this will **load** the blueprint class and **all its dependencies**
+> This is why important blueprints such as the player one can load a big part of your blueprints in your project (because of all the dependencies).
+> This is why big assets should be referenced as a soft reference.
+
 **Typical Scenario:**
 Let's imagine that the trap has a reference of type `Actor` that contains an instance of the `Player` class (using `On Component Begin Overlap`).
 
