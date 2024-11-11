@@ -551,6 +551,11 @@ List of debug draw nodes with example here: [[All Debug Draws]]
 
 ## Blueprint nodes
 
+> [!tip]- Select
+> If you want to set a value to something depending on a value (usually a bool or a enum value) the **select** nodes are a perfect choice.
+> Example:
+> ![[Pasted image 20241111194529.png]]
+
 > [!tip]- Timeline
 > ==TODO==
 ## Viewport tools
