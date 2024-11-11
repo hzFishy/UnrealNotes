@@ -1,5 +1,5 @@
-The goal of this page it to teach you how Unreal Engine, Blueprints and visual scripting works.
-Everything here should be understandable by someone who never programmed or used Unreal Engine.
+The goal of this page is to teach you how Unreal Engine, Blueprints and visual scripting works.
+Everything here should be understandable by someone who has never programmed or used Unreal Engine.
 
 This page has a lot of content, you can easily navigate between categories using the Table of Contents on the right. If something is overwhelming you, you can skip it and come back later.
 
@@ -36,10 +36,10 @@ Here are the main components of the UE interface:
 
 
 > [!example] Top bar (1)
-> A lot of tools and access to more settings are from the drop down displayed there
+> Here you have access to more tools, as well as various settings for your window and project.
 
 > [!example] Tabs (2)
-> Where all opened tabs are showed
+> Where all opened tabs are shown
 
 > [!example] Details panel (3)
 > When you select an actor or asset, its properties and settings appear here, allowing you to tweak and configure various parameters.
@@ -123,7 +123,7 @@ In UE, the forward axis is X and the up axis is Z.
 When you code in UE, you have two layers: the C++ layer and the Blueprint layer. <br>
 C++ can be mandatory to use special features or tools. C++ is also a lot faster than Blueprint code, which can make it a very important choice depending on what logic you want to execute in your game.
 
-The Blueprint layer is built on top of the C++ layer, either on already existing engine classes or on yours that you made in C++, which means you don't **need** to do anything in C++ and work on your game with only the Blueprint layer (not recommended for big or multiplayer projects).
+The Blueprint layer is built on top of the C++ layer, either on already existing engine classes or on yours that you made in C++, which means you don't **need** to do anything in C++ and can work on your game with only the Blueprint layer (not recommended for big or multiplayer projects).
 
 A Blueprint is an asset that inherits from a class, for example `Actor` (`AActor` being the real C++ name). In a blueprint you can already see/edit what is exposed from C++ (for example variables or components).
 
@@ -143,7 +143,7 @@ You can extend any Actor class with `Actor Components`,  `Scene Components` or `
 > More about Actors in [[#Main classes]]
 
 ### Playing in editor
-When you test your game in the editor (!= packaged build), you are in **PIE** (Play In Editor). <br>
+When you test your game in the editor (!= packaged build), you are by default in **PIE** (Play In Editor). <br>
 You can find PIE settings here: <br>
 ![[Pasted image 20241110110229.png|350]]
 
@@ -278,6 +278,9 @@ Here is a list of the most used variables types.
 > > You can `Make` and `Break` any struct. This is very useful in some cases. <br>![[Pasted image 20241109185113.png|350]]
 > > <br>You can break any struct pin by clicking on `Split Struct Pin` after right clicking on it. <br>
 > > ![[Pasted image 20241109185821.png|250]] ![[Pasted image 20241109185715.png|250]]
+
+> [!warning]- Warning for `Enum` and `Struct`
+> Those types can be unstable. Adding new entries while the blueprints are open and saving the changes will at the very least invalidate the nodes, or could cause possible engine crashes.
 
 > [!Info]- Containers (`Single`, `Array`, `Set` or `Map`)
 > For almost every variables types, you can decide if your variable *container* type is `Single`, `Array`, `Set` or `Map`. <br>
@@ -599,3 +602,6 @@ More resources and tools if you want to go further
 > > [!warning] YouTube warning
 > > 
 > > Sadly, a lot of UE YouTube content about programming (and mostly for BP) shows wrong/bad ways to program or use UE features. <br> If you want to keep using YouTube as your main learning tool (not recommended), please try to understand *why* a youtuber tells you something, and don't follow him like a sheep 🧠.
+
+# Credits
+Special thanks to Unreal Source great people for improving the quality of this page with helpful feedbacks.

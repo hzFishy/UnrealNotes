@@ -48,7 +48,6 @@ A simple way to solve this problem is to use the `Cast To <...>` node, it requir
 
 We can now retrieve the health variable and manipulate it as we wish.
 
-
 # Interfaces
 ==TODO==
 
