@@ -563,6 +563,11 @@ List of debug draw nodes with example here: [[All Debug Draws]]
 > [!tip]- Modeling tool
 > ==TODO==
 
+> [!tip]- Actor Palettes
+> Easy way to drag and drop actors between a palette level and your current opened level.
+> How to use: https://unrealdirective.com/tips/the-actor-palette
+> Example: <br>
+> ![[Pasted image 20241111135404.png]]
 ## Input Systems
 UE has two input systems, the first one is old and should not be used if you use a engine version greater than 5.0.
 The second one was officially introduced in 5.1, named "Enhanced Input System". And like the name says, it's a lot more powerful than the previous one.
