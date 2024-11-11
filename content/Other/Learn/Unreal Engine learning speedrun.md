@@ -367,15 +367,15 @@ For event dispatchers, it's a bit special, in blueprints it's called `Event Disp
 See a delegate like a special event that you can "call"  (known as broadcast) and "bind to" (known as subscribe). It's very useful if you want to send an event to anyone interested in it.
 Delegates are **instance dependent** (you subscribe to a delegate of a object instance), they can have multiple inputs and can't return anything.
 
-For example, you would use a delegate when the player's health changes to update your UI (meaning the UI subscribed/binded itself to your player class).
+For example, you would use a delegate when the player's health changes to update your Widget (meaning the Widget is bound to your player instance).
 
 > [!info]- Delegate & Event Dispatcher vocabulary
 > | Name in general programming | Name in UE | <div style="width:500px">Usage</div> |
 > | --- | --- | --- |
-> | Broadcast | Call | Sends the event to anyone subscribed/binded to it |
+> | Broadcast | Call | Sends the event to anyone subscribed/bound to it |
 > | Subscribe/Bind | Bind | Tells the delegate that we want the given event to be fired when a broadcast/call occurs |
 > | Unsubscribe/Unbind | Unbind | - Removes the given function for the delegate, the event won't fire anymore on broadcast/call. <br>- For the `Unbind All` version this will removed **all** binded events of this delegate |
-> | Callback | Event | This is the binded event/function called when the delegate is broadcasted/called |
+> | Callback | Event | This is the bound event/function called when the delegate is broadcasted/called |
 
 > [!Info]- Code example
 > Let's say we want to call some code with `Print Text` inside our Level Blueprint when our player health change.
@@ -389,7 +389,7 @@ For example, you would use a delegate when the player's health changes to update
 > ![[Pasted image 20241110143124.png]]
 > 
 > **Result:**<br>
-> After I pressed `Tab` my breakpoint was hit, meaning the level blueprint correctly binded `OnHealthChanged_Event` to the `OnHealthChanged` event dispatcher.<br>
+> After I pressed `Tab` my breakpoint was hit, meaning the level blueprint correctly bound `OnHealthChanged_Event` to the `OnHealthChanged` event dispatcher.<br>
 > ![[Pasted image 20241110143347.png]]
 
 > [!tip]- How to use in a graph
@@ -597,11 +597,17 @@ More resources and tools if you want to go further
 > - [Sorting Array](https://www.fab.com/listings/129f2b52-3fb0-4003-a93d-62922643cbde): Sort array nodes
 
 > [!abstract] Recommended YouTube channels
+> **General stuff:**
 > - [Mathew Wadstein](https://www.youtube.com/@MathewWadsteinTutorials)
 > - [Ryan Laley](https://www.youtube.com/@RyanLaley)
+> - [Micheal Pattison](https://www.youtube.com/@mpattym/)
+>
+> **Materials:**
+> - [Ben Cloward](https://www.youtube.com/@BenCloward)
+> - [PrismaticaDev](https://www.youtube.com/@PrismaticaDev)
 > > [!warning] YouTube warning
 > > 
 > > Sadly, a lot of UE YouTube content about programming (and mostly for BP) shows wrong/bad ways to program or use UE features. <br> If you want to keep using YouTube as your main learning tool (not recommended), please try to understand *why* a youtuber tells you something, and don't follow him like a sheep 🧠.
 
 # Credits
-Special thanks to Unreal Source great people for improving the quality of this page with helpful feedbacks.
+Special thanks to the incredible people at Unreal Source for their valuable feedback, which has significantly improved the quality of this page and the accuracy of informations.
