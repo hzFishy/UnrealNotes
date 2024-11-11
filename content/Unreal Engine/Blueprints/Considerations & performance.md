@@ -6,7 +6,7 @@
 - Inputs and outputs of nodes (pure, impure and Make/Break) are copied.
 
 
-# Ressources
+# Resources
 More details
 - [Unreal Engine, and the hidden pitfalls of Blueprints](https://celdevs.com/unreal-engine-and-the-hidden-pitfalls-of-blueprints/)
 - [Performance guideline for Blueprints and making sense of Blueprint VM](https://intaxwashere.github.io/blueprint-performance/)

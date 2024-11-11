@@ -11,9 +11,6 @@ A lot of stuff such as tips are collapsed, I've done this to make the page more 
 > [!info]- For Unity users
 > You might want to check out [this](https://dev.epicgames.com/documentation/en-us/unreal-engine/unreal-engine-for-unity-developers) official documentation about "UE to Unity"
 
-> [!warning]
-> This page is in active writing and review phase, images, sentences, or other content might change over time for a better experience.
-> I will also add more content over time (check `TODO`s to know the most upcoming ones)
 # Access & getting started
 Download Unreal Engine from the Epic Games launcher:
 - Click on "Unreal Engine" on the left side bar
@@ -167,6 +164,8 @@ You can find PIE settings here: <br>
 > > [!info]- About persistence
 > > Most actors (and objects) doesn't persist between levels (which usually means losing data).
 > > There is a custom solution to make any actor transferred to the new target level, but the easiest way is to store the persistent data on classes that are already persistent (see persistent classes below).
+> > 
+> > Some actor classes doesn't persist but are somehow **copied** over the new level.
 
 > [!example] Pawn
 > "Pawn is the base class of all actors that can be possessed by players or AI. They are the physical representations of players and creatures in a level." - [UE Docs](https://dev.epicgames.com/documentation/en-us/unreal-engine/API/Runtime/Engine/GameFramework/APawn)
@@ -179,7 +178,6 @@ You can find PIE settings here: <br>
 
 > [!example] Player State
 > "A Player State is created for every player. Player States should contain game relevant information about the player, such as score, etc." - [UE Docs](https://dev.epicgames.com/documentation/en-us/unreal-engine/API/Runtime/Engine/GameFramework/APlayerState)
->  > [!tip] *Gets recreated on level change but values are copied to new level*
 
 > [!example] Game Mode
 > "Defines the game being played. It governs the game rules, scoring, what actors are allowed to exist in this game type, and who may enter the game." - [UE Docs](https://dev.epicgames.com/documentation/en-us/unreal-engine/API/Runtime/Engine/GameFramework/AGameModeBase)
