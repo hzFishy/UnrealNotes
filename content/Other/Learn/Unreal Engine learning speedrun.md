@@ -541,8 +541,8 @@ The watch feature works with breakpoints, it allows you to see a value of a pin 
 > To stop watching a value, rich click on the pin and click on `Stop Watching This Value`. Or click on the lens (🔍) icon.
 
 
-**Draw**
-Sometimes when you debug some code you want to visualize locations, rotations or shapes.
+**Draw**<br>
+Sometimes when you debug some code you want to visualize locations, rotations or shapes. <br>
 This is easily done with `Draw Debug [...]` nodes, they can be called in any context (if you have a valid world) and they have a lot of parameters.
 
 List of debug draw nodes with example here: [[All Debug Draws]]
