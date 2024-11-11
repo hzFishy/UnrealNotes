@@ -481,6 +481,7 @@ Once you finished coding something, you will test it, and if it goes wrong (or i
 <br>Debugging is the process of identifying and removing errors or unwanted behaviors.
 Blueprint debugging features are disabled in packaged builds.
 
+
 **Print** <br>
 The most common way to debug is to `Print` something.
 In UE, you can use the `Print String` or `Print Text` nodes.<br>
@@ -490,6 +491,7 @@ In UE, you can use the `Print String` or `Print Text` nodes.<br>
 > [!info] Print to Screen & Print to Log
 > - **Screen:** Will show on the top left of your PIE window.
 > - **Log:** Will show in the Output Log.
+
 
 **Breakpoints**
 > [!quote] From [UE Docs](https://dev.epicgames.com/documentation/en-us/unreal-engine/blueprint-debugging-example-in-unreal-engine)
@@ -521,6 +523,7 @@ In UE, you can use the `Print String` or `Print Text` nodes.<br>
 > [!Info] More
 > More about the breakpoint features [here](https://dev.epicgames.com/documentation/en-us/unreal-engine/blueprint-debugging-example-in-unreal-engine)
 
+
 **Watch** <br>
 The watch feature works with breakpoints, it allows you to see a value of a pin **without hovering it manually**.
 
@@ -536,6 +539,13 @@ The watch feature works with breakpoints, it allows you to see a value of a pin 
 > To watch a pin you must right click on it and click on `Watch This Value`.
 > <br>![[Pasted image 20241110103400.png]] <br>
 > To stop watching a value, rich click on the pin and click on `Stop Watching This Value`. Or click on the lens (🔍) icon.
+
+
+**Draw**
+Sometimes when you debug some code you want to visualize locations, rotations or shapes.
+This is easily done with `Draw Debug [...]` nodes, they can be called in any context (if you have a valid world) and they have a lot of parameters.
+
+List of debug draw nodes with example here: [[All Debug Draws]]
 
 # Miscellaneous
 

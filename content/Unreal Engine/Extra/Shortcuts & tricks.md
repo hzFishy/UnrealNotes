@@ -1,6 +1,11 @@
 All the keys can be changed in the editor settings
 
 # Viewport
+
+## Camera movements
+- Go up (E)
+- Go down (Q)
+- Change speed (Scroll Wheel)
 ## Edit selected object
 - Move (W)
 - Rotate (E)
