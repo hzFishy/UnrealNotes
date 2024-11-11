@@ -345,7 +345,7 @@ Mainly:
 | -------- | ----------------------------------------- | ----------------------------------------------- | ------------------------------------------- | ------------------------------------------------ | -------------------------------------- | ------------------------------------------------------------------------------------------------------------ |
 | Event    | One                                       | One or multiple                                 | None                                        | None                                             | Can be called from anywhere if public. | The execution flow doesn't wait for the "end" of the event, it calls the event then continues.               |
 | Function | One                                       | One or multiple                                 | One                                         | One or multiple                                  | Can be called from anywhere if public. | Cannot contain any *time* nodes *(Delay, Cooldown, ...)*. <br>Can be overridden in parent classes if public. |
-| Macro    | Multiple                                  | One or multiple                                 | One or multiple                             | One or multiple                                  | Can only be called inside the class.   |                                                                                                              |
+| Macro    | One or multiple                           | One or multiple                                 | One or multiple                             | One or multiple                                  | Can only be called inside the class.   |                                                                                                              |
 
 > [!tip]- Overriding functions
 > You can override a function in a parent class if the function is public and exposed.
@@ -539,6 +539,10 @@ The watch feature works with breakpoints, it allows you to see a value of a pin 
 
 # Miscellaneous
 
+## Blueprint nodes
+
+> [!tip]- Timeline
+> ==TODO==
 ## Viewport tools
 
 > [!tip]- Fast duplicating
@@ -553,7 +557,7 @@ The watch feature works with breakpoints, it allows you to see a value of a pin 
 UE has two input systems, the first one is old and should not be used if you use a engine version greater than 5.0.
 The second one was officially introduced in 5.1, named "Enhanced Input System". And like the name says, it's a lot more powerful than the previous one.
 
-The default characters in the **First Person** and **Third Person** templates already uses the Enhanced Input system, it's a good idea to check how it's all setup before doing it from scratch
+The default characters in the **First Person** and **Third Person** templates already uses the Enhanced Input system, it's a good idea to check how it's all setup there before doing it from scratch in your project.
 
 > [!info] More about Enhanced Input
 > More can be found about the Enhanced Input System in the [Official Documentation](https://dev.epicgames.com/documentation/en-us/unreal-engine/enhanced-input-in-unreal-engine)
@@ -610,4 +614,4 @@ More resources and tools if you want to go further
 > > Sadly, a lot of UE YouTube content about programming (and mostly for BP) shows wrong/bad ways to program or use UE features. <br> If you want to keep using YouTube as your main learning tool (not recommended), please try to understand *why* a youtuber tells you something, and don't follow him like a sheep 🧠.
 
 # Credits
-Special thanks to the incredible people at Unreal Source for their valuable feedback, which has significantly improved the quality of this page and the accuracy of informations.
+Special thanks to the incredible people at Unreal Source for their valuable feedback, which has significantly improved the quality of this page and the accuracy of its content.
