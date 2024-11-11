@@ -597,6 +597,7 @@ More resources and tools if you want to go further
 > - [Beginplay - Engine breakdown](https://dev.epicgames.com/community/learning/paths/0w/unreal-engine-beginplay)
 > - [Epic Games UE learn portal](https://dev.epicgames.com/community/unreal-engine/getting-started/games)
 > - [Official UE C++ API Reference](https://dev.epicgames.com/documentation/en-us/unreal-engine/API/Classes)
+> - [Myth-busting "Best Practices" in Unreal Engine](https://dev.epicgames.com/community/learning/tutorials/l3E0/myth-busting-best-practices-in-unreal-engine)
 > 
 > **Not Official but great**
 > - [Unreal Source Discord Server](https://discord.gg/unrealsource)
