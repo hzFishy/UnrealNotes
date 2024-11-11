@@ -549,12 +549,21 @@ List of debug draw nodes with example here: [[All Debug Draws]]
 
 # Miscellaneous
 
-## Blueprint nodes
+## Blueprint
 
 > [!tip]- Select
-> If you want to set a value to something depending on a value (usually a bool or a enum value) the **select** nodes are a perfect choice.
-> Example:
+> If you want to set a value to something depending on a value (usually a bool or a enum value) the **select** nodes are a perfect choice. <br>
+> Example: <br>
 > ![[Pasted image 20241111194529.png]]
+
+> [!tip]- Rearranging nodes and connections
+> You can rearrange nodes and connections, just selected the concerned nodes, right click and go to `Alignement` <br>
+> ![[Pasted image 20241111200915.png]]
+> > [!info] Example
+> ><br>**Before:**<br>
+> > ![[Pasted image 20241111201032.png]]
+> > <br>**After:<br>**
+>>  ![[Pasted image 20241111201104.png]]
 
 > [!tip]- Timeline
 > ==TODO==
