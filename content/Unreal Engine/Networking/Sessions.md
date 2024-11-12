@@ -1,6 +1,7 @@
 Useful links:
 - [Cedric's notes on Session Management](https://cedric-neukirchen.net/docs/category/session-management/)
 - [Travelling In Multiplayer - Official Docs](https://dev.epicgames.com/documentation/en-us/unreal-engine/travelling-in-multiplayer-in-unreal-engine?application_version=5.3)
+- [Session lifecycle](https://docs.redpoint.games/eos-online-subsystem/docs/sessions_lifecycle)
 
 # Online Subsystem
 
