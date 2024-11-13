@@ -5,6 +5,8 @@
 
 - ==Events cannot return params==
 
+- ==Most inputs of nodes cannot be directly typed in==, this means you need to add another node for the literal value
+
 - Must specify trigger event node inputs count
 
 - Wildcard pins type are not updated after connecting a known type
