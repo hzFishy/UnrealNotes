@@ -201,7 +201,7 @@ You can find PIE settings here: <br>
 > More info can be found on [Cedric's Multiplayer Compendium](https://cedric-neukirchen.net/docs/multiplayer-compendium/common-classes/) and the [Official UE C++ API Reference](https://dev.epicgames.com/documentation/en-us/unreal-engine/API/Classes)
 
 ## Blueprints
-> A mix of my naming convention and what most people do: [[Working as a team in UE#For Designers]]
+> A mix of my naming convention and what most people do: [[Working as a team in Unreal Engine#For Designers]]
 
 ### Variables
 

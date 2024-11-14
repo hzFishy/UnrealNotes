@@ -1,10 +1,11 @@
-Notes of practices i noted.
+Notes of practices I noted.
 
 # For Devs
 - Setting up the workspace for the long run: [Post](https://dev.epicgames.com/community/learning/tutorials/8JYW/setting-up-an-unreal-engine-studio-the-epic-way) - [Video](https://www.youtube.com/watch?v=102O0FOEzNY)
 - Use Perforce if possible
-   - if not, using Git efficiently for UE as a team: https://miltoncandelero.github.io/unreal-git
-   - or try https://github.com/ProjectBorealis/UEGitPlugin
+- if not, using Git efficiently for UE as a team: https://miltoncandelero.github.io/unreal-git
+- or try https://github.com/ProjectBorealis/UEGitPlugin
+- or have everyone one install VS and [compile automatically](https://landelare.github.io/2022/09/27/tips-and-tricks.html#automatically-update-c-binaries)
 ## For new UE Devs
 - Read the following: 
    - https://landelare.github.io/2023/01/07/cpp-speedrun.html
@@ -17,14 +18,14 @@ Notes of practices i noted.
 - Disable Widget Bindings (`Projet Preferences`->`Property Binding Rule`)
 
 ## Naming convention
-- Prefix all classes by the project/game codename (1-5 letters) (**after the type prefix!**), this help knowing what is from the engine and whats from us.
+- Prefix all classes by the project/game codename (1-5 letters) (**after the type prefix!**), this help knowing what is from the engine and what's from us.
    - for example if the codename is `PG`: `AMyActor` becomes `APGMyActor`
    - for example if the codename is `Kaos`: `AMyActor` becomes `AKaosMyActor`
 
 - Delegates: 
    - Declaration of delegate ends with `Signature` (e.g: `F<CodeName>OnScoreChangedSignature`)
    - Declaration of property delegate ends with `Delegate` (e.g: `FOnScoreChangedSignature OnScoreChangedDelegate`)
-   - Declaration of functions binded to delegates ends with `Callback` (e.g: `void OnScoreChangedCallback(...)`)
+   - Declaration of functions bonded to delegates ends with `Callback` (e.g: `void OnScoreChangedCallback(...)`)
 - OnRep replicated variables:
    - `OnRep_FullVariableName()` -> Call `OnFullVariableNameReplicated`
    - `OnFullVariableNameReplicated()`
