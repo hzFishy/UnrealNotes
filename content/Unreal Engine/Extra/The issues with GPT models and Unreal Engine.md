@@ -12,7 +12,7 @@ This means that when you get an answer from ChatGPT, it can be a copy paste of a
 
 Regarding UE, ChatGPT isn't recommended, but if you really want to use it for starters, it isn't recommended to use it once you know the basics of UE.
 
-**Why ?**
+**Why ?**<br>
 Well any human can read the source code of UE, where there is everything you need, but AI models can't be trained on it because the source code is "private" (you need to create an Epic and GitHub account, link them and agree to the Unreal Engine EULA).<br>
 This means that ChatGPT trained itself on publicly available sources, which are only the Official Docs, forums such as the official one and Reddit, blogs, and maybe YouTube video transcripts.
 It can sometimes have some source code snippets that users copied from the source, but that's it.
