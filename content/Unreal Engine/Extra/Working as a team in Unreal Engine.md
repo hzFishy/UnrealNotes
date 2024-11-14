@@ -207,7 +207,7 @@ protected:
       - Set a specific display name for the function (ex: "Get Something") to hide the prefix and make it more readable
    - if its a custom K2 node, check `UK2Node` class
 - Use `UDeveloperSettings` to make project-wide settings, easier to define and change than using an Actor/Data Asset/Components/... in most cases
-   - Example of a Inventory System Settings:
+   - Example of a Inventory System Settings: <br>
 		![[Pasted image 20241029005348.png]]
 
 
