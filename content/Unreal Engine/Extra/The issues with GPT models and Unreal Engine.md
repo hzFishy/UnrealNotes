@@ -24,10 +24,14 @@ A good example that shows that ChatGPT gives bad answer is [this simple question
 Also, for people that read a lot of forums posts on any engine can confirm that maybe 30 to 50% of answers are not correct or ideal. This helps you imagine how wrong any AI trained on that data can be.
 
 # Conclusion
-Try to not use ChatGPT or any other GPT AI, some can be less worse than ChatGPT like Perplexity because it gives you the used sources. So you can at least check the context of the answer.
+Try to not use ChatGPT or any other GPT AI **on complexes engines/tools such as Unreal Engine**, some can be less worse than ChatGPT like Perplexity because it gives you the used sources. So you can at least check the context of the answer.
 
 **But please learn by yourself!** There is no better way to learn and improve, it's okay to be slow or to not do the correct thing the first times.<br>
-It is very important to learn doing research's on the internet (or elsewhere) by yourself to find answers, this makes you better at finding how to express your thoughts, find keywords and improve your criticism.<br>
+It is very important to learn doing research's on the internet (or elsewhere) by yourself to find answers, this makes you better at finding how to express your thoughts, find keywords and improve your criticism.
+
+> [!quote] Joviex
+> *"Mastery of a foundational skill precedes effective use of advanced tools."*
+
 And there is a ton of friendly humans that can answer your questions with more knowledge and correctness that GPT models could ever have, find them in the correct forums or communities (shout-out to the [Unreal Source Discord](https://discord.gg/unrealsource) and [Unity Official Discord](https://discord.gg/unity)).
 
 # External sources used
