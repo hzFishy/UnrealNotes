@@ -240,7 +240,7 @@ Here is a list of the most used variables types.
 > - `Soft Object Reference`: A soft reference to an instance of a object.
 > - `Soft Class Reference`: A soft reference to a class of a object.
 
-> [!info]- More on the `Text` type
+> [!info]- Formatting `Text`
 > When using a text variable, you can easily format it.
 > For example, lets say we have an item struct, it holds the item name and price. We want to display in a shop dialogue text "`<Item name>` costs `<item price>`".
 > 
@@ -600,7 +600,7 @@ If you already have some projects ideas and the listed exercises seems to boring
 > - [Build a Third Person Character from Scratch (Official)](https://dev.epicgames.com/community/learning/courses/kry/build-a-third-person-character-from-scratch/mDv/build-a-third-person-character-from-scratch-introduction)
 
 # More
-More resources and tools if you want to go further
+More resources and tools if you want to go further.
 
 > [!abstract] Useful links
 > **In my notes**
@@ -644,4 +644,4 @@ More resources and tools if you want to go further
 > > Sadly, a lot of UE YouTube content about programming (and mostly for BP) shows wrong/bad ways to program or use UE features. <br> If you want to keep using YouTube as your main learning tool (not recommended), please try to understand *why* a youtuber tells you something, and don't follow him like a sheep 🧠.
 
 # Credits
-Special thanks to the incredible people at Unreal Source for their valuable feedback, which has significantly improved the quality of this page and the accuracy of its content.
+Special thanks to the incredible people in the Unreal Source Discord for their valuable feedback, which has improved the quality of this page and the accuracy of its content.
