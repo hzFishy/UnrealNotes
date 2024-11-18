@@ -565,6 +565,13 @@ List of debug draw nodes with example here: [[All Debug Draws]]
 > > <br>**After:<br>**
 >>  ![[Pasted image 20241111201104.png]]
 
+> [!tip]- Hiding struct pins
+> When you make or break a struct, you can decide to hide unconnected pins <br>
+> **Before:**<br>
+> ![[Pasted image 20241118235922.png]]
+> <br>**After:**<br>
+> ![[Pasted image 20241118235957.png]]
+
 > [!tip]- Timeline
 > ==TODO==
 ## Viewport tools

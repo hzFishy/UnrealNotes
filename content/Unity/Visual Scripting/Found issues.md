@@ -37,3 +37,4 @@
 
 - Nested graphs cannot have multiple output triggers (But its allowed to create multiple ones ?)
 
+- Returned values from nodes aren't cached, meaning you need to save it or it will rerun it, or error (dynamic access error)
