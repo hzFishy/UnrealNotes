@@ -566,11 +566,20 @@ List of debug draw nodes with example here: [[All Debug Draws]]
 >>  ![[Pasted image 20241111201104.png]]
 
 > [!tip]- Hiding struct pins
-> When you make or break a struct, you can decide to hide unconnected pins <br>
+> When you Make, Break or Set members a struct, you can decide to hide unconnected pins <br>
 > **Before:**<br>
 > ![[Pasted image 20241118235922.png]]
 > <br>**After:**<br>
 > ![[Pasted image 20241118235957.png]]
+
+> [!tip]- Smart Delete
+> When you remove a node, all connections to other nodes are lost.<br>
+> If you press `Shift + Delete` the function input and output Exec pins will be merge with the closest connected nodes.
+> **Example:**
+> <br>Before:<br>
+> ![[Pasted image 20241119001746.png]]
+> <br>After:<br>
+> ![[Pasted image 20241119001757.png]]
 
 > [!tip]- Timeline
 > ==TODO==
