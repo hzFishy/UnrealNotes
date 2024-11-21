@@ -31,8 +31,8 @@ Global call stack of a successful call of `Login` on the identity interface.
 ### Get DisplayName
 
 > [!warning]- About Platform parameter
-> if not passing platform string getting the display name can work but will provoke the following warnings:
-> `LogEOSPresence: FPresenceClient::GetTargetPlatformTypePrivate - Target User Cache Not Found!`
+> if not passing platform string getting the display name can work but will provoke the following warnings:<br>
+> `LogEOSPresence: FPresenceClient::GetTargetPlatformTypePrivate - Target User Cache Not Found!`<br>
 > `LogEOSRTC: FRTCClient::GetTargetPlatformTypePrivate: Unable to find local user ....`
 
 Call stack when getting user display name
