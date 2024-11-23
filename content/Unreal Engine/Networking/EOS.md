@@ -1,4 +1,7 @@
-
+> There are 2 versions of OSS, one that's based on `OnlineSubsystem` plugin, and a new plugin that started with UE5 called `OnlineServices`
+# Logging
+- [Info](https://dev.epicgames.com/docs/epic-online-services/eos-get-started/working-with-the-eos-sdk/eossdkc-sharp-getting-started#logging)
+- [Log categoires details](https://dev.epicgames.com/docs/en-US/api-ref/enums/eos-e-log-category)
 # Account
 
 > [!info]- Auth Interface VS Connect Interface
@@ -40,5 +43,15 @@ Call stack when getting user display name
 	- call `FOnlineUser::GetDisplayName`
 		- implementation in `TOnlineUserEOS::GetDisplayName`
 			- calls `OnlineSubsystemEOSTypesPrivate::GetBestDisplayName`
-				- on `FOnlineSubsystemEOS->UserManager` (`FUserManagerEOSPtr`) calls `???`
+				- calls `UserManager->GetBestDisplayName` (`FUserManagerEOS`)
+					- calls `GetBestDisplayNameStr` and `EOS_UserInfo_BestDisplayName_Release`
+
+
+
+
+# Lobby
+- [Schemas](https://dev.epicgames.com/documentation/en-us/unreal-engine/lobbies-interface-in-unreal-engine#configuration)
+# Known issues
+
+- `FEpicGamesPlatform::GetOnlinePlatformType - unable to map None to EOS_OnlinePlatformType` : [Explanation](https://eoshelp.epicgames.com/s/article/Why-is-the-warning-LogEOS-FEpicGamesPlatform-GetOnlinePlatformType-unable-to-map-None-to-EOS-OnlinePlatformType-thrown)
 
