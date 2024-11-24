@@ -53,6 +53,10 @@ Call stack when getting user display name
 
 # Lobby
 - [Schemas](https://dev.epicgames.com/documentation/en-us/unreal-engine/lobbies-interface-in-unreal-engine#configuration)
+- Schema flags list: `ESchemaAttributeFlags`
+
+> [!Error] Searchable attributes
+> Searchable attributes must be declared in the LobbyBase schema id or the following error will come on Engine init config: `Invalid schema attribute yourderivedschemaid.lobby.yoursearchableattribute: Searchable fields may only exist in the base schema.`
 # Known issues
 
 > [!Warning] Unable to map None to EOS_OnlinePlatformType
