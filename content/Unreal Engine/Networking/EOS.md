@@ -1,4 +1,6 @@
 > There are 2 versions of OSS, one that's based on `OnlineSubsystem` plugin, and a new plugin that started with UE5 called `OnlineServices`
+
+You can't have `OnlineSubsystemEOS` and `OnlineServicesEOS` enabled or you will get errors, e.g: Lobby Server Travel fail because `FSocketSubsystemEOS::GetLocalUserId` will try to get logged user in Subsystem Auth Interface (and not the user logged in Online Services Auth interface)
 # Logging
 - [Info](https://dev.epicgames.com/docs/epic-online-services/eos-get-started/working-with-the-eos-sdk/eossdkc-sharp-getting-started#logging)
 - [Log categoires details](https://dev.epicgames.com/docs/en-US/api-ref/enums/eos-e-log-category)
@@ -53,5 +55,16 @@ Call stack when getting user display name
 - [Schemas](https://dev.epicgames.com/documentation/en-us/unreal-engine/lobbies-interface-in-unreal-engine#configuration)
 # Known issues
 
-- `FEpicGamesPlatform::GetOnlinePlatformType - unable to map None to EOS_OnlinePlatformType` : [Explanation](https://eoshelp.epicgames.com/s/article/Why-is-the-warning-LogEOS-FEpicGamesPlatform-GetOnlinePlatformType-unable-to-map-None-to-EOS-OnlinePlatformType-thrown)
+> [!Warning] Unable to map None to EOS_OnlinePlatformType
+> `FEpicGamesPlatform::GetOnlinePlatformType - unable to map None to EOS_OnlinePlatformType` : [Explanation](https://eoshelp.epicgames.com/s/article/Why-is-the-warning-LogEOS-FEpicGamesPlatform-GetOnlinePlatformType-unable-to-map-None-to-EOS-OnlinePlatformType-thrown)
+
+> [!error] Overlay initialization failed
+> `EOS First overlay initialization failed for swapchain. Disabling any future attempts to initialize.`
+> 
+This can be because we don't use `OnlineSubsystemEOS` but `OnlineServicesEOS`, which cause `EOS_Platform_Create` inside `FEOSSDKManager::CreatePlatform` to be called to late (after graphics initialized).
+> 
+> **Fix:**
+> - Make a custom module
+> - Add it to your project target file
+> - Add it to your `.uproject`  module dependency list with `PostSplashScreen` LoadingPhase
 
