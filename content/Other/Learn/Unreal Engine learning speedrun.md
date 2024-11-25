@@ -606,6 +606,15 @@ The default characters in the **First Person** and **Third Person** templates al
 
 > [!info] More about Enhanced Input
 > More can be found about the Enhanced Input System in the [Official Documentation](https://dev.epicgames.com/documentation/en-us/unreal-engine/enhanced-input-in-unreal-engine)
+## Packaging
+
+When packaging a project you have 3 methods
+- Debug (No code optimization, good for debugging a packaged game)
+- Development (Slightly optimized, still okay to use for debugging and further testing)
+- Shipping (Optimized as much as I could (depends on editor and project settings), this is the build you will send to your players)
+
+> [!Info] Packaging time
+> You may have noticed that Unreal Engine can take a lot of time to package a game, but since most of the packaging process is due to meshes, textures and other visual assets the packaging process will be very fast the next time you package (because UE will reused the unchanged assets).
 # Training exercises
 So now that you read all of that, you need some practice to be sure your understood everything AND to learn even more !
 
