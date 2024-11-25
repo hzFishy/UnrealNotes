@@ -21,4 +21,5 @@
 # Miscs
 - [Custom Gravity in UE 5.4](https://dev.epicgames.com/community/learning/tutorials/w6l7/unreal-engine-custom-gravity-in-ue-5-4)
 - [Myth-busting "Best Practices" in Unreal Engine](https://dev.epicgames.com/community/learning/tutorials/l3E0/myth-busting-best-practices-in-unreal-engine)
+- [Animated text](https://www.stevestreeting.com/2022/09/14/text-animation-effects-in-unreal-engine/)
 
