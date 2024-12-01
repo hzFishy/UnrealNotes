@@ -161,11 +161,6 @@ You can find PIE settings here: <br>
 
 > [!example] Actor
 > "Actor is the base class for an Object that can be placed or spawned in a level. Actors may contain a collection of Actor Components, which can be used to control how actors move, how they are rendered, etc." - [UE Docs](https://dev.epicgames.com/documentation/en-us/unreal-engine/API/Runtime/Engine/GameFramework/AActor)
-> > [!info]- About persistence
-> > Most actors (and objects) doesn't persist between levels (which usually means losing data).
-> > There is a custom solution to make any actor transferred to the new target level, but the easiest way is to store the persistent data on classes that are already persistent (see persistent classes below).
-> > 
-> > Some actor classes doesn't persist but are somehow **copied** over the new level.
 
 > [!example] Pawn
 > "Pawn is the base class of all actors that can be possessed by players or AI. They are the physical representations of players and creatures in a level." - [UE Docs](https://dev.epicgames.com/documentation/en-us/unreal-engine/API/Runtime/Engine/GameFramework/APawn)
@@ -187,7 +182,7 @@ You can find PIE settings here: <br>
 
 > [!example] Game Instance
 > "A high-level manager object for an instance of the running game. Spawned at game creation and not destroyed until game instance is shut down." - [UE Docs](https://dev.epicgames.com/documentation/en-us/unreal-engine/API/Runtime/Engine/Engine/UGameInstance)
->  > [!tip] *Persists between levels*
+>  > [!tip] *Persists between levels - [More about persistence](https://wizardcell.com/unreal/persistent-data/)*
 
 > [!example] HUD
 > "Base class of the heads-up display. This has a canvas and a debug canvas on which primitives can be drawn." - [UE Docs](https://dev.epicgames.com/documentation/en-us/unreal-engine/API/Runtime/Engine/GameFramework/AHUD) <br>
@@ -197,8 +192,9 @@ You can find PIE settings here: <br>
 > "UserWidgets are used in Epic Games' UI System, called **Unreal Motion Graphics** (UMG)." - [Cedric](https://cedric-neukirchen.net/docs/multiplayer-compendium/common-classes/userwidget/)<br>
 > This is the class you will use to display text, menus, inputs and more.
 
-> [!Info] To go further ...
-> More info can be found on [Cedric's Multiplayer Compendium](https://cedric-neukirchen.net/docs/multiplayer-compendium/common-classes/) and the [Official UE C++ API Reference](https://dev.epicgames.com/documentation/en-us/unreal-engine/API/Classes)
+
+> [!Info] To go further
+> More info can be found on [Cedric's Multiplayer Compendium](https://cedric-neukirchen.net/docs/multiplayer-compendium/common-classes/), [WizardCell's Persistent Data Compendium](https://wizardcell.com/unreal/persistent-data/#gameframework-objects) and the [Official UE C++ API Reference](https://dev.epicgames.com/documentation/en-us/unreal-engine/API/Classes)
 
 ## Blueprints
 > A mix of my naming convention and what most people do: [[Working as a team in Unreal Engine#For Designers]]
