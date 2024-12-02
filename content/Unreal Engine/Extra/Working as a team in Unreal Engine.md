@@ -2,10 +2,11 @@ Notes of practices I noted.
 
 # For Devs
 - Setting up the workspace for the long run: [Post](https://dev.epicgames.com/community/learning/tutorials/8JYW/setting-up-an-unreal-engine-studio-the-epic-way) - [Video](https://www.youtube.com/watch?v=102O0FOEzNY)
-- Use Perforce if possible
-- if not, using Git efficiently for UE as a team: https://miltoncandelero.github.io/unreal-git
-- or try https://github.com/ProjectBorealis/UEGitPlugin
-- or have everyone one install VS and [compile automatically](https://landelare.github.io/2022/09/27/tips-and-tricks.html#automatically-update-c-binaries)
+- For version control:
+	- Use Perforce if possible
+		- if not, using Git efficiently for UE as a team: https://miltoncandelero.github.io/unreal-git
+		- or try https://github.com/ProjectBorealis/UEGitPlugin
+		- or have everyone install VS and [compile automatically](https://landelare.github.io/2022/09/27/tips-and-tricks.html#automatically-update-c-binaries)
 ## For new UE Devs
 - Read the following: 
    - https://landelare.github.io/2023/01/07/cpp-speedrun.html
@@ -278,3 +279,6 @@ protected:
             - ...
          - Levels
             - ...
+
+## Misc
+- Set an empty level as the startup map to gain in iteration when launching the project.
