@@ -1,4 +1,4 @@
-
+*The emojis are for me, you can ignore them*
 # Global
 
 ## Character Movement Component
