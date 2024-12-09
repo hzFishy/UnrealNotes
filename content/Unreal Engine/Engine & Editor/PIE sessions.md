@@ -40,10 +40,26 @@ Client instance gets setup, there is a special login flow if using the online su
 
 if not using a OSS the engine calls `OnLoginPIEComplete_Deferred`.
 
-# ? -`UEditorEngine::OnLoginPIEComplete_Deferred`
+# ?+1 -`UEditorEngine::OnLoginPIEComplete_Deferred`
 
 Not called directly after the call, can be called after multiple frames.
 
-# ? - `UEditorEngine::OnAllPIEInstancesStarted`
+Checks if PIE logging was successful.
+Calls `UEditorEngine::CreateInnerProcessPIEGameInstance` that  calls `UGameInstance::StartPlayInEditorGameInstance`. 
 
-Just prints a log message and focus to the last client PUE viewport
+For the listen server it *ends* here. The editor doesn't reload the current map or load a new map.
+
+---
+But for the client, this will call an absolute`UEngine::Browse` 
+
+The `URL`will contain the map already opened in the editor with the following IP address and port: `127.0.0.1:17777`.
+**BUT** since its using the following `FURL` constructor `FURL(FURL* Base, const TCHAR* TextURL, ETravelType Type)` the `Map` property will be replaced with `UGameMapsSettings::GetGameDefaultMap()`. (so this means the PIE client will "initially" not travel to the listen server map)
+
+Inside `UEngine::Browse`, `URL.IsInternal() && GIsClient` will succeed.
+Later on this will call `UPendingNetGame::InitNetDriver`. Which calls `UIpNetDriver::InitConnect`.
+
+*end of the client only? part*
+
+---
+
+At the end if the conditions are met `UEditorEngine::OnAllPIEInstancesStarted` is called.
