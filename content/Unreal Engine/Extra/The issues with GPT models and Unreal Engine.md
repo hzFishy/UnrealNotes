@@ -25,6 +25,8 @@ It is very important to learn doing research's on the internet (or elsewhere) by
 And there is a ton of friendly humans that can answer your questions with more knowledge and correctness that GPT models could ever have, find them in the correct forums or communities (shout-out to the [Unreal Source Discord](https://discord.gg/unrealsource) and [Unity Official Discord](https://discord.gg/unity)).
 
 # More on the subject
+**Disclaimer!**
+I am not an expert in this domain, please be cautious when reading the listed links. Before writing this I mostly used trustworthy articles and my personal (and others) experienes.
 - https://en.wikipedia.org/wiki/Generative_pre-trained_transformer
 - https://torstenvolk.medium.com/chatgpt-is-revolutionary-but-it-calculates-one-word-at-a-time-694bc2c951ed
 - https://community.openai.com/t/chatgpt-cannot-count-words-or-produce-word-count-limited-text/47380/16

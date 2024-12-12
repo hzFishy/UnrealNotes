@@ -570,7 +570,7 @@ List of debug draw nodes with example here: [[All Debug Draws]]
 
 > [!tip]- Smart Delete
 > When you remove a node, all connections to other nodes are lost.<br>
-> If you press `Shift + Delete` the function input and output Exec pins will be merge with the closest connected nodes.
+> If you press `Shift + Delete` the function input and output Exec pins will be merge with the closest connected nodes.<br>
 > **Example:**
 > <br>Before:<br>
 > ![[Pasted image 20241119001746.png]]
@@ -614,10 +614,10 @@ When packaging a project you have 3 methods
 # Training exercises
 So now that you read all of that, you need some practice to be sure your understood everything AND to learn even more !
 
-If you already have some projects ideas and the listed exercises seems to boring for you, don't hesitate to directly start to learn by doing your project. <br>**But be careful !** Don't overkill yourself with a very big game that will probably make you hate UE (because what you have to learn will be to big for a new UE user). <br>Start with something "small" or "medium", something that you like and can be scaled up when you will have more knowledge and motivation to make a great game !
+If you already have some projects ideas and the listed exercises seems to boring for you, don't hesitate to directly start to learn by doing your project. <br>**But be careful !** Don't overkill yourself with a very big game that will probably make you hate UE (because what you have to learn will be to big for a new UE user) or programming/game dev. <br>Start with something "small" or "medium", something that you like and can be scaled up when you will have more knowledge and motivation to make a great game !
 
 > [!abstract] Exercises
-> - [Your First Hour in Unreal Engine 5.0(Official)](https://dev.epicgames.com/community/learning/courses/ZpX/your-first-hour-in-unreal-engine-5/E7L/introduction-to-your-first-hour-in-unreal-engine-5)
+> - [Your First Hour in Unreal Engine 5.0 (Official)](https://dev.epicgames.com/community/learning/courses/ZpX/your-first-hour-in-unreal-engine-5/E7L/introduction-to-your-first-hour-in-unreal-engine-5)
 > - [Build a Third Person Character from Scratch (Official)](https://dev.epicgames.com/community/learning/courses/kry/build-a-third-person-character-from-scratch/mDv/build-a-third-person-character-from-scratch-introduction)
 
 # More
@@ -627,6 +627,7 @@ More resources and tools if you want to go further.
 > **In my notes**
 > - [[Shortcuts & tricks]]
 > - [[Classes and inheritance]]
+> - [[The issues with GPT models and Unreal Engine]]
 > 
 > **Official**
 > - [Beginplay - Engine breakdown](https://dev.epicgames.com/community/learning/paths/0w/unreal-engine-beginplay)
@@ -665,4 +666,7 @@ More resources and tools if you want to go further.
 > > Sadly, a lot of UE YouTube content about programming (and mostly for BP) shows wrong/bad ways to program or use UE features. <br> If you want to keep using YouTube as your main learning tool (not recommended), please try to understand *why* a youtuber tells you something, and don't follow him like a sheep 🧠.
 
 # Credits
-Special thanks to the incredible people in the Unreal Source Discord for their valuable feedback, which has improved the quality of this page and the accuracy of its content.
+This page was written by myself, but I have to give a special thanks to the incredible people in the Unreal Source Discord for their valuable feedback, which has improved the quality of this page and the accuracy of its content.
+
+# Contact
+If you want to contact me for any reason (misspelling, feedback or ideas to improve this page), you can @ me (`@hzfishy`) on the Unreal Source Discord server (link can be found higher). If you send me a friend request I will probably deny it (because of spams).
