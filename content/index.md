@@ -1,5 +1,5 @@
 ---
-title:
+title: hzFishy's game Dev Notes
 ---
 # Welcome
 In those "notes" you will find my notes related to UE and other game dev and design stuff.
