@@ -628,17 +628,19 @@ More resources and tools if you want to go further.
 > - [[Shortcuts & tricks]]
 > - [[Classes and inheritance]]
 > - [[The issues with GPT models and Unreal Engine]]
+> - *... and more can be found by using the search tool*
 > 
 > **Official**
 > - [Beginplay - Engine breakdown](https://dev.epicgames.com/community/learning/paths/0w/unreal-engine-beginplay)
 > - [Epic Games UE learn portal](https://dev.epicgames.com/community/unreal-engine/getting-started/games)
 > - [Official UE C++ API Reference](https://dev.epicgames.com/documentation/en-us/unreal-engine/API/Classes)
 > - [Myth-busting "Best Practices" in Unreal Engine](https://dev.epicgames.com/community/learning/tutorials/l3E0/myth-busting-best-practices-in-unreal-engine)
-> - [Blueprint Communications | Live Training](https://www.youtube.com/watch?v=EM_HYqQdToE)
+> - [Blueprint Communications | Live Training](https://www.youtube.com/watch?v=EM_HYqQdToE
 > 
 > **Not Official but great**
 > - [Unreal Source Discord Server](https://discord.gg/unrealsource)
 > - [Cedric's Multiplayer Network Compendium](https://cedric-neukirchen.net/docs/category/multiplayer-network-compendium/)
+> - [Blueprints vs. C++: How They Fit Together and Why You Should Use Both](https://www.youtube.com/watch?v=VMZftEVDuCE)
 
 > [!abstract] Tools & plugins
 > A list of some of tools and plugins I used a lot when working with Blueprints (mostly free).
@@ -670,4 +672,4 @@ More resources and tools if you want to go further.
 This page was written by myself, but I have to give a special thanks to the incredible people in the Unreal Source Discord for their valuable feedback, which has improved the quality of this page and the accuracy of its content.
 
 # Contact
-If you want to contact me for any reason (misspelling, feedback or ideas to improve this page), you can @ me (`@hzfishy`) on the Unreal Source Discord server (link can be found higher). If you send me a friend request I will probably deny it (because of spams).
+Check the [[index]] page for further information.
