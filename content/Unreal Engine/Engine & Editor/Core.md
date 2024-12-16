@@ -6,6 +6,7 @@
 ## Object
 
 - `ClassPrivate` Is the `UClass` of the object instance. The thing you get back when you call `GetClass`.
+- If a object was loaded from "a loader" (`FAsyncPackage` or `LoadPackageInternal`) it will have the `RF_WasLoaded` flag. This can be very useful to use on actors to know if they got loaded from disk or spawned at runtime. 
 
 ## Actors
 - [Actor lifecycle](https://dev.epicgames.com/documentation/en-us/unreal-engine/unreal-engine-actor-lifecycle)
