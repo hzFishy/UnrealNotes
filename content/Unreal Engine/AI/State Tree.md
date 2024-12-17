@@ -14,13 +14,15 @@ The nest states (called leaf's) contains actions and activities
 ### Active states
 - When a given leaf state is selected, all its parent states are activated to.
 - Things set up in a parent state are also available in all child states.
+
+<br>
 ![[Pasted image 20241217225522.png]]
 
 ### State selection
 
 ![[Pasted image 20241217233128.png]]
 
-Child state selection behavior
+<br>Child state selection behavior <br>
 ![[Pasted image 20241217233257.png]]
 
 ## Tasks
@@ -98,6 +100,7 @@ Child state selection behavior
 ![[Pasted image 20241217234344.png]]
 
 ## Data Sources
+<br>
 ![[Pasted image 20241217234432.png|350]]
 1. Context data
 	- 
