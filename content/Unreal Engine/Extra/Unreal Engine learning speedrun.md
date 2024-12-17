@@ -5,6 +5,10 @@ This page has a lot of content, you can easily navigate between categories using
 
 A lot of stuff such as tips are collapsed, I've done this to make the page more readable and easy to navigate, it doesn't mean that it's not important !
 
+> [!warning] Warning
+> While I have some experience in Unreal Engine for a couples of years now, since this page is mostly addressed for beginners some stuff I say **might be simplified to various degrees**.
+> If you are interested in something, don't stop to what I say here, go do some extra research!
+
 > [!Info]- For C++ users
 > If you want to learn more about how to work with C++ in UE, I would recommend checking [Laura's C++ speedrun blog post](https://landelare.github.io/2023/01/07/cpp-speedrun.html).
 
