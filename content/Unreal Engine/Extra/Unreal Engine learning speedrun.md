@@ -676,4 +676,4 @@ More resources and tools if you want to go further.
 This page was written by myself, but I have to give a special thanks to the incredible people in the Unreal Source Discord for their valuable feedback, which has improved the quality of this page and the accuracy of its content.
 
 # Contact
-Check the [[index]] page for further information.
+Check the [[index#Contact]] section for further information.
