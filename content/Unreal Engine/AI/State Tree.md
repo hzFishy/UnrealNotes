@@ -101,6 +101,7 @@ The nest states (called leaf's) contains actions and activities
 
 ## Data Sources
 <br>
+
 ![[Pasted image 20241217234432.png|350]]
 1. Context data
 	- 
