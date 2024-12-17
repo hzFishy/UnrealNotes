@@ -96,12 +96,14 @@ The nest states (called leaf's) contains actions and activities
 
 ## Data flow
 
-## Property binding
+### Property binding
 ![[Pasted image 20241217234344.png]]
 
-## Data Sources
-<br>
+### Data Sources
 
 ![[Pasted image 20241217234432.png|350]]
+
 1. Context data
-	- 
+
+
+==UNFINISHED==
