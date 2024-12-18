@@ -1,9 +1,12 @@
 # Resources
-- [Detailed explanation of State Trees (from Epic dev)](https://www.youtube.com/watch?v=YEmq4kcblj4) *(The important parts of this video was noted bellow in [[State Tree#General view]])*
+- [Detailed explanation of State Trees (from Epic dev)](https://www.youtube.com/watch?v=YEmq4kcblj4) *(The content of this video was noted in [[State Tree#General view]])*
 - [Talk on it (from a studio)](https://dev.epicgames.com/community/learning/talks-and-demos/yj09/unreal-engine-exploring-the-new-state-tree-for-ai-unreal-fest-gold-coast-2024) on it
 - [Another one (from another studio)](https://www.youtube.com/watch?v=zovPQnq7ndE)
-
+- [Your First 60 Minutes with StateTree](https://dev.epicgames.com/community/learning/tutorials/lwnR/unreal-engine-your-first-60-minutes-with-statetree)
 # General view
+
+> [!info] Note
+> Most of the context of what's following is from the Unreal Fest 2024 videos. Meaning that some statements might be true only in 5.4 or higher
 
 ## What is the state tree composed of?
 A state tree is a tree of states (with a hierarchy).
@@ -97,13 +100,149 @@ The nest states (called leaf's) contains actions and activities
 ## Data flow
 
 ### Property binding
+You can bind properties in various cases.
 ![[Pasted image 20241217234344.png]]
+
+**Categories**
+- Input
+	- Value UI is hidden
+	- Assumed to be always bound
+- Output
+	- Value UI is hidden
+	- Not bindable, but can be bound to
+- Context
+	- Value UI is hidden
+	- Assumed to be always bound
+	- Automatically binds to similar context data
+	- Auto binding can be overridden
+
+All other properties as bindable if set to editable.
+
 
 ### Data Sources
 
 ![[Pasted image 20241217234432.png|350]]
+![[Pasted image 20241218095852.png|350]]
 
 1. Context data
+	- Data provided from the State Tree use context
+	- Actor Component vs Smart Object can have different data provided
+2. Tree parameters
+	- Configuration data provided from when a specific State Tree is used
+3. Global tasks (and Evaluators)
+	- Globally activated
+4. State Parameters
+	- Current and earlier states
+5. Tasks
+	- Tasks before the current task
+	- Enter conditions, Transitions a bit different
 
 
-==UNFINISHED==
+### Binding functions
+
+> [!info] New in 5.5
+
+- State Tree nodes that set property values
+- Useful for:
+	- Conversion functions
+	- Combine values
+	- Get value based another value
+
+### Property references
+
+> [!info] New in 5.4
+
+- State Tree property references allows the binding to return a pointer to the data
+- Allows writing back results
+	- Tasks that modify data (counters, etc)
+	- Use state parameters as blackboard
+- Pass references to instance data outside the State Tree
+
+## Composition
+### General
+- State can be built from other branches of State Tree in three different ways
+	- Linked subtrees
+	- Linked assets
+	- Parallel State Trees
+- Composition allows more reuse and more efficiently
+
+### Subtrees and linked states
+![[Pasted image 20241218101643.png|350]]
+- Subtree states allow to create reusable State Tree branches (Kind of like functions)
+- Linked states allow you to link to the subtree branches
+- Linked states can pass parameters to subtree states
+- Subtrees can access global data
+ 
+### Linked asset states
+
+> [!info] New in 5.4
+
+- Linked asset states allow you to replace a branch of the tree with another asset
+- Reconfigure State Trees
+- Allow multiple designers to build the behaviour
+- Events shared between nested trees
+
+### Run parallel task
+
+> [!info] New in 5.5
+
+- Run parallel task allows you to run another State Tree along with the current State Tree
+- Parallel tree is run as a task, so it will start after state selection
+- Events are shared between main and parallel tree task
+- Good for secondary states, like weapon selection
+
+### Linked overrides
+- The asset and parameters provided to **linked asset** and **run parallel task** can be overridden when the State Tree is used.
+- This allows you to build template State Trees, where parts of the tree are configured per character.
+
+## Using State Trees
+
+### How to run a State Tree
+- The off-the-shelf case is to use State Tree component
+- Works on any actor
+- The component has functions to start and stop the tree
+- Create a State Tree using State Tree component schema
+
+### State Tree schema
+- Define a specific State Tree use case
+- What external data is available?
+- What kind of nodes can be used to build the tree?
+
+![[Pasted image 20241218103233.png]]
+
+### Extending State Trees
+
+The users can create their own schemas, tasks and conditions to create their own building blocks to make State Trees.
+
+![[Pasted image 20241218103443.png]]
+
+### Using State Tree in your custom context
+
+- The State Tree has been created to be easy to embed for different use case.
+- `FStateTreeReference` handles asset selection and parameters
+- `FStateTreeInstanceData` stores the current runtime data for a State Tree instance.
+- `FStateTreeExecutionContext` is a temporary object used as a helper to tick a State Tree
+- Does not require an actor to tick but needs an owner `UObject` in case new objects are created
+
+## State Tree Debugger
+
+You can find it at `Window -> Debugger`
+
+- Traces the State Tree execution
+	- See state changes on timeline
+	- See log how the tasks and conditions were executed
+- Break points
+	- Task Enter/Exit
+	- State Enter/Exit
+	- On Transition
+- Enable/Disable
+	- States
+	- Tasks
+	- Transitions
+- Force conditions state on/off
+
+# Miscs
+
+## Helpers
+You can use custom colors for states to visualize better.
+[Section with more details](https://dev.epicgames.com/community/learning/tutorials/lwnR/unreal-engine-your-first-60-minutes-with-statetree#makingthestatetreeeasiertovisuallydistinguish)
