@@ -45,7 +45,7 @@ The nest states (called leaf's) contains actions and activities
 - Leaf states usually have the action tasks
 - **Task competition drives state completion**
 
-Useful default properties on task class
+Useful default properties on task class <br>
 ![[Pasted image 20241218145240.png]]
 
 ### Global tasks
@@ -56,7 +56,7 @@ Useful default properties on task class
 
 ### Tasks exposed variables
 - To make a variable showed as `CONTEXT`, add the `Context` category.
-- To make a variable showed as `IN` (for input), add the `Input` category.
+- To make a variable showed as `IN` (for input), add the `Input` category. (When marked as input you are forced to bind the value, so if you want to type it yourself you must not mark it)
 - To make a variable showed as `OUT` (for output), add the `Output` category.
 ## Transitions
 
