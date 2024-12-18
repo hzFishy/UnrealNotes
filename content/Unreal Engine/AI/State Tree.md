@@ -2,7 +2,8 @@
 - [Detailed explanation of State Trees (from Epic dev)](https://www.youtube.com/watch?v=YEmq4kcblj4) *(The content of this video was noted in [[State Tree#General view]])*
 - [Talk on it (from a studio)](https://dev.epicgames.com/community/learning/talks-and-demos/yj09/unreal-engine-exploring-the-new-state-tree-for-ai-unreal-fest-gold-coast-2024) on it
 - [Another one (from another studio)](https://www.youtube.com/watch?v=zovPQnq7ndE)
-- [Your First 60 Minutes with StateTree](https://dev.epicgames.com/community/learning/tutorials/lwnR/unreal-engine-your-first-60-minutes-with-statetree)
+- [Your First 60 Minutes with State Tree](https://dev.epicgames.com/community/learning/tutorials/lwnR/unreal-engine-your-first-60-minutes-with-statetree)
+- [More info about the issues and behaviors of state trees](https://jeanpaulsoftware.com/2024/08/13/state-tree-hell/)
 # General view
 
 > [!info] Note
@@ -44,14 +45,19 @@ The nest states (called leaf's) contains actions and activities
 - Leaf states usually have the action tasks
 - **Task competition drives state completion**
 
+Useful default properties on task class
+![[Pasted image 20241218145240.png]]
+
 ### Global tasks
 - Tasks that run for the duration of the whole tree, this can be useful for:
 	- Exposing data to the state tree
 	- Configuring event listeners
 	- Doing clean up at exit
 
-
-
+### Tasks exposed variables
+- To make a variable showed as `CONTEXT`, add the `Context` category.
+- To make a variable showed as `IN` (for input), add the `Input` category.
+- To make a variable showed as `OUT` (for output), add the `Output` category.
 ## Transitions
 
 ### In general
