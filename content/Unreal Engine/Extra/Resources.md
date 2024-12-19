@@ -4,8 +4,9 @@
 
 # General
 
-## Debug
+## Debug 
 - [Advanced Debugging in Unreal Engine](https://dev.epicgames.com/community/learning/tutorials/dXl5/advanced-debugging-in-unreal-engine)
+- [Crashing With Style in Unreal Engine](https://www.youtube.com/watch?v=qT3E--_px28)
 ## Character Movement Component
 - [How the CMC works under the hood](https://www.youtube.com/watch?v=urkLwpnAjO0&list=PLXJlkahwiwPmeABEhjwIALvxRSZkzoQpk)
 ## Optimizing
