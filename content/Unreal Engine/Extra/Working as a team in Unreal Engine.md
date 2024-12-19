@@ -1,5 +1,9 @@
 Notes of practices I noted.
 
+**Resources**
+- [Setting up an Unreal Engine Studio the Epic Way | Unreal Fest 2024](https://www.youtube.com/watch?v=102O0FOEzNY)
+
+
 # For Devs
 - Setting up the workspace for the long run: [Post](https://dev.epicgames.com/community/learning/tutorials/8JYW/setting-up-an-unreal-engine-studio-the-epic-way) - [Video](https://www.youtube.com/watch?v=102O0FOEzNY)
 - For version control:

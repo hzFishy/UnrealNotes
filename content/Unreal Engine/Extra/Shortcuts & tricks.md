@@ -1,5 +1,8 @@
 All the keys can be changed in the editor settings
 
+# Console commands
+- `ToggleDisplay`: disables all HUD
+- Object console commands [list](https://dev.epicgames.com/community/learning/tutorials/dXl5/advanced-debugging-in-unreal-engine#objconsolecommand)
 # Viewport
 
 ## Camera movements
@@ -16,6 +19,8 @@ All the keys can be changed in the editor settings
 - Content Browser `Open the asset of the selected object (if any) in the latest actif content browser tab` (Ctrl + B)
 
 # Blueprint
+
+## Keys
 - Search `Nodes, keywords, variables, ...` (Ctrl + F)
 - Rename (F2)
 - Toggle breakpoint (F9)
@@ -28,4 +33,20 @@ All the keys can be changed in the editor settings
 - Sequence `Place a Sequence node` (S)
 - For Each Loop `Place a For Each Loop node` (F)
 - Delay `Place a Delay node` (D)
+
+## Other
+
+**Automatically Break on BP Exceptions**
+Add this in `**DefaultEditorPerProjectUserSettings.ini`
+```init
+[/Script/UnrealEd.EditorExperimentalSettings]
+bBreakOnExceptions=True
+```
+
+**Show BP Script Callstack on Warnings**
+add this in `DefaultEngine.ini`
+```ini
+[Kismet]
+ScriptStackOnWarnings=true
+```
 
