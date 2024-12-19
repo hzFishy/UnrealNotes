@@ -1,6 +1,6 @@
 # Resources
 - [Detailed explanation of State Trees (from Epic dev)](https://www.youtube.com/watch?v=YEmq4kcblj4) *(The content of this video was noted in [[State Tree#General view]])*
-- [Talk on it (from a studio)](https://dev.epicgames.com/community/learning/talks-and-demos/yj09/unreal-engine-exploring-the-new-state-tree-for-ai-unreal-fest-gold-coast-2024) on it
+- [Talk on it (from a studio)](https://dev.epicgames.com/community/learning/talks-and-demos/yj09/unreal-engine-exploring-the-new-state-tree-for-ai-unreal-fest-gold-coast-2024)
 - [Another one (from another studio)](https://www.youtube.com/watch?v=zovPQnq7ndE)
 - [Your First 60 Minutes with State Tree](https://dev.epicgames.com/community/learning/tutorials/lwnR/unreal-engine-your-first-60-minutes-with-statetree)
 - [More info about the issues and behaviors of state trees](https://jeanpaulsoftware.com/2024/08/13/state-tree-hell/)
