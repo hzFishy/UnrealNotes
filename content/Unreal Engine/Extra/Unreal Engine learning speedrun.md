@@ -631,7 +631,7 @@ More resources and tools if you want to go further.
 > **In my notes**
 > - [[Shortcuts & tricks]]
 > - [[Classes and inheritance]]
-> - [[The issues with GPT models and Unreal Engine]]
+> - [[The issues with Large Language Models (LLMs) and Unreal Engine]]
 > - *... and more can be found by using the search tool*
 > 
 > **Official**

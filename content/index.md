@@ -1,5 +1,5 @@
 ---
-title: hzFishy's game Dev Notes
+title: hzFishy's Game Dev Notes
 ---
 # Welcome
 In those "notes" you will find my notes related to UE and other game dev and design stuff.
@@ -12,4 +12,6 @@ My main language isn't English, I apologies for any incorrect formulated sentenc
 
 # Contact
 If you want to contact me for any reason (misspelling, feedback or ideas to improve some specific page(s)), you can @ me (`@hzfishy`) on the [Unreal Source Discord Server](https://discord.gg/unrealsource). If you send me a friend request I will probably deny it (because of spams).
+
+More info about me [on my website](http://hzfishy.fr/).
 
