@@ -36,7 +36,7 @@ It is very important to learn doing research's on the internet (or elsewhere) by
 > [!quote] Joviex
 > *"Mastery of a foundational skill precedes effective use of advanced tools."*
 
-And there is a ton of friendly humans that can answer your questions with more knowledge and correctness that GPT models could ever have, find them in the correct forums or communities (shout-out to the [Unreal Source Discord](https://discord.gg/unrealsource) and [Unity Official Discord](https://discord.gg/unity)).
+And there is a ton of friendly humans that can answer your questions with more knowledge and correctness that any LLMs could ever have *(for now)*, find them in the correct forums or communities (shout-out to the [Unreal Source Discord](https://discord.gg/unrealsource) and [Unity Official Discord](https://discord.gg/unity)).
 
 # More on the subject
 **Disclaimer!**
