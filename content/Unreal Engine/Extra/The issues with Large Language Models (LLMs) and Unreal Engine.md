@@ -41,6 +41,7 @@ And there is a ton of friendly humans that can answer your questions with more k
 # More on the subject
 **Disclaimer!**
 I am not an expert in this domain, please be cautious when reading the listed links. Before writing this I mostly used trustworthy articles and my personal (and others) experienes.
+- https://daniel.haxx.se/blog/2024/01/02/the-i-in-llm-stands-for-intelligence/
 - https://en.wikipedia.org/wiki/Generative_pre-trained_transformer
 - https://torstenvolk.medium.com/chatgpt-is-revolutionary-but-it-calculates-one-word-at-a-time-694bc2c951ed
 - https://community.openai.com/t/chatgpt-cannot-count-words-or-produce-word-count-limited-text/47380/16
