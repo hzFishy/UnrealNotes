@@ -37,7 +37,7 @@ All the keys can be changed in the editor settings
 ## Other
 
 **Automatically Break on BP Exceptions**
-Add this in `**DefaultEditorPerProjectUserSettings.ini`
+Add this in `DefaultEditorPerProjectUserSettings.ini`
 ```init
 [/Script/UnrealEd.EditorExperimentalSettings]
 bBreakOnExceptions=True
