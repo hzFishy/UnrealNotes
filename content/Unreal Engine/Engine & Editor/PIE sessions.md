@@ -58,7 +58,7 @@ The `URL`will contain the map already opened in the editor with the following IP
 Inside `UEngine::Browse`, `URL.IsInternal() && GIsClient` will succeed.
 Later on this will call `UPendingNetGame::InitNetDriver`. Which calls `UIpNetDriver::InitConnect`.
 
-*end of the client only? part*
+*end of the client only par?*
 
 ---
 

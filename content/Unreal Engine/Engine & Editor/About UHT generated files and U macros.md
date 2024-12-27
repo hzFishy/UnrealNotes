@@ -16,3 +16,6 @@ When you press compile, the following happens:
 1. UHT creates `.generated.h`  and `.generated.cpp` files when needed.
 2. `U` macros are used as markers for UHT or replaced with pasted text.
 3. Since the `.generated.h` file is included in your regular `.h` file the C++ compiler will compile your regular files with the UHT generated files.
+
+# Issues
+UHT is a dumb text parser which means it can't resolve C++ pre-processors.
