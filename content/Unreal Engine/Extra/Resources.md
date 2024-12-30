@@ -4,6 +4,9 @@
 
 # General
 
+## Modeling tools
+- [50 Tips and Tricks in Modeling Mode | Unreal Fest 2024](https://www.youtube.com/watch?v=xIMudHNX9JM)
+
 ## Debug 
 - [Advanced Debugging in Unreal Engine](https://dev.epicgames.com/community/learning/tutorials/dXl5/advanced-debugging-in-unreal-engine)
 - [Crashing With Style in Unreal Engine](https://www.youtube.com/watch?v=qT3E--_px28)
