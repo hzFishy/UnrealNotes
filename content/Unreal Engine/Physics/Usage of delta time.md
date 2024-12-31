@@ -1,0 +1,2 @@
+- Add Force / Add Torque adapt to delta time automatically when used on Tick / Async Tick. 
+- Add Impulse / Add Angular Impulse do not, so you need to adjust manually for variations in delta time.
