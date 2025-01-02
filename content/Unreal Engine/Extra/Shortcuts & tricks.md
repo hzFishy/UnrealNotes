@@ -1,26 +1,21 @@
+# Shortcuts
 All the keys can be changed in the editor settings
+## Viewport
 
-# Console commands
-- `ToggleDisplay`: disables all HUD
-- Object console commands [list](https://dev.epicgames.com/community/learning/tutorials/dXl5/advanced-debugging-in-unreal-engine#objconsolecommand)
-# Viewport
-
-## Camera movements
+### Camera movements
 - Go up (E)
 - Go down (Q)
 - Change speed (Scroll Wheel)
-## Edit selected object
+### Edit selected object
 - Move (W)
 - Rotate (E)
 - Scale (R)
 
-## Miscs
+### Miscs
 - Focus `Move the editor camera pivot on the selected object` (F)
 - Content Browser `Open the asset of the selected object (if any) in the latest actif content browser tab` (Ctrl + B)
 
-# Blueprint
-
-## Keys
+## Blueprint
 - Search `Nodes, keywords, variables, ...` (Ctrl + F)
 - Rename (F2)
 - Toggle breakpoint (F9)
@@ -33,6 +28,11 @@ All the keys can be changed in the editor settings
 - Sequence `Place a Sequence node` (S)
 - For Each Loop `Place a For Each Loop node` (F)
 - Delay `Place a Delay node` (D)
+
+
+# Console commands
+- `ToggleDisplay`: disables all HUD
+- Object console commands [list](https://dev.epicgames.com/community/learning/tutorials/dXl5/advanced-debugging-in-unreal-engine#objconsolecommand)
 
 ## Other
 
@@ -53,7 +53,16 @@ ScriptStackOnWarnings=true
 
 
 # Other
-**Handle crashing for shipping builds** <br>
+## Miscs
+
+**Reset editor camera to before-PIE location & rotation**
+> Disable `bEnableViewportCameraToUpdateFromPIV` in Editor settings
+
+**Control Asset Open Location**
+> Edit `AssetEditorOpenLocation` in Editor Settings
+
+## Handle crashing for shipping builds
+
 Enable `Include Crash Reporter` in the project settings
 If you want to have a more detailed call stack, you need to include the debug symbols in your build, to do so enable `Include Debug Files`.
 
