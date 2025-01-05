@@ -18,4 +18,5 @@
 - [Game Rig Tools addon](https://toshicg.gumroad.com/l/game_rig_tools) - The main difference with the above addon is that you can CREATE and setup a new skeleton based on the UE4/5 skeleton. This addon is compatible with the above one to. [Here](https://www.youtube.com/watch?v=U23WyAd8o_8) is a good video that talk about how it works and how to use it.
 - Useful info at [[Blender for UE]]
 
-
+## Narrative Design
+- [Articy:draft](https://www.articy.com/en/)
