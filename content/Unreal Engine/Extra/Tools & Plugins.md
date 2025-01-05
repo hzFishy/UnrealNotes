@@ -1,5 +1,9 @@
 
 # Internal
+
+## General Scripting
+- Flow Graph - [Github](https://github.com/MothCocoon/FlowGraph) - [Video presentation](https://www.youtube.com/watch?v=BAqhccgKx_k)
+- Conversation (Yap) - [Github](https://github.com/HomerJohnston/UE-FlowYap)
 ## Level Design
 - [Voxel plugin](https://voxelplugin.com/) - Very cool and promising voxel plugin. Has a free and paid version.
 ## VFX
@@ -13,6 +17,5 @@
 - [Blender 2 UE addon](https://github.com/poly-hammer/BlenderTools) - Interesting (and updated) fork of the [official version](https://github.com/EpicGamesExt/BlenderTools) of the addon. See [docs](https://poly-hammer.github.io/BlenderTools/).
 - [Game Rig Tools addon](https://toshicg.gumroad.com/l/game_rig_tools) - The main difference with the above addon is that you can CREATE and setup a new skeleton based on the UE4/5 skeleton. This addon is compatible with the above one to. [Here](https://www.youtube.com/watch?v=U23WyAd8o_8) is a good video that talk about how it works and how to use it.
 - Useful info at [[Blender for UE]]
-
 
 

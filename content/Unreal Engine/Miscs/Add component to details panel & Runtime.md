@@ -1,5 +1,5 @@
 **Snippet to add a component at runtime and see it in detail panel**
-Thanks Northstar for sharing
+Thanks Northstar for sharing.
 ```c++
 UActorComponent* UCyComponentLibrary::AddRuntimeInstanceComponent(AActor* Actor, TSubclassOf<UActorComponent> ComponentClass) 
 {
