@@ -332,7 +332,7 @@ Here is a list of the most used variables types.
 > You can find [here](https://dev.epicgames.com/documentation/en-us/unreal-engine/blueprint-variables-in-unreal-engine?application_version=5.5) more details about blueprint variables.
 
 
-### Events, Functions, Macros & Event Dispatchers
+### Events, Functions, Macros & Event Dispatchers (Delegates)
 
 Sometimes you need a piece of code in multiple places. Instead of duplicating it, the best is to transform it into a event, function or macro. But what is the difference ?
 
