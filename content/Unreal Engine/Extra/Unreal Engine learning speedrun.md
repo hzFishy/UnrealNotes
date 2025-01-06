@@ -363,6 +363,11 @@ Mainly:
 > You can collapse code into a graph, function or macro to gain time. <br> ![[Pasted image 20241109193436.png|450]]
 > 
 
+> [!tip]- Functions, pure and impure
+> Functions can be pure or impure
+> A pure function has no exec pins, and **is evaluated for each connection**. This is not the case for impure nodes because it caches the result. This can be a big issue if the pure node is used multiple times and is heavy, or if the result is somewhat random.
+> A solution is to cache the result in a variable (or a local variable if you can). But since 5.5 you can right click any pure node and "Show exec pins", this will transform a pure node to a impure one.
+
 For event dispatchers, it's a bit special, in blueprints it's called `Event Dispatchers` but it's known in programming as delegates.
 See a delegate like a special event that you can "call"  (known as broadcast) and "bind to" (known as subscribe). It's very useful if you want to send an event to anyone interested in it.
 Delegates are **instance dependent** (you subscribe to a delegate of a object instance), they can have multiple inputs and can't return anything.
@@ -392,7 +397,7 @@ For example, you would use a delegate when the player's health changes to update
 > After I pressed `Tab` my breakpoint was hit, meaning the level blueprint correctly bound `OnHealthChanged_Event` to the `OnHealthChanged` event dispatcher.<br>
 > ![[Pasted image 20241110143347.png]]
 
-> [!tip]- How to use in a graph
+> [!tip]- How to use a Event Dispatcher/Delegate in a graph
 > If the event dispatcher declared in the graph where you want to call/bind/assign, you can simply drag & drop your event dispatcher from `My Blueprint` panel and release in the graph, this options will show: <br>
 > ![[Pasted image 20241110140828.png]]
 > <br> Otherwise, from the context menu you can type your Event Dispatcher name and you will find the same options (without the "Event" one):<br>
@@ -400,8 +405,9 @@ For example, you would use a delegate when the player's health changes to update
 
 > [!tip]- Actor & Component delegates
 > You can get a delegate callback by clicking on a actor or scene component and scrolling down in the details panel. <br>
-> Here i selected my Box component and clicked on the `+` next to `On Component Begin Overlap`
-> ![[Pasted image 20241109200944.png|300]] ![[Pasted image 20241109201057.png|600]]
+> Here I selected my Box component and clicked on the `+` next to `On Component Begin Overlap`
+> ![[Pasted image 20241109200944.png|300]] ![[Pasted image 20241109201057.png|600]] <br>
+> This also works for event dispatchers you created.
 
 ### Context Menu
 
