@@ -69,6 +69,6 @@ This can be because we don't use `OnlineSubsystemEOS` but `OnlineServicesEOS`, w
 > 
 > **Fix:**
 > - Make a custom module
-> - Add it to your project target file
-> - Add it to your `.uproject`  module dependency list with `PostSplashScreen` LoadingPhase
+> - Add this custom module to your project target file
+> - Add the custom module to your `.uproject`  module dependency list with `PostSplashScreen` LoadingPhase
 

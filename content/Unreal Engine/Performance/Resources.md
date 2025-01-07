@@ -1,8 +1,9 @@
 # Tutorials 
 - [How to Optimize Performance (From tech lead at Valorant)](https://www.youtube.com/watch?v=lfjG3z5VVIw)
 
-# CMC
-- [Character Movement Component Optimizations](https://dev.epicgames.com/community/learning/knowledge-base/mo9O/unreal-engine-character-movement-optimizations)
+# Networking
+- See [[Optimizing]]
+- See [[Character Movement Component]]
 
 # Multithreading
 - [UE5 Coro from Laura](https://github.com/landelare/ue5coro)
