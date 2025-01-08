@@ -8,3 +8,13 @@ The CMC is placed in [[Networking]] because most of the important parts and diff
 
 **Optimizing**
 - [Character Movement Component Optimizations](https://dev.epicgames.com/community/learning/knowledge-base/mo9O/unreal-engine-character-movement-optimizations)
+
+
+# Partial Breakdown
+
+When walking, when you move (or tick?) CMC will eventually run the following:
+- `StartNewPhysics` calls `PhysWalking` (only call of `PhysWalking`)
+	- `PhysWalking` calls `MoveAlongFloor`
+		- `MoveAlongFloor` calls `SafeMoveUpdatedComponent`
+			- `SafeMoveUpdatedComponent` will run checks and eventually call `MoveUpdatedComponentImpl`, which calls `MoveComponent` on `UpdatedComponent` (by default it is the root, which is the capsule component)
+		- Then, here it checks if we are stuck or not. And if its a another rampe (using Normal hit) or wall/barrier.
