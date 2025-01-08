@@ -10,7 +10,7 @@ A lot of stuff such as tips are collapsed, I've done this to make the page more 
 > If you are interested in something, don't stop to what I say here, go do some extra research!
 
 > [!Info]- For C++ users
-> If you want to learn more about how to work with C++ in UE, I would recommend checking [Laura's C++ speedrun blog post](https://landelare.github.io/2023/01/07/cpp-speedrun.html).
+> If you want to learn more about how to work with C++ in UE, I would recommend checking [Tom Looman's C++ Complete Guide](https://www.tomlooman.com/unreal-engine-cpp-guide/) and [Laura's C++ speedrun blog post](https://landelare.github.io/2023/01/07/cpp-speedrun.html).
 
 > [!info]- For Unity users
 > You might want to check out [this](https://dev.epicgames.com/documentation/en-us/unreal-engine/unreal-engine-for-unity-developers) official documentation about "UE to Unity" and [Unity to Unreal: Best Practices for Transitioning Developers | Unreal Fest 2024](https://www.youtube.com/watch?v=Ef_5P-aepyc)
