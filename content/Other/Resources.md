@@ -21,6 +21,13 @@
 
 
 # Design
+
+# Models
+- MDA (Mechanics, Dynamics & Aesthetics)
+	- [Link](https://users.cs.northwestern.edu/~hunicke/MDA.pdf)
+- DDE (Design, Dynamics, Experience)
+	- [Link](https://www.researchgate.net/publication/315854140_Design_Dynamics_Experience_DDE_An_Advancement_of_the_MDA_Framework_for_Game_Design)
+
 ## Subnautica
 - [Subnautica Postmortem](https://www.youtube.com/watch?v=fkjY_R7zQsM) - ✅
    - [Slides](https://docs.google.com/presentation/u/0/d/1voavbYG7Wn8Ry3ygH2AnDdUdMXfP8zR_K1SwbQ4Jkz4/mobilepresent)
