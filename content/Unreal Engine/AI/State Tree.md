@@ -257,5 +257,5 @@ You can use custom colors for states to visualize better.
 
 ## Editor
 
-Editor State Tree data (such as theme color list) is `UStateTreeEditorData`
-
+- Editor State Tree data (such as theme color list) is `UStateTreeEditorData`
+- State Tree Asset is made in `UStateTreeFactory::FactoryCreateNew`
