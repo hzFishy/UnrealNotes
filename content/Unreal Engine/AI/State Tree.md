@@ -247,8 +247,15 @@ You can find it at `Window -> Debugger`
 	- Transitions
 - Force conditions state on/off
 
+
 # Miscs
 
 ## Helpers
 You can use custom colors for states to visualize better.
 [Section with more details](https://dev.epicgames.com/community/learning/tutorials/lwnR/unreal-engine-your-first-60-minutes-with-statetree#makingthestatetreeeasiertovisuallydistinguish)
+
+
+## Editor
+
+Editor State Tree data (such as theme color list) is `UStateTreeEditorData`
+
