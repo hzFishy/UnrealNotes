@@ -1,5 +1,7 @@
 # Shortcuts
 All the keys can be changed in the editor settings
+
+[Blueprint Editor Cheat Sheet](https://dev.epicgames.com/documentation/en-us/unreal-engine/blueprint-editor-cheat-sheet-in-unreal-engine)
 ## Viewport
 
 ### Camera movements

@@ -4,6 +4,7 @@
 - [Another one (from another studio)](https://www.youtube.com/watch?v=zovPQnq7ndE)
 - [Your First 60 Minutes with State Tree](https://dev.epicgames.com/community/learning/tutorials/lwnR/unreal-engine-your-first-60-minutes-with-statetree)
 - [More info about the issues and behaviors of state trees](https://jeanpaulsoftware.com/2024/08/13/state-tree-hell/)
+- [zomg's notes](https://zomgmoz.tv/unreal/State-Tree/)
 # General view
 
 > [!info] Note
@@ -250,12 +251,14 @@ You can find it at `Window -> Debugger`
 
 # Miscs
 
-## Helpers
-You can use custom colors for states to visualize better.
-[Section with more details](https://dev.epicgames.com/community/learning/tutorials/lwnR/unreal-engine-your-first-60-minutes-with-statetree#makingthestatetreeeasiertovisuallydistinguish)
+> [!danger] Important
+> State Trees cannot reference actors
 
+## AI Move To
+
+the task is from `FStateTreeMoveToTask`, it uses `UAITask_MoveTo`
+by default it will create and request a new move each tick (while the task is active), to avoid that disable `bTrackMovingGoal`
 
 ## Editor
-
 - Editor State Tree data (such as theme color list) is `UStateTreeEditorData`
 - State Tree Asset is made in `UStateTreeFactory::FactoryCreateNew`
