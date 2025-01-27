@@ -12,6 +12,11 @@
 - [Component Pointer Fixer](https://github.com/Duroxxigar/ComponentPointerFixer) - Helper to fix up broken C++ components added to blueprint classes.
 - [Dependency Analyser](https://github.com/alessianigretti/DependencyAnalyser) - Useful to check dependencies count and size in your project.
 
+## ImGui
+- [DearImGui](https://github.com/ocornut/imgui)
+- [ImGui for UE](https://github.com/VesCodes/ImGui)
+- [UE setup](https://www.youtube.com/watch?v=qyO38jX5RU8&t=365s)
+
 # External
 ## Blender
 - [Blender 2 UE addon](https://github.com/poly-hammer/BlenderTools) - Interesting (and updated) fork of the [official version](https://github.com/EpicGamesExt/BlenderTools) of the addon. See [docs](https://poly-hammer.github.io/BlenderTools/).
