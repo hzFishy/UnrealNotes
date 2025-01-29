@@ -48,7 +48,12 @@ IConsoleManager::Get().RegisterConsoleCommand(
 	})
 );
 // example 2 (Northstar)
-auto& ConsoleManager = IConsoleManager::Get(); RegisteredConsoleCommands.Add(ConsoleManager.RegisterConsoleCommand( TEXT("CyGlass.ToggleOverlay"), TEXT("Toggle CyGlass overlay."), FConsoleCommandDelegate::CreateUObject(this, &UCyGlassExtensionSubsystem::ToggleCyGlassOverlay)));
+auto& ConsoleManager = IConsoleManager::Get();
+ConsoleManager.RegisterConsoleCommand(
+	TEXT("CyGlass.ToggleOverlay"),
+	TEXT("Toggle CyGlass overlay."),
+	FConsoleCommandDelegate::CreateUObject(this, &UCyGlassExtensionSubsystem::ToggleCyGlassOverlay))
+);
 ```
 
 ## Other
