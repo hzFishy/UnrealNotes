@@ -33,7 +33,8 @@ All the keys can be changed in the editor settings
 
 
 # Console commands
-- `ToggleDisplay`: disables all HUD
+- `ToggleDisplay` : disables all HUD
+- `show COLLISION` : displays collisions, works in PIE
 - Object console commands [list](https://dev.epicgames.com/community/learning/tutorials/dXl5/advanced-debugging-in-unreal-engine#objconsolecommand)
 
 > [!Info]- Custom command declaration example
