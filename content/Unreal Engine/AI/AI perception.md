@@ -8,3 +8,6 @@ To change it to something else like `OnEveryPerception` (`Continuous update when
 
 > See `EAISenseNotifyType NotifyType` in `UAISense`
 
+> [!Warning] Warning about not using `OnPerceptionChange`
+> if not using that `bWantsToNotifyOnlyOnValueChange` will be false, making `OnTargetPerceptionForgotten` delegate never called when age expired.
+

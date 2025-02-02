@@ -6,7 +6,7 @@
 - See [[Character Movement Component]]
 
 # Multithreading
-- [UE5 Coro from Laura](https://github.com/landelare/ue5coro)
+- [UE5 Coro from Laura](https://github.com/landelare/ue5coro) - [[UE5 Coro]]
 - [Multithreading and Performance in Unreal](https://docs.google.com/document/d/1uw9Dfui5ZepSrBpMc1DrxFOeRFnDu8ubzFse8Mr_s7E/edit?tab=t.0)
 - [Multithreading - Unreal Fest 2024](https://dev.epicgames.com/community/learning/talks-and-demos/V2E9/how-to-benefit-from-multithreading-in-your-unreal-engine-projects-unreal-fest-gold-coast-2024)
 - [Optimizing the Game Thread | Unreal Fest 2024](https://www.youtube.com/watch?v=KxREK-DYu70)
