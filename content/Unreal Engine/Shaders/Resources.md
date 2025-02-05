@@ -1,2 +1,2 @@
 - [Understanding Shader Permutations](https://dev.epicgames.com/community/learning/knowledge-base/6PxP/unreal-engine-understanding-shader-permutations)
-
+- [Game engines and shader stuttering: Unreal Engine's solution to the problem (talk about PSO)](https://www.unrealengine.com/en-US/tech-blog/game-engines-and-shader-stuttering-unreal-engines-solution-to-the-problem)
