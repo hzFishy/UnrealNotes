@@ -1,13 +1,11 @@
 
-- ==Variable & event names are identified by literal string==
+- ==Variable & event names are identified by literal string== (for variables user needs to type it manually or sometimes the dropdown will work)
 
 - ==Variable & event names cannot be edited across all instances== (must be edited by hand)
 
-- ==Events cannot return params==
+- ==Events cannot return params and input count must be manually added==
 
 - ==Most inputs of nodes cannot be directly typed in==, this means you need to add another node for the literal value
-
-- Must specify trigger event node inputs count
 
 - Wildcard pins type are not updated after connecting a known type
 
@@ -15,7 +13,7 @@
 	- Example :
 		- Something calls `EventA`, `EventA` calls `EventB`
 		- an error occurs in `EventB`
-		- In the console the error can be reported at `EventA`
+		- In the console the error can be reported at `EventA`, with not indication in the call chain
 
 - ==Adding object variables to prefab is broken==
 	- If you add a object variable to the prefab definition, already placed instances will not be updated (resulting in missing object variables)
@@ -25,7 +23,7 @@
 	- No contextual search
 	- If dragging from pin, can hide possible nodes (I recommended always searching from nothing, in some simple cases like with bools, ints, floats or flow control it works)
 
-- Weird parallelism for execution
+- ==Weird parallelism for execution== *(its all events, not functions, so Unity doesn't wait for your code to finish before going to the next execution)*
 	- I saw a checked value becoming false after a check IN THE SAME execution flow (in one case for now)
 		- Details:
 			- OnUpdate:
@@ -39,4 +37,10 @@
 
 - Returned values from nodes aren't cached, meaning you need to save it or it will rerun it, or error (dynamic access error)
 
-- No delegates support
+- ==No delegates support==
+
+- ==Cursed and time consuming to make callable nodes from C# for graphs==
+
+- Cannot diff properly
+
+- And of course, bad UX
