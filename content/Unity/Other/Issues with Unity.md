@@ -8,3 +8,6 @@
 
 # Lightning
 - Loading scene in additive ruins all lightning and fog effects (tested on HDRP 2022-23)
+
+# Scenes
+- You can nest scenes but only by 1 depth, and only one instance per scene
