@@ -13,7 +13,7 @@ Used resources:
 > So when we have a set of pixels to draw on the screen, we compare the depth values of each "I want to paint this color here" pixels, and if we have the lowest depth value we are drawn "above" the other "previously" drawn pixels RGB.
 This is a bit more complex because each vertices may have a different depth values.
 
-Process at high level
+Process at high level<br>
 ![[Pasted image 20250209142044.png]]
 ## Vertex shading
 
@@ -43,6 +43,7 @@ Fragment = group of pixels that come from the same triangle and share the same t
 One other issue with rasterization, is weird pixelated edges because not all triangle lines will perfectly match the pixels.
 We use anti-aliasing techniques to solve this problem, each have its pros and cons.
 For example, Super Sampling Anti-Aliasing (SSAA) distributes 16 sampling points to each pixel, when a triangle cuts though a pixel, depending on how many of the 16 sampling points of the triangle covers, a corresponding fractional shade of that color is applied to the pixel, this will result in faded edges.
+<br>
 ![[Pasted image 20250209113247.png]] 
 
 ## Fragment shading
