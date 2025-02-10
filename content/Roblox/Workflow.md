@@ -21,6 +21,7 @@ VS CODE extension
 - roblox-ts
 - ESLint
 
+[Info about syncing with Rojo](https://roblox-ts.com/docs/guides/syncing-with-rojo)
 
 # VS Code setup
 
@@ -40,20 +41,26 @@ You can exclude some files & folders (in Preferences->Settings->Workspace, searc
 
 # Miscs info
 
+
 **White spaces**
 White spaces are ignored when watch mode is looking for updates on file save.
 
-**Updating filesystem -> Roblox files after move**
-After you initially "replicated" a TS script from the filesystem to Roblox Studio, if you move the file to another folder (didn't test if outside the main container, but this should never be the case), then update the file, Rojo will somehow update correctly the file in Roblox. 
-Here I moved `LoadingScreen` script to a new subfolder in Roblox Studio, it updated but in the filesystem it didn't change: <br>
-![[Pasted image 20250210222943.png]]![[Pasted image 20250210223002.png]]
+
+**Folders**
+Once your root folders are configured on your filesystem, any subfolder made (if it has at least 1 script inside) will be replicated to Roblox Studio.
+
+
+**Updating filesystem <-> Roblox files**
+You may be able to desync Roblox Studio files/folders with your filesystem, but once you resync everything will be added/moved/deleted to match your filesystem. **This only happens for files/folders in the `TS` folder**
+In this example, everything in red will be removed on sync:<br>
+![[Pasted image 20250211003429.png]]![[Pasted image 20250211003433.png]]
 
 
 **What is inside `rbxts_include`**
-it stores runtime lib and the promise package, used by roblox-ts
+it stores runtime lib and the promise package, used by roblox-ts.
 
 
 **Updating scripts in Roblox Studio script viewer**
-If you edit a file in Roblox Studio, nothing will happen on your file system, and it seems like rojo wont try to update it again until you invoke a edit from a classic filesystem change.
+If you edit a file in Roblox Studio, nothing will happen on your file system, and it seems like Rojo wont try to update it again until you invoke a edit from a classic filesystem change.
 It seems like a option will come for that <br>
 ![[Pasted image 20250210222919.png]]
