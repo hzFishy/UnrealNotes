@@ -1,13 +1,13 @@
 
 [Testing docs](https://create.roblox.com/docs/en-us/studio/testing-modes)
 
+# Main tool manager
+Download Aftman [here](https://github.com/LPGhatguy/aftman#installation)
 
 # Rojo setup
-Download aftman [here](https://github.com/LPGhatguy/aftman#installation)
+- then install Rojo Roblox plugin [here](https://rojo.space/docs/v7/getting-started/installation/)
 
-then install rojo Roblox plugin [here](https://rojo.space/docs/v7/getting-started/installation/)
-
-VSCODE extensions:
+**VSCODE extensions**
 - Luau Language Server / luau-lsp
 - Rojo - Roblox Studio Sync
 - Stylua
@@ -15,9 +15,9 @@ VSCODE extensions:
 - roblox-ui
 
 # Roblox-ts setup
-https://roblox-ts.com/docs/setup-guide/
-https://roblox-ts.com/docs/quick-start
-VS CODE extension
+- https://roblox-ts.com/docs/setup-guide/
+- https://roblox-ts.com/docs/quick-start
+**VS CODE extension**
 - roblox-ts
 - ESLint
 
@@ -54,6 +54,7 @@ Once your root folders are configured on your filesystem, any subfolder made (if
 You may be able to desync Roblox Studio files/folders with your filesystem, but once you resync everything will be added/moved/deleted to match your filesystem. **This only happens for files/folders in the `TS` folder**
 In this example, everything in red will be removed on sync:<br>
 ![[Pasted image 20250211003429.png]]![[Pasted image 20250211003433.png]]
+to avoid that see `$ignoreUnknownInstances` [here](https://rojo.space/docs/v7/project-format/#instance-description). use `aftman add UpliftGames/rojo@7.4.0-uplift.syncback.rc.20`
 
 
 **What is inside `rbxts_include`**
@@ -62,5 +63,24 @@ it stores runtime lib and the promise package, used by roblox-ts.
 
 **Updating scripts in Roblox Studio script viewer**
 If you edit a file in Roblox Studio, nothing will happen on your file system, and it seems like Rojo wont try to update it again until you invoke a edit from a classic filesystem change.
+
 It seems like a option will come for that <br>
 ![[Pasted image 20250210222919.png]]
+To have it already check [this](https://github.com/UpliftGames/rojo/releases/tag/v7.4.0-uplift.syncback.rc.20) release fork of rojo.
+
+
+**Referencing assets**
+- [Main page](https://roblox-ts.com/docs/guides/indexing-children/)
+- [Automated with plugin](https://roblox-ts.com/docs/guides/indexing-children/#rbxts-object-to-tree-plugin-by-validark) (see also io-serve)
+
+Example: <br>
+![[Pasted image 20250211213528.png]]![[Pasted image 20250211213544.png]]
+```ts
+// access
+let StarterGui = game.GetService("StarterGui");
+StarterGui.LoadingScreenGui
+```
+
+
+**Auto imports for roblox services**
+use `npm install @rbxts/services`, then in VSCode if you start typing any roblox service by name it should suggests you to auto import.
