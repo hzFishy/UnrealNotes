@@ -36,5 +36,6 @@ An assembly is a rigid body, a assembly can be one or multiple part.
 
 ## Data model
 [Docs](https://create.roblox.com/docs/en-us/projects/data-model)
+
 Every place is represented by a data model, a hierarchy of objects that describe everything about the place. The data model contains all objects that make up the 3D world, such as parts, terrain, lighting, and other environmental elements. It also contains objects that can control runtime behavior, such as scripts that modify properties, call methods and functions, and respond to events that enable dynamic behavior and interactivity.
 

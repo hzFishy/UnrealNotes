@@ -1,11 +1,11 @@
 
-[Testing docs](https://create.roblox.com/docs/en-us/studio/testing-modes)
+- [Roblox Testing docs](https://create.roblox.com/docs/en-us/studio/testing-modes)
 
 # Main tool manager
 Download Aftman [here](https://github.com/LPGhatguy/aftman#installation)
 
 # Rojo setup
-- then install Rojo Roblox plugin [here](https://rojo.space/docs/v7/getting-started/installation/)
+- install Rojo Roblox plugin [here](https://rojo.space/docs/v7/getting-started/installation/)
 
 **VSCODE extensions**
 - Luau Language Server / luau-lsp
@@ -17,6 +17,7 @@ Download Aftman [here](https://github.com/LPGhatguy/aftman#installation)
 # Roblox-ts setup
 - https://roblox-ts.com/docs/setup-guide/
 - https://roblox-ts.com/docs/quick-start
+
 **VS CODE extension**
 - roblox-ts
 - ESLint
@@ -42,26 +43,26 @@ You can exclude some files & folders (in Preferences->Settings->Workspace, searc
 # Miscs info
 
 
-**White spaces**
+**White spaces**<br>
 White spaces are ignored when watch mode is looking for updates on file save.
 
 
-**Folders**
+**Folders**<br>
 Once your root folders are configured on your filesystem, any subfolder made (if it has at least 1 script inside) will be replicated to Roblox Studio.
 
 
-**Updating filesystem <-> Roblox files**
+**Updating filesystem <-> Roblox files**<br>
 You may be able to desync Roblox Studio files/folders with your filesystem, but once you resync everything will be added/moved/deleted to match your filesystem. **This only happens for files/folders in the `TS` folder**
 In this example, everything in red will be removed on sync:<br>
 ![[Pasted image 20250211003429.png]]![[Pasted image 20250211003433.png]]
 to avoid that see `$ignoreUnknownInstances` [here](https://rojo.space/docs/v7/project-format/#instance-description). use `aftman add UpliftGames/rojo@7.4.0-uplift.syncback.rc.20`
 
 
-**What is inside `rbxts_include`**
+**What is inside `rbxts_include<br>`**
 it stores runtime lib and the promise package, used by roblox-ts.
 
 
-**Updating scripts in Roblox Studio script viewer**
+**Updating scripts in Roblox Studio script viewer**<br>
 If you edit a file in Roblox Studio, nothing will happen on your file system, and it seems like Rojo wont try to update it again until you invoke a edit from a classic filesystem change.
 
 It seems like a option will come for that <br>
@@ -69,7 +70,7 @@ It seems like a option will come for that <br>
 To have it already check [this](https://github.com/UpliftGames/rojo/releases/tag/v7.4.0-uplift.syncback.rc.20) release fork of rojo.
 
 
-**Referencing assets**
+**Referencing assets**<br>
 - [Main page](https://roblox-ts.com/docs/guides/indexing-children/)
 - [Automated with plugin](https://roblox-ts.com/docs/guides/indexing-children/#rbxts-object-to-tree-plugin-by-validark) (see also io-serve)
 
@@ -82,5 +83,5 @@ StarterGui.LoadingScreenGui
 ```
 
 
-**Auto imports for roblox services**
+**Auto imports for roblox services**<br>
 use `npm install @rbxts/services`, then in VSCode if you start typing any roblox service by name it should suggests you to auto import.
