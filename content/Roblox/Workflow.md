@@ -24,6 +24,11 @@ Download Aftman [here](https://github.com/LPGhatguy/aftman#installation)
 
 [Info about syncing with Rojo](https://roblox-ts.com/docs/guides/syncing-with-rojo)
 
+# Flamework setup
+- [installation details page](https://flamework.fireboltofdeath.dev/docs/installation#installing-flamework)
+- delete `out`
+- restart RT and IDE
+
 # VS Code setup
 
 You can exclude some files & folders (in Preferences->Settings->Workspace, search Files:Exclude), example: <br>
@@ -39,6 +44,7 @@ You can exclude some files & folders (in Preferences->Settings->Workspace, searc
 
 - start watch mode `npx rbxtsc -w` (should check if automatic) (locks execution)
 - run `rojo serve` in a different terminal (because it locks execution)
+- run `npx io-serve` if needed (locks execution)
 
 # Miscs info
 
@@ -81,6 +87,7 @@ Example: <br>
 let StarterGui = game.GetService("StarterGui");
 StarterGui.LoadingScreenGui
 ```
+When you edit the definition files, the compiler might error because they don't know about the changes. To solve this you should move the definition file to the `src` folder. If you do this you need to `export` the interface.
 
 
 **Auto imports for roblox services**<br>
@@ -89,3 +96,7 @@ use `npm install @rbxts/services`, then in VSCode if you start typing any roblox
 
 **Update ts types/methods**<br>
 run `npm i -D @rbxts/types@latest`
+
+**Components workflow**<br>
+check [flamework components module](https://flamework.fireboltofdeath.dev/docs/additional-modules/components/creating-a-component)
+
