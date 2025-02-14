@@ -72,7 +72,7 @@ To have it already check [this](https://github.com/UpliftGames/rojo/releases/tag
 
 **Referencing assets**<br>
 - [Main page](https://roblox-ts.com/docs/guides/indexing-children/)
-- [Automated with plugin](https://roblox-ts.com/docs/guides/indexing-children/#rbxts-object-to-tree-plugin-by-validark) (see also io-serve)
+- [Automated with plugin](https://roblox-ts.com/docs/guides/indexing-children/#rbxts-object-to-tree-plugin-by-validark) (see also `npx io-serve`)
 
 Example: <br>
 ![[Pasted image 20250211213528.png]]![[Pasted image 20250211213544.png]]
@@ -85,3 +85,7 @@ StarterGui.LoadingScreenGui
 
 **Auto imports for roblox services**<br>
 use `npm install @rbxts/services`, then in VSCode if you start typing any roblox service by name it should suggests you to auto import.
+
+
+**Update ts types/methods**<br>
+run `npm i -D @rbxts/types@latest`
