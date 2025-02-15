@@ -87,7 +87,19 @@ Example: <br>
 let StarterGui = game.GetService("StarterGui");
 StarterGui.LoadingScreenGui
 ```
-When you edit the definition files, the compiler might error because they don't know about the changes. To solve this you should move the definition file to the `src` folder. If you do this you need to `export` the interface.
+**the best way is to place any definition in `src/services.d.ts`**, with
+```ts
+export {};
+declare global
+{
+    interface Workspace extends Instance {
+        PaintingBlock: Model & {
+            ClickDetector: ClickDetector;
+            MeshPart: MeshPart;
+        };
+    }
+}
+```
 
 
 **Auto imports for roblox services**<br>

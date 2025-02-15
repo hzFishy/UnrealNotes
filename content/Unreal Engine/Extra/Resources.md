@@ -26,4 +26,5 @@
 - [Myth-busting "Best Practices" in Unreal Engine](https://dev.epicgames.com/community/learning/tutorials/l3E0/myth-busting-best-practices-in-unreal-engine)
 - [Animated text](https://www.stevestreeting.com/2022/09/14/text-animation-effects-in-unreal-engine/)
 - [Turn In Place](https://github.com/Vaei/TurnInPlace)
+- [Plugin for component picker](https://github.com/gregorhcs/UEComponentPicker)
 
