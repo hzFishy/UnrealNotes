@@ -20,7 +20,12 @@ When walking, when you move (or tick?) CMC will eventually run the following:
 			- `SafeMoveUpdatedComponent` will run checks and eventually call `MoveUpdatedComponentImpl`, which calls `MoveComponent` on `UpdatedComponent` (by default it is the root, which is the capsule component)
 		- Then, here it checks if we are stuck or not. And if its a another ramp (using Normal hit) or wall/barrier.
 
-# Client to listen server animation issues
+
+# Debug
+You can visualize basic CMC info using `p.VisualizeMovement 1`
+
+# Miscs
+## Client to listen server animation issues
 It seems that the listen server can see client character animations lag, this is because by default clients send data to the server at a high frequency (because clients may have a high framerate).
 To fix this the idea is to cap the max update frequency.
 
