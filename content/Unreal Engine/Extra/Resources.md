@@ -27,4 +27,4 @@
 - [Animated text](https://www.stevestreeting.com/2022/09/14/text-animation-effects-in-unreal-engine/)
 - [Turn In Place](https://github.com/Vaei/TurnInPlace)
 - [Plugin for component picker](https://github.com/gregorhcs/UEComponentPicker)
-
+- [CMC Climbing mechanic](https://www.vitorcantao.com/post/climbing-system/)
