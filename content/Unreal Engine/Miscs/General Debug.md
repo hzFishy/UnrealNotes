@@ -1,6 +1,8 @@
 
 # Making your commands/vars
 - [Details about `Exec` functions](https://unreal.gg-labs.com/wiki-archives/common-pitfalls/exec-functions)
+- For static variables (int32, float, bool, FString) see `FAutoConsoleVariableRef`
+- For commands see `FAutoConsoleObject` and the childs such as `FAutoConsoleCommandWithWorld` or `FAutoConsoleCommand`
 
 # Engine & Editor commands
 ## Miscs Commands
