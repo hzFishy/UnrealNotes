@@ -4,6 +4,26 @@
 - For static variables (int32, float, bool, FString) see `FAutoConsoleVariableRef`
 - For commands see `FAutoConsoleObject` and the childs such as `FAutoConsoleCommandWithWorld` or `FAutoConsoleCommand`
 
+Code snippet
+```c++
+#if !NO_CVARS && TFC_WITH_CONSOLE  
+    /**  
+     *     
+     *  @return "TFC.Debug.TheName"     
+     *  @return "TFC.Debug.OptionalSubCatepgry.TheName"
+     */
+#define TFC_Console_Internal_BuildFullCommandString(SubNameString, SubCategoryString) \  
+    FString::Printf(TEXT("TFC.Debug.%s"), *(SubCategoryString.IsEmpty() ? SubNameString : SubCategoryString + "." + SubNameString))  
+  
+    struct FTFCAutoConsoleCommandWithWorld : private FAutoConsoleCommandWithWorld  
+    {  
+       FTFCAutoConsoleCommandWithWorld(const FString& SubName, const FString& Help, const FConsoleCommandWithWorldDelegate& Delegate, const FString& OptionalSubCategory = "")  
+          : FAutoConsoleCommandWithWorld(*TFC_Console_Internal_BuildFullCommandString(SubName, OptionalSubCategory), *Help, Delegate, ECVF_Default)  
+       {}  
+    };
+//...
+```
+
 # Engine & Editor commands
 ## Miscs Commands
 - `ShowDebug [Name]`, by default this will give details about the player pawn/character
