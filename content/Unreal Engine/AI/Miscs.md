@@ -13,3 +13,4 @@ On tick the controller calls `AAIController::UpdateControlRotation`, depending o
 - AI focus on the AI controller determines how the AI rotates to face things. There is also a priority: default, move, gameplay. The highest priority is the one used for the rotation.
 - When the AI follows a path, it uses move priority. If you set the focus with a default priority, the move will be the one chosen. If you set it as gameplay, that will win out over everything.
 - See `AAIController::SetFocus` (for actor) and `AAIController::SetFocalPoint` (for position).
+- **if the focused actor is a Pawn, the controller will also set the Pitch view**
