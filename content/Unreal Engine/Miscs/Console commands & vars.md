@@ -33,4 +33,5 @@ Code snippet
 - `FreezeRendering`, good to use with `ToggleDebugCamera`, allows you to see how culling works, with extra stuff like seeing the POV of different steps of rendering (press B)
 - `ToggleDebugCamera`
 - `ProfileGPU` panel, also named "GPU Visualizer"
+- `r.Streaming.PoolSize XXX`
 
