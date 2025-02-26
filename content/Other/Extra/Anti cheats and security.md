@@ -38,11 +38,11 @@ But most desktop OSs only uses 2 rings, r0 and r3 <br>
 ## Examples
 
 ### Aimbots
-Modern soft aimbots already mimic human inconsistency.
+Modern soft aimbots can mimic human inconsistency.
 
 ### Anti recoil 
 
-**A popular anti recoil hardware and software is `Cronus`**
+**A popular anti recoil hardware and software is `Cronus`**<br>
 > Cronus is a physical device that you plug your controller in and at the moment it's not detectable or bannable by any game as far as we know, even tho it's literally cheating.
 > 
 > It even comes with scripts to run on it for many popular games, like for Apex Legends it comes with anti recoil scripts* and there are even some that specifically try to boost the effect of aim assist.
@@ -54,21 +54,17 @@ Anti recoil software knows what gun you are playing and uses that to know how to
 
 A solution would be to add some randomness in the recoil pattern, that a human wouldn't notice, keeping a skill game *(= good and legit player can learn the pattern)*.
 
-
-
-
-## Miscs
+### Others
 
 **Trigger Bot**
 A trigger bot is something common in cheat menus.
 A trigger bot shoots for you if you aim at a target.
 
 
-
 ## Tools
 
 > [!Danger] Warning!
-> Please do not use these in multiplayer games, go for a solo game or your own one.
+> Please do not use these in multiplayer games, go for a solo game or your own game.
 > I am listing them for research and testing purposes.
 
 **Disassemblers**
@@ -119,6 +115,10 @@ It looks like Vanguard is "hijacking" the Windows boot process from outside. Pro
 
 ## In depth
 ### Reading RAM
+RAM holds everything that's running on your PC, including game code and data.
+This means that you can technically read the game state, or even override the game state by reading or manipulating RAM.
+
+This is why ACs tries to prevent RAM access (read/write).
 
 Each app has a unique memory signature. The signature is a sequence of bytes.
 
@@ -128,17 +128,17 @@ If you simply try to read/write memory you will probably get strike by a anti ch
 > [!Quote]- Blue Man explanation
 > Any time you want to read a process you need to get a handle to that process, you can basically intercept that handle request from a driver (`ObRegisterCallbacks`).
 > 
-> Any time anything tries to open a handle your driver will get notified from where you can block it depending on what process is trying to open it, etc...
+> Any time anything tries to open a handle your driver will get notified from where and you can block it depending on what process is trying to open it, etc...
 > 
 > Pretty much every single anti cheat will do this... but it's a game of cat and mouse, you have to make sure a cheat driver doesn't sneakily unregister your callback, swap it for its own, etc...
 > 
 > That's why Vanguard for example wants to load with the OS, to try and make sure it's the first thing to load before any cheating software can (they still can but more difficult) because it gives it a chance to protect itself from anything trying to manipulate it
 
-**Known case #1**
+**Known case #1**<br>
 RICOCHET was known for reading literal strings in the memory. It was simply searching memory for strings like "Trigger Bot". A bad actor could send you a chat message containing one of the strings and you'd get banned.
 Article about it [here](https://cybernews.com/security/hacker-claims-to-have-banned-thousands-of-cod-players/).
 
 
-**Known case #2**
+**Known case #2**<br>
 League Of Legends had something similar a few years back, it scanned your browser tabs and if any of them matched "cheat engine" the game would close.
 
