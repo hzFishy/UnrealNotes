@@ -15,6 +15,7 @@ Simplified plan <br>
 
 ### Programs
 When using `Run as administrator` you  are still in user mode.
+Any software that runs in the kernel namespace is referred to as a "driver".
 
 You need to write a driver to make it runnable at kernel level. And kernel level has no code error tolerance, any issue is assumed to be critical and for safety reasons it throws a BSOD.
 
@@ -98,6 +99,10 @@ Video about AI Anti Cheats: https://www.youtube.com/watch?v=LkmIItTrQP4.
 ## Considerations
 It's really hard to tell the difference between an average player with a humanized cheating device and a good player.
 
+This is why anti cheats (ACs) is never 100% sur if a player is cheating or not.
+Also, the fact the an AC usually runs on kernel makes it a potential security issue. For example in 2024 a RCE (Remote Code Execution) vulnerability was [used on streamers while playing a tournament](https://www.pcgamer.com/games/battle-royale/easy-anti-cheat-washes-its-hands-of-the-apex-legends-hacking-disaster-that-saw-streamer-accounts-hijacked-live-there-is-no-rce-vulnerability-within-eac/) on Apex Legends, which seemed to be linked to the Source Engine, and not EAC.
+
+Here are one [article](https://www.pushtotalk.gg/p/the-gamers-do-not-understand-anti-cheat) and one [Steam post](https://steamcommunity.com/app/553850/discussions/2/4206994023681287288/) of Helldivers 2 anti cheat controverse.
 
 ## Software's
 Vanguard, Easy Anti Cheat (EAS) and RICOCHET runs on the kernel level.
@@ -112,7 +117,8 @@ RICOCHET is used on some specific COD versions.
 Vanguard files are located in your EFI system partition. Right next to Windows boot img.
 It looks like Vanguard is "hijacking" the Windows boot process from outside. Probably to be able to load the earliest.
 
-## Reading RAM
+## In depth
+### Reading RAM
 
 Each app has a unique memory signature. The signature is a sequence of bytes.
 
