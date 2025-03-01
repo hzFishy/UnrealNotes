@@ -25,11 +25,18 @@ When walking, when you move (or tick?) CMC will eventually run the following:
 You can visualize basic CMC info using `p.VisualizeMovement 1`
 
 # Miscs
+
+# Jitter movement when object is attached to character
+[In this example](https://discord.com/channels/187217643009212416/221799385611239424/1345390184052555837) the character view jitters because of the interpolation between listen server and clients.
+The character jittering is placed on a moving actor (used as base). This moving actor is attached to the other character (that's controlling the moving actor).
+The solution is to attach the moving actor on the character mesh, since this is one of the smoothest component of the character for other clients (as the autonomous proxy).
+
 ## Client to listen server animation issues
 It seems that the listen server can see client character animations lag, this is because by default clients send data to the server at a high frequency (because clients may have a high framerate).
 To fix this the idea is to cap the max update frequency.
 
-(thanks to Kaos)
+All of the following isn't required.
+*Thanks to Kaos*
 
 ```ini title="DefaultGame.ini"
 [/Script/Engine.GameNetworkManager]
