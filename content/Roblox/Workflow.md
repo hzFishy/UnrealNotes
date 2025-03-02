@@ -48,6 +48,9 @@ You can exclude some files & folders (in Preferences->Settings->Workspace, searc
 
 # Miscs info
 
+**New/Constructors with TS**<br>
+Instead of using `Instance.new("Part")` use the `new` keyword.
+For example, `new Instance("Part")`
 
 **White spaces**<br>
 White spaces are ignored when watch mode is looking for updates on file save.
@@ -64,7 +67,7 @@ In this example, everything in red will be removed on sync:<br>
 to avoid that see `$ignoreUnknownInstances` [here](https://rojo.space/docs/v7/project-format/#instance-description). use `aftman add UpliftGames/rojo@7.4.0-uplift.syncback.rc.20`
 
 
-**What is inside `rbxts_include<br>`**
+**What is inside `rbxts_include`**<br>
 it stores runtime lib and the promise package, used by roblox-ts.
 
 

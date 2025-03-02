@@ -7,7 +7,9 @@ All the keys can be changed in the editor settings
 ### Camera movements
 - Go up (E)
 - Go down (Q)
-- Change speed (Scroll Wheel)
+- Change camera speed (Scroll Wheel)
+- Move around focused object (Alt + mouse)
+
 ### Edit selected object
 - Move (W)
 - Rotate (E)
@@ -16,6 +18,7 @@ All the keys can be changed in the editor settings
 ### Miscs
 - Focus `Move the editor camera pivot on the selected object` (F)
 - Content Browser `Open the asset of the selected object (if any) in the latest actif content browser tab` (Ctrl + B)
+- Move selected object(s) without the 3 arrows: (X: Ctrl + Drag LMB), (Y: Ctrl + Drag RMB), (Z: Ctrl + Drag LMB+RMB)
 
 ## Blueprint
 - Search `Nodes, keywords, variables, ...` (Ctrl + F)
