@@ -12,7 +12,7 @@ Like traces you can give a list of actors/components to ignore to any `UPrimitiv
 
 
 ## `CollisionEnabled` in depth
-From what I've found in the source code, there **is** an actual performance change depending on `TEnumAsByte<ECollisionEnabled::Type> CollisionEnabled;`.
+From what I've found in the source code, there **is** an actual performance change depending on the `ECollisionEnabled::Type` value set on your component.
 Full details:
 - **No Collision**:
 	- Will not create any representation in the physics engine. Cannot be used for spatial queries (raycasts, sweeps, overlaps) or simulation (rigid body, constraints). 
