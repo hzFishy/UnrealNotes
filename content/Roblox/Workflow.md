@@ -115,3 +115,17 @@ run `npm i -D @rbxts/types@latest`
 **Components workflow**<br>
 check [flamework components module](https://flamework.fireboltofdeath.dev/docs/additional-modules/components/creating-a-component)
 
+
+**Rojo: Replace a filesystem folder with an Instance type**<br>[Details](https://rojo.space/docs/v7/sync-details/#meta-files)
+Example: <br>
+```json
+- ActorFolder
+	- init.meta.json
+	- main.server.luau
+```
+inside `init.meta.json`:
+```json
+{
+	"className": "Actor"
+}
+```
