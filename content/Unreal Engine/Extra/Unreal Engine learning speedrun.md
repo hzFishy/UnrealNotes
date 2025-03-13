@@ -280,7 +280,9 @@ Here is a list of the most used variables types.
 > > ![[Pasted image 20241109185821.png|250]] ![[Pasted image 20241109185715.png|250]]
 
 > [!warning]- Warning for `Enum` and `Struct`
-> Those types can be unstable. Adding new entries while the blueprints are open and saving the changes will at the very least invalidate the nodes, or could cause possible engine crashes.
+> Those types can be unstable.
+> Adding new entries while the blueprints are open and saving the changes will at the very least invalidate the nodes, or could cause possible engine crashes.
+> As far as I experienced with those, *adding* new entries results in less issues than **renaming/editing** existing entries.
 
 > [!Info]- Containers (`Single`, `Array`, `Set` or `Map`)
 > For almost every variables types, you can decide if your variable *container* type is `Single`, `Array`, `Set` or `Map`. <br>
