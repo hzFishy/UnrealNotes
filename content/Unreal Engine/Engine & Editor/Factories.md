@@ -1,4 +1,11 @@
 
+# Factories
+A class used to create new assets, such as when creating files in the content browser.
+
+Details:
+- [Zomg's page about it](https://zomgmoz.tv/unreal/Editor-customization/UFactory)
+- [Detailed code from UE forum](https://forums.unrealengine.com/t/is-it-possible-to-add-custom-asset-category-for-custom-data-asset/105162/2)
+- [Possible more details](https://dev.epicgames.com/community/learning/knowledge-base/q545/unreal-engine-adding-new-asset-types)
 # Actor Factories
 **Actor** Factory classes allows you to do custom behavior when drag and dropping your assets into the level.
 
