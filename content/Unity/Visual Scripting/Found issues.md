@@ -1,7 +1,7 @@
 Here are *some* issues that I noted regarding Unity Visual Scripting solution.
 
 
-- ==No classes, complete graph abstraction=
+- ==No classes, complete graph abstraction==
 	- This means no...
 		- ...hierarchy possible
 		- ...interfaces
