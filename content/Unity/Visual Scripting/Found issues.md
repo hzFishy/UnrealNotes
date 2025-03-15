@@ -1,3 +1,12 @@
+Here are *some* issues that I noted regarding Unity Visual Scripting solution.
+
+
+- ==No classes, complete graph abstraction=
+	- This means no...
+		- ...hierarchy possible
+		- ...interfaces
+		- ...virtual functions
+		- ...and so on
 
 - ==Variable & event names are identified by literal string== (for variables user needs to type it manually or sometimes the dropdown will work)
 
@@ -13,13 +22,13 @@
 	- Example :
 		- Something calls `EventA`, `EventA` calls `EventB`
 		- an error occurs in `EventB`
-		- In the console the error can be reported at `EventA`, with not indication in the call chain
+		- In the console the error will be reported at `EventA`, with no indication in the call chain
 
 - ==Adding object variables to prefab is broken==
 	- If you add a object variable to the prefab definition, already placed instances will not be updated (resulting in missing object variables)
 	- same issue with default value
 
-- ==Broken node search==:
+- ==Broken node search==
 	- No contextual search
 	- If dragging from pin, can hide possible nodes (I recommended always searching from nothing, in some simple cases like with bools, ints, floats or flow control it works)
 
@@ -41,6 +50,6 @@
 
 - ==Cursed and time consuming to make callable nodes from C# for graphs==
 
-- Cannot diff properly
+- Cannot diff and merge graphs properly
 
 - And of course, bad UX
