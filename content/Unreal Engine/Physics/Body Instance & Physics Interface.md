@@ -1,5 +1,6 @@
 
 # Body Instance
+A important parent class of the BI is `FBodyInstanceCore`
 The body instance seems to be mostly used from `UPrimitiveComponent`.
 It also seems that a lot of physic functions are running from `FBodyInstance`.
 
