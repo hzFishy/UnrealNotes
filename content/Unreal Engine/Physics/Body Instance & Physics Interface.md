@@ -6,12 +6,18 @@ A important parent class of the BI is `FBodyInstanceCore`
 The body instance seems to be mostly used from `UPrimitiveComponent`.
 It also seems that a lot of physic functions are running from `FBodyInstance`.
 
-Some of these functions will register a physic command using `ApplyAsyncPhysicsCommand`, that has a function call-back that's using `FPhysicsInterface`.
+Most of the functions will register a physic command using `ApplyAsyncPhysicsCommand`, that has a function call-back that's using `FPhysicsInterface`.
 
-BIs are initialized using a `UBodySetup`
+BIs are initialized using a `UBodySetup`.
+A BI holds a `FPhysicsActorHandle ActorHandle` which is the "Internal physics representation of our body instance".
+
+
+## Miscs
 
 **Change collision:**
-For some reason`SetCollisionEnabled(NewState)` doesn't work as expected, use `SetShapeCollisionEnabled(0, NewState)` instead.
+For some reason`SetCollisionEnabled(NewState)` doesn't work as expected, you can use `SetShapeCollisionEnabled(0, NewState)` instead.
+For more detailed collision setting, there are many functions like `SetResponseToChannel` and `SetResponseToAllChannels`.
+
 
 **Constraint**
 When you select a PrimitiveComponent, you can set Constraints <br>
@@ -37,3 +43,12 @@ for (int i = 0; i < Bodies.Num(); ++i)
     BI->CreateDOFLock();
 }
 ```
+
+
+**Sleeping and wake**
+`WakeInstance` and `PutInstanceToSleep` will *at some point* call `SetObjectState` in `TPBDRigidParticle`.
+
+Inside `SetObjectState` it is written than when we put an object to sleep, its velocity is zeroed and buffered (*"in case the velocity is queried during sleep, or in case the object is woken up again"*).
+After that its said that *"If another force is added after the object is put to sleep, the old forces*  
+*will remain and the new ones will accumulate and re-dirty the dynamic properties which will*  
+*wake the body."*

@@ -557,6 +557,12 @@ List of debug draw nodes with example here: [[All Debug Draws]]
 
 # Miscellaneous
 
+## Assets
+
+> [!tip]- Reference Viewer
+> For any asset, you can see its dependencies and usages across your project<br>
+> ![[Pasted image 20250319113316.png|300]]<br>
+> ![[Pasted image 20250319113347.png]]
 ## Blueprint
 
 > [!tip]- Select
