@@ -6,7 +6,7 @@ A important parent class of the BI is `FBodyInstanceCore`
 The body instance seems to be mostly used from `UPrimitiveComponent`.
 It also seems that a lot of physic functions are running from `FBodyInstance`.
 
-Most of the functions will register a physic command using `ApplyAsyncPhysicsCommand`, that has a function call-back that's using `FPhysicsInterface`.
+Most of the functions will register a physic command using `ApplyAsyncPhysicsCommand`, that has a function call-back that's using `FPhysicsInterface` (a typedef of `FPhysInterface_Chaos`).
 
 BIs are initialized using a `UBodySetup`.
 A BI holds a `FPhysicsActorHandle ActorHandle` which is the "Internal physics representation of our body instance".
@@ -14,9 +14,18 @@ A BI holds a `FPhysicsActorHandle ActorHandle` which is the "Internal physics re
 
 ## Miscs
 
+**Gravity**
+> [!Warning] Warning
+> If you enable gravity the BI will wake up
+
+
+
 **Change collision:**
 For some reason`SetCollisionEnabled(NewState)` doesn't work as expected, you can use `SetShapeCollisionEnabled(0, NewState)` instead.
 For more detailed collision setting, there are many functions like `SetResponseToChannel` and `SetResponseToAllChannels`.
+
+> [!Warning] Warning
+> `SetShapeCollisionEnabled` calls `UpdatePhysicsFilterData`, which will wake up the BI
 
 
 **Constraint**
