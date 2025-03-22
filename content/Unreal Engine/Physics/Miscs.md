@@ -1,4 +1,7 @@
 
+## Constraints and Motors
+- [Video showing a use case of motors](https://www.youtube.com/watch?v=thtbUILejXA)
+
 ## Cancel gravity force on slope
 
 Used on a capsule, the capsule has no friction.
