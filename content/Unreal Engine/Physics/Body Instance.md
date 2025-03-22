@@ -14,13 +14,12 @@ A BI holds a `FPhysicsActorHandle ActorHandle` which is the "Internal physics re
 
 ## Miscs
 
-**Gravity**
+### Gravity
 > [!Warning] Warning
 > If you enable gravity the BI will wake up
 
 
-
-**Change collision:**
+### Change collision:
 For some reason`SetCollisionEnabled(NewState)` doesn't work as expected, you can use `SetShapeCollisionEnabled(0, NewState)` instead.
 For more detailed collision setting, there are many functions like `SetResponseToChannel` and `SetResponseToAllChannels`.
 
@@ -28,7 +27,7 @@ For more detailed collision setting, there are many functions like `SetResponseT
 > `SetShapeCollisionEnabled` calls `UpdatePhysicsFilterData`, which will wake up the BI
 
 
-**Constraint**
+### Constraint
 When you select a PrimitiveComponent, you can set Constraints <br>
 ![[Pasted image 20250318220101.png]]
 **These constraint settings are ONLY applied on the first body instance of this component**
@@ -54,10 +53,18 @@ for (int i = 0; i < Bodies.Num(); ++i)
 ```
 
 
-**Sleeping and wake**
+### Sleeping and wake
 `WakeInstance` and `PutInstanceToSleep` will *at some point* call `SetObjectState` in `TPBDRigidParticle`.
 
 Inside `SetObjectState` it is written than when we put an object to sleep, its velocity is zeroed and buffered (*"in case the velocity is queried during sleep, or in case the object is woken up again"*).
 After that its said that *"If another force is added after the object is put to sleep, the old forces*  
 *will remain and the new ones will accumulate and re-dirty the dynamic properties which will*  
 *wake the body."*
+
+
+### Set body transform
+As mentioned in [this](https://itscai.us/blog/post/ue-physics-framework/#2-scene-tick) blog post section (see `FPushPhysicsData`) `FBodyInstance::SetBodyTransform` will eventually call `FSingleParticlePhysicsProxy::SetXBase`.
+
+> [!Warning] Sleeping
+> `SetXBase` will [wake up](https://github.com/EpicGames/UnrealEngine/blob/40eea367040d50aadd9f030ed5909fc890c159c2/Engine/Source/Runtime/Experimental/Chaos/Public/PhysicsProxy/SingleParticlePhysicsProxy.h#L220) the particle if its sleeping.
+
