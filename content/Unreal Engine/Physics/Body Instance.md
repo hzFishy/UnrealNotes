@@ -63,6 +63,8 @@ After that its said that *"If another force is added after the object is put to 
 
 
 ### Set body transform
+If called on a dynamic (not kinematic) body, it will eventually call `SetGlobalPose_AssumesLocked`. And it seems that the new scale is not used there.
+
 As mentioned in [this](https://itscai.us/blog/post/ue-physics-framework/#2-scene-tick) blog post section (see `FPushPhysicsData`) `FBodyInstance::SetBodyTransform` will eventually call `FSingleParticlePhysicsProxy::SetXBase`.
 
 > [!Warning] Sleeping
