@@ -555,6 +555,25 @@ This is easily done with `Draw Debug [...]` nodes, they can be called in any con
 
 List of debug draw nodes with example here: [[All Debug Draws]]
 
+
+**More settings**
+
+\> Automatically Break on BP Exceptions
+Add this in `DefaultEditorPerProjectUserSettings.ini`
+```init
+[/Script/UnrealEd.EditorExperimentalSettings]
+bBreakOnExceptions=True
+```
+
+\>Show BP Script Callstack on Warnings
+add this in `DefaultEngine.ini`
+```ini
+[Kismet]
+ScriptStackOnWarnings=true
+```
+
+
+
 # Miscellaneous
 
 ## Assets
