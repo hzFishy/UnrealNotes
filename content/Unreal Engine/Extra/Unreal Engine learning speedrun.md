@@ -624,6 +624,7 @@ ScriptStackOnWarnings=true
 > > <br>![[FastDuplicating.gif|400]]
 
 > [!tip]- Modeling tool
+> [[Modeling tool]]
 > ==TODO==
 
 > [!tip]- Actor Palettes
