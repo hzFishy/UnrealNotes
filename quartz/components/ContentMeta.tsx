@@ -32,10 +32,11 @@ export default ((opts?: Partial<ContentMetaOptions>) => {
       if (fileData.dates) {
         //segments.push(formatDate(getDate(cfg, fileData)!, cfg.locale))
 
-        const createdDate = formatDate(getDate(cfg, fileData)!, cfg.locale)
+        //const createdDate = formatDate(getDate(cfg, fileData)!, cfg.locale)
         const modifiedDate = formatDate(fileData.dates.modified, cfg.locale) // Assuming fileData contains a 'dates' object with 'modified' property
 
-        segments.push(`Created: ${createdDate}, Modified: ${modifiedDate}`)
+        //segments.push(`Created: ${createdDate}, Modified: ${modifiedDate}`)
+        segments.push(`Modified: ${modifiedDate}`)
       }
 
       // Display reading time if enabled
