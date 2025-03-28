@@ -582,6 +582,12 @@ ScriptStackOnWarnings=true
 > For any asset, you can see its dependencies and usages across your project<br>
 > ![[Pasted image 20250319113316.png|300]]<br>
 > ![[Pasted image 20250319113347.png]]
+
+> [!tip]- Managing assets and data design
+> Check this [super article](https://benui.ca/unreal/data-driven-design/) about the different ways to do data-driven design in UE. It also mentions [curve tables](https://benui.ca/unreal/curve-tables/) which are very useful for two-dimensional numerical data (like a level up system).
+> 
+> ==TODO==
+
 ## Blueprint
 
 > [!tip]- Select

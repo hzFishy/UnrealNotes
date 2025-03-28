@@ -42,6 +42,9 @@ All the keys can be changed in the editor settings
 # Other
 ## Miscs
 
+**Keep Simulation Changes**
+> [[Keep Simulation Changes]]
+
 **Reset editor camera to before-PIE location & rotation**
 > Disable `bEnableViewportCameraToUpdateFromPIV` in Editor settings
 

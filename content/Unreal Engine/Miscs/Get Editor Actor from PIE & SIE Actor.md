@@ -1,0 +1,3 @@
+
+See `EditorUtilities::GetEditorWorldCounterpartActor`
+
