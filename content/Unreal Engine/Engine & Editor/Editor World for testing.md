@@ -2,6 +2,11 @@ Thanks to Northstar (Unreal Source Discord) for the help and snippets.
 
 By just doing `FBPGTestWorld TestWorld` you are making a new GI and World. This allows you to do a lot of things, such as automated tests and spawning actors.
 
+If you want you can move the creation stuff in a `Init` function.
+
+> [!Warning] Conditions
+> `GEngine` must be valid when `UWorld::CreateWorld` is called
+
 **Code to make this GI and World**
 ```c++
 // Header
