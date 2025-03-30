@@ -2,7 +2,6 @@
 ## In short
 A `UPackage` is the container for anything stored on disk. It holds one or more `UObject`s and functions as the outermost container object for any `.uasset`.
 
-
 ## In depth
 
 > [!Quote] What **was** and **is now** a `UPackage` from Nick Darnell (from BenUI's Discord server)
@@ -18,10 +17,12 @@ A `UPackage` is the container for anything stored on disk. It holds one or more 
 > 
 > *So that's all it is, a package holds one or more UObjects and functions as the outermost container object for any uasset"*
 
-*Thanks Ollsonn Northsar and Baffled for the following*
+*Thanks Olsson, Northsar, Baffled and Ramius for the following*
 
 Also, all reflected c++ types are stored in the packages `/Script/ModuleName`.
 `ModuleName` here is a "package", `/Script/ModuleName` is the path to the module "package" on the virtual filesystem. The `ModuleName` isn't a real package, the module in that path is saying where that package belongs.
 
 **Note:** `Script/` is for c++ files and `Game/` is for assets.
+
+For example a Blueprint package has 2 assets: the blueprint (`blueprint.blueprint`) and the generated class (`blueprint.blueprint_C`).
 
