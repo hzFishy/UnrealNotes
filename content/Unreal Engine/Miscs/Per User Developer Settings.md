@@ -1,5 +1,5 @@
 
-Thanks for Northstat for the example.
+Thanks for Northstar for the example.
 ```cpp
 UCLASS(Config = EditorPerProjectUserSettings, DefaultConfig) class UMyFrameworkLocalDevSettings : public UDeveloperSettings
 ```

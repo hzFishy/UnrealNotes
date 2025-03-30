@@ -2,7 +2,8 @@
 # General
 - Blueprint nodes execution are slower than C++ code.
 - Pure nodes are executed each time they are used (they don't cache the outputs like a impure node).
-- Blueprint `For loop` is very slow because for each iteration it does a copy of the current entry.
+- Blueprint `For Each loop` is slow because for each iteration it does a copy of the current entry.
+- At each `For Each loop` iteration we are getting the array (so if the array is from a pure node this can be bad)
 - Inputs and outputs of nodes (pure, impure and Make/Break) are copied.
 - BP doesn't get optimized when compiled, it merges neighbor connections.
 - BP is an array of uint8 in the background

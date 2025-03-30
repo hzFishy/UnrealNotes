@@ -1,4 +1,6 @@
 
+# Plugins
+- [EnhancedUnrealEngineDocumentation by BenUI](https://plugins.jetbrains.com/plugin/18787-enhancedunrealenginedocumentation)
 
 # Templates
 When you create a new UE class with Rider, it shows up templates.
