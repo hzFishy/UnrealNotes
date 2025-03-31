@@ -36,7 +36,7 @@ export default ((opts?: Partial<ContentMetaOptions>) => {
         const modifiedDate = formatDate(fileData.dates.modified, cfg.locale) // Assuming fileData contains a 'dates' object with 'modified' property
 
         //segments.push(`Created: ${createdDate}, Modified: ${modifiedDate}`)
-        segments.push(`Modified: ${modifiedDate}`)
+        segments.push(`Latest update: ${modifiedDate}`)
       }
 
       // Display reading time if enabled
