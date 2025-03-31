@@ -19,17 +19,16 @@ A BI holds a `FPhysicsActorHandle ActorHandle` which is the "Internal physics re
 > If you enable gravity the BI will wake up
 
 
-### Change collision:
+### Changing collision
 For some reason`SetCollisionEnabled(NewState)` doesn't work as expected, you can use `SetShapeCollisionEnabled(0, NewState)` instead.
 For more detailed collision setting, there are many functions like `SetResponseToChannel` and `SetResponseToAllChannels`.
 
 > [!Warning] Warning
 > `SetShapeCollisionEnabled` calls `UpdatePhysicsFilterData`, which will wake up the BI
 
-
 ### Constraint
 When you select a PrimitiveComponent, you can set Constraints <br>
-![[Pasted image 20250318220101.png]]
+![[Pasted image 20250318220101.png]]<br>
 **These constraint settings are ONLY applied on the first body instance of this component**
 For a regular static mesh, this would be expected, but for a skeletal mesh component, this means only the root bone is constrained.
 
