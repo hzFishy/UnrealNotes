@@ -26,3 +26,5 @@ Also, all reflected c++ types are stored in the packages `/Script/ModuleName`.
 
 For example a Blueprint package has 2 assets: the blueprint (`blueprint.blueprint`) and the generated class (`blueprint.blueprint_C`).
 
+For example a blueprint asset package contains two objects: `UBlueprint` asset and `UBlueprintGeneratedClass` `UClass`
+
