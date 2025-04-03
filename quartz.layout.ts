@@ -27,7 +27,7 @@ export const defaultContentPageLayout: PageLayout = {
     //Component.Graph(),
     Component.DesktopOnly(Component.TableOfContents()),
 	Component.MobileOnly(Component.Explorer()),
-    Component.DesktopOnly(Component.RecentNotes({ title: "Recent notes", limit: 10, showTags: false }))
+    Component.DesktopOnly(Component.RecentNotes({ title: "Latest added/edited notes", limit: 10, showTags: false }))
   ],
 }
 
