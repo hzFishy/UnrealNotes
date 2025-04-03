@@ -1,4 +1,11 @@
 
+> [!Error] Danger of `LoadSynchronous`
+> Example of why `LoadSynchronous` is very bad and shouldn't be used in shipped builds (Thanks to Northstar)
+> > [!Quote] Example
+> > *"Let's say you're loading a map async. It's a big map and it's taking a while. Then you call LoadSynchronous on a DA or something. Map load gets cancelled, DA blocks game thread to load, Map starts loading all over again but blocking the game thread"*
+> 
+> In other words: *"LoadSync halts all requests in the queue. They can't resume async so SM handles this by sync loading them"*
+
 # Data Assets
 
 Example: [https://www.tomlooman.com/unreal-engine-asset-manager-async-loading/](https://www.tomlooman.com/unreal-engine-asset-manager-async-loading/)
