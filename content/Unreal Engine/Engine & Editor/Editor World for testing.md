@@ -1,106 +1,14 @@
-Thanks to Northstar (Unreal Source Discord) for the help and snippets.
+## How it's done elsewhere
+- [`FTestWorld` from ue5coro](https://github.com/landelare/ue5coro/blob/bf83ab3ac7195d8ea6f2dd7dce0d5f2f92e48bc1/Source/UE5CoroTests/Private/TestWorld.cpp#L37)
+- `FActorTestSpawner` in engine CQTest module]
 
-By just doing `FBPGTestWorld TestWorld` you are making a new GI and World. This allows you to do a lot of things, such as automated tests and spawning actors.
+# My implementation
+*Thanks to Northstar and Aquanox (Unreal Source Discord) for the help, snippets and directions.*
 
-If you want you can move the creation stuff in a `Init` function.
+By just doing `TestWorldContainer->Init()` you are making a new GI and World. This allows you to do a lot of things, such as automated tests and spawning actors.
 
-> [!Warning] Conditions
-> `GEngine` must be valid when `UWorld::CreateWorld` is called
+*Some people likes to do this in constructor, I don't because sometimes i'm declaring the test container but i don't yet want to create a test world, etc
 
-**Code to make this GI and World**
-```c++
-// Header
-struct FBPGTestWorld  
-{  
-    TObjectPtr<UBPGGameInstance> GameInstance;  
-    TObjectPtr<UWorld> World;  
-  
-public:  
-    FBPGTestWorld();  
-    ~FBPGTestWorld();  
-  
-    void Tick(float DeltaSeconds = 0.001953125);  
-    void EndTick();  
-  
-    UWorld* operator->() const { return World.Get(); }  
-};
+**Code to make this test GI and World (with SpawnActor and destruction)**
+[Gist link](https://gist.github.com/hzFishy/bea474a2f684ac8bac107cce4d1e11cd)
 
-// Cpp file
-FBPGTestWorld::FBPGTestWorld() :  
-    World(UWorld::CreateWorld(EWorldType::Game, true))  
-{  
-    check(IsInGameThread());  
-  
-    GameInstance = NewObject<UBPGGameInstance>();  
-    GameInstance->AddToRoot();  
-  
-    auto& WorldContext = GEngine->CreateNewWorldContext(EWorldType::Game);  
-    WorldContext.SetCurrentWorld(World);  
-    World->UpdateWorldComponents(true, true);  
-    World->AddToRoot();  
-    World->SetFlags(RF_Public | RF_Standalone);  
-    // We are responsible for ticking this world  
-    World->SetShouldTick(false);  
-  
-    GameInstance->InitForTest(World);  
-  
-#if WITH_EDITOR  
-    GEngine->BroadcastLevelActorListChanged();  
-#endif  
-    World->InitializeActorsForPlay(FURL());  
-    auto* Settings = World->GetWorldSettings();  
-    Settings->MinUndilatedFrameTime = 0.0001;  
-    Settings->MaxUndilatedFrameTime = 10;  
-  
-    World->BeginPlay();  
-}  
-  
-FBPGTestWorld::~FBPGTestWorld()  
-{  
-    GameInstance->RemoveFromRoot();  
-    World->RemoveFromRoot();  
-  
-    GameInstance->Shutdown();  
-  
-    GEngine->DestroyWorldContext(World.Get());  
-    World->DestroyWorld(true);  
-  
-    CollectGarbage(RF_NoFlags);  
-}  
-  
-void FBPGTestWorld::Tick(float DeltaSeconds)  
-{  
-    check(IsInGameThread());  
-    StaticTick(DeltaSeconds);  
-    World->Tick(LEVELTICK_All, DeltaSeconds);  
-    EndTick();  
-  
-    FTaskGraphInterface::Get().ProcessThreadUntilIdle(ENamedThreads::GameThread);  
-  
-    // Other things that need ticking - FTSTicker is used by FHttpModule  
-    // Reference: FEngineLoop::Tick()    FTSTicker::GetCoreTicker().Tick(FApp::GetDeltaTime());  
-    FThreadManager::Get().Tick();  
-    GEngine->TickDeferredCommands();  
-}  
-  
-void FBPGTestWorld::EndTick()  
-{  
-    check(IsInGameThread());  
-    ++GFrameCounter;}
-```
-
-**This function is placed on the GI**
-```c++
-void UBPGGameInstance::InitForTest(UWorld* World)  
-{  
-    FWorldContext* TestWorldContext = GEngine->GetWorldContextFromWorld(World);  
-    check(TestWorldContext);  
-  
-    WorldContext = TestWorldContext;  
-    WorldContext->OwningGameInstance = this;  
-    World->SetGameInstance(this);  
-    World->SetGameMode(FURL());  
-  
-    Init();  
-}
-```

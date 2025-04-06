@@ -27,5 +27,8 @@
 - [FName and GameplayTag in depth - Baffled's blog post on the subject](https://itsbaffled.github.io/posts/UE/GameplayTags-And-FNames-In-Depth)
 
 # Miscs
+
+## Core delegates
+- See `FCoreDelegates`
 ## Seamless and hard travel
 - [Wizard Cell Persistent Data Compendium](https://wizardcell.com/unreal/persistent-data/#travel-seamless-vs-hard)
