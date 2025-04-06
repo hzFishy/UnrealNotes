@@ -252,7 +252,8 @@ You can find it at `Window -> Debugger`
 # Miscs
 
 > [!danger] Important
-> State Trees cannot reference actors
+> State Trees cannot use soft references (ex: to an actor on the level).
+> To make this possible you will have to set it as a param from outside
 
 ## AI Move To
 
@@ -265,7 +266,7 @@ by default it will create and request a new move each tick (while the task is ac
 
 
 ## Instant Data
+You cannot store a instance data ptr for long because it may be reallocated on data changes.
+See `TStateTreeInstanceDataStructRef` for mrore info on how to keep the reference.
 
-you cannot store a instance data ptr for long because it may be reallocated on data changes.
-See `TStateTreeInstanceDataStructRef` for mroe info on how to keep the reference.
-**Be sure to declare FInstanceDataType BEFORE the task constructor**
+**Be sure to declare FInstanceDataType BEFORE the task constructor** or you will get hard to debug compiler errors.
