@@ -7,7 +7,7 @@
 	- Doesn't return the boolean.
 - `ensure`
 	- Failing a `ensure` will bring up the debugger when using an IDE and not cause a UE crash if not. It can print a custom text in the logs.
-	- Returns the boolean.
+	- Returns the boolean expression you are passing in for all build types.
 
 ## Engine notifications
 Use `FNotificationInfo` with `FSlateNotificationManager::Get().AddNotification(Info);`
