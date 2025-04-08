@@ -1,4 +1,4 @@
-For a editor VP solution see [[Debug Visualization]]
+For a editor VP solution see [[Custom show flag]]
 # Component Visualizer
 There is a struct called `FComponentVisualizer` that seems to be used to draw/debug whatever you want for a specific component class.
 
@@ -11,8 +11,4 @@ See also [zomg's post](https://zomgmoz.tv/unreal/Editor-customization/Component-
 > Load your module at `PostEngineInit` phase to correct that.
 
 More details about it (with an example on Unity box collider 6 faces maker) [here](https://dev.epicgames.com/community/learning/tutorials/KP5p/unreal-engine-extending-unreal-editor-with-component-visualizer)
-# Actor selection
-[Forum thread on it](https://forums.unrealengine.com/t/can-an-aactor-react-on-ineditor-select/143706/3)
-Notes:
-- There is `Actor::IsSelectedInEditor
-- There is `USelection::SelectionChangedEvent` and `USelection::SelectObjectEvent`
+

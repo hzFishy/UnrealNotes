@@ -5,3 +5,8 @@ Example:
 ```c++
 .AddWeakLambda(this, [this, SafeInstanceData] () mutable { /* code */ }
 ```
+
+## Capture
+inside `[]`
+- `=` captures `this` by value
+- `&` captures `this` by reference
