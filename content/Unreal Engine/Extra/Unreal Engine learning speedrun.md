@@ -584,7 +584,7 @@ ScriptStackOnWarnings=true
 > ![[Pasted image 20250319113347.png]]
 
 > [!tip]- Managing assets and data design
-> Check this [super article](https://benui.ca/unreal/data-driven-design/) about the different ways to do data-driven design in UE. It also mentions [curve tables](https://benui.ca/unreal/curve-tables/) which are very useful for two-dimensional numerical data (like a level up system).
+> Check this [super article](https://unreal-garden.com/tutorials/data-driven-design/) about the different ways to do data-driven design in UE. It also mentions [curve tables](https://unreal-garden.com/tutorials/curve-tables/) which are very useful for two-dimensional numerical data (like a level up system).
 > 
 > ==TODO==
 
