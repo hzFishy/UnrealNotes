@@ -40,6 +40,9 @@ All the keys can be changed in the editor settings
 
 
 # Other
+
+### Console commands
+At the top of this page there are interesting console commands [[Console commands & vars]]
 ## Miscs
 
 **Keep Simulation Changes**

@@ -41,6 +41,7 @@ The flag is set in `FPhysicsFilterBuilder.Word3` using `ConditionalSetFlags` wit
 
 > [!warning]- `bContactModification` in the body instance
 > There is a mention about contact modification at `EFilterFlags::ModifyContacts`, saying that the flag is "Unused" and "handled in Chaos callbacks". 
+> 
 **Meaning that setting `bContactModification` in the body instance doesn't matter for the sim callback to be used.**
 
 In `ISimCallbackObject` you have `OnContactModification_Internal` from `ContactModification_Internal`. [See post about it](https://forums.unrealengine.com/t/chaos-contact-modification/517748/3?u=hzfishy).
@@ -48,13 +49,19 @@ In `ISimCallbackObject` you have `OnContactModification_Internal` from `ContactM
 > [!info]- Use cases in source
 > The CMC seems to somehow use this system with `FCharacterMovementComponentAsyncCallback` by using `TSimCallbackObject`, same for `FChaosVehicleManager` using `FChaosVehicleManagerAsyncCallback`.
 
+> [!error] `ISimCallbackObject` methods can be called on any thread.
+> So be careful when using game thread only stuff.
+> For example, don't use `xxx__AssumesLocked` methods
+
 The `Chaos::FCollisionContactModifier& Modifier` received in `OnContactModification_Internal` contains a list of `Constraints` (Lot's of details at `FPBDCollisionConstraint` declaration).
 
 This list contains all the contact between all bodies in a scene. Not only Object1 and Object2 pair.
 But in each contact you can get the Object1 and Object2 by using `GetParticlePair` (or by using the particle index `0` or `1` for some functions).
 
+This list excludes sleeping bodies (even if in contact with something).
+
 > [!info]- Contact points prediction
-> From the results I had after drawing the contact points each frame, the following frames shows that the points seems "predicted" if close enough to collide in the near future.
+> From the results I had after drawing the contact points each frame, the following frames shows that the points seems "predicted" if close enough to collide in the near future. <br>
 > ![[DrawPhyContacts_Box_Pred2.png]]  ![[DrawPhyContacts_Box_Pred1.png]]
 > 
 
@@ -71,21 +78,25 @@ When using functions like `GetWorldContactLocations` you are getting the list of
 // minimal implementation of sim callback
 struct FBPGCableBodySimCallbackInput : public Chaos::FSimCallbackInput  
 {  
+	// MUST have
     void Reset() {};  
 };  
   
 struct FBPGCableBodySimCallbackOutput : public Chaos::FSimCallbackOutput  
 {  
+	// MUST have
     void Reset() {};  
 };  
-  
+
+// I don't know if ESimCallbackOptions::ContactModification is 100% required
 class FBPGCableBodySimCallback : public Chaos::TSimCallbackObject<FBPGCableBodySimCallbackInput, FBPGCableBodySimCallbackOutput, Chaos::ESimCallbackOptions::ContactModification>  
 {  
   
 private:  
-    virtual void OnPreSimulate_Internal() override;  
+	// MUST have
+    virtual void OnPreSimulate_Internal() override {};  
 
-	// Contact stuff
+	// What we want
     virtual void OnContactModification_Internal(Chaos::FCollisionContactModifier& Modifier) override;  
 };
 
@@ -101,10 +112,14 @@ void FBPGCableBodySimCallback::OnContactModification_Internal(Chaos::FCollisionC
 	// iterating all contacts
     for (Chaos::FContactPairModifier& ContactPairModifier : Modifier)  
     {
+	    // Example 0
+	    // We get the 2 particles of this pair
+	    Chaos::TVec2<Chaos::FGeometryParticleHandle*> Particles = ContactPairModifier.GetParticlePair();
+		
 	    // Example 1
         // here no collisions will happen between the bodies
-        ContactPairModifier.Disable();
-
+		ContactPairModifier.Disable();
+        
 		// Example 2
 		// Here we are drawing the location of all the contact points
 		// (can easily reach draw limit so watch out)
@@ -119,6 +134,10 @@ void FBPGCableBodySimCallback::OnContactModification_Internal(Chaos::FCollisionC
 			    BPG_Debug::DrawDebugSphere(World, WorldPos1, 10, FColor::Blue, 2, 1);  
 		    }
 		}
+		
+		// Example 3
+		// Get Body Instance from particle
+		FBodyInstance* BI0 = PhysScene->GetBodyInstanceFromProxy(Particles[0]->PhysicsProxy());
     }
 }
 
@@ -129,7 +148,6 @@ if (UWorld* World = CapsuleComponent->GetWorld())
     if (FPhysScene_Chaos* PhysScene = World->GetPhysicsScene())  
     {
         SimCallback = PhysScene->GetSolver()->CreateAndRegisterSimCallbackObject_External<FBPGCableBodySimCallback>();
-         
     }
 }    
 ```

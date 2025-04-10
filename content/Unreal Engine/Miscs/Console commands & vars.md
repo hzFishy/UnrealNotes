@@ -6,7 +6,7 @@
 - `ShowDebug [Name]`, by default this will give details about the player pawn/character
 - `ToggleDisplay` : disables all HUD
 - `show COLLISION` : displays collisions, works in PIE
-
+- `slomo <new time dilation>`: changes the world time dilation
 
 ## Rendering commands
 - `FreezeRendering`, good to use with `ToggleDebugCamera`, allows you to see how culling works, with extra stuff like seeing the POV of different steps of rendering (press B)
@@ -14,13 +14,16 @@
 - `ProfileGPU` panel, also named "GPU Visualizer"
 - `r.Streaming.PoolSize XXX`
 
+## Physics commands
+- See [[Unreal Engine/Physics/Debug|Debug]] (in `/Physics/`)
 
-# Making your commands/vars
+# Making your own console commands/vars
 - [Details about `Exec` functions](https://unreal.gg-labs.com/wiki-archives/common-pitfalls/exec-functions)
 - For static variables (int32, float, bool, FString) see `FAutoConsoleVariableRef`
 - For commands see `FAutoConsoleObject` and the childs such as `FAutoConsoleCommandWithWorld` or `FAutoConsoleCommand`
+- To save the cvars values, see `UDeveloperSettingsBackedByCvars`.
 
-Code snippet
+**Code snippets**
 ```c++
 #if !NO_CVARS && TFC_WITH_CONSOLE  
     /**  
@@ -43,14 +46,12 @@ Code snippet
 > [!Info]- Custom command declaration example
 > 
 > ```c++
-> // example 1, works in constructor
-> IConsoleManager::Get().RegisterConsoleCommand(
-> 	TEXT("TFC.Debug.DisplayInGamePlayerCharacterWindow"),  
-> 	TEXT("Show data for player"),  
-> 	FConsoleCommandDelegate::CreateWeakLambda(this, [this]()  
-> 	{
-> 		bDisplayDebugWindow = !bDisplayDebugWindow;
-> 	})
+> // example 1, inside a namespace
+> static bool bDrawCableInGame = false;  
+> void ToggleDrawCableInGame() { bDrawCableInGame = !bDrawCableInGame; };  
+> BPG_Console::FBPGAutoConsoleCommand CDrawCableInGame(  
+>    "DrawCableInGame", "Toggle to show debug data",  
+>     FConsoleCommandDelegate::CreateStatic(ToggleDrawCableInGame), "CableManager"  
 > );
 > 
 > // example 2 (Northstar)
