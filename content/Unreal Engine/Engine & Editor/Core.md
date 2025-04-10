@@ -32,3 +32,9 @@
 - See `FCoreDelegates`
 ## Seamless and hard travel
 - [Wizard Cell Persistent Data Compendium](https://wizardcell.com/unreal/persistent-data/#travel-seamless-vs-hard)
+
+## `GWorld`
+`GWorld` (that shouldn't be used in gameplay) holds a pointer to the game editor world.
+When in PIE it's the PIE world, and it switch's back to the editor world on PIE exit.
+See `SetPlayInEditorWorld` and `RestoreEditorWorld`.
+
