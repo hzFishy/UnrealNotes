@@ -35,6 +35,10 @@ void BPGTargetDrawing::DrawTargetFlag(UCanvas* Canvas, APlayerController* PC)
 ```
 
 > [!info] More about `TCustomShowFlag`
+> > [!Warning] Include
+> > As mentioned [here](https://zomgmoz.tv/unreal/ShowFlags) *"If you define TCustomShowFlag values in a .h file, you can't include the header from more than one .cpp file, as it will cause an error. 
+> > You must put TCustomShowFlag definitions in a .cpp file."*
+> 
 > `TCustomShowFlag` will register the flag in `FEngineShowFlags::RegisterCustomShowFlag` as well as a custom command formatted as `ShowFlag.MyFlag`.
 You can use this console command in editor and in SIE/PIE to change the state of this flag.
 > - `ShowFlag.MyFlag 0` will **FORCE** disable the flag

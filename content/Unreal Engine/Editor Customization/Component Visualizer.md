@@ -4,7 +4,7 @@ There is a struct called `FComponentVisualizer` that seems to be used to draw/de
 
 See `FConstraintComponentVisualizer::DrawVisualization` and `FComponentVisualizersModule::StartupModule` for an example.
 
-See also [zomg's post](https://zomgmoz.tv/unreal/Editor-customization/Component-visualizers) on it.
+See [zomg's post](https://zomgmoz.tv/unreal/Editor-customization/Component-visualizers) for the base setup.
 
 > [!Warning] About `GUnrealEd` in `StartupModule`
 > As I found [here](https://forums.unrealengine.com/t/gunrealed-is-null-in-startupmodule/295355/2?u=hzfishy ) `GUnrealEd` is null in `StartupModule` if you are loading it to early.
