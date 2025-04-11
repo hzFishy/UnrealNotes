@@ -1,7 +1,9 @@
 
 # Engine & Editor commands
 
-- Object console commands [list](https://dev.epicgames.com/community/learning/tutorials/dXl5/advanced-debugging-in-unreal-engine#objconsolecommand)
+Object console commands list [here](https://dev.epicgames.com/community/learning/tutorials/dXl5/advanced-debugging-in-unreal-engine#objconsolecommand)
+You can have a cool panel with your console commands & vars in `Window->Console Variables`
+![[Pasted image 20250411181357.png]]
 ## Miscs Commands
 - `ShowDebug [Name]`, by default this will give details about the player pawn/character
 - `ToggleDisplay` : disables all HUD
@@ -66,4 +68,15 @@
 > [!Warning]- About re-registration warning (console commands and vars)
 > you might get the following warning `Console object named 'xxx' already exists but is being registered again, but we weren't expected it to be!`
 > You can totally ignore it if it happens when you hot reload/live code. For more details read the comment above the UE_LOG line
+
+## Run commands from code
+
+### Blueprint
+Use the `Execute Console Command` node, the player parameter is not required in all cases.
+![[Pasted image 20250411170027.png]]
+
+### C++
+We can use the same logic than the BP node (`UKismetSystemLibrary::ExecuteConsoleCommand`).
+Internally it uses `ConsoleCommand` on the Player Controller if valid and `Exec` on the `GEngine` if not.
+It seems safer to use the kismet function because it has some extra safety measures.
 

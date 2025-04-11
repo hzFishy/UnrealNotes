@@ -19,5 +19,6 @@ The main functions are `GizmoManipulationStarted`, `GizmoManipulationDeltaUpdate
 Notes:
 - There is `Actor::IsSelectedInEditor
 - There is `USelection::SelectionChangedEvent` and `USelection::SelectObjectEvent`
+	- `SelectObjectEvent` isn't called if we clear selection with the Escape key, so if you want to handle all possibilities for an actor use `USelection::SelectObjectEvent` with `IsSelected()`.
 - Use `GEditor->GetSelectedObjects()` (or other variants) to get a pointer to `USelection`
 
