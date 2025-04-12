@@ -1,5 +1,5 @@
 
-> [!Danger] The child is `Component/Bone 1` and the child is `Component/Bone 2` !!
+> [!Danger] The child is `Component/Bone 1` and the parent is `Component/Bone 2` !!
 
 
 ## Stability
