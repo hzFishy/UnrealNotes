@@ -621,6 +621,10 @@ ScriptStackOnWarnings=true
 > ![[Pasted image 20241119001757.png]]
 
 > [!tip]- Timeline
+> Useful node to run one or more tracks (float/vector/color/...)
+> <br>![[Pasted image 20250412155518.png]]
+> <br> with autoplay/loop options
+> <br>![[Pasted image 20250412155508.png]]
 > ==TODO==
 ## Viewport tools
 
@@ -676,6 +680,7 @@ More resources and tools if you want to go further.
 > - *... and more can be found by using the search tool*
 > 
 > **Official**
+> - [Content Examples Project](https://dev.epicgames.com/documentation/en-us/unreal-engine/content-examples-sample-project-for-unreal-engine)
 > - [Beginplay - Engine breakdown](https://dev.epicgames.com/community/learning/paths/0w/unreal-engine-beginplay)
 > - [Epic Games UE learn portal](https://dev.epicgames.com/community/unreal-engine/getting-started/games)
 > - [Official UE C++ API Reference](https://dev.epicgames.com/documentation/en-us/unreal-engine/API/Classes)

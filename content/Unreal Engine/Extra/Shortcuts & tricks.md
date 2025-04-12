@@ -39,11 +39,15 @@ All the keys can be changed in the editor settings
 - Delay `Place a Delay node` (D)
 
 
-# Other
+# Tricks
 
 ### Console commands
 At the top of this page there are interesting console commands [[Console commands & vars]]
 ## Miscs
+
+**Show 3D Widget on Vector variable**
+> `MakeEditWidget` in C++
+> ![[Pasted image 20250412162241.png]]
 
 **Keep Simulation Changes**
 > [[Keep Simulation Changes]]
@@ -53,4 +57,3 @@ At the top of this page there are interesting console commands [[Console command
 
 **Control Asset Open Location**
 > Edit `AssetEditorOpenLocation` in Editor Settings
-

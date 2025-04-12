@@ -38,3 +38,6 @@
 When in PIE it's the PIE world, and it switch's back to the editor world on PIE exit.
 See `SetPlayInEditorWorld` and `RestoreEditorWorld`.
 
+## Beginplay
+Partial root is `AGameModeBase::StartPlay -> GameState::HandleBeginPlay - >GetWorldSettings()->NotifyBeginPlay() which finally sets World->SetBegunPlay(true);`
+
