@@ -26,6 +26,17 @@ You can have a cool panel with your console commands & vars in `Window->Console 
 - To save the cvars values, see `UDeveloperSettingsBackedByCvars`.
 
 **Code snippets**
+
+```c++
+static float DrawingShowFlagsMaxDrawDistance = 3500;  
+static FAutoConsoleVariableRef CVarDrawingShowFlagsMaxDrawDistance(  
+    TEXT("BrutalPuzzle.Editor.DrawingShowFlagsMaxDrawDistance"),
+    DrawingShowFlagsMaxDrawDistance,  
+    TEXT("Limits the drawing of custom show flags to this distance"),  
+    ECVF_Default  
+);
+```
+
 ```c++
 #if !NO_CVARS && TFC_WITH_CONSOLE  
     /**  
@@ -73,7 +84,7 @@ You can have a cool panel with your console commands & vars in `Window->Console 
 
 ### Blueprint
 Use the `Execute Console Command` node, the player parameter is not required in all cases.
-![[Pasted image 20250411170027.png]]
+<br>![[Pasted image 20250411170027.png]]
 
 ### C++
 We can use the same logic than the BP node (`UKismetSystemLibrary::ExecuteConsoleCommand`).
