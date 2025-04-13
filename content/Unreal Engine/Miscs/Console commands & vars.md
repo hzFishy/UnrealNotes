@@ -17,7 +17,7 @@ You can have a cool panel with your console commands & vars in `Window->Console 
 - `r.Streaming.PoolSize XXX`
 
 ## Physics commands
-- See [[Unreal Engine/Physics/Debug|Debug]] (in `/Physics/`)
+- See [[Console commands & debugging|Console commands & debugging]] (in `/Physics/`)
 
 # Making your own console commands/vars
 - [Details about `Exec` functions](https://unreal.gg-labs.com/wiki-archives/common-pitfalls/exec-functions)

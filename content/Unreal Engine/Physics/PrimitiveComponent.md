@@ -4,4 +4,4 @@ Most (all?) of their physic settings are in `BodyInstance` and `FBodyInstanceCor
 
 Some special settings like the constraints are in `BodyInstanceCustomization.cpp` (`FBodyInstanceCustomizationHelper`).
 
-For **Constraint** details check [[Body Instance]]
+For **Constraint** details check [[Body Instance]] and [[Constraints]]

@@ -141,7 +141,7 @@ Unlike other engines like Unity, you don't create a empty "Game Object" then add
 You can extend any Actor class with `Actor Components`,  `Scene Components` or `Interfaces`.
 - A `Actor Component` don't have any transform, it's just a block of whatever logic attached to your actor.
 - A `Scene Component` is the same as an `Actor Component` but it has a transform and must be attached somewhere on your Actor (at the root of the actor or on any other `Scene Component`), it also support sockets.
-- For `Interface` see [[Classes and inheritance#Interfaces]]
+- For the basics of `Interface`s in OOP see [[Classes and inheritance#Interfaces]], for a UE usage see [[Unreal Engine learning speedrun#Interfaces]]
 
 > [!Info]
 > More about Actors in [[#Main classes]]
@@ -411,6 +411,16 @@ For example, you would use a delegate when the player's health changes to update
 > ![[Pasted image 20241109200944.png|300]] ![[Pasted image 20241109201057.png|600]] <br>
 > This also works for event dispatchers you created.
 
+### Interfaces
+
+See [C++ (and BP support) Interfaces](https://dev.epicgames.com/documentation/en-us/unreal-engine/interfaces-in-unreal-engine) and [Blueprint Only Interfaces](https://dev.epicgames.com/documentation/en-us/unreal-engine/blueprint-interface-in-unreal-engine)
+
+> [!Warning] Casting Vs Interfaces
+> Unlike what is sadly spread a bit everywhere, using interfaces for single classes to avoid casting is **not helping** you (in your design choices) and **doesn't resolves** the issues of loading a BP.
+> See [this graph](https://dev.epicgames.com/community/learning/tutorials/l3E0/myth-busting-best-practices-in-unreal-engine#don'tusecast?) for a better overview.
+
+==TODO==
+
 ### Context Menu
 
 The context menu is what is shown when your right click in a BP graph.
@@ -590,7 +600,7 @@ ScriptStackOnWarnings=true
 
 ## Blueprint
 
-> [!tip]- Select
+> [!tip]- Select node
 > If you want to set a value to something depending on a value (usually a bool or a enum value) the **select** nodes are a perfect choice. <br>
 > Example: <br>
 > ![[Pasted image 20241111194529.png]]
@@ -691,6 +701,7 @@ More resources and tools if you want to go further.
 > - [Unreal Source Discord Server](https://discord.gg/unrealsource)
 > - [Cedric's Multiplayer Network Compendium](https://cedric-neukirchen.net/docs/category/multiplayer-network-compendium/)
 > - [Blueprints vs. C++: How They Fit Together and Why You Should Use Both](https://www.youtube.com/watch?v=VMZftEVDuCE)
+> - [Where to store persistent runtime data](https://wizardcell.com/unreal/persistent-data/#persistent-runtime-data)
 
 > [!abstract] Tools & plugins
 > A list of some of tools and plugins I used a lot when working with Blueprints (mostly free).

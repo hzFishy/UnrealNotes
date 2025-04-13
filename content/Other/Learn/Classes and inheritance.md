@@ -54,5 +54,9 @@ A simple way to solve this problem is to use the `Cast To <...>` node, it requir
 We can now retrieve the health variable and manipulate it as we wish.
 
 # Interfaces
+
+> [!Quote] [Source](https://users.cs.utah.edu/~germain/PPS/Topics/interfaces.html)
+> *"An interface is a description of the actions that an object can do... for example when you flip a light switch, the light goes on, you don't care how, just that it does. In Object Oriented Programming, an Interface is a description of all functions that an object must have in order to be an "X". Again, as an example, anything that "ACTS LIKE" a light, should have a turn_on() method and a turn_off() method. The **purpose** of interfaces is to allow **the computer** to **enforce** these properties and to know that an object of TYPE T (whatever the interface is ) must have functions called X,Y,Z, etc."*
+
 ==TODO==
 
