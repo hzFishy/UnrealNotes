@@ -22,7 +22,7 @@ Before calling `OnConstraintBroken` inside `UPhysicsConstraintComponent::OnConst
 Inside `FPhysScene_Chaos::OnSyncBodies`, if the `bIsBreaking` in `FJointConstraint, FOutputData` is true the `FConstraintBrokenDelegateWrapper` wrapper will be called (see `OnConstraintBrokenWrapper` above).
 
 > [!Note]- About `bIsBroken` in OutputData
-> It reflects if `IsConstraintEnabled` return false (`bIsBroken == !IsConstraintEnabled`)
+> It reflects if `IsConstraintEnabled` return false (`bIsBroken = !IsConstraintEnabled`)
 
 This output data is pulled and set in `FJointConstraintPhysicsProxy::PullFromPhysicsState` (see above) by reading the buffer `FDirtyJointConstraintData`.
 
@@ -30,13 +30,13 @@ The actual *set* of `bIsBreaking` (and the rest of the `FDirtyJointConstraintDat
 
 This calls `FPBDJointConstraints::IsConstraintBreaking` on a `FConstraintContainer` (templated to `FPBDJointConstraints` for `FPBDJointConstraintHandle`), which just reads the value of `bBreaking` on the element stored in `ConstraintStates`.
 
-This `bBreaking` state is set by `FPBDJointConstraints::SetConstraintBroken` (only called by `FPBDJointConstraints::BreakConstraint` and `FixConstraint` *(and by the way this also disables the constraint)*).
+This `bBreaking` state is set by `FPBDJointConstraints::SetConstraintBroken` (only called by `FPBDJointConstraints::BreakConstraint` *(by the way this also disables the constraint)* and `FixConstraint`).
 The only usage of this break function is `FPBDJointConstraints::SetSolverResults` which is called in `Chaos::Private::ScatterOutputImpl` (called by `FPBDJointContainerSolver::ScatterOutput`).
 
-This function will set the value of the argument `bIsBroken` by calling `IsBroken()` on the solver (`SolverType`, templated to `FPBDJointCachedSolver` here). This function just returns the value of the variable `bIsBroken` of the cached solver.
+This function will set the value of the argument `bIsBroken` by calling `IsBroken()` on the solver (templated to `FPBDJointCachedSolver` here). This function just returns the value of the variable `bIsBroken` of the cached solver.
 This variable is only set by `SetIsBroken()` which is only called in `Chaos::Private::ApplyPositionConstraintsImpl` (called by `FPBDJointContainerSolver::ApplyPositionConstraints`, search for `Solver.SetIsBroken`).
 
-This `Solver.SetIsBroken` calls occur because `GetJointShouldBreak` returned true.
+This `Solver.SetIsBroken` call occurs because `GetJointShouldBreak` returned true.
 Since `GetJointShouldBreak` is called on a `FPBDJointCachedSolver`  its doing some math to get the linear and angular impulse so you can't simply read some variables to get the values.
 
 > [!Note]- Debug values of `LinearImpulse` and `AngularImpulse` in `GetJointShouldBreak`
@@ -52,4 +52,5 @@ See [[Body Instance#Constraint]]
 Some interesting commands, a lot more available
 - `Stat ChaosConstraintSolver`
 - `Stat ChaosConstraintDetails`
+
 See [[Console commands & debugging|Console commands & debugging]] in `/Physics` for more Chaos commands
