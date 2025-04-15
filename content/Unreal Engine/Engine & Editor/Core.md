@@ -1,7 +1,7 @@
 # Core
 - [Engine various structures](https://dev.epicgames.com/community/learning/paths/0w/beginplay)
 - [The Unreal Engine Game Framework: From int main() to BeginPlay](https://www.youtube.com/watch?v=IaU2Hue-ApI)
-
+- [[Garbage Collection]]
 # Classes and types
 ## Game Framework Objects
 - Detailed list [here](https://wizardcell.com/unreal/persistent-data/#gameframework-objects) (WizardCell)
