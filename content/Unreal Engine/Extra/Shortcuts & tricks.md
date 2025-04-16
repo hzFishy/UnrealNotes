@@ -18,11 +18,21 @@ All the keys can be changed in the editor settings
 - Move (W)
 - Rotate (E)
 - Scale (R)
+- Pilot (Ctrl + Shift + P)
 
-### Miscs
+## Faster Level Design
+- Open level (Ctrl + O)
+- Toggle Translucent selection (T)
+- Group & Ungroup (Ctrl +G/Shift + G) [More details](https://www.unrealengine.com/fr/tech-blog/designer-s-guide-to-unreal-engine-keyboard-shortcuts)
 - Focus `Move the editor camera pivot on the selected object` (F)
-- Content Browser `Open the asset of the selected object (if any) in the latest actif content browser tab` (Ctrl + B)
 - Move selected object(s) without the 3 arrows: (X: Ctrl + Drag LMB), (Y: Ctrl + Drag RMB), (Z: Ctrl + Drag LMB+RMB)
+- Select all similar (Shift + E) [More details](https://www.cbgamedev.com/blog/quick-dev-tip-54-ue4-ue5-select-all-of-the-same)
+- Current folder feature, any asset dropped in the level from the CB will be placed in this folder (Select folder in Outliner -> Make current folder) [More details](https://forums.unrealengine.com/t/solved-normal-would-love-to-select-the-folder-that-actors-go-in-in-outliner/1168761/2?u=hzfishy)
+
+## Other
+- Content Browser `Open the asset of the selected object (if any) in the latest actif content browser tab` (Ctrl + B)
+- Tab Navigation (Ctrl + Tab)
+- Show navigation surface (P)
 
 ## Blueprint
 - Search `Nodes, keywords, variables, ...` (Ctrl + F)
@@ -41,7 +51,7 @@ All the keys can be changed in the editor settings
 
 # Tricks
 
-### Console commands
+## Console commands
 At the top of this page there are interesting console commands [[Console commands & vars]]
 ## Miscs
 
