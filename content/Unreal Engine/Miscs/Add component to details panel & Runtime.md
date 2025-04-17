@@ -17,22 +17,22 @@ UActorComponent* UCyComponentLibrary::AddRuntimeInstanceComponent(AActor* Actor,
 	return NewComponent;
 }
 ```
-**Template version
+
+**My Template version ([GitHub link](https://github.com/hzFishy/FishyUtils/blob/73eb0520f0d77f76787266bb9b4649d170959595/Source/FishyUtils/Public/Utility/FUUtilities.h#L12))**
 ```c++
 template<class T>  
-T* AddRuntimeInstanceComponent(AActor* Actor, TSubclassOf<T> ComponentClass)
+T* AddRuntimeInstanceComponent(AActor* Actor, TSubclassOf<T> ComponentClass = T::StaticClass())
 {  
-    if (!IsValid(Actor) || !IsValid(ComponentClass)) { return nullptr; }  
-  
+	if (!IsValid(Actor) || !IsValid(ComponentClass)) { return nullptr; }  
+	
     EObjectFlags Flags = RF_Transient;  
-    Flags &= ~RF_Transactional;  
-  
+    Flags &= ~RF_Transactional; // unset flag  
+    
     T* NewComponent = NewObject<T>(Actor, ComponentClass, NAME_None, Flags);  
     if (!IsValid(NewComponent)) { return nullptr; }  
-  
+    
     NewComponent->RegisterComponent();  
     Actor->AddInstanceComponent(NewComponent);  
-  
     return NewComponent;  
 }
 ```
