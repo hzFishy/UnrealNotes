@@ -14,8 +14,6 @@ In `UWorld::SpawnPlayActor`, `AGameModeBase::Login`, `AGameModeBase::InitNewPlay
 > To address this issue in PIE you can override Login in the game mode and read `PlaySettings->LastExecutedPlayModeLocation` (with `ULevelEditorPlaySettings`)
 
 
-```
-
 **To set your portal string:**
 - go in `DefaultEngine.ini`
 - if it doesn't already exist, add a `URL` section
