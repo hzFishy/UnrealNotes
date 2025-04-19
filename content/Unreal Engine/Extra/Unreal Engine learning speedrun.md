@@ -49,7 +49,8 @@ Here are the main components of the UE interface:
 > When you select an actor or asset, its properties and settings appear here, allowing you to tweak and configure various parameters.
 
 > [!example] Content browser (4)
-> It serves as your primary tool for managing assets, such as meshes, textures, materials, and blueprints
+> It serves as your primary tool for managing assets, such as meshes, textures, materials, and blueprints.
+> **It is strongly advised to always import assets using the Content Browser and not the regular file explorer** (there is somehow some exceptions).
 
 ## Viewport & Level
 ![[Screenshot_32.png]]
@@ -247,7 +248,7 @@ Here is a list of the most used variables types.
 > This is easily done using the `Format` node: <br>
 > ![[Pasted image 20241110105200.png]]
 > ![[Pasted image 20241110105151.png|550]]<br>
-> Here the `result` will be `Apple costs 3`. <br>
+> Here the `Result` will be `Apple costs 3`. <br>
 > **For each `{...}` in the `Format` input a new input pin will appear**
 
 > [!Info]- `Enum` type
@@ -702,6 +703,7 @@ More resources and tools if you want to go further.
 > - [Cedric's Multiplayer Network Compendium](https://cedric-neukirchen.net/docs/category/multiplayer-network-compendium/)
 > - [Blueprints vs. C++: How They Fit Together and Why You Should Use Both](https://www.youtube.com/watch?v=VMZftEVDuCE)
 > - [Where to store persistent runtime data](https://wizardcell.com/unreal/persistent-data/#persistent-runtime-data)
+> - [Unreal Engine 5 Beginner Tutorial - UE5 Starter Course](https://www.youtube.com/watch?v=k-zMkzmduqI)
 
 > [!abstract] Tools & plugins
 > A list of some of tools and plugins I used a lot when working with Blueprints (mostly free).
