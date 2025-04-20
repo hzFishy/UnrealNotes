@@ -1,10 +1,11 @@
 *More stuff can be found in the various pages in the blog, here is a not exhaustive list of great external blog/pages*
 
 # Internal resources
-- [[Core]] (And `UnrealEngine/Engine & Editor`)
+- [[Core]] (And `UnrealEngine/Engine & Editor` folder)
 - [[Live Coding & Hot Reload]]
-- `UnrealEngine/Networking`
-- `UnrealEngine/Performance`
+- `UnrealEngine/Networking` folder
+- `UnrealEngine/Performance` folder
+- `UnrealEngine/AI` folder
 
 
 # External resources
@@ -15,9 +16,9 @@
 - [Laura's Unreal C++ speedrun](https://landelare.github.io/2023/01/07/cpp-speedrun.html)
 
 ## Nice to check
-- [Multiplayer Network Compendium](https://cedric-neukirchen.net/docs/category/multiplayer-network-compendium/) (Also related to `UnrealEngine/Networking`)
+- [Multiplayer Network Compendium](https://cedric-neukirchen.net/docs/category/multiplayer-network-compendium/) (Also related to the `UnrealEngine/Networking` folder)
 - [Unreal Engine Persistent Data Compendium](https://wizardcell.com/unreal/persistent-data/) (Also related to [[Saving]])
-- [Unreal Engine Multiplayer Tips and Tricks](https://wizardcell.com/unreal/multiplayer-tips-and-tricks/) (Also related to `UnrealEngine/Networking`)
+- [Unreal Engine Multiplayer Tips and Tricks](https://wizardcell.com/unreal/multiplayer-tips-and-tricks/) (Also related to the `UnrealEngine/Networking` folder)
 - [Tom Looman's UE C++ Course **(Paid)**](https://courses.tomlooman.com/p/unrealengine-cpp?coupon_code=COMMUNITY15)
 - [Converting Blueprint to C++ (Official)](https://dev.epicgames.com/community/learning/courses/KJ/unreal-engine-converting-blueprint-to-c/kjB/unreal-engine-introduction-to-blueprint-vs-c)
 
