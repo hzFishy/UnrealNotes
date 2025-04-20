@@ -6,8 +6,8 @@
 - `p.Chaos.DebugDraw.Enabled 1`
 	- **Must be called so other commands work**
 - `p.Chaos.Solver.DebugDrawShapes 1`
-	- Red: Not simulated?
-	- Blue: Not simulated?
+	- Red: Not simulated, Static
+	- Blue: Not simulated, Movable
 	- Yellow: Simulated (Active)
 	- Gray: Simulated (Sleeping)
 
