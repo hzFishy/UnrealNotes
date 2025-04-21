@@ -1,5 +1,4 @@
-
-> [ikrima notes](https://ikrima.dev/ue4guide/networking/network-replication/sublevellevel-instance-streaming-replication/)
+See also [[Level Streaming]]
 
 - Load level on server and clients
 - Use same override name (NEEDS TO BE UNIQUE !)
