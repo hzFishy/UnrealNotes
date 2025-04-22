@@ -2,6 +2,7 @@
 
 Join the super cool [Unreal Source Discord Server](https://discord.gg/unrealsource)!
 # Internal resources
+- For a general intro to Unreal Engine see [[Unreal Engine learning speedrun]] (You can skip the Blueprint part)
 - [[Core]] (And `UnrealEngine/Engine & Editor` folder)
 - [[Live Coding & Hot Reload]]
 - `UnrealEngine/Networking` folder
@@ -16,7 +17,8 @@ Join the super cool [Unreal Source Discord Server](https://discord.gg/unrealsour
 - [Laura's Unreal C++ speedrun](https://landelare.github.io/2023/01/07/cpp-speedrun.html)
 
 ## Nice to check
-- [Multiplayer Network Compendium](https://cedric-neukirchen.net/docs/category/multiplayer-network-compendium/) (Also related to the `UnrealEngine/Networking` folder)
+- [Common unreal slacker issues & tips](https://tackytortoise.github.io/2022/06/24/common-slacker-issues.html)
+- [Multiplayer Network Compendium](https://cedric-neukirchen.net/docs/category/multiplayer-network-compendium/) (Multiplayer aside, it explains very well many gameplay framework classes) (Also related to the `UnrealEngine/Networking` folder)
 - [Unreal Engine Persistent Data Compendium](https://wizardcell.com/unreal/persistent-data/) (Also related to [[Saving]])
 - [Unreal Engine Multiplayer Tips and Tricks](https://wizardcell.com/unreal/multiplayer-tips-and-tricks/) (Also related to the `UnrealEngine/Networking` folder)
 - [Tom Looman's UE C++ Course **(Paid)**](https://courses.tomlooman.com/p/unrealengine-cpp?coupon_code=COMMUNITY15)
