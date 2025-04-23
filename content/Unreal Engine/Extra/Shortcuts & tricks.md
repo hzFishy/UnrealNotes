@@ -52,7 +52,7 @@ All the keys can be changed in the editor settings
 # Tricks
 
 ## Console commands
-At the top of this page there are interesting console commands [[Console commands & vars]]
+At the top of this page there are interesting console commands [[Console commands & variables]]
 ## Miscs
 
 **Show 3D Widget on Vector variable**

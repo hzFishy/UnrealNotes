@@ -1,5 +1,5 @@
 
-# Engine & Editor commands
+# Engine & Editor cmds/vars
 
 Object console commands list [here](https://dev.epicgames.com/community/learning/tutorials/dXl5/advanced-debugging-in-unreal-engine#objconsolecommand)
 You can have a cool panel with your console commands & vars in `Window->Console Variables`
@@ -24,7 +24,7 @@ You can either use the console command window, set the console variable value in
 ### Physics
 - See [[Console commands & debugging|Console commands & debugging]] (in `/Physics/`)
 
-# Making your own console commands/vars
+# Making your own console cmds/vars
 - [Details about `Exec` functions](https://unreal.gg-labs.com/wiki-archives/common-pitfalls/exec-functions)
 - For static variables (int32, float, bool, FString) see `FAutoConsoleVariableRef`
 - For commands see `FAutoConsoleObject` and the childs such as `FAutoConsoleCommandWithWorld` or `FAutoConsoleCommand`
