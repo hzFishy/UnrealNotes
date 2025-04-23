@@ -4,19 +4,24 @@
 Object console commands list [here](https://dev.epicgames.com/community/learning/tutorials/dXl5/advanced-debugging-in-unreal-engine#objconsolecommand)
 You can have a cool panel with your console commands & vars in `Window->Console Variables`
 ![[Pasted image 20250411181357.png]]
-## Miscs Commands
+
+## Saving console variables
+You can either use the console command window, set the console variable value in the correct `.init` in the correct section, or see `ConsoleVariables.ini` (special file that doesn't exist by default, can be copied from source engine).
+
+## List of console cmds/vars
+### Miscs
 - `ShowDebug [Name]`, by default this will give details about the player pawn/character
 - `ToggleDisplay` : disables all HUD
 - `show COLLISION` : displays collisions, works in PIE
 - `slomo <new time dilation>`: changes the world time dilation
 
-## Rendering commands
+### Rendering
 - `FreezeRendering`, good to use with `ToggleDebugCamera`, allows you to see how culling works, with extra stuff like seeing the POV of different steps of rendering (press B)
 - `ToggleDebugCamera`
 - `ProfileGPU` panel, also named "GPU Visualizer"
 - `r.Streaming.PoolSize XXX`
 
-## Physics commands
+### Physics
 - See [[Console commands & debugging|Console commands & debugging]] (in `/Physics/`)
 
 # Making your own console commands/vars
