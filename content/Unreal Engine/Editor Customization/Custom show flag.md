@@ -1,5 +1,5 @@
 
-Great [article](https://itsbaffled.github.io/posts/UE/Easier-Editor-Debug-Visualization) by Baffled with an example and code.
+Great [article](https://itsbaffled.github.io/posts/UE/Easier-Editor-Debug-Visualization) by Baffled with a full example and more detailed code.
 
 
 **Quick snippet**
@@ -36,6 +36,7 @@ void BPGTargetDrawing::DrawTargetFlag(UCanvas* Canvas, APlayerController* PC)
 
 > [!info] More about `TCustomShowFlag`
 > > [!Warning] Include
+> > 
 > > As mentioned [here](https://zomgmoz.tv/unreal/ShowFlags) *"If you define TCustomShowFlag values in a .h file, you can't include the header from more than one .cpp file, as it will cause an error. 
 > > You must put TCustomShowFlag definitions in a .cpp file."*
 > 
