@@ -11,10 +11,11 @@ Join the super cool [Unreal Source Discord Server](https://discord.gg/unrealsour
 
 # External resources
 *Some of those resources are mentioned in various places in this blog*
-## Must read
+## Must see
 - [Programming with C++ (Official)](https://dev.epicgames.com/documentation/en-us/unreal-engine/programming-with-cplusplus-in-unreal-engine?application_version=5.4)
 - [Tom Looman's UE C++ Complete Guide](https://www.tomlooman.com/unreal-engine-cpp-guide/)
 - [Laura's Unreal C++ speedrun](https://landelare.github.io/2023/01/07/cpp-speedrun.html)
+- [Blueprints vs. C++: How They Fit Together and Why You Should Use Both](https://www.youtube.com/watch?v=VMZftEVDuCE)
 
 ## Nice to check
 - [Common unreal slacker issues & tips](https://tackytortoise.github.io/2022/06/24/common-slacker-issues.html)
