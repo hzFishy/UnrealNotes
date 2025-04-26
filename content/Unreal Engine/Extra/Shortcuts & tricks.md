@@ -33,6 +33,7 @@ All the keys can be changed in the editor settings
 - Content Browser `Open the asset of the selected object (if any) in the latest actif content browser tab` (Ctrl + B)
 - Tab Navigation (Ctrl + Tab)
 - Show navigation surface (P)
+- Screen capture (F9)
 
 ## Blueprint
 - Search `Nodes, keywords, variables, ...` (Ctrl + F)
