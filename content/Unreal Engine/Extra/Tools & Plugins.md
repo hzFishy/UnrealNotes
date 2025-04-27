@@ -12,6 +12,7 @@
 - [Component Pointer Fixer](https://github.com/Duroxxigar/ComponentPointerFixer) - Helper to fix up broken C++ components added to blueprint classes.
 - [Dependency Analyser](https://github.com/alessianigretti/DependencyAnalyser) - Useful to check dependencies count and size in your project.
 - [BlueprintComponentReferencePlugin](https://github.com/aquanox/BlueprintComponentReferencePlugin) - Allows you to reference in editor UI a component inside the owning actor and get it at runtime.
+- [Editor GB button](https://github.com/HomerJohnston/UE-EditorGCButton) simple UI button to unload unreferenced assets.
 
 ## ImGui
 - [DearImGui](https://github.com/ocornut/imgui)

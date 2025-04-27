@@ -44,9 +44,12 @@ Since `GetJointShouldBreak` is called on a `FPBDJointCachedSolver`  its doing so
 > - Add a conditional breakpoint by using `LinearForceSq > LinearThresholdSq` at the last line of the first if block
 > - To get the value of `LinearForceSq` run the following `(LinearImpulse.X*LinearImpulse.X + LinearImpulse.Y*LinearImpulse.Y + LinearImpulse.Z*LinearImpulse.Z) / (Dt * Dt * Dt * Dt)`. This mimics the math used to get `LinearForceSq`.
 
+
+## Motor
+Orientation, Position and Velocity Target of the motors are relative to the constraint origin.
+
 # Constraint on body instance
 See [[Body Instance#Constraint]]
-
 
 # Commands & debug
 Some interesting commands, a lot more available
