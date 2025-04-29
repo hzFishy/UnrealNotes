@@ -51,7 +51,7 @@ In `ISimCallbackObject` you have `OnContactModification_Internal` from `ContactM
 
 > [!error] `ISimCallbackObject` methods can be called on any thread.
 > So be careful when using game thread only stuff.
-> For example, don't use `xxx__AssumesLocked` methods
+> For example, don't use `xxx__AssumesLocked` methods (at least directly without safe checks)
 
 The `Chaos::FCollisionContactModifier& Modifier` received in `OnContactModification_Internal` contains a list of `Constraints` (Lot's of details at `FPBDCollisionConstraint` declaration).
 

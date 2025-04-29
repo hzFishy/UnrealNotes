@@ -1,8 +1,8 @@
 
 # Physics Constraint Component
 
-> [!Danger] The child is `Component/Bone 1` and the parent is `Component/Bone 2` !!
-
+> [!Danger]- The child is `Component/Bone 1` and the parent is `Component/Bone 2` !!
+> ![[Pasted image 20250429105432 scaled.png]]
 ## Stability
 To have a stable chain of physics constraints (eg: multiple capsules forming a cable) you should have everything parent correctly.
 
