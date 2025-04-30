@@ -155,6 +155,7 @@ if (UWorld* World = CapsuleComponent->GetWorld())
 
 ## `CollisionEnabled` in depth
 From what I've found in the source code, there **is** an actual performance change depending on the `ECollisionEnabled::Type` value set on your component.
+
 Full details:
 - **No Collision**:
 	- Will not create any representation in the physics engine. Cannot be used for spatial queries (raycasts, sweeps, overlaps) or simulation (rigid body, constraints). 
@@ -163,7 +164,7 @@ Full details:
 	- Only used for spatial queries (raycasts, sweeps, and overlaps). Cannot be used for simulation (rigid body, constraints). Useful for character movement and things that do not need physical simulation.
 	- Performance gains by keeping data out of simulation tree.  
 - **Physics Only**:
-	- Only used only for physics simulation (rigid body, constraints). Cannot be used for spatial queries (raycasts, sweeps, overlaps). Useful for jiggly bits on characters that do not need per bone detection.
+	- Only used for physics simulation (rigid body, constraints). Cannot be used for spatial queries (raycasts, sweeps, overlaps). Useful for jiggly bits on characters that do not need per bone detection.
 	- Performance gains by keeping data out of query tree  
 - **Collision Enabled**:
 	- Can be used for both spatial queries (raycasts, sweeps, overlaps) and simulation (rigid body, constraints).  
