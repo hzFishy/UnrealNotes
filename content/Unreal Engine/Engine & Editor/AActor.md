@@ -1,0 +1,2 @@
+- [Actor lifecycle](https://dev.epicgames.com/documentation/en-us/unreal-engine/unreal-engine-actor-lifecycle)
+- Extra details in `Actor.h` file

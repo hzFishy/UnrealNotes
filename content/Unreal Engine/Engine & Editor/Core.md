@@ -9,15 +9,9 @@
 - [More](https://1danielcoelho.github.io/unreal-engine-basics-base-classes/) details on UObject, UClass, CDO and UBlueprint (See also [[UBlueprint]])
 
 ## Object
-- `ClassPrivate` Is the `UClass` of the object instance. The thing you get back when you call `GetClass()`.
-- If a object was loaded from "a loader" (`FAsyncPackage` or `LoadPackageInternal`) it will have the `RF_WasLoaded` flag. This can be very useful to use on actors to know if they got loaded from disk or spawned at runtime. 
-- [UObject Construction & Post Initalization](https://github.com/staticJPL/Unreal-Engine-Documentation/blob/6fb6beee4484bd4b15cf037dbccafc823e21457b/Unreal%20Engine%20UObject%20Construction%20%26%20Post%20Initalization/Main.md)
-- [[UObject virtuals details]]
-- [[Reflection System]]
-
+- [[UObject]]
 ## Actors
-- [Actor lifecycle](https://dev.epicgames.com/documentation/en-us/unreal-engine/unreal-engine-actor-lifecycle)
-- Extra details in `Actor.h` file
+- [[AActor]]
 
 ## Blueprints
 - [[UBlueprint]]
