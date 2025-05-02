@@ -199,7 +199,11 @@ You can find PIE settings here: <br>
 
 
 > [!Info] To go further
-> More info can be found on [Cedric's Multiplayer Compendium](https://cedric-neukirchen.net/docs/multiplayer-compendium/common-classes/), [WizardCell's Persistent Data Compendium](https://wizardcell.com/unreal/persistent-data/#gameframework-objects) and the [Official UE C++ API Reference](https://dev.epicgames.com/documentation/en-us/unreal-engine/API/Classes)
+> [This](https://www.youtube.com/watch?v=nL4NmaHNaGc) video of less than 10 minutes covers most of the basics of the UE Gameplay Framework very well.
+> 
+> More info can be found on [Cedric's Multiplayer Compendium](https://cedric-neukirchen.net/docs/multiplayer-compendium/common-classes/), [WizardCell's Persistent Data Compendium](https://wizardcell.com/unreal/persistent-data/#gameframework-objects) and the [Official UE C++ API Reference](https://dev.epicgames.com/documentation/en-us/unreal-engine/API/Classes).
+> 
+> *More can be found in the [[Unreal Engine learning speedrun#More]] section*
 
 ## Blueprints
 > A mix of my naming convention and what most people do: [[Working as a team in Unreal Engine#For Designers]]
@@ -691,6 +695,7 @@ More resources and tools if you want to go further.
 > - *... and more can be found by using the search tool*
 > 
 > **Official**
+> - [Switching to Unreal | Understanding Unreal Engine Gameplay Framework](https://www.youtube.com/watch?v=nL4NmaHNaGc)
 > - [Content Examples Project](https://dev.epicgames.com/documentation/en-us/unreal-engine/content-examples-sample-project-for-unreal-engine)
 > - [Beginplay - Engine breakdown](https://dev.epicgames.com/community/learning/paths/0w/unreal-engine-beginplay)
 > - [Epic Games UE learn portal](https://dev.epicgames.com/community/unreal-engine/getting-started/games)
