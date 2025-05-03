@@ -1,10 +1,14 @@
 
 Very good post about [Stop Live Coding: The broken promise of a Unity-like workflow in Unreal](https://dev.northstarhana.com/Unreal-Engine/Stop-Live-Coding).
 
-to **completely remove Reinstancing & hot reload (not live coding)**
-https://dev.northstarhana.com/Unreal-Engine/Defeating-Hot-Reload-and-Reinstancing
+To **completely remove Reinstancing & hot reload (not live coding)**
+> https://dev.northstarhana.com/Unreal-Engine/Defeating-Hot-Reload-and-Reinstancing
 
-## Overview of Live Coding
+## TLDR; What Can I do with LC?
+*[imgur link](https://imgur.com/a/what-can-i-do-with-live-coding-UEoRFWs)* <br>
+![](https://i.imgur.com/tZo2l7s.png)
+
+## Overview of how Live Coding works
 *(Thanks to Blue Man, UE Source Discord)*
 
 It creates a new patch, which is actually an exe

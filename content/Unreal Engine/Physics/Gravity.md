@@ -21,3 +21,7 @@ FVector CancelForce = -SlopeDirection * GravityAlongSlope * PlayerCapsuleBodyIns
 PlayerCapsuleBodyInstance->AddForce(CancelForce, true, false);
 ```
 
+
+## Custom gravity
+[Custom Gravity in UE 5.4](https://dev.epicgames.com/community/learning/tutorials/w6l7/unreal-engine-custom-gravity-in-ue-5-4)
+

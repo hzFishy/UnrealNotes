@@ -1,10 +1,15 @@
 *More stuff can be found in the various pages in the blog, here is a not exhaustive list of great external blog/pages*
 
-Join the super cool [Unreal Source Discord Server](https://discord.gg/unrealsource)!
+**Join the super cool [Unreal Source Discord Server](https://discord.gg/unrealsource)!**
+
+
+> [!Warning] If you are completely new to C++
+> If you never did any C++ beforehand, I would highly recommend getting the basics of C++ without learning UE at the same time, [learncpp.com](https://www.learncpp.com/) is a good starting point.
+
 # Internal resources
 - For a general intro to Unreal Engine see [[Unreal Engine learning speedrun]] (You can skip the Blueprint part)
 - [[Core]] (And `UnrealEngine/Engine & Editor` folder)
-- [[Live Coding & Hot Reload]]
+- [[Unreal Engine/Engine & Editor/Live Coding & Hot Reload]]
 - `UnrealEngine/Networking` folder
 - `UnrealEngine/Performance` folder
 - `UnrealEngine/AI` folder
