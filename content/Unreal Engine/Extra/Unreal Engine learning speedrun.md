@@ -375,6 +375,16 @@ Mainly:
 > A pure function has no exec pins, and **is evaluated for each connection**. This is not the case for impure nodes because it caches the result. This can be a big issue if the pure node is used multiple times and is heavy, or if the result is somewhat random.
 > A solution is to cache the result in a variable (or a local variable if you can). But since 5.5 you can right click any pure node and "Show exec pins", this will transform a pure node to a impure one.
 
+> [!Danger]- Function paths with no returns easily leads to issues
+> *Found by zomg*
+> 
+> *"if you have a blueprint function which returns a value only from _some_ branches of execution, the branches which don't explicitly return a value will return the same value as the function returned previously.*
+> 
+> *In this example every subsequent calls will return 25"*<br>
+> ![[Data/Pasted image 20250503191052.png]]
+> 
+> **This means that for all paths you should use the Return node**
+
 For event dispatchers, it's a bit special, in blueprints it's called `Event Dispatchers` but it's known in programming as delegates.
 See a delegate like a special event that you can "call"  (known as broadcast) and "bind to" (known as subscribe). It's very useful if you want to send an event to anyone interested in it.
 Delegates are **instance dependent** (you subscribe to a delegate of a object instance), they can have multiple inputs and can't return anything.

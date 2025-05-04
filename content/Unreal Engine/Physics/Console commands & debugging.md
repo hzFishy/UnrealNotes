@@ -5,9 +5,11 @@
 - `stat Chaos`
 - `p.Chaos.DebugDraw.Enabled 1`
 	- **Must be called so other commands work**
-- `p.Chaos.Solver.DebugDrawShapes 1`
+- `p.Chaos.Solver.DebugDrawShapes 1` (engine will call `FPBDRigidsSolver::DebugDrawShapes` each frame)
 	- Red: Not simulated, Static
 	- Blue: Not simulated, Movable
 	- Yellow: Simulated (Active)
 	- Gray: Simulated (Sleeping)
 
+
+For more debug draw methods, see `ChaosDebugDraw.cpp` file
