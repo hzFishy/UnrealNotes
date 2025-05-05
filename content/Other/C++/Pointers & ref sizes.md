@@ -1,5 +1,5 @@
 
-- A `ref (&)` *is* `pointer (*)` that by definition can't be null.
+- A `ref (&)` *is* a `pointer (*)` who by definition can't be null.
 - A pointer holds a memory address.
 - A pointer has a size of 64bits, it doesn't matter what type it is (this is why you can forward declare in header when you use a pointer).
 
