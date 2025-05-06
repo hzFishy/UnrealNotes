@@ -1,15 +1,15 @@
 **PhysX isn't taken (fully) into account, only Chaos as we are taking into considerations UE5+ versions**
 
-## Profiles
+# Profiles
 Profiles can be created in a unlimited amount, so be free to use it at anytime a specific "thing" with a specific set of collisions rules exists more than once.
 
-## Collision rules
+# Collision rules
 The Engine takes the lowest collision rule.
 
 > [!Info]- Example
 > If i got 2 object types, ObjectA and ObjectB. ObjectA wants to block ObjectB, but ObjectB ignores ObjectA : then both can overlap, because Ignore is lower than Block.
 
-## Custom collisions per instance(s)
+# Custom collisions per instance(s)
 
 ## Simple move
 Like traces you can give a list of actors/components to ignore **WHEN MOVING** to any `UPrimitiveComponent`. This works on not-simulated physic objects.
@@ -153,7 +153,7 @@ if (UWorld* World = CapsuleComponent->GetWorld())
 ```
 
 
-## `CollisionEnabled` in depth
+### `CollisionEnabled` in depth
 From what I've found in the source code, there **is** an actual performance change depending on the `ECollisionEnabled::Type` value set on your component.
 
 Full details:
@@ -168,6 +168,10 @@ Full details:
 	- Performance gains by keeping data out of query tree  
 - **Collision Enabled**:
 	- Can be used for both spatial queries (raycasts, sweeps, overlaps) and simulation (rigid body, constraints).  
+
+
+### Overlap per bone
+Enable `bMultiBodyOverlap` on the skeletal mesh.
 
 # Resources & tips
 - [Collision Data in UE5: Practical Tips for Managing Collision Settings & Queries | Unreal Fest 2023](https://www.youtube.com/watch?v=xIQI6nXFygA)
