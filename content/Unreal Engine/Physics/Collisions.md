@@ -1,7 +1,10 @@
 **PhysX isn't taken (fully) into account, only Chaos as we are taking into considerations UE5+ versions**
+# Resources & tips
+- [Collision Data in UE5: Practical Tips for Managing Collision Settings & Queries | Unreal Fest 2023](https://www.youtube.com/watch?v=xIQI6nXFygA)
 
 # Profiles
 Profiles can be created in a unlimited amount, so be free to use it at anytime a specific "thing" with a specific set of collisions rules exists more than once.
+
 
 # Collision rules
 The Engine takes the lowest collision rule.
@@ -153,7 +156,8 @@ if (UWorld* World = CapsuleComponent->GetWorld())
 ```
 
 
-### `CollisionEnabled` in depth
+
+# `CollisionEnabled` in depth
 From what I've found in the source code, there **is** an actual performance change depending on the `ECollisionEnabled::Type` value set on your component.
 
 Full details:
@@ -170,8 +174,20 @@ Full details:
 	- Can be used for both spatial queries (raycasts, sweeps, overlaps) and simulation (rigid body, constraints).  
 
 
-### Overlap per bone
-Enable `bMultiBodyOverlap` on the skeletal mesh.
+# Overlapping
 
-# Resources & tips
-- [Collision Data in UE5: Practical Tips for Managing Collision Settings & Queries | Unreal Fest 2023](https://www.youtube.com/watch?v=xIQI6nXFygA)
+## Per actor ignore
+You can use `MoveIgnoreActors` and `MoveIgnoreComponents`
+
+## Breakdown
+When a primitive is moved, `UPrimitiveComponent::MoveComponentImpl` will get called.
+near the end it will call `UPrimitiveComponent::UpdateOverlaps` which calls `UPrimitiveComponent::UpdateOverlapsImpl`.
+
+This is where lots of stuff happens, including `UPrimitiveComponent::BeginComponentOverlap` and `UPrimitiveComponent::EndComponentOverlap.` 
+Inside these 2 functions other stuff happens including the call to the `OnComponentBeginOverlap` and `OnComponentEndOverlap` delegates. This is also where `OverlappingComponents` is updated
+
+
+## Overlap per bone
+Enable `bMultiBodyOverlap` on the skeletal mesh should do the job, but its not the case.
+A workaround is to do a overlap test for all SKMC bodies when a overlap happens between a primitive and a SKMC
+
