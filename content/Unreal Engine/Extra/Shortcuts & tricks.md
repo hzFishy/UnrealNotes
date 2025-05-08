@@ -57,7 +57,7 @@ At the top of this page there are interesting console commands [[Console command
 ## Miscs
 
 **Show 3D Widget on Vector variable**
-> `MakeEditWidget` in C++
+> `meta=(MakeEditWidget)` in C++
 > ![[Pasted image 20250412162241.png]]
 
 **Keep Simulation Changes**
