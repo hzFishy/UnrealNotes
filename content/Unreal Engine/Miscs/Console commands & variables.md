@@ -20,6 +20,7 @@ You can either use the console command window, set the console variable value in
 - `ToggleDebugCamera`
 - `ProfileGPU` panel, also named "GPU Visualizer"
 - `r.Streaming.PoolSize XXX`
+- `r.VisualizeOccludedPrimitives` and `r.AllowOcclusionQueries`
 
 ### Physics
 - See [[Console commands & debugging|Console commands & debugging]] (in `/Physics/`)
