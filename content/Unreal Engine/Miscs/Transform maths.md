@@ -1,5 +1,5 @@
 
-### Rotate a object around another
+## Rotate a object around another
 
 ```c++
 // TestTransform is the actual position
@@ -9,3 +9,11 @@ FVector OffsetPos = TestTransform.GetLocation() - ReferencePointTestTransform.Ge
 const FVector RotatedOffset = OffsetTestTransform.GetRotation().RotateVector(OffsetPos);  
 TestTransform.SetLocation(ReferencePointTestTransform.GetLocation() + RotatedOffset);
 ```
+
+## Transform world/local conversion
+
+**World to local**
+Use `Transform XXX`
+
+**Local to world**
+use `Inverse Transform XXX`
