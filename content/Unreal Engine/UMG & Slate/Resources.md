@@ -1,8 +1,10 @@
 
-# Overall
+# UMG
 - Check `UI_UMG` level in the Content Examples project.
 - [UMG Slate Compendium](https://github.com/YawLighthouse/UMG-Slate-Compendium)
 
+# Slate
+- [Slate UI Framework (Docs) ](https://dev.epicgames.com/documentation/en-us/unreal-engine/slate-user-interface-programming-framework-for-unreal-engine)
 
 # Specific examples
 ## Custom progress bar
