@@ -1,4 +1,15 @@
-*thanks to duroxxigar on the Unreal Source discord !*
+*thanks to duroxxigar on the Unreal Source discord for writing this message after I asked about the following points in Godot (compared to Unity/UE):*
+- Rendering
+- QoL
+- Data storage (DT/DAs ?)
+- Multiplayer
+- AI tools (pathfinding and so on)
+- Gameplay framework (just comps ? or stuff like UE GM/GS/PS/PC/pawn)
+- VCS support
+- SFX/VFX tools and performance
+- UI (is it shit like unity components or better like UMG)
+
+**His answer:**
 
 **Rendering** is still one of its weakest areas, performance wise. Still has glaring performance problems with its GI solution. It also still has issues with shadows. Light baking is a fast process, compared to older versions. And it _feels_ faster than UE's light baking. It uses GPU to light bake and with UE - I've always had issues with the GPU doing the light bakes. The renderer isn't as customizable as Unity, but they are still working towards being able to replace the renderer entirely like you can do with the physics engine. Not 100% there yet, but that is the goal.
 
@@ -24,4 +35,5 @@ No concept of a **gameplay** framework. You build everything yourself. Make scen
 
 **UI** - generally one of the highlights of Godot. One of the things people love most about it. Better than Unity, slightly worse than UMG (mainly because of some of the advanced UI stuff that some people want to do). But for most use cases, I'd say it is pretty comparable to UMG. Others may disagree but I don't see much of a big difference honestly. At least in general usage.
 
-Overall, for 3D - it is still pretty rough unless you want to build your own tooling. Then it is generally alright. Like, its skeleton IK stuff is still in a very rough spot after like 3 rewrites since 4.0. That said, this kind of stuff only matters based ont he game that you're making. For 2D, it is generally pretty dang good.
+Overall, for 3D - it is still pretty rough unless you want to build your own tooling. Then it is generally alright. Like, its skeleton IK stuff is still in a very rough spot after like 3 rewrites since 4.0. That said, this kind of stuff only matters based on the game that you're making. For 2D, it is generally pretty dang good.
+
