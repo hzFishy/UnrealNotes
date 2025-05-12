@@ -13,6 +13,7 @@
 - [Dependency Analyser](https://github.com/alessianigretti/DependencyAnalyser) - Useful to check dependencies count and size in your project.
 - [BlueprintComponentReferencePlugin](https://github.com/aquanox/BlueprintComponentReferencePlugin) - Allows you to reference in editor UI a component inside the owning actor and get it at runtime.
 - [Editor GB button](https://github.com/HomerJohnston/UE-EditorGCButton) simple UI button to unload unreferenced assets.
+- [MarkdownAsset](https://github.com/gwaredd/MarkdownAsset) allows you to embed multiple types of markdowns as a new asset type in editor.
 
 ## ImGui
 - [DearImGui](https://github.com/ocornut/imgui)

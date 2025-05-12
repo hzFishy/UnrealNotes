@@ -1,4 +1,4 @@
-*thanks to duroxxigar on the Unreal Source discord for writing this message after I asked about the following points in Godot (compared to Unity/UE):*
+*thanks to duroxxigar on the Unreal Source Discord for writing this message after I asked about the following points in Godot (compared to Unity/UE):*
 - Rendering
 - QoL
 - Data storage (DT/DAs ?)
@@ -9,6 +9,7 @@
 - SFX/VFX tools and performance
 - UI (is it shit like unity components or better like UMG)
 
+---
 **His answer:**
 
 **Rendering** is still one of its weakest areas, performance wise. Still has glaring performance problems with its GI solution. It also still has issues with shadows. Light baking is a fast process, compared to older versions. And it _feels_ faster than UE's light baking. It uses GPU to light bake and with UE - I've always had issues with the GPU doing the light bakes. The renderer isn't as customizable as Unity, but they are still working towards being able to replace the renderer entirely like you can do with the physics engine. Not 100% there yet, but that is the goal.
