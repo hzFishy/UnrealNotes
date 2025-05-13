@@ -86,3 +86,4 @@ I am not an expert in this domain, most of my insights comes from people with ex
 >
 >What's progressing is small models, you can now run a 32B local model on 1 GPU that will be almost on par with best of the best
 
+Analysis published not long before his message that matches his observations and insight: [How far can reasoning models scale?]([https://epoch.ai/gradient-updates/how-far-can-reasoning-models-scale](https://epoch.ai/gradient-updates/how-far-can-reasoning-models-scale "https://epoch.ai/gradient-updates/how-far-can-reasoning-models-scale"))
