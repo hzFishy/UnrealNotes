@@ -1,4 +1,4 @@
-Snippets taken from [here](https://1danielcoelho.github.io/unreal-engine-basics-base-classes/)
+Snippets taken from [here](https://1danielcoelho.github.io/unreal-engine-basics-base-classes/) (if link is broken use [this](https://github.com/1danielcoelho/1danielcoelho.github.io/blob/main/_posts/2021-02-14-unreal-engine-basics-base-classes.md))
 
 ```c++
 UCLASS()
@@ -7,16 +7,16 @@ class UMyObject : public UObject
     GENERATED_BODY()
 
 public:
-    UFUNCTION( BlueprintCallable )
+    UFUNCTION(BlueprintCallable)
     float Multiply(float OtherValue)
     {
         return MyValue * OtherValue;
     }
 
-    UPROPERTY( EditAnywhere )
+    UPROPERTY(EditAnywhere)
     float MyValue = 2.3f;
 
-    UPROPERTY( EditAnywhere )
+    UPROPERTY(EditAnywhere)
     TArray<int32> MyValueArray;
 
     float UnAnnotatedValue = 3.0f;
@@ -26,9 +26,7 @@ public:
 ```cpp
 UClass* MyObjectsClass = UMyObject::StaticClass();
 
-for ( TFieldIterator<FProperty> PropertyIterator( MyObjectsClass );
-      PropertyIterator;
-      ++PropertyIterator )
+for (TFieldIterator<FProperty> PropertyIterator( MyObjectsClass); PropertyIterator; ++PropertyIterator )
 {
     FProperty* Property = *PropertyIterator;
 
@@ -36,13 +34,11 @@ for ( TFieldIterator<FProperty> PropertyIterator( MyObjectsClass );
     UE_LOG( LogTemp, Log, TEXT( "%s" ), *Property->GetName() );
 }
 
-for ( TFieldIterator<UFunction> FunctionIterator( MyObjectsClass );
-      FunctionIterator;
-      ++FunctionIterator )
+for (TFieldIterator<UFunction> FunctionIterator( MyObjectsClass); FunctionIterator; ++FunctionIterator)
 {
     UFunction* Func = *FunctionIterator;
 
     // Would log Multiply
-    UE_LOG( LogTemp, Log, TEXT( "%s" ), *FunctionIterator->GetName() );
+    UE_LOG(LogTemp, Log, TEXT( "%s" ), *FunctionIterator->GetName());
 }
 ```
