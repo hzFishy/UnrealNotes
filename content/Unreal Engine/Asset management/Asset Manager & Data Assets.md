@@ -7,7 +7,7 @@
 > 
 > In other words: *"LoadSync halts all requests in the queue. They can't resume async so SM handles this by sync loading them"*
 
-# Data Assets
+# Primary Data Asset
 
 Example on why and how to use: [https://www.tomlooman.com/unreal-engine-asset-manager-async-loading/](https://www.tomlooman.com/unreal-engine-asset-manager-async-loading/)
 
@@ -24,7 +24,12 @@ Example on why and how to use: [https://www.tomlooman.com/unreal-engine-asset-ma
 
 - filter PDAs using tags [Discord message](https://discord.com/channels/187217643009212416/221799439008923648/1248689350674481263)
 
+## Asset Bundles
+See **Asset Bundles** section [here](https://www.tomlooman.com/unreal-engine-asset-manager-async-loading/)
+To include nested asset bundles see [IncludeAssetBundles](https://unreal-garden.com/docs/uproperty/#includeassetbundles)
+
 # Asset Manager
 
 - [https://www.tomlooman.com/unreal-engine-asset-manager-async-loading/](https://www.tomlooman.com/unreal-engine-asset-manager-async-loading/)
 - [https://unrealcommunity.wiki/using-the-asset-manager-qj38astq](https://unrealcommunity.wiki/using-the-asset-manager-qj38astq)
+
