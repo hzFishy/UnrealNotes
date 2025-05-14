@@ -264,7 +264,6 @@ by default it will create and request a new move each tick (while the task is ac
 - Editor State Tree data (such as theme color list) is `UStateTreeEditorData`
 - State Tree Asset is made in `UStateTreeFactory::FactoryCreateNew`
 
-
 ## Instant Data
 You cannot store a instance data ptr for long because it may be reallocated on data changes.
 See `TStateTreeInstanceDataStructRef` for mrore info on how to keep the reference.

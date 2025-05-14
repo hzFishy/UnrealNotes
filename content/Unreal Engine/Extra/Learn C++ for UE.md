@@ -32,7 +32,7 @@
 
 
 ## Niche cases
-- GAS [[Unreal Engine/GAS/Resources|Resources]]
+- GAS [[Unreal Engine/GAS/_Resources (GAS)|_Resources (GAS)]]
 - [Animating in C++: Curves and Easing Functions](https://www.tomlooman.com/animating-in-cpp-curves-and-easing-functions/)
 - [Unreal Engine C++ Save System (SaveGame)](https://www.tomlooman.com/unreal-engine-cpp-save-system/) (See also [[Saving]])
 - ... and more can be found on [Tom Looman's posts browser](https://www.tomlooman.com/?post_type=post) and over the internet!
