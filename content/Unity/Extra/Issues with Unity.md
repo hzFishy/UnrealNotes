@@ -1,5 +1,5 @@
 
-# Quality of life:
+# Quality of life
 - Cannot open multiple prefab tabs
 
 # Viewport
