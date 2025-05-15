@@ -1,5 +1,8 @@
 Snippets taken from [here](https://1danielcoelho.github.io/unreal-engine-basics-base-classes/) (if link is broken use [this](https://github.com/1danielcoelho/1danielcoelho.github.io/blob/main/_posts/2021-02-14-unreal-engine-basics-base-classes.md))
 
+# Example
+
+**Dummy class**
 ```c++
 UCLASS()
 class UMyObject : public UObject
@@ -23,6 +26,8 @@ public:
 };
 ```
 
+
+**Iterate the fields and functions**
 ```cpp
 UClass* MyObjectsClass = UMyObject::StaticClass();
 
@@ -42,3 +47,13 @@ for (TFieldIterator<UFunction> FunctionIterator( MyObjectsClass); FunctionIterat
     UE_LOG(LogTemp, Log, TEXT( "%s" ), *FunctionIterator->GetName());
 }
 ```
+
+# `TFieldIterator`
+You can give a `TFieldIterator` in the `TFieldIterator` constructor for more customization like `IncludeSuper`
+
+# Functions
+
+## Flags
+You can get the reflected function flags by reading `FunctionFlags`.
+For example, to check if a function is an RPC you should do `if (Function->FunctionFlags & (FUNC_NetServer | FUNC_NetClient | FUNC_NetMulticast))`
+

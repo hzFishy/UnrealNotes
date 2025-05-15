@@ -45,6 +45,7 @@ And there is a ton of friendly humans that can answer your questions with more k
 I am not an expert in this domain, most of my insights comes from people with experience in the mentioned domains, please be cautious when reading the listed links. Before writing this I mostly used trustworthy articles and my personal (and others) experiences.
 - https://daniel.haxx.se/blog/2024/01/02/the-i-in-llm-stands-for-intelligence/
 - https://en.wikipedia.org/wiki/Generative_pre-trained_transformer
+- https://devops.com/survey-ai-tools-are-increasing-amount-of-bad-code-needing-to-be-fixed/
 - https://torstenvolk.medium.com/chatgpt-is-revolutionary-but-it-calculates-one-word-at-a-time-694bc2c951ed
 - https://community.openai.com/t/chatgpt-cannot-count-words-or-produce-word-count-limited-text/47380/16
 - https://help.openai.com/en/articles/6681258-doing-math-with-openai-models
