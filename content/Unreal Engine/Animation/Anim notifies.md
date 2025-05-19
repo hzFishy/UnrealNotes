@@ -10,3 +10,28 @@
 > 
 > See [PlayMontageAdvanced](https://github.com/Vaei/PlayMontageAdvanced/)
 
+
+# Create your own Notify
+
+First, make a subclass of `UAnimNotify` and add your own delegate and call it in the `Notify` override.
+```c++
+class PUSHTHEMALL_API UPTAEquipmentItemUseNotify : public UAnimNotify  
+{  
+    GENERATED_BODY()  
+  
+public:  
+    virtual void Notify(USkeletalMeshComponent* MeshComp, UAnimSequenceBase* Animation, const FAnimNotifyEventReference& EventReference) override;  
+};
+```
+
+Then you can know if an anim montage is using it by casting the notify events:
+```c++
+const auto& NotifyEvents = UseMontage->Notifies;  
+for (auto& NotifyEvent : NotifyEvents)  
+{
+	if (const auto& UseNotify = Cast<UPTAEquipmentItemUseNotify>(NotifyEvent.Notify))  
+    {
+	    // Some callback setup  
+    }  
+}
+```
