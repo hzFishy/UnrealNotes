@@ -12,4 +12,4 @@ for (auto It = YourMap.CreateIterator(); It; ++It)
 ## Add memory
 When you add a key and value to a TMap, it gets copied to its own memory, meaning whatever was passed will get destroyed (destructor called).
 
-See [[Move semantics (&&)]]
+See [[Other/C++/Move semantics (&&)]]
