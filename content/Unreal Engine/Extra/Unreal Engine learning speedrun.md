@@ -7,10 +7,10 @@ A lot of stuff such as tips are collapsed, I've done this to make the page more 
 
 > [!warning] Warning
 > While I have some experience in Unreal Engine for a couples of years now, since this page is mostly addressed for beginners some stuff I say **might be simplified to various degrees**.
-> If you are interested in something, don't stop to what I say here, go do some extra research!
+> If you are highly interested in something I mentioned here, don't stop to what I say here, go do some extra research!
 
 > [!Info]- For C++ users
-> If you want to learn more about how to work with C++ in UE, I would recommend checking the [[Learn C++ for UE]] page
+> If you want to learn more about how to work with C++ in UE, I would recommend checking the [[Learn C++ for UE]] page. But keep in mind that some engine basics such as the frameworks, features and the interface are something you need to learn before doing any C++.
 
 > [!info]- For Unity users
 > You might want to check out the [[Unity to Unreal Engine]] page before/after reading this one.
@@ -690,7 +690,7 @@ So now that you read all of that, you need some practice to be sure your underst
 If you already have some projects ideas and the listed exercises seems to boring for you, don't hesitate to directly start to learn by doing your project. <br>**But be careful !** Don't overkill yourself with a very big game that will probably make you hate UE (because what you have to learn will be to big for a new UE user) or programming/game dev. <br>Start with something "small" or "medium", something that you like and can be scaled up when you will have more knowledge and motivation to make a great game !
 
 > [!abstract] Exercises
-> - [Your First Hour in Unreal Engine 5.0 (Official)](https://dev.epicgames.com/community/learning/courses/ZpX/your-first-hour-in-unreal-engine-5/E7L/introduction-to-your-first-hour-in-unreal-engine-5)
+> - [Your First Hour in Unreal Engine 5.0 (Official)](https://dev.epicgames.com/community/learning/courses/ZpX/your-first-hour-in-unreal-engine-5/E7L/introduction-to-your-first-hour-in-unreal-engine-5) or [Your First Hour in Unreal Engine 5.2](https://dev.epicgames.com/community/learning/courses/3ke/your-first-hour-in-unreal-engine-5-2/VPlM/conclusion-to-your-first-hour-in-unreal-engine-5-2) (mostly the same)
 > - [Build a Third Person Character from Scratch (Official)](https://dev.epicgames.com/community/learning/courses/kry/build-a-third-person-character-from-scratch/mDv/build-a-third-person-character-from-scratch-introduction)
 > - [2025 Crash Course for New Unreal Engine Developers](https://dev.epicgames.com/community/learning/paths/Yaz/2025-crash-course-for-new-unreal-engine-developers)
 
