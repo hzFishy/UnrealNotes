@@ -3,3 +3,4 @@
 - [Rendering pipeline UE5](https://teres4enko.blogspot.com/2025/03/rendering-pipeline-ue5.html)
 - [UE4 vs UE4](https://brickadia.com/blog/devlog-2/#comparing-on-lowest-end-hardware)
 - [[Unreal Engine/Graphics/Optimizing a scene|Optimizing a scene]]
+- [Unreal Performance Maxxing (Snaps)](https://blog.daftsoftware.com/unreal-perf-maxing/)

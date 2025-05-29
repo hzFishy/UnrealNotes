@@ -14,6 +14,7 @@
 - [BlueprintComponentReferencePlugin](https://github.com/aquanox/BlueprintComponentReferencePlugin) - Allows you to reference in editor UI a component inside the owning actor and get it at runtime.
 - [Editor GB button](https://github.com/HomerJohnston/UE-EditorGCButton) simple UI button to unload unreferenced assets.
 - [MarkdownAsset](https://github.com/gwaredd/MarkdownAsset) allows you to embed multiple types of markdowns as a new asset type in editor.
+- [Message Log for Blueprints](https://www.fab.com/listings/742876c7-2a32-47d2-9b23-8d0b430e7683)
 
 ## ImGui
 - [DearImGui](https://github.com/ocornut/imgui)
