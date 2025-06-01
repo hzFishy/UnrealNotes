@@ -31,6 +31,7 @@ All the keys can be changed in the editor settings
 
 ## Other
 - Content Browser `Open the asset of the selected object (if any) in the latest actif content browser tab` (Ctrl + B)
+- Edit Asset `Open the selected asset` (Ctrl + E)
 - Tab Navigation (Ctrl + Tab)
 - Show navigation surface (P)
 - Screen capture (F9)

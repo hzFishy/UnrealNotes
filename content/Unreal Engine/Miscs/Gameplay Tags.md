@@ -1,3 +1,5 @@
+- [TypedGameplayTags Plugin](https://github.com/MaksymKapelianovych/TypedGameplayTags)
+
 
 To filter the tags
 ```c++

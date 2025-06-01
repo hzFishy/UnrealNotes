@@ -18,4 +18,5 @@
 # Resources
 More details
 - [Unreal Engine, and the hidden pitfalls of Blueprints](https://celdevs.com/unreal-engine-and-the-hidden-pitfalls-of-blueprints/)
-- [Performance guideline for Blueprints and making sense of Blueprint VM](https://intaxwashere.github.io/blueprint-performance/)
+- [Performance guideline for Blueprints and making sense of Blueprint VM (Part 1)](https://intaxwashere.github.io/blueprint-performance/)
+- [Discovering Blueprint VM (Part 2)](https://intaxwashere.github.io/blueprint-part-two/)
