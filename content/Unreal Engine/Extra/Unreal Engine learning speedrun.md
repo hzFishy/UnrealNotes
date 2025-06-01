@@ -137,7 +137,8 @@ Unlike other engines like Unity, you don't create a empty "Game Object" then add
 
 > [!Warning]
 > You can only create new blueprints from the content browser or using the Quick Add tool.
-> This means that you can't make a **new** and unique blueprint classes/instances directly in a level, it must exist in the Content Browser.
+> Blueprint instances made outside of the content browser cannot have unique code (you can't access their graph) but you can add any component you want and set their properties
+
 
 You can extend any Actor class with `Actor Components`,  `Scene Components` or `Interfaces`.
 - A `Actor Component` don't have any transform, it's just a block of whatever logic attached to your actor.
