@@ -1,6 +1,10 @@
-> There are 2 versions of OSS, one that's based on `OnlineSubsystem` plugin, and a new plugin that started with UE5 called `OnlineServices`
+> There are 2 versions of OSS, one that's based on `OnlineSubsystem` plugin, and a new plugin that started with UE5 called `OnlineServices` (working with EGS plugin to)
 
 You can't have `OnlineSubsystemEOS` and `OnlineServicesEOS` enabled or you will get errors, e.g: Lobby Server Travel fail because `FSocketSubsystemEOS::GetLocalUserId` will try to get logged user in Subsystem Auth Interface (and not the user logged in Online Services Auth interface)
+
+# Resources
+- Starting with OSSv1 [Forum Thread](https://forums.unrealengine.com/t/course-the-eos-online-subsystem-oss-plugin/1178111) - [Course](https://dev.epicgames.com/community/learning/courses/1px/unreal-engine-the-eos-online-subsystem-oss-plugin/Lnjn/unreal-engine-introduction) from a UE EOS dev.
+
 # Logging
 - [Info](https://dev.epicgames.com/docs/epic-online-services/eos-get-started/working-with-the-eos-sdk/eossdkc-sharp-getting-started#logging)
 - [Log categoires details](https://dev.epicgames.com/docs/en-US/api-ref/enums/eos-e-log-category)
