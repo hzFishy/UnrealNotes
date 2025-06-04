@@ -1,2 +1,2 @@
 
-- [GASDocumentation by Tranek](GASDocumentation)
+- [GASDocumentation by Tranek](https://github.com/tranek/GASDocumentation)
