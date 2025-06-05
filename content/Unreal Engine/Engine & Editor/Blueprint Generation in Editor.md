@@ -32,7 +32,7 @@ When you click on any of them the call-back will be `SMyBlueprint::OnAddButtonCl
 > In the editor the type of a variable is defined by a `FEdGraphPinType`.
 > - `PinCategory` will be whatever "category" is displayed in the picker, it can be `byte` (the literal type and for enums), `int`, `int64`, `real`, `struct`, `object` (or `softobject`), `class` (or `softclass`), `interface`, ...
 > - `PinSubCategory` depends, usually `None` but if selecting `float` it will be `double`
-> - `PinSubCategoryObject` will hold a `UObjecy` weak ref to the selected object, if selecting a struct it will be a `UScript`
+> - `PinSubCategoryObject` will hold a `UObject` weak ref to the selected object/class, if selecting a struct it will be a `UScript`
 
 After the preliminary process mentioned above in `Bones->"+" buttons` the editor calls `FBlueprintEditor::OnAddNewVariable`. This function does the following:
 - It will find a unique default var name using `FBlueprintEditorUtils::FindUniqueKismetName`.
