@@ -5,7 +5,7 @@
 > [!Warning] Small disclaimer
 > This topic has a LOT going on under the hood, I won't mention EVERYTHING that happens when doing X with Y, I talk about the important/relevant stuff happening.
 
-# Bones
+# Base
 
 ## My Blueprint
 When you open an BP in editor it runs `FBlueprintEditorModule::CreateBlueprintEditor` which creates a `TSharedRef<FBlueprintEditor>`.
