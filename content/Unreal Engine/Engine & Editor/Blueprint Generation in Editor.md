@@ -1,5 +1,9 @@
+
 > [!Info] About Slate classes
 > Since all slate widgets are contained in `TSharedPtr`s, I won't always type `TSharedPtr<SSomeWIdget>` but `SSomeWidget`.
+
+> [!Warning] Small disclaimer
+> This topic has a LOT going on under the hood, I won't mention EVERYTHING that happens when doing X with Y, I talk about the important/relevant stuff happening.
 
 # Bones
 
