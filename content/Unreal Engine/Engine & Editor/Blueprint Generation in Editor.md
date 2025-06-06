@@ -51,7 +51,6 @@ Here are some places where the array is used when inside `FBlueprintEditorUtils:
 - `FKismetCompilerContext::CreateClassVariablesFromBlueprint`
 - `FBlueprintEditorUtils::GetClassVariableList`
 
-
 `FKismetCompilerContext::CreateClassVariablesFromBlueprint` will iterate the new variables and call `FKismetCompilerContext::CreateVariable` (which calls `FKismetCompilerUtilities::CreatePropertyOnScope` and `FKismetCompilerUtilities::LinkAddedProperty`) which returns a `FProperty`.
 
 > [!Info] These functions are also used to create the variables of our components (and more?)
