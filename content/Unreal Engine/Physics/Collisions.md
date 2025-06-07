@@ -1,4 +1,4 @@
-**PhysX isn't taken (fully) into account, only Chaos as we are taking into considerations UE5+ versions**
+**PhysX isn't taken (fully) into account here, only Chaos as we are taking into considerations UE5+ versions**
 # Resources & tips
 - [Collision Data in UE5: Practical Tips for Managing Collision Settings & Queries | Unreal Fest 2023](https://www.youtube.com/watch?v=xIQI6nXFygA)
 
@@ -159,6 +159,7 @@ if (UWorld* World = CapsuleComponent->GetWorld())
 
 # `CollisionEnabled` in depth
 From what I've found in the source code, there **is** an actual performance change depending on the `ECollisionEnabled::Type` value set on your component.
+For more details about optimizing your physics scene see [this article section](https://dev.epicgames.com/community/learning/tutorials/6XW8/unreal-engine-the-great-hitch-hunt-tracking-down-every-frame-drop?source=Rkk#thephysicshitch)
 
 Full details:
 - **No Collision**:

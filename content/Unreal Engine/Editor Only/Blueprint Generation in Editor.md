@@ -29,6 +29,7 @@ When you click on any of them the call-back will be `SMyBlueprint::OnAddButtonCl
 ## Adding a new variable in BP
 
 > [!Info] About `FEdGraphPinType` 
+> **See `UEdGraphSchema_K2` for a full and detailed list**
 > In the editor the type of a variable is defined by a `FEdGraphPinType`.
 > - `PinCategory` will be whatever "category" is displayed in the picker, it can be `byte` (the literal type and for enums), `int`, `int64`, `real`, `struct`, `object` (or `softobject`), `class` (or `softclass`), `interface`, ...
 > - `PinSubCategory` depends, usually `None` but if selecting `float` it will be `double`
@@ -39,7 +40,7 @@ After the preliminary process mentioned above in `Bones->"+" buttons` the editor
 - Then it calls `FBlueprintEditorUtils::AddMemberVariable` and passes the `UBlueprint` we are editing, the var name and the last type we used.
 - And finally if it succeeds it will call `FBlueprintEditor::RenameNewlyAddedAction` manually (that's' why you can directly type to rename the variable name)
 
-In depth of `FBlueprintEditorUtils::AddMemberVariable`:
+**In depth of `FBlueprintEditorUtils::AddMemberVariable`:**
 - It calls `Modify`
 - It creates a new var as a `FBPVariableDescription` and set name, GUID, property flags, and more (last pin type is either default (a boolean) or the last type set from `SBlueprintPalette::OnVarTypeChanged`).
 - It adds this var in a an array named `NewVariables`.
@@ -51,15 +52,33 @@ Here are some places where the array is used when inside `FBlueprintEditorUtils:
 - `FKismetCompilerContext::CreateClassVariablesFromBlueprint`
 - `FBlueprintEditorUtils::GetClassVariableList`
 
-`FKismetCompilerContext::CreateClassVariablesFromBlueprint` will iterate the new variables and call `FKismetCompilerContext::CreateVariable` (which calls `FKismetCompilerUtilities::CreatePropertyOnScope` and `FKismetCompilerUtilities::LinkAddedProperty`) which returns a `FProperty`.
+`FKismetCompilerContext::CreateClassVariablesFromBlueprint` will iterate the new variables and call **`FKismetCompilerContext::CreateVariable`** (which calls `FKismetCompilerUtilities::CreatePropertyOnScope` and `FKismetCompilerUtilities::LinkAddedProperty`) which returns a `FProperty`.
 
 > [!Info] These functions are also used to create the variables of our components (and more?)
 
 
+**More on `FKismetCompilerUtilities::CreatePropertyOnScope`:**
+- It does a early check to be sure that no object on the same scope has a name equal to our property name, it will find a fixed name if necessary (see `ValidatedPropertyName` var and `FKismetCompilerUtilities::CheckPropertyNameOnScope`).
+- Once we are sure to have a valid property name, we are handling special extra vars type if the property is a container (Map/Set/Array), see `NewContainerProperty` var. 
+- We are also setting the value of `PropertyScope`
+	- `PropertyScope` is a `FFieldVariant` because if the property is a container the scope is a `FField` (`FMapProperty`/`FSetProperty`/`FArrayProperty`) but it we are a regular property the scope is a `UStruct`.
+- If our property type isn't a delegate, we call `FKismetCompilerUtilities::CreatePrimitiveProperty` and set `NewProperty` with the result
+	- Depending on the `PinCategory` the property is made differently.
+	- For basic types like `Int64`, `Float` or `String` its always calling the same code but using a different struct property (ex: `FInt64Property`/`FFloatProperty`/`FStrProperty`).
+	- For struct type it has some extra checks but ultimately it uses `FStructProperty` and set the `Struct` member variable of the property to the `UScriptType* SubType` (casted from `PinSubCategoryObject`)
+	- For an Object/Interface/SoftObject type it gets the `UClass* SubType` from `SelfClass` or from `PinSubCategoryObject` and use the following property structs: `FInterfaceProperty`/`FSoftObjectProperty`/`FWeakObjectProperty`/`FObjectProperty` (they are all derived from `FObjectPropertyBase`)
+	- For an Class/SoftClass type it gets the `UClass* SubType` from `PinSubCategoryObject` and use the following property structs: `FSoftClassProperty`/`FClassProperty` 
+- If we are a container, `NewProperty` is used for some shady stuff then replaced by the container property (`NewMapProperty`/`NewSetProperty`/`NewArrayProperty`)
+- Returns the `NewProperty`
+
+**More on `FKismetCompilerUtilities::LinkAddedProperty`:**
+- It sets the `Next` member var of the new property to be the `ChildProperties` member var of our `UStruct*` (owner of the property, here a `UBlueprintGeneratedClass`)
+- it sets the `ChildProperties` member var of the structure to the the new property
+See [[FField]] and [[UStruct]] for more info on these member vars
+
 ## Editing a variable type
 
 The type picker is a `SBlueprintPaletteItem` (with internally `SPinTypeSelectorHelper`) (this slate widget is used in other scenarios).
-
 
 When clicking the picker to open the selector `UEdGraphSchema_K2::GetVariableTypeTree` is called. This is where all types are added (one by one, or all sub types using `GatherPinsImpl::FindStructs` for structs, `GatherPinsImpl::FindObjectsAndInterfaces` for objects, classes and interfaces and `GatherPinsImpl::FindEnums` for enums)
 

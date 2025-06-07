@@ -4,7 +4,7 @@ When you save a BP using Ctrl + S or by clicking the button you are executing a 
 This function will get the Objects to save, as well as the associated packages.
 It then calls `FEditorFileUtils::PromptForCheckoutAndSave` (This is where the prompt "what do you want to save" is managed if requested).
 
-> [!Info]- More info on the save prompt
+> [!Info] More info on the save prompt
 > The prompt is created using `FPromptForCheckoutAndSaveParams`.
 > 
 

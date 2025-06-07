@@ -9,7 +9,7 @@
 # Internal resources
 - For a general intro to Unreal Engine see [[Unreal Engine learning speedrun]] (You can skip the Blueprint part)
 - [[Core]] (And `UnrealEngine/Engine & Editor` folder)
-- [[Unreal Engine/Engine & Editor/Live Coding & Hot Reload]]
+- [[Live Coding & Hot Reload]]
 
 # External resources
 *Some of those resources are mentioned in various places in this blog*
