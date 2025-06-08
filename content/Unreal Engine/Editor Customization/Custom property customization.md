@@ -1,8 +1,10 @@
 
 # Resources
 - [Zomg's post](https://zomgmoz.tv/unreal/Editor-customization/Creating-custom-property-editors-for-structs-and-other-types)
+- [Docs](https://dev.epicgames.com/documentation/en-us/unreal-engine/details-panel-customizations-in-unreal-engine#ipropertytypecustomization)
 
-
+Difference between `CustomizeHeader` and `CustomizeChildren`
+<br>![[Pasted image 20250607233142.png]]
 # Miscs
 
 ## `PropertyHandle`
@@ -46,3 +48,5 @@ You may want to know in what BP/Actor this property is being rendered
 Here is how aquanox does for his [BlueprintComponentReference](https://github.com/aquanox/BlueprintComponentReferencePlugin/blob/main/Source/BlueprintComponentReferenceEditor/BlueprintComponentReferenceCustomization.cpp#L301) plugin
 
 
+## Add new rows
+See `ChildBuilder.AddCustomRow`

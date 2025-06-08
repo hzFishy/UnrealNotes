@@ -12,5 +12,21 @@ SAssignNew(HorizontalBox, SHorizontalBox)
 ### Make combo box
 See example of use of `SComboBox`
 
+### Horizontal Box
+Example
+```c++
+SNew(SHorizontalBox)  
++SHorizontalBox::Slot()  
+.AutoWidth()  
+[  
+    SNew(STextBlock).Text(INVTEXT("Hello"))  
+]  
++SHorizontalBox::Slot()  
+.AutoWidth()  
+[  
+    SNew(STextBlock).Text(INVTEXT("Hello"))  
+]
+```
+
 ### Common Slate Arguments
 [Common Slate Arguments (Docs)](https://dev.epicgames.com/documentation/en-us/unreal-engine/slate-ui-widget-examples-for-unreal-engine)

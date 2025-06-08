@@ -78,7 +78,8 @@ See [[FField]] and [[UStruct]] for more info on these member vars
 
 ## Editing a variable type
 
-The type picker is a `SBlueprintPaletteItem` (with internally `SPinTypeSelectorHelper`) (this slate widget is used in other scenarios).
+> [!Info] Slate type picker
+> The type picker is a `SBlueprintPaletteItem` (with internally `SPinTypeSelectorHelper`, made in `SBlueprintPaletteItem::Construct`) (this slate widget is used in other scenarios).
 
 When clicking the picker to open the selector `UEdGraphSchema_K2::GetVariableTypeTree` is called. This is where all types are added (one by one, or all sub types using `GatherPinsImpl::FindStructs` for structs, `GatherPinsImpl::FindObjectsAndInterfaces` for objects, classes and interfaces and `GatherPinsImpl::FindEnums` for enums)
 
