@@ -4,7 +4,7 @@ Great [article](https://itsbaffled.github.io/posts/UE/Easier-Editor-Debug-Visual
 
 **Quick snippet**
 ```c++
-/* in editor module header */
+/* in editor module header or cpp file*/
 inline const TCHAR* TargetShowFlagName = TEXT("BPG_TargetFlag");  
 inline TCustomShowFlag<EShowFlagShippingValue::ForceDisabled> TargetShowFlag(TargetShowFlagName, true, SFG_Normal);
 
