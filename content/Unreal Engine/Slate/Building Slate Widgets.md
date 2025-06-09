@@ -28,5 +28,8 @@ SNew(SHorizontalBox)
 ]
 ```
 
+### Fill dropdown from enum
+See `SEnumComboBox`
+
 ### Common Slate Arguments
 [Common Slate Arguments (Docs)](https://dev.epicgames.com/documentation/en-us/unreal-engine/slate-ui-widget-examples-for-unreal-engine)

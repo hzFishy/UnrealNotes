@@ -9,6 +9,9 @@ See [zomg's post](https://zomgmoz.tv/unreal/Editor-customization/Component-visua
 > [!Warning] About `GUnrealEd` in `StartupModule`
 > As I found [here](https://forums.unrealengine.com/t/gunrealed-is-null-in-startupmodule/295355/2?u=hzfishy ) `GUnrealEd` is null in `StartupModule` if you are loading it to early.
 > Load your module at `PostEngineInit` phase to correct that.
+> Or use the following delegate: `FCoreDelegates::OnPostEngineInit.AddRaw(this, &FMyModule::OnPostEngineInit);`
 
 More details about it (with an example on Unity box collider 6 faces maker) [here](https://dev.epicgames.com/community/learning/tutorials/KP5p/unreal-engine-extending-unreal-editor-with-component-visualizer)
 
+
+Component visualizer's are used in `UUnrealEdEngine::DrawComponentVisualizers`, see also ` FSCSEditorViewportClient::Draw`
