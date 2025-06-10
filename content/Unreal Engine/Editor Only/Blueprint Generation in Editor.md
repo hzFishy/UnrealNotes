@@ -94,3 +94,10 @@ Then we create a new transaction and call `Modify`.
 All lot of checks are run for validation and easy transfer/conversion between types.
 But eventually the new type is assigned to the variable and `FBlueprintEditorUtils::MarkBlueprintAsStructurallyModified` is called on the edited BP and any BP with broken connections. `UEdGraphSchema_K2::ReconstructNode` is also called on all previously found nodes.
 
+
+# Components
+When you add a component from the BP UI, `SSubobjectEditor::PerformComboAddClass` is called.
+This calls `SSubobjectBlueprintEditor::AddNewSubobject` then `USimpleConstructionScript::CreateNode` where `NewObject<UActorComponent>(...)` is actually called.
+
+# Preview
+See also [[FPreviewScene]]
