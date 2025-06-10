@@ -7,7 +7,7 @@
 See [[Optimizing]] and [[Character Movement Component]] pages in `Networking/`
 
 # Animations
-See [[Improve animation performance]]
+See [[Animation Debugging and Optimization]]
 
 # Rendering
 See [[Optimizing a scene]] page in `Graphics`
