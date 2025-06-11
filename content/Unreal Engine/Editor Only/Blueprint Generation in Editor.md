@@ -14,6 +14,7 @@ The "My Blueprint" tab slate widget is made in `FMyBlueprintSummoner::CreateTabB
 
 ## Categories and content
 The categories "GRAPHS", "FUNCTIONS", "MACROS", "VARIABLES" and "EVENT DISPATCHERS" are all of type `SCategoryHeaderTableRow` and the entries inside are `STableRow<TSharedPtr<FGraphActionNode>>`
+
 Example:
 <br>![[Pasted image 20250606002634.png]]<br>
 ## "+" buttons
@@ -35,7 +36,7 @@ When you click on any of them the call-back will be `SMyBlueprint::OnAddButtonCl
 > - `PinSubCategory` depends, usually `None` but if selecting `float` it will be `double`
 > - `PinSubCategoryObject` will hold a `UObject` weak ref to the selected object/class, if selecting a struct it will be a `UScript`
 
-After the preliminary process mentioned above in `Bones->"+" buttons` the editor calls `FBlueprintEditor::OnAddNewVariable`. This function does the following:
+After the preliminary process mentioned above the editor calls `FBlueprintEditor::OnAddNewVariable`. This function does the following:
 - It will find a unique default var name using `FBlueprintEditorUtils::FindUniqueKismetName`.
 - Then it calls `FBlueprintEditorUtils::AddMemberVariable` and passes the `UBlueprint` we are editing, the var name and the last type we used.
 - And finally if it succeeds it will call `FBlueprintEditor::RenameNewlyAddedAction` manually (that's' why you can directly type to rename the variable name)
@@ -73,8 +74,7 @@ Here are some places where the array is used when inside `FBlueprintEditorUtils:
 
 **More on `FKismetCompilerUtilities::LinkAddedProperty`:**
 - It sets the `Next` member var of the new property to be the `ChildProperties` member var of our `UStruct*` (owner of the property, here a `UBlueprintGeneratedClass`)
-- it sets the `ChildProperties` member var of the structure to the the new property
-See [[FField]] and [[UStruct]] for more info on these member vars
+- it sets the `ChildProperties` member var of the structure to the the new property (See [[FField]] and [[UStruct]] for more info on these member vars)
 
 ## Editing a variable type
 
