@@ -96,6 +96,9 @@ But eventually the new type is assigned to the variable and `FBlueprintEditorUti
 
 
 # Components
+
+The components are shown in a `SSubobjectEditor`
+
 When you add a component from the BP UI, `SSubobjectEditor::PerformComboAddClass` is called.
 This calls `SSubobjectBlueprintEditor::AddNewSubobject` then `USimpleConstructionScript::CreateNode` where `NewObject<UActorComponent>(...)` is actually called.
 
