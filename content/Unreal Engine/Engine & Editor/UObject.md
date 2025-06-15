@@ -18,10 +18,11 @@ The GC will call this as much as it needs (`TStrongObjectPtr` would be better pe
 > [!Warning] To use `TStrongObjectPtr` you must include the type
 
 
+# Archetype
+`GetArchetype` gives you the template object that was used.
+For example, the UObject you get from a BP editor sub object editor (with `BlueprintEditor->GetSubobjectEditor()->GetDragDropTree()->GetSelectedItems()`) is the same than the returned archetype of the component that lives in the preview world.
 
-
-
-# Virtual details
+# Virtual functions details
 - [Actor Load/Init Function Cheatsheet](https://ikrima.dev/ue4guide/gameplay-programming/actor-tick-lifecycle-flow/actor-lifecycle-diagram/)
 
 - `PostTransacted` is called when you move/edit anything in a BP

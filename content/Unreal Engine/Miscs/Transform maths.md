@@ -1,14 +1,17 @@
 
-## Rotate a object around another
+## Rotate an object around another
 
 ```c++
-// TestTransform is the actual position
-// ReferencePointTestTransform is the "other" object
-// OffsetTestTransform is a transform with just a rotation set (eg: 0, 90, 0)
-FVector OffsetPos = TestTransform.GetLocation() - ReferencePointTestTransform.GetLocation();  
-const FVector RotatedOffset = OffsetTestTransform.GetRotation().RotateVector(OffsetPos);  
-TestTransform.SetLocation(ReferencePointTestTransform.GetLocation() + RotatedOffset);
+// here in this example we are running this code on tick
+// RelativeLocation is 100, 0, 0 in this example.
+
+Rotation += FRotator(0, 1, 0);
+const FVector CenterLocation = GetActorLocation();
+RotatedLocation = CenterLocation + Rotation.RotateVector(RelativeLocation);
 ```
+
+In red its `CenterLocation` and in green `RotatedLocation`
+<br>![[RotationMath.gif]]
 
 ## Transform world/local conversion
 

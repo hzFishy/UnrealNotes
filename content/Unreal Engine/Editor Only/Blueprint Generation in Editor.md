@@ -5,6 +5,11 @@
 > [!Warning] Small disclaimer
 > This topic has a LOT going on under the hood, I won't mention EVERYTHING that happens when doing X with Y, I talk about the important/relevant stuff happening.
 
+
+# Tabs
+
+All the special BP tabs/windows are made in `FBlueprintEditorUnifiedMode::FBlueprintEditorUnifiedMode` (from `FBlueprintEditor::InitBlueprintEditor` -> `FBlueprintEditor::RegisterApplicationModes`)
+
 # Base
 
 ## My Blueprint
@@ -99,8 +104,17 @@ But eventually the new type is assigned to the variable and `FBlueprintEditorUti
 
 The components are shown in a `SSubobjectEditor`
 
+## Get selected components
+From the `FBlueprintEditor`, do `BlueprintEditor->GetSubobjectEditor()->GetDragDropTree()->GetSelectedItems()`, you will have a `TArray<FSubobjectEditorTreeNodePtrType>`.
+
+To get the "mapped" real component (the one living in the preview world) see the `#Archetype` section at [[UObject]]
+
+## Add
 When you add a component from the BP UI, `SSubobjectEditor::PerformComboAddClass` is called.
-This calls `SSubobjectBlueprintEditor::AddNewSubobject` then `USimpleConstructionScript::CreateNode` where `NewObject<UActorComponent>(...)` is actually called.
+This calls `SSubobjectBlueprintEditor::AddNewSubobject` then `USubobjectDataSubsystem::AddNewSubobject` then `USimpleConstructionScript::CreateNode` where `NewObject<UActorComponent>(...)` is actually called.
+
+## Selection
+When you select a component it will call `SSubobjectEditor::OnTreeSelectionChanged`
 
 # Preview
 See also [[FPreviewScene]]

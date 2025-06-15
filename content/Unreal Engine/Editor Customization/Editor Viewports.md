@@ -13,7 +13,7 @@ Here are the various viewport client types depending on what is visible:
 - Level viewport: `FLevelEditorViewportClient` (parent is `FEditorViewportClient`)
 - Blueprint Viewport: `FSCSEditorViewportClient` (parent is `FEditorViewportClient`)
 - Animation Viewport `FAnimationViewportClient` (parent is `FEditorViewportClient`)
-
+- Static Mesh Viewport `FStaticMeshEditorViewportClient` (parent is `FEditorViewportClient`)
 
 
 # Viewports
