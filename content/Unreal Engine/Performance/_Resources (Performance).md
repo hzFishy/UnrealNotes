@@ -14,6 +14,9 @@ See [[Optimizing a scene]] page in `Graphics`
 
 # Ticking
 - [Aggregating Ticks to Manage Scale in Sea of Thieves | Unreal Fest Europe 2019 | Unreal Engine](https://www.youtube.com/watch?v=CBP5bpwkO54)
+# UI
+See [[Performance (UI)]]
+
 # Miscs
 - [C++ Move Semantics in Unreal Engine 4](https://jonasreich.de/blog/001-ue4-move-semantics.html)
 - [CDPR talk (Unreal Fest 2024)](https://www.youtube.com/watch?v=JaCf2Qmvy18)
