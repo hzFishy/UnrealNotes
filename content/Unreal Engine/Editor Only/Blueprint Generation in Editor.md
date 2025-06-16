@@ -116,5 +116,7 @@ This calls `SSubobjectBlueprintEditor::AddNewSubobject` then `USubobjectDataSubs
 ## Selection
 When you select a component it will call `SSubobjectEditor::OnTreeSelectionChanged`
 
+To get selected nodes use `BlueprintEditor->GetSelectedSubobjectEditorTreeNodes`
+
 # Preview
 See also [[FPreviewScene]]
