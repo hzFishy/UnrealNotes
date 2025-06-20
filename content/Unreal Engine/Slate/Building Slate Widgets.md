@@ -31,5 +31,15 @@ SNew(SHorizontalBox)
 ### Fill dropdown from enum
 See `SEnumComboBox`
 
+Example:
+```c++
+auto PreviewSelectionDrawModeWidget = SNew(SEnumComboBox, StaticEnum<EPSEditorPRCPreviewSettings_SelectionDrawMode>())
+.OnEnumSelectionChanged(SEnumComboBox::FOnEnumSelectionChanged::CreateLambda([this, BlueprintEditorContext] (int32 InValue, ESelectInfo::Type InSelectInfo)
+{...}))
+.CurrentValue_Lambda([this, BlueprintEditorContext]()  
+{ return ...});
+
+```
+
 ### Common Slate Arguments
 [Common Slate Arguments (Docs)](https://dev.epicgames.com/documentation/en-us/unreal-engine/slate-ui-widget-examples-for-unreal-engine)
