@@ -34,3 +34,6 @@ These objects are templates, meaning they aren't owned by an actor component ins
 - When you edit a property `PostEditChangeProperty` is called (Doesn't work for Transforms)
 - `PostCDOContruct` always has its World null.
 
+
+# TStrongObjectPtr
+Use `MyStrPtr.Reset(SomeObject)` to set it.

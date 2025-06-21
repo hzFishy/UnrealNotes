@@ -104,6 +104,16 @@ But eventually the new type is assigned to the variable and `FBlueprintEditorUti
 
 The components are shown in a `SSubobjectEditor`
 
+## Creation (`GEN_VARIABLE`)
+When you open a BP, `ContentBrowserAssetData::EditOrPreviewAssetFileItems` will eventually use `LoadPackage` to load the BP. This will construct the object.
+So here in the case of BP components, `DefaultSceneRoot_GEN_VARIABLE` and so on are made from there. 
+
+> [!Note] Note
+> The the callstack isn't 100% the same between loading the scene root component and the other child components.
+
+## Creation (viewport)
+See [[FPreviewScene]] for some details on how the components are spawned in the viewport window.
+
 ## Get selected components
 From the `FBlueprintEditor`, do `BlueprintEditor->GetSubobjectEditor()->GetDragDropTree()->GetSelectedItems()`, you will have a `TArray<FSubobjectEditorTreeNodePtrType>`.
 

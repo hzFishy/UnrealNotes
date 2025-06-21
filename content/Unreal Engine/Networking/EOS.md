@@ -4,6 +4,7 @@ You can't have `OnlineSubsystemEOS` and `OnlineServicesEOS` enabled or you will 
 
 # Resources
 - Starting with OSSv1 [Forum Thread](https://forums.unrealengine.com/t/course-the-eos-online-subsystem-oss-plugin/1178111) - [Course](https://dev.epicgames.com/community/learning/courses/1px/unreal-engine-the-eos-online-subsystem-oss-plugin/Lnjn/unreal-engine-introduction) from a UE EOS dev.
+- [EOS Online Framework Plugin](https://docs.redpoint.games/)
 
 # Logging
 - [Info](https://dev.epicgames.com/docs/epic-online-services/eos-get-started/working-with-the-eos-sdk/eossdkc-sharp-getting-started#logging)
