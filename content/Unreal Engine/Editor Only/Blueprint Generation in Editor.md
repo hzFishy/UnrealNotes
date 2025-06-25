@@ -88,7 +88,7 @@ Here are some places where the array is used when inside `FBlueprintEditorUtils:
 
 When clicking the picker to open the selector `UEdGraphSchema_K2::GetVariableTypeTree` is called. This is where all types are added (one by one, or all sub types using `GatherPinsImpl::FindStructs` for structs, `GatherPinsImpl::FindObjectsAndInterfaces` for objects, classes and interfaces and `GatherPinsImpl::FindEnums` for enums)
 
-After selecting a new type in the type picker, `SBlueprintPalette::OnVarTypeChanged` is called. Since here we are editing a BP class variable `FBlueprintEditorUtils::ChangeMemberVariableType` will be called.
+After selecting a new type in the type picker, `SPinTypeSelectorHelper::OnVarTypeChanged` is called. Since here we are editing a BP class variable `FBlueprintEditorUtils::ChangeMemberVariableType` will be called.
 
 Inside it will get back our var as a `FBPVariableDescription`.
 

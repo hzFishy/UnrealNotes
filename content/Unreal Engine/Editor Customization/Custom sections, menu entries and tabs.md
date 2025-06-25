@@ -88,6 +88,7 @@ ToolbarSection.AddDynamicEntry(FName("PrefabReferenceComponentSubMenu"), FNewToo
 - `UContentBrowserAssetContextMenuContext` // for an entry on the right click menu of an CB asset
 - `UAssetEditorToolkitMenuContext`
 - `USubobjectEditorMenuContext` // For a subobject entry (ex: component)
+- `ULevelEditorMenuContext` // for a menu on the main level toolbar
 
 # Tabs
 See https://github.com/aquanox/SubsystemBrowserPlugin/blob/main/Source/SubsystemBrowser/SubsystemBrowserModule.cpp#L49-L76.
