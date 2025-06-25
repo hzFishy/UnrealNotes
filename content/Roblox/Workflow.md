@@ -61,9 +61,10 @@ Once your root folders are configured on your filesystem, any subfolder made (if
 
 
 **Updating filesystem <-> Roblox files**<br>
-You may be able to desync Roblox Studio files/folders with your filesystem, but once you resync everything will be added/moved/deleted to match your filesystem. **This only happens for files/folders in the `TS` folder**
+You may be able to desync Roblox Studio files/folders with your filesystem, but once you resync everything will be added/moved/deleted to match your filesystem. 
+**This only happens for files/folders in the `TS` folder**
 In this example, everything in red will be removed on sync:<br>
-![[Pasted image 20250211003429.png]]![[Pasted image 20250211003433.png]]
+![[Pasted image 20250211003429.png]]![[Pasted image 20250211003433.png]]<br>
 to avoid that see `$ignoreUnknownInstances` [here](https://rojo.space/docs/v7/project-format/#instance-description). use `aftman add UpliftGames/rojo@7.4.0-uplift.syncback.rc.20`
 
 
@@ -76,6 +77,7 @@ If you edit a file in Roblox Studio, nothing will happen on your file system, an
 
 It seems like a option will come for that <br>
 ![[Pasted image 20250210222919.png]]
+
 To have it already check [this](https://github.com/UpliftGames/rojo/releases/tag/v7.4.0-uplift.syncback.rc.20) release fork of rojo.
 
 
