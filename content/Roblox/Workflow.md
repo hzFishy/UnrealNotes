@@ -123,7 +123,7 @@ Example: <br>
 ```json
 - ActorFolder
 	- init.meta.json
-	- main.server.luau
+	- main.server.ts
 ```
 inside `init.meta.json`:
 ```json
