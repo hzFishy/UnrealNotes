@@ -29,6 +29,7 @@ You can visualize basic CMC info using `p.VisualizeMovement 1`
 
 # Client Auth
 *Thanks to Jambax*
+
 CMC is server authoritative.
 to enable client auth see `bServerAcceptClientAuthoritativePosition` and `bIgnoreClientMovementErrorChecksAndCorrection`.
 There is also `AGameNetworkManager`->`ClientAuthorativePosition`.
