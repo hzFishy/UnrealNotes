@@ -12,7 +12,7 @@ See
 - [[Reflection System]]
 - [[Garbage Collection]]
 
-There is also `AddReferencedObjects`, for example this is used in AActor to add all owned components.
+There is also `AddReferencedObjects`, for example this is used in AActor to add all owned components. (For UObjects only, otherwise look for `AddReferencedObjectsGlobals`)
 The GC will call this as much as it needs (`TStrongObjectPtr` would be better performance wise in some cases).
 
 > [!Warning] To use `TStrongObjectPtr` you must include the type

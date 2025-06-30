@@ -5,6 +5,8 @@
 - See [this](https://herr-edgy.com/tutorials/extending-tool-menus-in-the-editor-via-c/) for dynamic tool menu entries and to get context.
 - See [this](https://zhuanlan.zhihu.com/p/628655599) cool post (use translator) about general extensions (check at the end (`FWorkflowCentricApplication` section) for a cool example of using a `FSummoner`).
 
+# Engine menu creation
+- Level Editor Toolbar: `FLevelEditorToolBar::RegisterLevelEditorToolBar(`
 # Add something to a toolbar
 
 ## Default way
@@ -88,7 +90,7 @@ ToolbarSection.AddDynamicEntry(FName("PrefabReferenceComponentSubMenu"), FNewToo
 - `UContentBrowserAssetContextMenuContext` // for an entry on the right click menu of an CB asset
 - `UAssetEditorToolkitMenuContext`
 - `USubobjectEditorMenuContext` // For a subobject entry (ex: component)
-- `ULevelEditorMenuContext` // for a menu on the main level toolbar
+- `ULevelEditorMenuContext` // for a menu on the main level toolbar (only in `LevelEditor.LevelEditorToolbar` ?)
 
 # Tabs
 See https://github.com/aquanox/SubsystemBrowserPlugin/blob/main/Source/SubsystemBrowser/SubsystemBrowserModule.cpp#L49-L76.
