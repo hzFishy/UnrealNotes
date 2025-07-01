@@ -1,4 +1,21 @@
 
+
+
+# Objects
+
+See `TObjectIterator`
+
+Examples:
+```c++
+// Default
+for (TObjectIterator<UPSPrefabReferenceComponentBase> It; It; ++It)
+
+// with flags (and more if needed)
+for (auto It = TObjectIterator<UPSPrefabReferenceComponentBase>(EObjectFlags::RF_ClassDefaultObject | EObjectFlags::RF_ArchetypeObject); It; ++It)
+```
+
+# Actors
+
 Recommended to read [this article section](https://dev.epicgames.com/community/learning/tutorials/l3E0/myth-busting-best-practices-in-unreal-engine#let%E2%80%99stalkaboutgetallactorsofclass).
 
 ## `GetAllActorsOfClass`
