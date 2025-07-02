@@ -13,3 +13,11 @@
 
 
 For more debug draw methods, see `ChaosDebugDraw.cpp` file
+
+# Draw
+
+Chaos has a special helper for drawing, which is thread safe (under the hood it uses the global draw helpers functions, see `DebugDrawChaosCommand`).
+
+See `Chaos::FDebugDrawQueue` and `UChaosDebugDrawComponent`.
+Example: `Chaos::FDebugDrawQueue::GetInstance().DrawDebugSphere(ParticlePoint, 4, 32, FColor::Yellow);`
+

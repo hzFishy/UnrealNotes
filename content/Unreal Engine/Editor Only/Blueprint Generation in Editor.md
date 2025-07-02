@@ -5,6 +5,8 @@
 > [!Warning] Small disclaimer
 > This topic has a LOT going on under the hood, I won't mention EVERYTHING that happens when doing X with Y, I talk about the important/relevant stuff happening.
 
+# Related
+- `USubobjectDataSubsystem`
 
 # Tabs
 
@@ -128,5 +130,27 @@ When you select a component it will call `SSubobjectEditor::OnTreeSelectionChang
 
 To get selected nodes use `BlueprintEditor->GetSelectedSubobjectEditorTreeNodes`
 
+## Remove
+
+When you delete a component in the component tree `SSubobjectBlueprintEditor::OnDeleteNodes` is called.
+This then calls `USubobjectDataSubsystem::DeleteSubobjects` and since we are a Blueprint it will do the following:
+- Save the SCS state in a transaction buffer.
+- Call `FBlueprintEditorUtils::RemoveVariableNodes` (since our component can also be a variable in a graph)
+- Same logic for `FKismetEditorUtilities::FindAllBoundEventsForComponent`
+- The real remove in SCS is `USimpleConstructionScript::RemoveNodeAndPromoteChildren` (this will eventually call `USCS_Node::RemoveChildNode`).
+- The `ComponentTemplate` of the SCS Node will get renamed with a new Guid and  `_REMOVED_`.
+
+
 # Preview
 See also [[FPreviewScene]]
+
+# Compiling
+
+It looks like BP instances in the levels are reinstanced when you compile a BP.
+
+On compiling, `FBlueprintEditor::Compile` gets called from the UI Action.
+This calls `FKismetEditorUtilities::CompileBlueprint` which calls `FBlueprintCompilationManager::CompileSynchronously`. 
+
+A bunch of stuff happens in this function, the most important part is the call  to `FBlueprintCompileReinstancer::BatchReplaceInstancesOfClass` -> `FBlueprintCompileReinstancer::ReplaceInstancesOfClass_Inner`. In the latter function is where the "old to new" object remapping is done. Its also there that any "old versions" of the actors in any opening level gets destroyed.
+
+While in the replacement/reinstancing process, `UEditorEngine::NotifyToolsOfObjectReplacement` will be called (see `FCoreUObjectDelegates::OnObjectsReplaced`)

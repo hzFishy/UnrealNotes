@@ -16,5 +16,7 @@ My main language isn't English, I apologies for any incorrect formulated sentenc
 # Contact
 If you want to contact me for any reason (misspelling, feedback or ideas to improve some specific page(s)), you can @ me (`@hzfishy`) on the [Unreal Source Discord Server](https://discord.gg/unrealsource). If you send me a friend request I will probably deny it (because of spams).
 
+**DON'T EMAIL ME FOR HELP, GO ON THE DISCORD**
+
 More info about me [on my website](https://hzfishy.fr/).
 

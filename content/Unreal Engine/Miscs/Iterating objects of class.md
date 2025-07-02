@@ -28,6 +28,12 @@ You can see it in source code at `UGameplayStatics::GetAllActorsWithInterface`, 
 ## `TActorIterator`
 Its usually fast, but it scales with the number of actors, because it runs some checks on each found actors.
 
+```c++
+for (auto It = TActorIterator<AActor>(World); It; ++It)
+// or ...
+for (TActorIterator<AActor> It(World); It; ++It)
+```
+
 **How it works**
 This is the interesting part of the declaration of the actor iterator: `class TActorIterator : public TActorIteratorBase<TActorIterator<ActorType>>`.
 

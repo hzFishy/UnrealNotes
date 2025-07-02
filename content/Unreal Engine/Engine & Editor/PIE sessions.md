@@ -1,4 +1,6 @@
 
+For `GWorld` changes, see `SetPlayInEditorWorld` and `RestoreEditorWorld`.
+
 # Starting PIE
 
 ## 0 - Start
@@ -46,6 +48,7 @@ Not called directly after the call, can be called after multiple frames.
 
 Checks if PIE logging was successful.
 Calls `UEditorEngine::CreateInnerProcessPIEGameInstance` that  calls `UGameInstance::StartPlayInEditorGameInstance`. 
+
 
 For the listen server it *ends* here. The editor doesn't reload the current map or load a new map.
 
