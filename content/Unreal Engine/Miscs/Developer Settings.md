@@ -16,6 +16,7 @@ UCLASS(Config = EditorPerProjectUserSettings, DefaultConfig) class UMyFrameworkL
 Override `GetCategoryName` and return `Plugins`.
 If your class is an Editor module it will appear in the Editor Preferences and Project Settings
 
+In the `UCLASS` macro, specify a correct `Config` value
 
 # Miscs
 

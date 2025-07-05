@@ -43,6 +43,7 @@ FPSPrefabSystemBlueprintSummoner::FPSPrefabSystemBlueprintSummoner(TSharedPtr<FB
 	TabIcon = PS::Editor::Helpers::GetPrefabSystemIcon();
 	
     bIsSingleton = true;
+    InsideTabPadding = 10;
 	
     ViewMenuDescription = INVTEXT("ViewMenuDescription");
     ViewMenuTooltip = INVTEXT("ViewMenuTooltip");
