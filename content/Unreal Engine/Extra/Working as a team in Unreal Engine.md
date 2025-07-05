@@ -1,4 +1,5 @@
 Notes of practices I noted.
+Needs some updates.
 
 **Resources**
 - [Setting up an Unreal Engine Studio the Epic Way | Unreal Fest 2024](https://www.youtube.com/watch?v=102O0FOEzNY)

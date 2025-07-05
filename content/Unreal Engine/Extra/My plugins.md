@@ -1,8 +1,10 @@
+# Unreal Prefabs ([Website](https://products.hzfishy.fr/Prefabs/))
+The power of Child Actor Components and Unity Prefabs the Unreal way, coming soon.
 
 # Fishy Utils ([Github](https://github.com/hzFishy/FishyUtils))
 
-For now my only plugin, holds a lot of utility functions.
-Most of them are in c++ namespaces, I will eventually make Blueprint Function Libraries for everything so BP users can use this plugin. 
+Holds a lot of utility functions.
+Most of them are in c++ namespaces, I will eventually make Blueprint Function Libraries for everything so BP users can use most of this plugin features. 
 
 **Main features**
 - General Utility functions
@@ -14,13 +16,18 @@ Most of them are in c++ namespaces, I will eventually make Blueprint Function Li
 	- Modular logging macros (wrapper of [dbgLOG](https://github.com/itsBaffled/dbgLOG))
 - Physics
 	- `FindSkeletalOverlappingBodies`
+	- ...
 - UI
 	- `SetInputModeAndMouseVisibility`
+	- ...
 - Miscs
 	- Oriented Box
 	- Socket picker
+	- ...
+- ...
 
 **Editor only features**
 - Level Design features
 	- **SelectSameFolderLevel:** In `Select` menu, or with the shortcut (`Shift+Alt+S` by default): Selects all other actors that are in the same root folder than the current selection.
 - Message Dialog Box
+- ...

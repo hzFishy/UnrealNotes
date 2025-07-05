@@ -1,9 +1,15 @@
 
-- Use `ToolMenus.Edit` command in editor
-- See [this](https://minifloppy.it/posts/2024/adding-custom-buttons-unreal-editor-toolbars-menus/) cool post.
+# Resources
+- Use `ToolMenus.Edit` command in editor to see the menu entry points
+- See [this](https://minifloppy.it/posts/2024/adding-custom-buttons-unreal-editor-toolbars-menus/) cool post on how to add custom entries to toolbar and menu entries in menu.
 - See [[Unreal Engine/Slate/_Resources (Slate)|_Resources (Slate)]] for more details about reusing engine slate icons & styles.
 - See [this](https://herr-edgy.com/tutorials/extending-tool-menus-in-the-editor-via-c/) for dynamic tool menu entries and to get context.
 - See [this](https://zhuanlan.zhihu.com/p/628655599) cool post (use translator) about general extensions (check at the end (`FWorkflowCentricApplication` section) for a cool example of using a `FSummoner`).
+- See [this](https://easycomplex-tech.com/blog/Unreal/AssetEditor/UEAssetEditorDev-AssetEditorClassDef/) for more info on how to create custom editor classes and how they work. And the differences between `FAssetEditorToolkit` and `FWorkflowCentricApplication`.
+- See [this](https://easycomplex-tech.com/blog/Unreal/AssetEditor/UEAssetEditorDev-AssetEditorLayout/) for more information on editor layouts for application modes.
+- See [this](https://easycomplex-tech.com/blog/Unreal/AssetEditor/UEAssetEditorDev-AssetEditorAppMode/) for information about application modes
+- See [this](https://easycomplex-tech.com/blog/Unreal/AssetEditor/UEAssetEditorDev-AssetEditorMenuToolbar/) for examples on how to add specific tabs/toolbars/menu to your custom asset
+- See [[Summoners (Tabs)]]
 
 # Engine menu creation
 - Level Editor Toolbar: `FLevelEditorToolBar::RegisterLevelEditorToolBar(`
@@ -94,4 +100,16 @@ ToolbarSection.AddDynamicEntry(FName("PrefabReferenceComponentSubMenu"), FNewToo
 
 # Tabs
 See https://github.com/aquanox/SubsystemBrowserPlugin/blob/main/Source/SubsystemBrowser/SubsystemBrowserModule.cpp#L49-L76.
+
+
+# Other
+## Combo Button
+
+> [!Danger] Text not showing in button
+> I found out that when adding a ComboButton in the level editor toolbar, the text inside the button wasn't displayed (this didn't happen in other toolbars).
+> 
+> The fix is to override the style on the button (which is an `FToolMenuEntry`) like so: `Button.StyleNameOverride = "CalloutToolbar";`.
+> The only mention on what this style does in the source code was the following: `// This style displays button text`.
+
+
 

@@ -11,6 +11,12 @@ UCLASS(Config = EditorPerProjectUserSettings, DefaultConfig) class UMyFrameworkL
 > This will go into Editor preferences and write to `DefaultEditorPerProjectUserSettings.ini` in `Saved/` which shouldn't be committed
 
 
+# Plugin Developer Settings
+
+Override `GetCategoryName` and return `Plugins`.
+If your class is an Editor module it will appear in the Editor Preferences and Project Settings
+
+
 # Miscs
 
 ## Custom category
