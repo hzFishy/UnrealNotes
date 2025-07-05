@@ -14,7 +14,10 @@ They have special features such as:
 To see how the Blueprint Editor ones are made see `BlueprintEditorTabFactories.h/.cpp` and `BlueprintEditorModes.h/.cpp` files.
 
 # Add your custom summoners
-Here are the barebones of the required setup.
+
+## Blueprint Editor Setup
+### Steps
+
 Do it in an editor module.
 **Here we are adding a summoner tab for the Blueprint Editor, I didn't test for other asset types.**
 
@@ -71,3 +74,18 @@ BlueprintEditorModule.OnRegisterTabsForEditor().AddLambda([] FWorkflowAllowedTab
 And now, its done!
 <br>![[Pasted image 20250705145940.png]]<br>
 ![[Pasted image 20250705150003.png]]
+
+### How does the injection work
+
+It seems that `FBlueprintEditorUnifiedMode::FBlueprintEditorUnifiedMode` constructor is used by default when you open a blueprint.
+
+It registers the summoners in `BlueprintEditorTabFactories`.
+The same tab set is used in `FBlueprintEditorUnifiedMode::RegisterTabFactories`.
+We are using the `OnRegisterTabsForEditor` lambda, which is called BETWEEN the two mentioned function, allowing us to add summoners BEFORE its pushed to the `FBlueprintEditor`.
+
+If you want to add the summoner tab in another way, you could by having a `TSharedptr<FBlueprintEditor>`.
+```c++
+FWorkflowAllowedTabSet WorkflowAllowedTabSet;  
+WorkflowAllowedTabSet.RegisterFactory(MakeShared<FPSPrefabSystemBlueprintSummoner>(BlueprintEditorPtr));  
+BlueprintEditor->PushTabFactories(WorkflowAllowedTabSet);
+```
