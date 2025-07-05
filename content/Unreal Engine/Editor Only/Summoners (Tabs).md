@@ -2,6 +2,7 @@
 # About
 
 Summoner is the name given for some type of tabs, for example the `My Blueprint`, `Graph Editor`, `Construction Script Editor`. An easy example of them being used is the Blueprint Editor.
+
 ![[Pasted image 20250705144922.png]]
 
 They are tabs BOUND to an asset.
