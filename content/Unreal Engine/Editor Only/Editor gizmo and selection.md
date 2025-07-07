@@ -16,6 +16,8 @@ The main functions are `GizmoManipulationStarted`, `GizmoManipulationDeltaUpdate
 # Selection
 `USelection` is the backend of the selection flow in the editor.
 
+Also check [[In depth Editor selection]]
+
 Notes:
 - There is `Actor::IsSelectedInEditor` (same for components)
 - There is `USelection::SelectionChangedEvent` and `USelection::SelectObjectEvent`
