@@ -80,11 +80,11 @@ And now, its done!
 
 It seems that `FBlueprintEditorUnifiedMode::FBlueprintEditorUnifiedMode` constructor is used by default when you open a blueprint.
 
-It registers the summoners in `BlueprintEditorTabFactories`.
-The same tab set is used in `FBlueprintEditorUnifiedMode::RegisterTabFactories`.
-We are using the `OnRegisterTabsForEditor` lambda, which is called BETWEEN the two mentioned function, allowing us to add summoners BEFORE its pushed to the `FBlueprintEditor`.
+> It registers the summoners in `BlueprintEditorTabFactories`.
+> The same tab set is used in `FBlueprintEditorUnifiedMode::RegisterTabFactories`.
+> We are using the `OnRegisterTabsForEditor` lambda, which is called BETWEEN the two mentioned function, allowing us to add summoners BEFORE its pushed to the `FBlueprintEditor`.
 
-If you want to add the summoner tab in another way, you could by having a `TSharedptr<FBlueprintEditor>`.
+If you want to add the summoner tab in another way, you could by having a `TSharedptr<FBlueprintEditor>`. *(Didn't test it but should work with only the following)*
 ```c++
 FWorkflowAllowedTabSet WorkflowAllowedTabSet;  
 WorkflowAllowedTabSet.RegisterFactory(MakeShared<FPSPrefabSystemBlueprintSummoner>(BlueprintEditorPtr));  
