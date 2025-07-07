@@ -18,6 +18,7 @@
 - [Laura's Unreal C++ speedrun](https://landelare.github.io/2023/01/07/cpp-speedrun.html)
 - [Tom Looman's UE C++ Complete Guide](https://www.tomlooman.com/unreal-engine-cpp-guide/)
 - [Blueprints vs. C++: How They Fit Together and Why You Should Use Both](https://www.youtube.com/watch?v=VMZftEVDuCE)
+- [Coding Standard](https://dev.epicgames.com/documentation/en-us/unreal-engine/epic-cplusplus-coding-standard-for-unreal-engine)
 
 ## Nice to check
 - [Common unreal slacker issues & tips](https://tackytortoise.github.io/2022/06/24/common-slacker-issues.html)

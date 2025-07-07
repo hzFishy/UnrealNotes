@@ -7,3 +7,7 @@
 ## `FCoreUObjectDelegates::OnObjectsReplaced`
 
 See engine wrapper at `UEditorEngine::NotifyToolsOfObjectReplacement`.
+
+## `FCoreUObjectDelegates::OnAssetLoaded`
+
+
