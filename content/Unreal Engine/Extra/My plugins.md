@@ -1,4 +1,4 @@
-# Unreal Prefabs ([Website](https://products.hzfishy.fr/Prefabs/))
+# Unreal Prefabs ([Website](https://hzfishy.gitbook.io/unrealprefabs/))
 The power of Child Actor Components and Unity Prefabs the Unreal way, coming soon.
 
 # Fishy Utils ([Github](https://github.com/hzFishy/FishyUtils))
