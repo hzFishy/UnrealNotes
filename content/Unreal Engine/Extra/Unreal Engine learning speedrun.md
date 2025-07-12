@@ -740,6 +740,8 @@ More resources and tools if you want to go further.
 > - [Mathew Wadstein](https://www.youtube.com/@MathewWadsteinTutorials)
 > - [Ryan Laley](https://www.youtube.com/@RyanLaley)
 > - [Micheal Pattison](https://www.youtube.com/@mpattym/)
+> - [Dan's Game Dev Channel](https://www.youtube.com/@dansgamedevchannel6297)
+> 	- [Blueprint Series](https://www.youtube.com/playlist?list=PLe8IIGgGFPxKnH1yvjuYNvNgFiJmW0LlO)
 >
 > **Materials:**
 > - [Ben Cloward](https://www.youtube.com/@BenCloward)

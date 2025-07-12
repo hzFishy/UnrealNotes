@@ -1,0 +1,37 @@
+
+# About
+SlateIM widgets/windows are meant to be constructed from commands. But you can also use SlateIM to build a SWidget and get it (see How it works section)
+
+# Commands
+- `SlateIM.ToggleSlateStyleBrowser`: A window showing the engine existing brushes, rich text, button styles, etc
+- `SlateIM.ToggleTestSuiteWindow`: A ton of examples
+- `SlateIM.ToggleTestSuiteViewport`: Same as above but the window is "linked" to the viewport
+
+# Examples
+See the commands section and `FSlateIMTestWindowWidget` with `FSlateIMTestWidget`.
+
+# How it works
+*Arrows points to parent*
+
+```mermaid
+flowchart TD
+%%{ init : {'flowchart': {'nodeSpacing': 100, 'rankSpacing': 100, "curve" : "step"}} }%%
+
+    FSlateIMWidgetWithCommandBase --> FSlateIMWidgetBase
+    FSlateIMWindowBase --> FSlateIMWidgetWithCommandBase
+    FSlateIMExposedBase --> FSlateIMWidgetBase
+```
+
+From this hierarchy we can understand the following:
+- If you want a standalone widget that is created from a command, use `FSlateIMWindowBase`
+- If you want to use SlateIM and get the created SWidget to use it elsewhere, use `FSlateIMExposedBase`
+
+
+For `FSlateIMWidgetBase`, the widget is constructed from the command that runs `FSlateIMWidgetWithCommandBase::ToggleWidget`. This will execute `FSlateIMWidgetBase::DrawWidget` on Slate PreTick until the window is disabled.
+If conditions are met `FSlateIMWindowBase::DrawWindow` runs (which needs to be overridden, for example `FSlateIMTestWindowWidget` does it).
+
+But for `FSlateIMExposedBase`, its different.
+`FSlateIMExposedBase::DrawContent` is the functions that has to be overridden to build the widget.
+**How to use `FSlateIMExposedBase` to embed it in other widgets?**
+Since after enabling the widget it needs at least 1 Slate PreTick to hold a valid SWidget, you have to enabled the widget BEFORE you use `GetExposedWidget`.
+To avoid unnecessary calls, you also have to manually handle its active/inactive state depending on if the widget is displayed or not (since `DrawContent` is called regardless of its visibility).

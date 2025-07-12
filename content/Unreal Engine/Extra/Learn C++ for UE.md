@@ -28,7 +28,7 @@
 - [Tom Looman's UE C++ Course **(Paid)**](https://courses.tomlooman.com/p/unrealengine-cpp?coupon_code=COMMUNITY15)
 - [Converting Blueprint to C++ (Official)](https://dev.epicgames.com/community/learning/courses/KJ/unreal-engine-converting-blueprint-to-c/kjB/unreal-engine-introduction-to-blueprint-vs-c)
 
-
+# Other
 ## Niche cases
 - GAS [[Unreal Engine/GAS/_Resources (GAS)|_Resources (GAS)]]
 - [Animating in C++: Curves and Easing Functions](https://www.tomlooman.com/animating-in-cpp-curves-and-easing-functions/)
