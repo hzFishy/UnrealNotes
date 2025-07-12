@@ -23,8 +23,8 @@ flowchart TD
 ```
 
 From this hierarchy we can understand the following:
-- If you want a standalone window (which holds a widget) that is created from a command, use `FSlateIMWindowBase`
-- If you want to use SlateIM and get the created `SWidget` to use it elsewhere, use `FSlateIMExposedBase`
+- If you want a standalone window (which holds a widget) that is created from a command, use `FSlateIMWindowBase` or directly subclass `FSlateIMWidgetWithCommandBase`.
+- If you want to use the SlateIM API and get the generated `SWidget` to use it elsewhere, use `FSlateIMExposedBase`.
 
 
 For `FSlateIMWidgetBase`, the widget is constructed from the command that runs `FSlateIMWidgetWithCommandBase::ToggleWidget`. This will execute `FSlateIMWidgetBase::DrawWidget` on Slate PreTick until the window is disabled.
@@ -32,6 +32,7 @@ If conditions are met `FSlateIMWindowBase::DrawWindow` runs (which needs to be o
 
 But for `FSlateIMExposedBase`, its different.
 `FSlateIMExposedBase::DrawContent` is the functions that has to be overridden to build the widget.
-**How to use `FSlateIMExposedBase` to embed it in other widgets?**
+
+**How to use `FSlateIMExposedBase` to embed it in other widgets?**<br>
 Since after enabling the widget it needs at least 1 Slate PreTick to hold a valid `SWidget`, you have to enabled the widget BEFORE you use `GetExposedWidget`.
 To avoid unnecessary calls, you also have to manually handle its active/inactive state depending on if the widget is displayed or not (since `DrawContent` is called regardless of its visibility).
