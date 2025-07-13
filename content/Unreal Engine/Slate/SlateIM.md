@@ -1,6 +1,6 @@
 
 # About
-SlateIM widgets/windows are meant to be constructed from commands. But you can also use SlateIM to build a `SWidget` and get it (see How it works section)
+SlateIM widgets/windows are meant to be constructed from commands. But you can also use SlateIM to build a `SWidget` and get it (see `How it works` section)
 
 # Commands
 - `SlateIM.ToggleSlateStyleBrowser`: A window showing the engine existing brushes, rich text, button styles, etc
@@ -8,7 +8,7 @@ SlateIM widgets/windows are meant to be constructed from commands. But you can a
 - `SlateIM.ToggleTestSuiteViewport`: Same as above but the widget is "linked" to the viewport
 
 # Examples
-See the commands section and `FSlateIMTestWindowWidget` with `FSlateIMTestWidget`.
+See the `Commands` section and `FSlateIMTestWindowWidget` with `FSlateIMTestWidget`.
 
 # How it works
 *Arrows points to parent*
