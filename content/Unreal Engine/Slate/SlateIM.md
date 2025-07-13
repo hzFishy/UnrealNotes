@@ -1,6 +1,6 @@
 
 # About
-SlateIM widgets/windows are meant to be constructed from commands. But you can also use SlateIM to build a SWidget and get it (see How it works section)
+SlateIM widgets/windows are meant to be constructed from commands. But you can also use SlateIM to build a `SWidget` and get it (see How it works section)
 
 # Commands
 - `SlateIM.ToggleSlateStyleBrowser`: A window showing the engine existing brushes, rich text, button styles, etc
@@ -34,5 +34,15 @@ But for `FSlateIMExposedBase`, its different.
 `FSlateIMExposedBase::DrawContent` is the functions that has to be overridden to build the widget.
 
 **How to use `FSlateIMExposedBase` to embed it in other widgets?**<br>
+Without editing the plugin:
 Since after enabling the widget it needs at least 1 Slate PreTick to hold a valid `SWidget`, you have to enabled the widget BEFORE you use `GetExposedWidget`.
 To avoid unnecessary calls, you also have to manually handle its active/inactive state depending on if the widget is displayed or not (since `DrawContent` is called regardless of its visibility).
+
+If you can edit the plugin:
+In `SlateIMWidgetBase.h`, remove the `private` for `DrawWidget`.
+Then you can simply call `EnableWidget` and `DrawWidget(FApp::GetDeltaTime())` on your `FSlateIMExposedBase` when you need to initialize one and directly access its internal widget (for example I do this for editor utilities which are in engine-managed tab managers).
+
+# Troubleshoot
+
+**Text not filling space after resizing ?** Use `SlateIM::HAlign(HAlign_Fill);`
+
