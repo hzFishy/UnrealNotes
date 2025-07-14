@@ -734,6 +734,8 @@ More resources and tools if you want to go further.
 > - [Math Extension Nodes and Functions](https://www.fab.com/listings/eb43bd3c-40be-459d-bc14-0e0fd6919681): Add math nodes for types with no default math operations support. 
 > - [[Blueprint] Array Helper](https://www.fab.com/listings/87af7b30-1635-4321-b1df-6e1f459cf855): A bunch of new nodes to do operations on arrays.
 > - [Sorting Array](https://www.fab.com/listings/129f2b52-3fb0-4003-a93d-62922643cbde): Sort array nodes
+> 
+> More here: [[Tools & Plugins]]
 
 > [!abstract] Recommended YouTube channels
 > **General stuff:**
