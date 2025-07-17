@@ -25,6 +25,9 @@ There is `USelection::SelectionChangedEvent` and `USelection::SelectObjectEvent`
 
 Use `GEditor->GetSelectedObjects()` (or other variants) to get a pointer to `USelection` (depending on the used functions some objects will be excluded from the list, for example use `GetSelectedActors` to get selected actors.)
 
+`UUnrealEdEngine::edactSelectAll` is called when doing Select All.
+More can be found in `UUnrealEdEngine` <br>
+![[Pasted image 20250717120918.png]]
 ## Actors
 There is `Actor::IsSelectedInEditor`.
 
