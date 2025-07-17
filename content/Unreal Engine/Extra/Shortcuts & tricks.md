@@ -55,17 +55,58 @@ All the keys can be changed in the editor settings
 
 ## Console commands
 At the top of this page there are interesting console commands [[Console commands & variables]]
-## Miscs
+## Global
 
 **Show 3D Widget on Vector variable**
 > `meta=(MakeEditWidget)` in C++
 > ![[Pasted image 20250412162241.png]]
 
-**Keep Simulation Changes**
-> [[Keep Simulation Changes]]
+**Control Asset Open Location**
+> Edit `AssetEditorOpenLocation` in Editor Settings
 
+## Blueprint
+All settings in `Blueprint Editor Settings` and `Graph Editors` in Editor Settings.
+
+**Object Type Auto Casting**
+> See `AutoCastObjectConnections` in Editor Settings
+![[Pasted image 20250717105227.png]]
+
+**Disable ghost nodes**
+> See `Spawn Default Blueprint Nodes` in Editor Settings
+
+**Add new default Blueprint Categories**
+> See `Additional Blueprint Categories` in Editor Settings.
+
+**Draw mid point arrows**
+> See `Draw midpoint arrows in Blueprints` in Editor Settings
+![[Pasted image 20250717110126.png]]
+
+**Jump to invalid nodes on compile error**
+> See `Jump to Node Errors` in Editor Settings
+
+## Level Editor
 **Reset editor camera to before-PIE location & rotation**
 > Disable `bEnableViewportCameraToUpdateFromPIV` in Editor settings
 
-**Control Asset Open Location**
-> Edit `AssetEditorOpenLocation` in Editor Settings
+**Keep Simulation Changes**
+> [[Keep Simulation Changes]]
+
+**Enable Combined Translate/Rotate Widget**
+> See `Enable Combined Translate/Rotate Widget` in Editor Settings
+![[Pasted image 20250717111552.png]]
+
+**Enable Screen Rotate**
+> See `Enable Screen Rotate` in Editor Settings
+![[Pasted image 20250717111932.png]]
+
+
+**Camera Preview Settings**
+> See `Preview Selected Cameras` and `Camera Preview Size` in Editor Settings.
+
+**Add more values for move/rotate/scale snapping**
+See `Grid Snapping -> Advanced` in Editor Settings.
+
+## PIE
+**Give Mouse Control**
+> See `Game Gets Mouse Control` in Editor Settings
+
