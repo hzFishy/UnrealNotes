@@ -23,7 +23,7 @@
 # Miscs
 
 ## Core delegates
-- See `FCoreDelegates`
+- See `FCoreDelegates` ([[FCoreDelegates]])
 ## Seamless and hard travel
 - [Wizard Cell Persistent Data Compendium](https://wizardcell.com/unreal/persistent-data/#travel-seamless-vs-hard)
 ## UWorld creation flow

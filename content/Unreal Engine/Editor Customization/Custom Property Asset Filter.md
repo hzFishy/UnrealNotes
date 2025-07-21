@@ -1,5 +1,8 @@
 Basically, for whatever assets the default picker finds, it loops them with your function.
 
+The function must have the following signature: `UFUNCTION() bool FuncName(const FAssetData& AssetData) const;` But it seems that non const functions works to.
+
+**If you return true you are excluding the given Asset Data**
 # Simple use case
 Snippet (thanks to KaosSpectrum)
 ```c++
@@ -10,7 +13,6 @@ bool UMyBlah::MyOwnFilter(const FAssetData& AssetData)
     //Do asset checking here
 }
 ```
-
 
 # Filtering Data Tables from base struct
 You can filter `UDataTable` pickers by using `RowType=XXX` to only display data tables that use a specific row type.
