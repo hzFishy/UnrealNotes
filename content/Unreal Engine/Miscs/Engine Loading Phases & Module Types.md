@@ -1,0 +1,3 @@
+- All phases and modules types with description can be found in `ModuleDescriptor.h`
+- All phases with description [here](https://dev.epicgames.com/documentation/en-us/unreal-engine/API/Runtime/Projects/ELoadingPhase__Type) (Known as `ELoadingPhase`)
+- All modules types with description [here](https://dev.epicgames.com/documentation/en-us/unreal-engine/API/Runtime/Projects/EHostType__Type) (Known as `EHostType`)
