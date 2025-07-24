@@ -9,7 +9,6 @@ Unfiltered list, this will be cleaned up with other pages when I got time.
 - [Landscape Physics Material Node - Custom fx for gn or different footstep sounds](https://www.youtube.com/watch?v=_BIZ3FOcLNs&t=401)
 - [Water System Overrides - Modify from project settings](https://www.youtube.com/watch?v=_BIZ3FOcLNs&t=471)
 - [Console Water Variables - VSM Filtering (Virtual Shadow Map)](https://www.youtube.com/watch?v=_BIZ3FOcLNs&t=512)
-- [Property Coloration Viewmode - Ctrl+Click on any property in details and it will grab all from the scene!](https://www.youtube.com/watch?v=_BIZ3FOcLNs&t=557)
 - [Render Resource Viewer - View what eats up the VRAM](https://www.youtube.com/watch?v=_BIZ3FOcLNs&t=610)
 - [Local Exposure - Blend between different exposures in the same view](https://www.youtube.com/watch?v=_BIZ3FOcLNs&t=659)
 - [Location Volume - Named markers for an area in map partition (Shared between team)](https://www.youtube.com/watch?v=_BIZ3FOcLNs&t=733)

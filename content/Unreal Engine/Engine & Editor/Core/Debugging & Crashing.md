@@ -14,26 +14,6 @@
 	- Failing a `ensure` will bring up the debugger when using an IDE and not cause a UE crash if not. It can print a custom text in the logs.
 	- Returns the boolean expression you are passing in for all build types.
 
-## Engine notifications
-Use `FNotificationInfo` with `FSlateNotificationManager::Get().AddNotification(Info);`
-Then use `SetCompletionState` to set the status (success, fail, ...).
-
-Snippet example (thanks to Hojo, Unreal Source Discord)
-```c++
-void PostNotificationInfo_Warning(FText Title, FText Description, float Duration)
-{
-	FNotificationInfo NotificationInfo(Title);
-	NotificationInfo.ExpireDuration = Duration;
-	NotificationInfo.Image = FAppStyle::GetBrush("Icons.WarningWithColor");
-	NotificationInfo.SubText = Description;
-	FSlateNotificationManager::Get().AddNotification(NotificationInfo);
-}
-```
-
-To use `FAppStyle` you need to include `SlateCore` module.
-
-You can find another simple example at `UMassEntityConfigAsset::ValidateEntityConfig`
-
 ## Handle crashing for shipping builds
 Enable `Include Crash Reporter` in the project settings
 If you want to have a more detailed call stack, you need to include the debug symbols in your build, to do so enable `Include Debug Files`.

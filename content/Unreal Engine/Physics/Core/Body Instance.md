@@ -26,7 +26,7 @@ For more detailed collision setting, there are many functions like `SetResponseT
 > [!Warning] Warning
 > `SetShapeCollisionEnabled` calls `UpdatePhysicsFilterData`, which will wake up the BI
 
-See also [[Unreal Engine/Physics/Collisions|Collisions]]
+See also [[Collisions|Collisions]]
 ### Constraint
 When you select a PrimitiveComponent, you can set Constraints <br>
 ![[Pasted image 20250318220101.png]]<br>

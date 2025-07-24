@@ -99,13 +99,14 @@ All settings in `Blueprint Editor Settings` and `Graph Editors` in Editor Settin
 > See `Enable Screen Rotate` in Editor Settings
 ![[Pasted image 20250717111932.png]]
 
-
 **Camera Preview Settings**
 > See `Preview Selected Cameras` and `Camera Preview Size` in Editor Settings.
 
 **Add more values for move/rotate/scale snapping**
 See `Grid Snapping -> Advanced` in Editor Settings.
 
+**Highlight elements with same values**
+> [Property Coloration Viewmode - Ctrl+Click on any property in details and it will grab all from the scene!](https://www.youtube.com/watch?v=_BIZ3FOcLNs&t=557)
 ## PIE
 **Give Mouse Control**
 > See `Game Gets Mouse Control` in Editor Settings
