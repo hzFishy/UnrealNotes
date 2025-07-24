@@ -9,7 +9,8 @@ const NotFound: QuartzComponent = ({ cfg }: QuartzComponentProps) => {
   return (
     <article class="popover-hint">
       <h1>404</h1>
-      <p>{i18n(cfg.locale).pages.error.notFound}</p>
+      <p>Sorry, this page/folder doesn't exist.</p>
+        <p>It's not rare that I change a page location, so if you saved a link in the past, and now the page doesn't exist anymore, just search the title/keywords in the search bar and you will probably find it again in another category.</p>
       <a href={baseDir}>{i18n(cfg.locale).pages.error.home}</a>
     </article>
   )

@@ -3,8 +3,8 @@ title: hzFishy's Game Dev Notes
 ---
 *Since Oct 25, 2024*
 # Welcome
-In those "notes" you will find my notes related to UE and other game dev and design stuff.
-This is where I store stuff so I can find them later if I ever forget.
+In those "notes" you will find my notes related to Unreal Engine, other game dev and design stuff.
+This is where I store various kind of resources, tips and knowledge so I can find them later if I ever forget or share them with others. Over time I added a lot of notes (for example the Unreal Engine folder has more than 200 notes) so unfortunately their names or folder isn't always the best.
 
 Most of the pages are just my personal storage place. But other pages like [[Unreal Engine learning speedrun]] were mainly written for other people.
 
@@ -19,4 +19,3 @@ If you want to contact me for any reason (misspelling, feedback or ideas to impr
 **DON'T EMAIL ME FOR HELP, GO ON THE DISCORD**
 
 More info about me [on my website](https://hzfishy.fr/).
-
