@@ -10,3 +10,10 @@ Common types of channels:
 - A Unique Actor Channel will exist for every Actor replicated from the server to the client.
 
 # Actor Channel
+A channel for exchanging actor and its subobject's properties and RPCs.  
+A Actor Channel manages the creation and lifetime of a replicated actor. Actual replication of properties and RPCs actually happens in `FObjectReplicator` now (see `DataReplication.h`).
+
+There is an example of an Actor Channel bunch at the class declaration.
+
+An actor channel has a `FObjectReplicator` called `ActorReplicator`.
+A `FObjectReplicator` "Represents an object that is currently being replicated or handling RPCs.".

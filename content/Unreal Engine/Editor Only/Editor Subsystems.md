@@ -10,3 +10,6 @@ Example on how to open a BP from a sub object component object
 auto* AssetSS = GEditor->GetEditorSubsystem<UAssetEditorSubsystem>();
 AssetSS->OpenEditorForAsset(OutSelectedObject, AssetTypeActivationOpenedMethod::Edit);
 ```
+
+# UEditorValidatorSubsystem
+Manages validation.

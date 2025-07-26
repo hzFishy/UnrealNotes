@@ -15,3 +15,4 @@ DOREPLIFETIME_WITH_PARAMS_FAST(AMyAwesomeActor, bMyReplicatedBool, Params);
 
 Use `MARK_PROPERTY_DIRTY` macros to mark a property as being dirty so it can be picked up to be replicated.
 
+A useful macro that I made that i like is `#define NET_MARKDIRTY(PropertyName) MARK_PROPERTY_DIRTY_FROM_NAME(ThisClass, PropertyName, this)`.

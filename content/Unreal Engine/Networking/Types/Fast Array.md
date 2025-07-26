@@ -1,7 +1,11 @@
 # Resources
 - See `FastArraySerializer.h` (Explanation of why and how + code examples)
+- See [this article](https://ikrima.dev/ue4guide/networking/network-replication/fast-tarray-replication/)
 
 # Declaration
+
+In your class, you must add `UPROPERTY(Replicated)` above your container, and add it like usual in `GetLifetimeReplicatedProps`.
+
 ```c++
 USTRUCT()
 struct FExampleItemEntry : public FFastArraySerializerItem
@@ -44,3 +48,6 @@ struct TStructOpsTypeTraits< FExampleArray > : public TStructOpsTypeTraitsBase2<
        };
 };
 ```
+
+# Replication
+See [[Replication]] and `FRepLayout::DeltaSerializeFastArrayProperty`.
