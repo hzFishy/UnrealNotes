@@ -3,6 +3,7 @@
 - For a complete list of `DOREPLIFETIME_XXX` macros see [Property Replication Reference](https://dev.epicgames.com/documentation/en-us/unreal-engine/replicate-actor-properties-in-unreal-engine).
 - See also [[Rep Helpers]]
 - [[Custom replication override]] and [Conditional Replication](https://dev.epicgames.com/documentation/en-us/unreal-engine/replicate-actor-properties-in-unreal-engine#conditionalreplication)
+- For interesting logging categories see [[Debugging Networking]]
 
 # Flow
 The majority of actor replication happens inside the [`UNetDriver::ServerReplicateActors`](https://dev.epicgames.com/documentation/en-us/unreal-engine/API/Runtime/Engine/Engine/UNetDriver/ServerReplicateActors) function. This is where the server first gathers all actors it has determined to be relevant for each client, then sends any properties that have changed since the last time each connected client was updated. 
@@ -28,7 +29,7 @@ Finally we actually do stuff with the actor we can replicate this tick with `UNe
 Then we call `UNetDriver::ServerReplicateActors_MarkRelevantActors` which are marked to be considered for next frame.
 
 ### `UActorChannel::ReplicateActor`
-See [[Channel]], [[FObjectReplicator]] & [[FRepLayout & FRepState]]
+See [[Channel]] & [[Net Types]].
 
 This eventually calls `FObjectReplicator::ReplicateProperties` which is a wrapper of `FObjectReplicator::ReplicateProperties_r`. 
 This function replicates properties to the Bunch (`FOutBunch`, which is a bunch used to be send). 
@@ -39,12 +40,19 @@ This will eventually call `FRepLayout::SendCustomDeltaProperty`.
 
 And starting here various path are followed depending on types, for example for a struct `ICppStructOps::NetDeltaSerialize` will be called.
 
+## How are subobject's handled
+When calling `AActor::AddReplicatedSubObject` it will eventually call `FReplicationSystemUtil::BeginReplicationForActorSubObject` then `UEngineReplicationBridge::StartReplicatingSubObject`.
+This will run `UObjectReplicationBridge::StartReplicatingNetObject` & `UReplicationBridge::InternalAddSubObject` (which is called `FNetRefHandleManager::AddSubObject`).
 
 ## Handling new replicated objects
 
+### Spawning replicated object for client
+Inside `UActorChannel::ReceivedBunch` -> `UActorChannel::ProcessBunch` -> `UActorChannel::ReadContentBlockHeader` calls `UActorChannel::ReadContentBlockHeader` which does the actual `NewObject`.
+This also calls `AActor::OnSubobjectCreatedFromReplication` on the assigned actor.
+
 ### Spawning replicated actor for client
 The process seems to be the following:
-`UNetConnection::ReceivedRawPacket` -> `UNetConnection::ReceivedPacket` -> `UNetConnection::DispatchPacket`.
+`UNetConnection::ReceivedRawPacket` -> `UNetConnection::ReceivedPacket` -> `UNetConnection::DispatchPacket`. (See `LogNetTraffic` logs for this).
 
 I don't know how the Actor Channel exists/is created since the representing actor doesn't exist yet.
 `UChannel::ReceivedRawBunch` (bunch is of type `FInBunch`) -> `UChannel::ReceivedNextBunch` -> `UChannel::ReceivedSequencedBunch` -> `UActorChannel::ReceivedBunch` -> `UActorChannel::ProcessBunch`.
@@ -59,6 +67,10 @@ Thats the job of `UNetDriver::UpdateUnmappedObjects`, which will call `FObjectRe
 The function responsible for that is `FObjectReplicator::CallRepNotifies` which calls `FRepLayout::CallRepNotifies` which uses `UObject::ProcessEvent` to run the OnRep function.
 
 # Common Issues
+
+## UObject not replicating
+I had an issue with a UObject not replicating because it was a instanced object of another Actor Component.
+Using `NewObject` and giving the object as the template fixed the issue (use the result of the function as the object to replicate). Duplicate function or changing outer didn't fix the issue.
 
 ## OnRep OldValue
 When using OldValue in `OnRep_` functions, be sure to make your parameter a reference, otherwise your value will be broken.

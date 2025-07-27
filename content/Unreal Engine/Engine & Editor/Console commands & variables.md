@@ -8,9 +8,10 @@ You can have a cool panel with your console commands & variable in `Window->Cons
 ## Saving console variables
 You can either:
 - use the console command window
-- set the console variable value in the correct `.init` in the correct section
+- set the console variable value in the correct `.ini` in the correct section
 - see `ConsoleVariables.ini` (special file that doesn't exist by default, can be copied from source engine).
 - use a `UDeveloperSettingsBackedByCvars`
+- or simply add the cvar under `[ConsoleVariables]` section in default project ini
 
 ## List of existing commands and variables
 ### Miscs

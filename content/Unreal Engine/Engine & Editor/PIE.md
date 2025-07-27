@@ -1,7 +1,16 @@
 
 For `GWorld` changes, see `SetPlayInEditorWorld` and `RestoreEditorWorld`.
 
+
 # Starting PIE
+
+> [!Info] Control if you want to allow PIE or not when requested
+> *Inside `UEditorEngine::StartPlayInEditorSession` the engine is looking for any PlayAuthorizers to know if any plugin wants to abort the PIE session*
+> 
+>1. Make a type inheriting `IPIEAuthorizer`.
+> 2. Override `RequestPIEPermission`
+> 3. In a module, register with `IModularFeatures::Get().RegisterModularFeature(IPIEAuthorizer::GetModularFeatureName(), YourPIEAuthorizerObject);`
+> 4. And unregister with `IModularFeatures::Get().UnregisterModularFeature(IPIEAuthorizer::GetModularFeatureName(), YourPIEAuthorizerObject);`
 
 ## 0 - Start
 When pressing play to start a PIE session(s) the editor will set data in `PlaySessionRequest`
@@ -12,7 +21,7 @@ In `UEditorEngine::Tick`, if `PlaySessionRequest.IsSet()` the engine will call
 The latter will run checks such as:
 - See if edited maps are saved
 - See if we run in one process or multiple
-- Broadcasting PIE editor delegates (`FEditorDelegates`)
+- Broadcasting PIE editor delegates (See [[FEditorDelegates]])
 
 Finally, it checks the enum value of `PlaySessionRequest->SessionDestination`
 - If `EPlaySessionDestinationType::InProcess`: Create one-or-more PIE/SIE sessions inside of the current process. Calls `UEditorEngine::StartPlayInEditorSession`
@@ -66,6 +75,7 @@ Later on this will call `UPendingNetGame::InitNetDriver`. Which calls `UIpNetDri
 ---
 
 At the end if the conditions are met `UEditorEngine::OnAllPIEInstancesStarted` is called.
+
 
 
 # Switching between PIE/SIE (Eject/Possess)

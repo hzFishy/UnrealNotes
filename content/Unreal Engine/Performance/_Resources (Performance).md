@@ -5,7 +5,7 @@
 - [The Great Hitch Hunt: Tracking Down Every Frame Drop | Unreal Fest Orlando 2025](https://www.youtube.com/watch?v=HaVTYSnGvxA)
 
 # Networking
-See [[Optimizing]] and [[Character Movement Component]] pages in `Networking/`
+See [[Optimizing Networking]] and [[Character Movement Component]] pages in `Networking/`
 
 # Animations
 See [[Animation Debugging and Optimization]]
