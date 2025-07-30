@@ -5,6 +5,7 @@
 - [Authored vs. Systemic: Finding a Balance for Combat AI in Uncharted 4 (GDC)](https://www.youtube.com/watch?v=G8W7EQKBgcg)
 - [Embracing Push Forward Combat in DOOM (GDC)](https://www.youtube.com/watch?v=2KQNpQD8Ayo)
 - [Marvel's Spider-Man AI Postmortem (GDC)](https://www.youtube.com/watch?v=LxWq65CZBU8)
+- [The Last of Us Human Enemy AI (GDC)](https://gdcvault.com/play/1020338/The-Last-of-Us-Human)
 ### Generic
 - [Game AI Basics](https://www.youtube.com/watch?v=G5A0-_4dFLg)
 - [Simple and Scalable Game AI Decision Making](https://www.youtube.com/watch?v=5ZXfDFb4dzc)
