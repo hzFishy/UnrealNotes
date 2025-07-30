@@ -22,11 +22,7 @@ You can either:
 - `slomo <new time dilation>`: changes the world time dilation
 
 ### Rendering
-- `FreezeRendering`, good to use with `ToggleDebugCamera`, allows you to see how culling works, with extra stuff like seeing the POV of different steps of rendering (press B)
-- `ToggleDebugCamera`
-- `ProfileGPU` panel, also named "GPU Visualizer"
-- `r.Streaming.PoolSize XXX`
-- `r.VisualizeOccludedPrimitives` and `r.AllowOcclusionQueries`
+See [[Debugging Graphics]]
 
 ### Physics
 - See [[Console commands & debugging|Console commands & debugging]] (in `/Physics/`)
