@@ -1,14 +1,17 @@
 
 # Development
 ## AI
+### From game
+- [Authored vs. Systemic: Finding a Balance for Combat AI in Uncharted 4 (GDC)](https://www.youtube.com/watch?v=G8W7EQKBgcg)
+- [Embracing Push Forward Combat in DOOM (GDC)](https://www.youtube.com/watch?v=2KQNpQD8Ayo)
+- [Marvel's Spider-Man AI Postmortem (GDC)](https://www.youtube.com/watch?v=LxWq65CZBU8)
+### Generic
 - [Game AI Basics](https://www.youtube.com/watch?v=G5A0-_4dFLg)
 - [Simple and Scalable Game AI Decision Making](https://www.youtube.com/watch?v=5ZXfDFb4dzc)
 - [AI Arborist: Proper Cultivation and Care for Your Behavior Trees](https://www.youtube.com/watch?v=Qq_xX1JCreI)
 - [Improving AI Decision Modeling Through Utility Theory (GDC)](https://www.gdcvault.com/play/1012410/Improving-AI-Decision-Modeling-Through)
 - [Architecture Tricks: Managing Behaviors in Time, Space, and Depth (GDC)](https://gdcvault.com/play/1018040/Architecture-Tricks-Managing-Behaviors-in)
-- [Building a Better Centaur: AI at Massive Scale (GDC)](https://www.gdcvault.com/play/1021848/Building-a-Better-Centaur-AI)
-- [Improving AI Decision Modeling Through Utility Theory (GDC)](https://www.gdcvault.com/play/1012410/Improving-AI-Decision-Modeling-Through)
-- [Architecture Tricks: Managing Behaviors in Time, Space, and Depth (GDC)](https://gdcvault.com/play/1018040/Architecture-Tricks-Managing-Behaviors-in)
+### Optimization
 - [Building a Better Centaur: AI at Massive Scale (GDC)](https://www.gdcvault.com/play/1021848/Building-a-Better-Centaur-AI)
 
 ## Networking

@@ -31,7 +31,7 @@ public:
 ```cpp
 UClass* MyObjectsClass = UMyObject::StaticClass();
 
-for (TFieldIterator<FProperty> PropertyIterator( MyObjectsClass); PropertyIterator; ++PropertyIterator )
+for (TFieldIterator<FProperty> PropertyIterator(MyObjectsClass); PropertyIterator; ++PropertyIterator)
 {
     FProperty* Property = *PropertyIterator;
 
@@ -39,7 +39,7 @@ for (TFieldIterator<FProperty> PropertyIterator( MyObjectsClass); PropertyIterat
     UE_LOG( LogTemp, Log, TEXT( "%s" ), *Property->GetName() );
 }
 
-for (TFieldIterator<UFunction> FunctionIterator( MyObjectsClass); FunctionIterator; ++FunctionIterator)
+for (TFieldIterator<UFunction> FunctionIterator(MyObjectsClass); FunctionIterator; ++FunctionIterator)
 {
     UFunction* Func = *FunctionIterator;
 
