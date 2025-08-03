@@ -16,26 +16,39 @@ Message->AddToken(FAssetNameToken::Create(GetPathNameSafe(Blueprint),
        *FU_Utilities::GetNameWithoutTemplateSuffix(PRC->GetFName()).ToString()  
 ))));  
   
-// Make a FixeController  
-TSharedRef<FMutuallyExclusiveFixSet> FixController = MakeShareable(new FMutuallyExclusiveFixSet());  
-  
+// Make a FixeController, this can container multiple fixs
+TSharedRef<FMutuallyExclusiveFixSet> FixController = MakeShareable(new FMutuallyExclusiveFixSet());
+
 // fix function  
-TFunction<FFixResult()> ApplyFix = [PRC]()  
-{  
-    PRC->AddPrefabSpawnParametersStruct<FPSRequiredActorPrefabSpawnParameters>();  
-    return FFixResult::Success();  
-};  
-  
-// actual fixer  
-const TSharedRef<IFixer> Fixer = MakeFix(MoveTemp(ApplyFix));  
-  
-// action message with fixer  
-FixController->Add(INVTEXT("Click to add the Required Spawn Prefab Parameters struct"), Fixer);  
-  
+TFunction<FFixResult()> ApplyFix1 = [PRC]()
+{
+    ...
+    return FFixResult::Success();
+};
+// fix function
+TFunction<FFixResult()> ApplyFix2 = [PRC]()
+{
+    ...
+    return FFixResult::Success();
+};
+
+// action message with fixer 1
+FixController->Add(INVTEXT(
+	"Click to apply fix1"),
+	MakeFix(MoveTemp(ApplyFix1))
+);
+
+// action message with fixer 2
+FixController->Add(INVTEXT(
+	"Click to apply fix2"),
+	MakeFix(MoveTemp(ApplyFix2))
+);
+
 FixController->CreateTokens([Message](TSharedRef<FFixToken> FixToken)  
-    {       Message->AddToken(FixToken);  
-    });  
-  
+{
+	Message->AddToken(FixToken);  
+});
+
 // finally, add the message to the editor validator entries  
 Context.AddMessage(Message);
 ```

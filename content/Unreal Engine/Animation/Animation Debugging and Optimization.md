@@ -4,3 +4,5 @@
 - [Animation Debugging and Optimization](https://dev.epicgames.com/documentation/en-us/unreal-engine/animation-debugging-and-optimization-in-unreal-engine)
 - [Rewind Debugger](https://dev.epicgames.com/documentation/en-us/unreal-engine/animation-rewind-debugger-in-unreal-engine)
 - [About Standard Blend, Dead Blending and Inertialization](https://github.com/Vaei/LocoTips/wiki/Inertialization)
+- [Fast Path, Worker Threads, Performance](https://github.com/Vaei/LocoTips/wiki/Structuring:-Fast-Path,-Worker-Threads,-Performance)
+

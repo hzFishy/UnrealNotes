@@ -20,6 +20,7 @@ You can either:
 - `ToggleDisplay` : disables all HUD
 - `show COLLISION` : displays collisions, works in PIE
 - `slomo <new time dilation>`: changes the world time dilation
+- `listtimers` show all active/paused/pending times.
 
 ### Rendering
 See [[Debugging Graphics]]

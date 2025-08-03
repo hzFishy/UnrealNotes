@@ -1,5 +1,6 @@
 
 # Map
+- `FEditorDelegates::OnMapLoad` : `GWorld` will be the current (old) loaded world.
 - `FEditorDelegates::OnMapOpened` : `GWorld` will be the new loaded world.
 
 

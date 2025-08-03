@@ -1,6 +1,6 @@
 
 For `GWorld` changes, see `SetPlayInEditorWorld` and `RestoreEditorWorld`.
-
+Use `GEditor->IsPlayingSessionInEditor()` to see if a PIE/SIE session is running.
 
 # Starting PIE
 

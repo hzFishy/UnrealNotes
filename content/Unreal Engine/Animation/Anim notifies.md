@@ -8,7 +8,7 @@
 > However branching point notifies don't fire if there are 2 on the same frame, especialy common when its the start of a montage.
 > Use my task node/plugin instead, it basically looks for notifies of a specific type, caches the time where they should play, and starts a timer, and broadcasts an event"*
 > 
-> See [PlayMontageAdvanced](https://github.com/Vaei/PlayMontageAdvanced/)
+> See [PlayMontageAdvanced](https://github.com/Vaei/PlayMontageAdvanced/) plugin and [Page from Vaei](https://github.com/Vaei/LocoTips/wiki/Anim-Notifies)
 
 
 # Create your own Notify

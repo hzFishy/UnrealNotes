@@ -1,5 +1,12 @@
 
 
+# Design philosophy
+- See [Vaei - Animation templates](https://github.com/Vaei/LocoTips/wiki/Building-Your-System#animation-templates)
+- See [Vaei - Animation States design](https://github.com/Vaei/LocoTips/wiki/Animation-States#implementation)
+- instead of switching anim layer to match equipped weapon (aka 1 anim layer per weapon), you stay in the same graph BUT you update a given container (for example a data asset)
+- gather your data in `UAnimInstance::NativeUpdateAnimation` (called on game thread)
+- use your collected data in `UAnimInstance::NativeThreadSafeUpdateAnimation` (called on worker threads)
+
 # Montage behavior
 *Thanks to zomg on the Unreal Source Discord for some insights after hitting this problem*
 
@@ -20,7 +27,7 @@ if (auto* CurrentAnim = AnimInstance->GetInstanceForMontage(NPCMontages->PickupM
 }
 else
 {
-PlayPickupAnim();
+	PlayPickupAnim();
 }
 ```
 

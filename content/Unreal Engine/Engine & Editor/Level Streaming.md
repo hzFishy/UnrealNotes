@@ -1,6 +1,6 @@
-There is also [[Networked Streamed levels]]
-
 # Resources
+- [[Networked Streamed levels]]
+- [[_Resources (Level Design)]]
 - [ikrima notes](https://ikrima.dev/ue4guide/networking/network-replication/sublevellevel-instance-streaming-replication/)
 - See `UWorld` , `FStreamingLevelPrivateAccessor` and `FLevelUtils` 
 # Level Streaming Volume
