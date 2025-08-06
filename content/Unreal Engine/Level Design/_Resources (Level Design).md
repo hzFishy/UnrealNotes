@@ -1,4 +1,4 @@
-
+For external editor tools see [[Tools & Plugins]].
 # Editor tooling
 - [Actor palette](https://unrealdirective.com/tips/the-actor-palette)
 - [Layers Panel](https://dev.epicgames.com/documentation/en-us/unreal-engine/layers-panel-in-unreal-engine)

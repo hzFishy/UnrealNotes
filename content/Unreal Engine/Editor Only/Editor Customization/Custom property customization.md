@@ -5,6 +5,30 @@
 
 Difference between `CustomizeHeader` and `CustomizeChildren`
 <br>![[Pasted image 20250607233142.png]]
+
+# Widget Classes
+
+- `SPropertyNameWidget`: Made by `FPropertyHandleBase::CreatePropertyNameWidget`
+	- `SPropertyEditorTitle`
+- `SPropertyValueWidget`: Made by `FPropertyHandleBase::CreatePropertyValueWidget`
+- Pick in order:
+	- `SPropertyEditorArray`
+	- `SPropertyEditorSet`
+	- `SPropertyEditorMap`
+	- `SPropertyEditorOptional`
+	- `SPropertyEditorClass`
+	- `SPropertyEditorStruct`
+	- `SPropertyEditorAsset`
+	- `SPropertyEditorNumeric`
+	- `SPropertyEditorCombo`
+	- `SPropertyEditorEditInline`
+	- `SPropertyEditorText`
+	- `SPropertyEditorBool`
+	- `SPropertyEditorArrayItem`
+	- `SPropertyEditorDateTime`
+	- `SPropertyEditor` uses `FPropertyEditor::GetValueAsText` -> `FPropertyHandleBase::GetValueAsFormattedText` -> `FPropertyNode::GetPropertyValueText` -> `FPropertyTextUtilities::PropertyToTextHelper` -> `FProperty::ExportText_Direct`
+
+
 # Miscs
 
 ## `PropertyHandle`

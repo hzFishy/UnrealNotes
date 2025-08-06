@@ -6,7 +6,7 @@
 - Conversation (Yap) - [Github](https://github.com/HomerJohnston/UE-FlowYap)
 ## Level Design
 - [Voxel plugin](https://voxelplugin.com/) - Very cool and promising voxel plugin. Has a free and paid version.
-- [Scythe](https://www.youtube.com/@ScytheEditor) - Promising level design editor but doesn't have a free version (for now).
+- [Scythe](https://scytheeditor.com/) - Promising level design editor but doesn't have a free version (for now).
 ## VFX
 - [FluidNinja LIVE](https://www.fab.com/listings/80fcf53e-49f7-4635-a71c-ba81280c6618) - Very detailed and modular plugin to use advanced dynamic particle systems. It's paid but on the [Discord](https://discord.gg/rgEtwua2tu) there is an access to a free student version.
 ## Utilities

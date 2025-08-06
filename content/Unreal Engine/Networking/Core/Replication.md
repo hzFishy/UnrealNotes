@@ -63,14 +63,30 @@ When replicated objects are spawned on server, we have to spawn them on relevant
 Since they use unique net GUIDs, we have to tell to the locally spawned objects what are their net GUID.
 Thats the job of `UNetDriver::UpdateUnmappedObjects`, which will call `FObjectReplicator::UpdateUnmappedObjects`  which will trigger onreps on the newly created object.
 
+## Bunch handling
+Aside what is already said in the other sections, all UObjects have a `UObject::PreNetReceive` and `UObject::PostNetReceive`. These are called on each received bunch.
+
 ## OnRep handling
 The function responsible for that is `FObjectReplicator::CallRepNotifies` which calls `FRepLayout::CallRepNotifies` which uses `UObject::ProcessEvent` to run the OnRep function.
 
+`FRepLayout::CallRepNotifies` will call `UObject::PostRepNotifies` after.
 # Common Issues
 
 ## UObject not replicating
 I had an issue with a UObject not replicating because it was a instanced object of another Actor Component.
 Using `NewObject` and giving the object as the template fixed the issue (use the result of the function as the object to replicate). Duplicate function or changing outer didn't fix the issue.
+
+## OnRep BP function not called in BP UObject
+This is because by default the replication system won't pick up UObject replicated properties.
+You have to add the following in `GetLifetimeReplicatedProps` (for example this is what the Actor class does):
+```c++
+if (const UBlueprintGeneratedClass* BPClass = Cast<UBlueprintGeneratedClass>(GetClass()))
+{
+	BPClass->GetLifetimeBlueprintReplicationList(OutLifetimeProps);
+}
+```
+
+It also seems like you need to override `GetWorld`.
 
 ## OnRep OldValue
 When using OldValue in `OnRep_` functions, be sure to make your parameter a reference, otherwise your value will be broken.
