@@ -35,6 +35,7 @@ All the keys can be changed in the editor settings
 - Tab Navigation (Ctrl + Tab)
 - Show navigation surface (P)
 - Screen capture (F9)
+- Close current asset window (Ctrl + W)
 
 ## Blueprint
 - Search `Nodes, keywords, variables, ...` (Ctrl + F)
