@@ -66,7 +66,10 @@ At the top of this page there are interesting console commands [[Console command
 > Edit `AssetEditorOpenLocation` in Editor Settings
 
 ## Blueprint
-All settings in `Blueprint Editor Settings` and `Graph Editors` in Editor Settings.
+Fore more see all settings in `Blueprint Editor Settings` and `Graph Editors` in Editor Settings.
+
+**Show BP Asset and Function calling Print String**
+> Use `bp.BlamePrintString`
 
 **Object Type Auto Casting**
 > See `AutoCastObjectConnections` in Editor Settings

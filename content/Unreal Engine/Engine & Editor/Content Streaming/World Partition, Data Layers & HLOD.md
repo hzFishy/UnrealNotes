@@ -1,6 +1,7 @@
 # Resources
 - See [[_Resources (Level Design)]]
 - See [Docs Page](https://dev.epicgames.com/documentation/en-us/unreal-engine/world-partition-in-unreal-engine)
+- See [Streaming Improvements for Dense Worlds in The Witcher 4 UE 5 Tech Demo | Unreal Fest Orlando 2025](https://www.youtube.com/watch?v=BdopUm1_1_E)
 
 # World Partition
 ## Actors

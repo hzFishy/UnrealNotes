@@ -55,6 +55,7 @@ The process seems to be the following:
 `UNetConnection::ReceivedRawPacket` -> `UNetConnection::ReceivedPacket` -> `UNetConnection::DispatchPacket`. (See `LogNetTraffic` logs for this).
 
 I don't know how the Actor Channel exists/is created since the representing actor doesn't exist yet.
+
 `UChannel::ReceivedRawBunch` (bunch is of type `FInBunch`) -> `UChannel::ReceivedNextBunch` -> `UChannel::ReceivedSequencedBunch` -> `UActorChannel::ReceivedBunch` -> `UActorChannel::ProcessBunch`.
 Then we simply check if the representing actor of the channel exists, if not we call `UPackageMapClient::SerializeNewActor`.
 

@@ -16,3 +16,8 @@ DOREPLIFETIME_WITH_PARAMS_FAST(AMyAwesomeActor, bMyReplicatedBool, Params);
 Use `MARK_PROPERTY_DIRTY` macros to mark a property as being dirty so it can be picked up to be replicated.
 
 A useful macro that I made that i like is `#define NET_MARKDIRTY(PropertyName) MARK_PROPERTY_DIRTY_FROM_NAME(ThisClass, PropertyName, this)`.
+
+# Use it for engine class
+Some engine classes already use push based model (for e.g. Actor).
+But some are not, but it can be changed through a cvar.
+For example PlayerController and Controller looks for `UE::Gameplay::CVars::bIsPlayerControllerPushBased` and `UE::Gameplay::CVars::bIsControllerPushBased` to know what to use.

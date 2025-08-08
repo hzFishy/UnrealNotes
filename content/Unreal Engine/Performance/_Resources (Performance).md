@@ -14,7 +14,7 @@ See [[Animation Debugging and Optimization]]
 See [[Optimizing a scene]] page in `Graphics`
 
 # Physics
-- [Collision Data in UE5: Practical Tips for Managing Collision Settings & Queries | Unreal Fest 2023](https://www.youtube.com/watch?v=xIQI6nXFygA)
+- See [[Optimize physics]]
 
 # Ticking
 - [Aggregating Ticks to Manage Scale in Sea of Thieves | Unreal Fest Europe 2019 | Unreal Engine](https://www.youtube.com/watch?v=CBP5bpwkO54)

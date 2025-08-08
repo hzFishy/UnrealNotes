@@ -1,3 +1,6 @@
+# Enable Async creation state
+For 5.6
+Use `p.Chaos.EnableAsyncInitBody = true`
 
 ## Info
 `Substepping Async` is not used anymore and should be deprecated.
