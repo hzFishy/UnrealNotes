@@ -17,7 +17,7 @@ See [[Optimizing a scene]] page in `Graphics`
 - See [[Optimize physics]]
 
 # Ticking
-- [Aggregating Ticks to Manage Scale in Sea of Thieves | Unreal Fest Europe 2019 | Unreal Engine](https://www.youtube.com/watch?v=CBP5bpwkO54)
+- [[Unreal Engine/Engine & Editor/Core/Ticking|Ticking]]
 # UI
 See [[Performance (UI)]]
 

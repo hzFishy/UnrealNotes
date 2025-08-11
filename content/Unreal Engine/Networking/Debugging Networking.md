@@ -1,8 +1,7 @@
 **To debug networking side on rider**
-	- watch `{,,UnrealEditor-Engine.dll}::GPlayInEditorContextString`
+watch `{,,UnrealEditor-Engine.dll}::GPlayInEditorContextString`
 
-
-**Select a specific world**
+**Select a specific world**<br>
 	![[Pasted image 20241028202522.png]]
 
 # Logging categories

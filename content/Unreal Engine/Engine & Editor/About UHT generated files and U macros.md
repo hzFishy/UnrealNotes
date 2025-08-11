@@ -5,7 +5,7 @@ When you need to use `U` macros in your c++ file you need to include the `xxxx.g
 
 # Why include `xxx.generated.h` ?
 
-When you compile your c++ code, UHT (Unreal Header Tool) will generate some code from the `U` macros (`UCLASS`, `UPROPERTY`, `UFUNCTION`, ...). This code is written inside the `.generated.h` header file. A second file (`.generated.cpp`) will include it.
+When you compile your c++ code, UHT (Unreal Header Tool) will generate some code from the `U` macros (`UCLASS`, `UPROPERTY`, `UFUNCTION`, ...). This code is written inside the `.generated.h` header file. A second file (`.gen.cpp`) will include it.
 
 # Why `GENERATED_BODY()` ?
 It seems that this macro is a marker for UHT, so it knows where to paste some code inside the class/struct.

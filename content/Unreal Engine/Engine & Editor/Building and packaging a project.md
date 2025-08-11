@@ -1,4 +1,8 @@
 
+# Resources
+- [About Unreal Build Tool](https://rezonant.dev/resources/unreal/cpp/build)
+
+# Build.cs
 # Set macro value
 
 ```cs
