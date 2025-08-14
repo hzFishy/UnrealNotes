@@ -65,6 +65,10 @@ At the top of this page there are interesting console commands [[Console command
 **Control Asset Open Location**
 > Edit `AssetEditorOpenLocation` in Editor Settings
 
+## Assets
+**Thumbnail 3D rotate in Content Browser**
+> In settings enable thumbnail editing (see [video](https://www.youtube.com/watch?v=raiaGRBD_c4))
+
 ## Blueprint
 Fore more see all settings in `Blueprint Editor Settings` and `Graph Editors` in Editor Settings.
 

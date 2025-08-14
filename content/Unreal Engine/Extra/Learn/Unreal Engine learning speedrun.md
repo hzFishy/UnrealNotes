@@ -694,6 +694,7 @@ If you already have some projects ideas and the listed exercises seems to boring
 > - [Your First Hour in Unreal Engine 5.0 (Official)](https://dev.epicgames.com/community/learning/courses/ZpX/your-first-hour-in-unreal-engine-5/E7L/introduction-to-your-first-hour-in-unreal-engine-5) or [Your First Hour in Unreal Engine 5.2](https://dev.epicgames.com/community/learning/courses/3ke/your-first-hour-in-unreal-engine-5-2/VPlM/conclusion-to-your-first-hour-in-unreal-engine-5-2) (mostly the same)
 > - [Build a Third Person Character from Scratch (Official)](https://dev.epicgames.com/community/learning/courses/kry/build-a-third-person-character-from-scratch/mDv/build-a-third-person-character-from-scratch-introduction)
 > - [2025 Crash Course for New Unreal Engine Developers](https://dev.epicgames.com/community/learning/paths/Yaz/2025-crash-course-for-new-unreal-engine-developers)
+> - [The Stack O Bot project](https://dev.epicgames.com/documentation/en-us/unreal-engine/stackobot-sample-game-in-unreal-engine)
 
 # More
 More resources and tools if you want to go further.

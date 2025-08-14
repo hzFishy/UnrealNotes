@@ -3,7 +3,7 @@
 - [Resave Assets (x157)](https://x157.github.io/UE5/Engine/Resave-Assets.html)
 
 
-To clean up redirects (C++ redirects or engine redirects) run the resavepackages commandlet.
+To clean up redirects (C++ redirects aka CoreRedirects or engine redirects) run the resavepackages commandlet.
 
 ```cmd
 "Drive:\YourEngineVersionOrSource\Engine\Binaries\Win64\UnrealEditor-Cmd.exe" "Drive:\YourProjectPath\YourProject.uproject" -run=resavepackages
