@@ -17,6 +17,8 @@ As far I saw:
 3. Put the file in your project/plugin `Documentation/Source/XXX` folder, if its a type the path is `Documentation/Source/Shared/UMyTypeName/UMyTypeName.INT.udn`
 4. Set the content inside (use the various engine .udn files for examples)
 
+**To add images**
+Use `![](MyImage.png)`, the file must be in a `Images` folder next to your `.udn` file.
 
 # How it works
 The `FDocumentationModule` has a private var of type `IDocumentation` which seems to keep track of the `SourcePaths` as well as the `LoadedPages`.
