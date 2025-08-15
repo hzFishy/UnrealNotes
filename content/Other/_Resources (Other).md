@@ -2,14 +2,21 @@
 # Development
 ## AI
 ### From games
-- [Authored vs. Systemic: Finding a Balance for Combat AI in Uncharted 4 (GDC)](https://www.youtube.com/watch?v=G8W7EQKBgcg)
-- [Embracing Push Forward Combat in DOOM (GDC)](https://www.youtube.com/watch?v=2KQNpQD8Ayo)
-- [Marvel's Spider-Man AI Postmortem (GDC)](https://www.youtube.com/watch?v=LxWq65CZBU8)
-- [The Last of Us Human Enemy AI (GDC)](https://gdcvault.com/play/1020338/The-Last-of-Us-Human)
-- [Beyond 'Killzone': Creating New AI Systems for 'Horizon Zero Dawn](https://gdcvault.com/play/1024912/Beyond-Killzone-Creating-New-AI)
-- ['Death Stranding': An AI Postmortem](https://www.youtube.com/watch?app=desktop&v=yqZE5O8VPAU)
-- [AI in the Awesomepocalypse - Creating the Enemies of Sunset Overdrive](https://gdcvault.com/play/1021780/AI-in-the-Awesomepocalypse-Creating)
-- [Alien: Isolation - The Retrospective | AI and Games](https://www.youtube.com/watch?v=LeIkEoHglQQ)
+- Combat
+	- [Authored vs. Systemic: Finding a Balance for Combat AI in Uncharted 4 (GDC)](https://www.youtube.com/watch?v=G8W7EQKBgcg)
+	- [Embracing Push Forward Combat in DOOM (GDC)](https://www.youtube.com/watch?v=2KQNpQD8Ayo)
+- General
+	- [Marvel's Spider-Man AI Postmortem (GDC)](https://www.youtube.com/watch?v=LxWq65CZBU8)
+	- [The Last of Us Human Enemy AI (GDC)](https://gdcvault.com/play/1020338/The-Last-of-Us-Human)
+	- [Beyond 'Killzone': Creating New AI Systems for 'Horizon Zero Dawn](https://gdcvault.com/play/1024912/Beyond-Killzone-Creating-New-AI)
+	- ['Death Stranding': An AI Postmortem](https://www.youtube.com/watch?app=desktop&v=yqZE5O8VPAU)
+	- [AI in the Awesomepocalypse - Creating the Enemies of Sunset Overdrive](https://gdcvault.com/play/1021780/AI-in-the-Awesomepocalypse-Creating)
+	- [Alien: Isolation - The Retrospective | AI and Games](https://www.youtube.com/watch?v=LeIkEoHglQQ)
+	- [AI Summit: Branching Out: 'Watch Dogs Legion's' Architecture for Group AI Behaviours](https://www.gdcvault.com/play/1027239/AI-Summit-Branching-Out-Watch)
+	- [Blending Autonomy and Control: Creating NPCs for Tom Clancy's The Division](https://www.youtube.com/watch?v=Vre9qqoEBpE)
+- NPC Voice
+	- [NPC Voice Design in The Division 2](https://www.youtube.com/watch?v=WXPWQFe8NYQ)
+	- [AI-driven Dynamic Dialog through Fuzzy Pattern Matching](https://www.youtube.com/watch?v=tAbBID3N64A)
 ### Generic
 - [Game AI Basics](https://www.youtube.com/watch?v=G5A0-_4dFLg)
 - [Simple and Scalable Game AI Decision Making](https://www.youtube.com/watch?v=5ZXfDFb4dzc)
