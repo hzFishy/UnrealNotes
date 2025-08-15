@@ -6,9 +6,11 @@ This is what is used when in the tooltip you see "Hold (Ctrl + Alt) for more".
 
 # When is it displayed ?
 As far I saw:
-- Displays in the class picker when you create a Blueprint
-- Displays in the component class picker inside an actor.
-
+- For Types
+	- Displays when you hover a class in the class picker when you create a Blueprint
+	- Displays when you hover a class in the component class picker inside an actor.
+- For nodes
+	- Displays when you hover a node in graph editor.
 # How to use
 (Thanks to Hojo)
 
