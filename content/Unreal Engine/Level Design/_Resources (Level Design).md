@@ -3,6 +3,9 @@ For external editor tools see [[Tools & Plugins]].
 - [Actor palette](https://unrealdirective.com/tips/the-actor-palette)
 - [Layers Panel](https://dev.epicgames.com/documentation/en-us/unreal-engine/layers-panel-in-unreal-engine)
 - [Scene Variants](https://dev.epicgames.com/documentation/en-us/unreal-engine/working-with-scene-variants-in-unreal-engine)
+- Prefabs
+	- [Unreal Prefabs](https://hzfishy.gitbook.io/unrealprefabs/)
+	- [Prefabricator (Fab)](https://www.fab.com/listings/57a67b66-2248-48ba-a680-bb3e2e64d7e5) - [Prefabricator (Unknown Worlds updated fork)](https://github.com/unknownworlds/prefabricator-ue5)
 
 # Editor & Runtime Streaming
 - [Level Instances](https://dev.epicgames.com/documentation/en-us/unreal-engine/level-instancing-in-unreal-engine?application_version=5.5) (See also [[Level Streaming]])
