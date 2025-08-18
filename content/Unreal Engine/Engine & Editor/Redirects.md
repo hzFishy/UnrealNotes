@@ -9,4 +9,5 @@ To clean up redirects (C++ redirects aka CoreRedirects or engine redirects) run 
 "Drive:\YourEngineVersionOrSource\Engine\Binaries\Win64\UnrealEditor-Cmd.exe" "Drive:\YourProjectPath\YourProject.uproject" -run=resavepackages
 ```
 
-To fix BP redirectors, you can either do it when right clicking on an asset or a folder OR add a flag to the commandlet.
+To make it faster you can also use `-NoShaderCompile -ProjectOnly`.
+To fix asset redirectors you can add `-fixupredirects` or use the content browser asset action.
