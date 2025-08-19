@@ -70,10 +70,12 @@ Call stack when getting user display name
 > [!error] Overlay initialization failed
 > `EOS First overlay initialization failed for swapchain. Disabling any future attempts to initialize.`
 > 
-This can be because we don't use `OnlineSubsystemEOS` but `OnlineServicesEOS`, which cause `EOS_Platform_Create` inside `FEOSSDKManager::CreatePlatform` to be called to late (after graphics initialized).
+> This can be because we don't use `OnlineSubsystemEOS` but `OnlineServicesEOS`, which cause `EOS_Platform_Create` inside `FEOSSDKManager::CreatePlatform` to be called to late (after graphics initialized).
 > 
 > **Fix:**
-> - Make a custom module
-> - Add this custom module to your project target file
-> - Add the custom module to your `.uproject`  module dependency list with `PostSplashScreen` LoadingPhase
+> - Make a new `Runtime` module with the loading phase set to `PostSplashScreen`
+> - Add this module to your project target file (and also project editor target)
+> - Add the module to your `.uproject`  module dependency list (with `Runtime` and `PostSplashScreen`)
+> - In your module `Build.cs` include as a dependency (for example in `PrivateDependencyModuleNames`) the `OnlineServicesInterface` module.
+> - Inside your module `StartupModule`, call `UE::Online::GetServices(...)`, in my case I was calling `UE::Online::GetServices(UE::Online::EOnlineServices::Epic)`. This will trigger the EOS Overlay to be created, and `PostSplashScreen` is early enough for it.
 

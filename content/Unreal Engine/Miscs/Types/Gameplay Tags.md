@@ -1,5 +1,5 @@
 - [TypedGameplayTags Plugin](https://github.com/MaksymKapelianovych/TypedGameplayTags)
-
+- [Declare & Define Native Gameplay Tags](https://unrealdirective.com/tips/declare-define-native-gameplay-tags)
 
 # Filtering
 
