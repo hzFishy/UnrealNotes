@@ -1,4 +1,6 @@
 - [Simple GAS tutorial by Laura](https://landelare.github.io/2024/01/15/simple-gas-tutorial.html#gameplay-ability)
 - [GASDocumentation by Tranek](https://github.com/tranek/GASDocumentation)
 - [Narxim's GAS Example](https://github.com/Narxim/Narxim-GAS-Example)
-
+- [Your First 60 Minutes with Gameplay Ability System (by Zhi Kang Shao)](https://dev.epicgames.com/community/learning/tutorials/8Xn9/unreal-engine-epic-for-indies-your-first-60-minutes-with-gameplay-ability-system)
+- [Gameplay Ability System - Best Practices for Setup (by Zhi Kang Shao)](https://dev.epicgames.com/community/learning/tutorials/DPpd/unreal-engine-gameplay-ability-system-best-practices-for-setup)
+- [Gameplay Ability System - Modifier Evaluation Channels (by Zhi Kang Shao)](https://dev.epicgames.com/community/learning/tutorials/JG2a/unreal-engine-gameplay-ability-system-modifier-evaluation-channels)

@@ -5,7 +5,7 @@ When you go in the Plugins window in the editor and click on Package it will run
 Format seems to be `<Path to RunUAT.bat> BuildPlugin -Plugin=<Path to.uplugin> -Package=<Path to packaging output> -CreateSubFolder -nocompile -nocompileuat`
 
 Here is a .bat file you can run (use the vars to edit it)
-```c++
+```bat
 set PATH_ENGINE="F:/UnrealEngine/EGL/UE_5.5/Engine/Build/BatchFiles/RunUAT.bat"
 set PATH_PLUGIN="F:/UnrealEngine/Projects/Plugins/UnrealPrefabsDemo/Plugins/UnrealPrefabs/UnrealPrefabs.uplugin"
 set PATH_OUTPUT="F:/UEShortBuilds/UnrealPrefabs"

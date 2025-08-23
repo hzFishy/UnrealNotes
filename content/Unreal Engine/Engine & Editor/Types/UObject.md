@@ -32,6 +32,11 @@ These objects are templates, meaning they aren't owned by an actor component ins
 - When you edit a property `PostEditChangeProperty` is called (Doesn't work for Transforms)
 - `PostCDOContruct` always has its World null.
 
+# Managing off game thread
+*Thanks Hojo and Blue Man*
+- creating UObjects off game thread is completely fine
+- you will need to manually remove the Async flag from it, once you're ready for it to be managed by GC.
+- you can read and edit UObjects just fine wherever you want, within the confines of your own ability to safely code things async.
 
-# TStrongObjectPtr
-Use `MyStrPtr.Reset(SomeObject)` to set it.
+You *can* create new actor components off the game thread but it's a minefield as each sub component class has various behavior. You will also have to rename the component's outer once you get the component back on game thread because it has to be its owning actor (you cant directly use an actor ref as outer in the worker thread because this would edit the actor component list, which you shouldnt do).
+

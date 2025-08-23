@@ -9,6 +9,7 @@ The CMC is placed in [[Networking]] because most of the important parts and diff
 - [Implementing predicted sprinting](https://www.youtube.com/watch?v=17D4SzewYZ0&list=PLXJlkahwiwPmeABEhjwIALvxRSZkzoQpk&index=3)
 - [CMC Climbing mechanic](https://www.vitorcantao.com/post/climbing-system/)
 - [Turn In Place plugin](https://github.com/Vaei/TurnInPlace)
+- [Best Practices for Networked Movement Abilities](https://dev.epicgames.com/community/learning/tutorials/ywD1/unreal-engine-best-practices-for-networked-movement-abilities)
 
 **Optimizing**
 - [Character Movement Component Optimizations](https://dev.epicgames.com/community/learning/knowledge-base/mo9O/unreal-engine-character-movement-optimizations)

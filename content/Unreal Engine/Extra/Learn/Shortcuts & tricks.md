@@ -19,6 +19,7 @@ All the keys can be changed in the editor settings
 - Rotate (E)
 - Scale (R)
 - Pilot (Ctrl + Shift + P)
+- Move with (Hold shift while performing modification)
 
 ## Faster Level Design
 - Open level (Ctrl + O)

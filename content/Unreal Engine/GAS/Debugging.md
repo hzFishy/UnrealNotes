@@ -1,4 +1,5 @@
 
 For debug HUD info check `AAbilitySystemDebugHUD::DrawDebugHUD`
 
-- [Forum post with info](https://dev.epicgames.com/community/learning/tutorials/Y477/unreal-engine-gas-debugging-tools)
+- [Gameplay Ability System - Debugging Tools (by Zhi Kang Shao)](https://dev.epicgames.com/community/learning/tutorials/Y477/unreal-engine-gas-debugging-tools)
+- [Tranek documentation debugging section](https://github.com/tranek/GASDocumentation?tab=readme-ov-file#6-debugging-gas)

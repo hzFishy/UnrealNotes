@@ -3,7 +3,6 @@
 Inside `APawn::PostInitializeComponents` dependaing on the value of `AutoPossessAI` `APawn::SpawnDefaultController` will be called which creates a `NewController` and call `AController::Possess` on it.
 
 # Debugging
-
 The visual logger has a lot of AI info
 
 # AI focus/rotation

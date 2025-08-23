@@ -44,7 +44,7 @@ The nest states (called leaf's) contains actions and activities
 - Tasks on all active states are running
 - Intermediate states tend to have the configuration tasks
 - Leaf states usually have the action tasks
-- **Task competition drives state completion**
+- **Task completion drives state completion** THIS MEANS THAT IF ANY TASKS FAILS OR SUCEEDS THE STATE IS MARKED AS FAILED OR SUCCEEDED (this can be changed in 5.6 and above)
 
 Useful default properties on task class <br>
 ![[Pasted image 20241218145240.png]]
