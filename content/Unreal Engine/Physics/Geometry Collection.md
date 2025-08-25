@@ -22,8 +22,7 @@ void ABPGDestructibleBase::OnChaosBreakEvent(const FChaosBreakEvent& BreakEvent)
 	    // A member var of type TArray<int32> to store all broken parts over time
 	    // SmallBrokenPartsCollisionProfile is of type FCollisionProfileName
 	    SmallBrokenPartsBoneIds.Add(ParticleIndex);
-	    GCC->SetPerParticleCollisionProfileName(SmallBrokenPartsBoneIds,
-	    SmallBrokenPartsCollisionProfile.Name);
+	    GCC->SetPerParticleCollisionProfileName(SmallBrokenPartsBoneIds, SmallBrokenPartsCollisionProfile.Name);
 	}
 }
 ```

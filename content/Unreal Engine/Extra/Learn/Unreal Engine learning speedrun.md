@@ -3,7 +3,7 @@ Everything here should be understandable by someone who has never programmed or 
 
 This page has a lot of content, you can easily navigate between categories using the Table of Contents on the right. If something is overwhelming you, you can skip it and come back later.
 
-A lot of stuff such as tips are collapsed, I've done this to make the page more readable and easy to navigate, it doesn't mean that it's not important !
+A lot of stuff such as tips are collapsed, I've done this to make the page more readable and easy to navigate, it doesn't mean that it's not important!
 
 > [!warning] Warning
 > While I have some experience in Unreal Engine for a couples of years now, since this page is mostly addressed for beginners some stuff I say **might be simplified to various degrees**.
@@ -24,16 +24,21 @@ Download Unreal Engine from the Epic Games launcher:
 
 Once you launched a engine version you will be able to load a existing project or create a new one using a template.
 
-> [!tip]
-> You can directly open a existing UE project with the correct engine version from the "My Projects" area
+> [!tip] Quick Launch
+> Once created you can directly open an existing UE project with the assigned engine version from the "My Projects" area and from the `.uproject` file.
 
 Other UE stuff such as your assets from your Fab library are accessible below the engine version, if some are missing try to refresh using the refresh button.
 
 > [!tip]- Templates
 > UE offers various templates to start your project.
+> New ones with "variants" arrived in 5.6.
 
 # Interface anatomy
-Here are the main components of the UE interface: 
+Here are the main components of the UE interface.
+
+> [!Warning]- Regarding 5.6 and onwards
+> Epic changed the viewport UI so some screenshots will be out of date.
+> But the UI elements mainly changed placed but have roughly (or exactly) the same icons or names.
 ## Global
 
 ![[Screenshot_31b.png]]
@@ -137,7 +142,7 @@ Unlike other engines like Unity, you don't create a empty "Game Object" then add
 
 > [!Warning]
 > You can only create new blueprints from the content browser or using the Quick Add tool.
-> Blueprint instances made outside of the content browser cannot have unique code (you can't access their graph) but you can add any component you want and set their properties
+> Blueprint instances made outside of the content browser cannot have unique code (you can't access their graph) but you can add any component you want and set their properties.
 
 
 You can extend any Actor class with `Actor Components`,  `Scene Components` or `Interfaces`.
@@ -699,6 +704,10 @@ If you already have some projects ideas and the listed exercises seems to boring
 # More
 More resources and tools if you want to go further.
 
+> [!Warning]- Udemy and other paid courses website warning
+> Sadly a vast majority of these kind of courses (especially from Udemy) showed that the users that followed them had small and big misconceptions on how to use UE (in Blueprints and C++).
+> I strongly suggest you to learn using free resources (Discord servers, google, docs, blogs, YouTube, ...). While really good paid resources/courses exists, they are usually not cheap or worth it.
+
 > [!abstract] Useful links
 > **In my notes**
 > - [[Shortcuts & tricks]]
@@ -751,7 +760,7 @@ More resources and tools if you want to go further.
 > - [PrismaticaDev](https://www.youtube.com/@PrismaticaDev)
 > > [!warning] YouTube warning
 > > 
-> > Sadly, a lot of UE YouTube content about programming (and mostly for BP) shows wrong/bad ways to program or use UE features. <br> If you want to keep using YouTube as your main learning tool (not recommended), please try to understand *why* a youtuber tells you something, and don't follow him like a sheep 🧠.
+> > Sadly, a lot of UE YouTube content about programming (and mostly for BP) shows wrong/bad ways to program or use UE features. <br> If you want to keep using YouTube as your main learning tool (not recommended), please try to understand *why* a youtuber tells you something, and don't follow them like a sheep 🧠.
 
 # Credits
 This page was written by myself, but I have to give a special thanks to the incredible people in the Unreal Source Discord for their valuable feedback, which has improved the quality of this page and the accuracy of its content.
