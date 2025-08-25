@@ -13,14 +13,18 @@ All particles (also called physic objects) exists one the physic state is create
 Use `SetPerParticleCollisionProfileName`
 Basic setup
 ```c++
-void ABPGDestructibleBase::OnChaosBreakEvent(const FChaosBreakEvent& BreakEvent)  
-{  
-    if (UGeometryCollectionComponent* GCC = Cast<UGeometryCollectionComponent>(BreakEvent.Component))  
-    {
-	    // TArray<int32>
+void ABPGDestructibleBase::OnChaosBreakEvent(const FChaosBreakEvent& BreakEvent)
+{
+    if (UGeometryCollectionComponent* GCC = Cast<UGeometryCollectionComponent>(BreakEvent.Component))
+{
+	    const int32 ParticleIndex = BreakEvent.Index;
+	    
+	    // A member var of type TArray<int32> to store all broken parts over time
+	    // SmallBrokenPartsCollisionProfile is of type FCollisionProfileName
 	    SmallBrokenPartsBoneIds.Add(ParticleIndex);
-	    GCC->SetPerParticleCollisionProfileName(SmallBrokenPartsBoneIds, SmallBrokenPartsCollisionProfile.Name);  
-	} 
+	    GCC->SetPerParticleCollisionProfileName(SmallBrokenPartsBoneIds,
+	    SmallBrokenPartsCollisionProfile.Name);
+	}
 }
 ```
 
