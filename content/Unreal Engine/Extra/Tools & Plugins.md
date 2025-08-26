@@ -13,6 +13,8 @@
 ## Utilities
 - [BlueprintComponentReferencePlugin](https://github.com/aquanox/BlueprintComponentReferencePlugin) - Allows you to reference in editor UI a component inside the owning actor and get it at runtime.
 - [BlueprintTaskForge](https://github.com/CommitAndChill/BlueprintTaskForge): Make tasks without C++
+## UI
+- [[Widget property bindings]]
 ## Editor Only Utilities
 - [Component Pointer Fixer](https://github.com/Duroxxigar/ComponentPointerFixer) - Helper to fix up broken C++ components added to blueprint classes.
 - [Dependency Analyser](https://github.com/alessianigretti/DependencyAnalyser) - Useful to check dependencies count and size in your project.
