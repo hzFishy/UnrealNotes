@@ -22,7 +22,7 @@ See [details and example here](https://unreal-garden.com/docs/uproperty/#titlepr
 **So how does this works?** <br>
 `FTitleMetadataFormatter` is a really simple struct, it has two member vars: `FText Format` and `TArray<TSharedPtr<IPropertyHandle>> PropertyHandles`. and the 2 functions I mentioned above.
 
-**Example 1 (no formatting)**
+**Example 1 (no formatting)** <br>
 Lets take for first example `TitleProperty="PushEndOffset"`. No fancy formatting just the name of a property in my struct which is a `FVector`.
 In this example we will imagine we only have one entry in the array (the process is the same for each entry).
 
@@ -32,7 +32,7 @@ Then inside `GetDisplayText` we create a temp var `FFormatNamedArguments FormatA
 
 In the end we call `FText::Format(Format, FormatArgs)` and the result is used as the display text.
 
-**Example 2 (with formatting)**
+**Example 2 (with formatting) *<br>*
 *To avoid repetitive content I will just point out the differences, which here are in `FTitleMetadataFormatter::TryParse`*
 In this second example we will have `TitleProperty="{PushEndOffset}"`.
 
@@ -81,13 +81,17 @@ struct TStructOpsTypeTraits<FPTPushDataForTagQuery> : public TStructOpsTypeTrait
 UPROPERTY(EditAnywhere, meta=(TitleProperty="Target: {EditorDisplayName}"))
 TArray<FPTPushDataForTagQuery> PushDataForQueries;
 
+
 // .cpp
 FPTPushDataForTagQuery::FPTPushDataForTagQuery():
 	PushEndOffset(FVector::ZeroVector)
-{}
+{
+	// We cannot set EditorDisplayName here because when created for editor details panel view the struct will be in default state and not have our user overrides.
+}
 
 void FPTPushDataForTagQuery::PostSerialize(const FArchive& Ar)
 {
+	// Here the struct instance will have user overrides.
 	EditorDisplayName = FString::Printf(TEXT("%s"), *TagRequirements.ToString());
 }
 ```
