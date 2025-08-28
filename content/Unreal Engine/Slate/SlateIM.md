@@ -34,8 +34,10 @@ But for `FSlateIMExposedBase`, its different.
 `FSlateIMExposedBase::DrawContent` is the functions that has to be overridden to build the widget.
 
 **How to use `FSlateIMExposedBase` to embed it in other widgets?**<br>
+> [!Info] This might not be the case since 5.7 and above
+
 Without editing the plugin:
-Since after enabling the widget it needs at least 1 Slate PreTick to hold a valid `SWidget`, you have to enabled the widget BEFORE you use `GetExposedWidget`.
+Since after enabling the widget it needs at least 1 Slate PreTick to hold a valid `SWidget`, you have to enable the widget BEFORE you use `GetExposedWidget`.
 To avoid unnecessary calls, you also have to manually handle its active/inactive state depending on if the widget is displayed or not (since `DrawContent` is called regardless of its visibility).
 
 If you can edit the plugin:

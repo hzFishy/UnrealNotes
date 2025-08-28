@@ -13,6 +13,7 @@
 ## Utilities
 - [BlueprintComponentReferencePlugin](https://github.com/aquanox/BlueprintComponentReferencePlugin) - Allows you to reference in editor UI a component inside the owning actor and get it at runtime.
 - [BlueprintTaskForge](https://github.com/CommitAndChill/BlueprintTaskForge): Make tasks without C++
+- [Json](https://github.com/Blueman2/BMJson)
 ## UI
 - [[Widget property bindings]]
 ## Editor Only Utilities

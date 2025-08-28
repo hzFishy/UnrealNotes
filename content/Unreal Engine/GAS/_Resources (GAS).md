@@ -4,3 +4,4 @@
 - [Your First 60 Minutes with Gameplay Ability System (by Zhi Kang Shao)](https://dev.epicgames.com/community/learning/tutorials/8Xn9/unreal-engine-epic-for-indies-your-first-60-minutes-with-gameplay-ability-system)
 - [Gameplay Ability System - Best Practices for Setup (by Zhi Kang Shao)](https://dev.epicgames.com/community/learning/tutorials/DPpd/unreal-engine-gameplay-ability-system-best-practices-for-setup)
 - [Gameplay Ability System - Modifier Evaluation Channels (by Zhi Kang Shao)](https://dev.epicgames.com/community/learning/tutorials/JG2a/unreal-engine-gameplay-ability-system-modifier-evaluation-channels)
+

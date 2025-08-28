@@ -10,4 +10,4 @@ To clean up redirects (C++ redirects aka CoreRedirects or engine redirects) run 
 ```
 
 To make it faster you can also use `-NoShaderCompile -ProjectOnly`.
-To fix asset redirectors you can add `-fixupredirects` or use the content browser asset action.
+If using git you can also add `-IgnoreChangelist`.

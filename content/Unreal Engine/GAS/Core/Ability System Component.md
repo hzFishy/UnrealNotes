@@ -18,7 +18,7 @@
 - Related to GAs
 	- `AbilityActivatedCallbacks`
 	- `AbilityEndedCallbacks`
-	- `OnAbilityEnded`
+	- `OnAbilityEnded` (has more info than `AbilityEndedCallbacks`)
 	- `AbilityCommittedCallbacks`
 	- `AbilityFailedCallbacks`
 	- `AbilitySpecDirtiedCallbacks`

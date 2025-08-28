@@ -11,7 +11,7 @@ You can either:
 - set the console variable value in the correct `.ini` in the correct section
 - see `ConsoleVariables.ini` (special file that doesn't exist by default, can be copied from source engine).
 - use a `UDeveloperSettingsBackedByCvars`
-- or simply add the cvar under `[ConsoleVariables]` section in default project ini
+- or simply add the cvar under `[ConsoleVariables]` section in the correct `.ini` file
 
 ## List of existing commands and variables
 ### Miscs
