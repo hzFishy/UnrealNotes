@@ -77,6 +77,7 @@ struct TStructOpsTypeTraits<FPTPushDataForTagQuery> : public TStructOpsTypeTrait
    };
 };
 
+
 // somewhere in a class
 UPROPERTY(EditAnywhere, meta=(TitleProperty="Target: {EditorDisplayName}"))
 TArray<FPTPushDataForTagQuery> PushDataForQueries;
