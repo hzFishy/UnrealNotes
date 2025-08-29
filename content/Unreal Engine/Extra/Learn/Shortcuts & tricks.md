@@ -78,7 +78,7 @@ Fore more see all settings in `Blueprint Editor Settings` and `Graph Editors` in
 
 **Object Type Auto Casting**
 > See `AutoCastObjectConnections` in Editor Settings
-![[Pasted image 20250717105227.png]]
+> ![[Pasted image 20250717105227.png]]
 
 **Disable ghost nodes**
 > See `Spawn Default Blueprint Nodes` in Editor Settings
@@ -88,7 +88,7 @@ Fore more see all settings in `Blueprint Editor Settings` and `Graph Editors` in
 
 **Draw mid point arrows**
 > See `Draw midpoint arrows in Blueprints` in Editor Settings
-![[Pasted image 20250717110126.png]]
+> ![[Pasted image 20250717110126.png]]
 
 **Jump to invalid nodes on compile error**
 > See `Jump to Node Errors` in Editor Settings
@@ -102,11 +102,11 @@ Fore more see all settings in `Blueprint Editor Settings` and `Graph Editors` in
 
 **Enable Combined Translate/Rotate Widget**
 > See `Enable Combined Translate/Rotate Widget` in Editor Settings
-![[Pasted image 20250717111552.png]]
+> ![[Pasted image 20250717111552.png]]
 
 **Enable Screen Rotate**
 > See `Enable Screen Rotate` in Editor Settings
-![[Pasted image 20250717111932.png]]
+> ![[Pasted image 20250717111932.png]]
 
 **Camera Preview Settings**
 > See `Preview Selected Cameras` and `Camera Preview Size` in Editor Settings.

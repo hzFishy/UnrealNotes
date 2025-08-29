@@ -32,7 +32,7 @@ Then inside `GetDisplayText` we create a temp var `FFormatNamedArguments FormatA
 
 In the end we call `FText::Format(Format, FormatArgs)` and the result is used as the display text.
 
-**Example 2 (with formatting) *<br>*
+**Example 2 (with formatting)**<br>
 *To avoid repetitive content I will just point out the differences, which here are in `FTitleMetadataFormatter::TryParse`*
 In this second example we will have `TitleProperty="{PushEndOffset}"`.
 
