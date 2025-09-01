@@ -1,8 +1,14 @@
-# Unreal Prefabs ([Website](https://hzfishy.gitbook.io/unrealprefabs/))
+## Unreal Prefabs ([Website](https://hzfishy.gitbook.io/unrealprefabs/))
 The power of Child Actor Components and Unity Prefabs the Unreal way.
 [Fab Link](https://www.fab.com/listings/dc2e38c1-8cf1-4143-8564-f5d9ac2be8d8)
 
-# Fishy Utils ([Github](https://github.com/hzFishy/FishyUtils))
+## FishyWorldSpaceWidgets ([Github Repo](https://github.com/hzFishy/FishyWorldSpaceWidgets))
+A simple UE5 plugin adding more optimized world space widgets.
+
+## Common Interaction System ([Github Repo](https://github.com/hzFishy/CommonInteractionSystem))
+UE5 plugin for common interactions between a source pawn and abstract objects.
+
+## Fishy Utils ([Github Repo](https://github.com/hzFishy/FishyUtils))
 
 Holds a lot of utility functions.
 Most of them are in c++ namespaces, I will eventually make Blueprint Function Libraries for everything so BP users can use most of this plugin features. 
