@@ -35,10 +35,12 @@ Other UE stuff such as your assets from your Fab library are accessible below th
 
 # Interface anatomy
 Here are the main components of the UE interface.
+> See [the docs page](https://dev.epicgames.com/documentation/en-us/unreal-engine/unreal-editor-interface) for more details and up-to-date screenshots.
 
 > [!Warning]- Regarding 5.6 and onwards
 > Epic changed the viewport UI so some screenshots will be out of date.
 > But the UI elements mainly changed placed but have roughly (or exactly) the same icons or names.
+> You can go back to the previous editor UI by using the `ToolMenusViewportToolbars 0` command (see [this tutorial](https://dev.epicgames.com/community/learning/tutorials/B3dZ/unreal-engine-from-the-old-viewport-ui-to-the-new-5-6-viewport-ui) for more info on the 3 `ToolMenusViewportToolbars` available values).
 ## Global
 
 ![[Screenshot_31b.png]]
