@@ -10,7 +10,7 @@
 	- Blue: Not simulated, Movable
 	- Yellow: Simulated (Active)
 	- Gray: Simulated (Sleeping)
-
+- `p.Chaos.DebugDraw.MaxLines` (default to 20000)
 
 For more debug draw methods, see `ChaosDebugDraw.cpp` file
 
@@ -21,3 +21,6 @@ Chaos has a special helper for drawing, which is thread safe (under the hood it 
 See `Chaos::FDebugDrawQueue` and `UChaosDebugDrawComponent`.
 Example: `Chaos::FDebugDrawQueue::GetInstance().DrawDebugSphere(ParticlePoint, 4, 32, FColor::Yellow);`
 
+For `p.Chaos.Solver.DebugDrawShapes` the drawing root path is `FPBDRigidsSolver::PostTickDebugDraw` -> `FChaosDDParticle::DrawShapes`.
+See also `FChaosDDParticleShape::Draw`.
+`FChaosDDParticleShape::GetRenderColor` is used if no color is given (default case for engine) and it has multiple checks to know what color to use, most of the case this falls to reading to use `FChaosDebugDrawColorsByState::GetColorFromState` on `DebugDraw::FChaosDebugDrawSettings`.
