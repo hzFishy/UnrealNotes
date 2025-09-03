@@ -18,7 +18,7 @@ UActorComponent* UCyComponentLibrary::AddRuntimeInstanceComponent(AActor* Actor,
 }
 ```
 
-**My Template version ([GitHub link](https://github.com/hzFishy/FishyUtils/blob/73eb0520f0d77f76787266bb9b4649d170959595/Source/FishyUtils/Public/Utility/FUUtilities.h#L12))**
+**My Template version ([Up-to-date code here](https://github.com/hzFishy/FishyUtils/blob/73eb0520f0d77f76787266bb9b4649d170959595/Source/FishyUtils/Public/Utility/FUUtilities.h#L12))**
 ```c++
 template<class T>  
 T* AddRuntimeInstanceComponent(AActor* Actor, TSubclassOf<T> ComponentClass = T::StaticClass())
@@ -45,7 +45,7 @@ FKismetEditorUtilities::AddComponentsToBlueprint
 ```
 
 **For scene components**
-when you attach them and register, there is only two ways
+When you attach them and register, there are only two ways:
 1. Use SetupAttachement then RegisterComponent
 2. Use RegisterComponent then AttachTo
 
