@@ -1,6 +1,8 @@
 
 # About Procedural Mesh Component
 > See `UProceduralMeshComponent`
+> See `UKismetProceduralMeshLibrary`
+> See [this video](https://www.youtube.com/watch?v=cJArwFqm3XY) for a example of slicing a procedural mesh component.
 
 A procedural mesh is composed of multiple sections (`FProcMeshSection`).
 ## Sections
@@ -125,7 +127,8 @@ Result: <br>
 You can generate a mesh looking the same as a Skeletal Mesh from a Skeletal Mesh Component.
 
 > [!Warning] Warning
-> Before doing further please note that this is some early testing code that "works" (correct visuals but *seems* to have incorrect triangle count and maybe broken collisions). 
+> Before doing further please note that this is some early testing code that "works".
+> For physics you shouldn't use this mesh collisions and physics but add bigger bodies like the Skeletal Mesh Component does.
 
 Code (primarily taken from [this](https://forums.unrealengine.com/t/create-procedural-mesh-from-animated-skeletal-mesh/429492/11) UE forum post):
 ```cpp

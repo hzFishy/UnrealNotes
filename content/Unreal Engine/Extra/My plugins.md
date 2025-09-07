@@ -2,7 +2,7 @@
 The power of Child Actor Components and Unity Prefabs the Unreal way.
 [Fab Link](https://www.fab.com/listings/dc2e38c1-8cf1-4143-8564-f5d9ac2be8d8)
 
-## FishyWorldSpaceWidgets ([Github Repo](https://github.com/hzFishy/FishyWorldSpaceWidgets))
+## Fishy World Space Widgets ([Github Repo](https://github.com/hzFishy/FishyWorldSpaceWidgets))
 A simple UE5 plugin adding more optimized world space widgets.
 
 ## Common Interaction System ([Github Repo](https://github.com/hzFishy/CommonInteractionSystem))

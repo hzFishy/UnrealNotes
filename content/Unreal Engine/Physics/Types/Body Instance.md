@@ -1,6 +1,6 @@
 
 # Body Instance
-See [[PrimitiveComponent]] for extra info on how they work together.
+See [[Primitive Component]] for extra info on how they work together.
 
 A important parent class of the BI is `FBodyInstanceCore`
 The body instance seems to be mostly used from `UPrimitiveComponent`.
