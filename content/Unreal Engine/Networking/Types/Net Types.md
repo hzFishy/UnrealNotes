@@ -8,6 +8,7 @@ A bit writer that serializes FNames and UObject* through a network packagemap.
 A bit reader that serializes FNames and UObject* through a network packagemap.
 
 # Bridge types
+See also [[Iris]]
 ## `UEngineReplicationBridge`
 N/A
 
@@ -44,6 +45,7 @@ There is only one `FRepLayout` for a given type, meaning all instances of the ty
 
 ## `FRepState`
 Replication State that is unique Per Object Per Net Connection.
+See also [[Iris]]
 
 ## `FReplicationChangelistMgr`
 Manages a list of change lists for a particular replicated object that have occurred since the object started replicating.
