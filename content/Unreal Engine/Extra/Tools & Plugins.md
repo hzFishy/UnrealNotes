@@ -29,6 +29,7 @@
 - [Message Log for Blueprints](https://www.fab.com/listings/742876c7-2a32-47d2-9b23-8d0b430e7683) ([Github repo](https://github.com/aquanox/BlueprintMessageLogPlugin)): interactive Message Log for Blueprints
 - [Converting BP types to C++](https://www.codemongous.com/post/unreal-engine-blueprint-conversion-the-right-way)
 - [K2PostIt](https://github.com/HomerJohnston/K2PostIt): Adding cool post it comments in BP.
+- [Icon Creator](https://www.fab.com/listings/7edd0c84-f1d5-4b95-bb1a-e4a3a26b78d6)
 
 
 ## ImGui

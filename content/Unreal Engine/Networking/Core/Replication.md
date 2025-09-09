@@ -59,6 +59,9 @@ I don't know how the Actor Channel exists/is created since the representing acto
 `UChannel::ReceivedRawBunch` (bunch is of type `FInBunch`) -> `UChannel::ReceivedNextBunch` -> `UChannel::ReceivedSequencedBunch` -> `UActorChannel::ReceivedBunch` -> `UActorChannel::ProcessBunch`.
 Then we simply check if the representing actor of the channel exists, if not we call `UPackageMapClient::SerializeNewActor`.
 
+### Destroying subobject's
+This seems to be done close to where they are spawned in `UActorChannel::ReadContentBlockHeader` (see `bDeleteSubObject`))
+
 ### Remapping net GUIDs
 When replicated objects are spawned on server, we have to spawn them on relevant clients to.
 Since they use unique net GUIDs, we have to tell to the locally spawned objects what are their net GUID.
