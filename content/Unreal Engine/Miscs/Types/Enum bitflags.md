@@ -5,3 +5,4 @@
 
 See `ENUM_CLASS_FLAGS();` macro (example with `ENUM_CLASS_FLAGS(EMoveComponentFlags);`)
 this declares operators for easy checking in c++
+Check also the template functions under it.

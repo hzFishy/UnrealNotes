@@ -48,7 +48,8 @@ It seems that the listen server can see client character animations lag, this is
 To fix this the idea is to cap the max update frequency.
 
 All of the following isn't required.
-*Thanks to Kaos*
+
+*Thanks to Kaos* - See original discord discussion [here](https://discord.com/channels/187217643009212416/221799385611239424/1386732944873357332)
 
 ```ini title="DefaultGame.ini"
 [/Script/Engine.GameNetworkManager]
