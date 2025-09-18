@@ -232,6 +232,8 @@ protected:
 
 # For Designers
 ## Naming convention (Asset & blueprint prefixs)
+See also [Official Docs](https://dev.epicgames.com/documentation/en-us/unreal-engine/recommended-asset-naming-conventions-in-unreal-engine-projects#recommendedassetprefixes) and  [Unreal Directive](https://unrealdirective.com/resources/asset-naming-conventions)
+
 - Blueprints (prefix ends with `BP_`):
    - Actor: `ABP_`
    - Actor Component: `ACBP_`
