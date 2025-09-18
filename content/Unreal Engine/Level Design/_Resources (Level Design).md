@@ -4,7 +4,7 @@ For external editor tools see [[Tools & Plugins]].
 - [Layers Panel](https://dev.epicgames.com/documentation/en-us/unreal-engine/layers-panel-in-unreal-engine)
 - [Scene Variants](https://dev.epicgames.com/documentation/en-us/unreal-engine/working-with-scene-variants-in-unreal-engine)
 - [Day sequence](https://www.youtube.com/watch?v=xQKPsQeTcOg)
-- [Modeling tool tricks](https://www.youtube.com/watch?v=xIMudHNX9JM)
+- [[Modeling Tools]]
 
 # Editor & Runtime Streaming
 - [Level Instances](https://dev.epicgames.com/documentation/en-us/unreal-engine/level-instancing-in-unreal-engine?application_version=5.5) (See also [[Level Streaming]])
