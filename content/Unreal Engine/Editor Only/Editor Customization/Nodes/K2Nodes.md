@@ -5,6 +5,7 @@
 - `UK2Node_TemporaryVariable`
 - `UK2Node_AssignmentStatement
 - `UK2Node_CallFunction`
+- `UK2Node_ExecutionSequence`
 
 # About
 

@@ -379,7 +379,8 @@ Mainly:
 > 
 
 > [!tip]- Functions, pure and impure
-> Functions can be pure or impure
+> Functions can be pure or impure.
+> 
 > A pure function has no exec pins, and **is evaluated for each connection**. This is not the case for impure nodes because it caches the result. This can be a big issue if the pure node is used multiple times and is heavy, or if the result is somewhat random.
 > A solution is to cache the result in a variable (or a local variable if you can). But since 5.5 you can right click any pure node and "Show exec pins", this will transform a pure node to a impure one.
 
