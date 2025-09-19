@@ -1,4 +1,10 @@
 
+ 
+# Resources
+- [Getting Started with Editor Utility Blueprints](https://dev.epicgames.com/community/learning/tutorials/owYv/unreal-engine-getting-started-with-editor-utility-blueprints)
+- [Scripting the Unreal Editor using Blueprints](https://dev.epicgames.com/documentation/en-us/unreal-engine/scripting-the-unreal-editor-using-blueprints)
+
+# About
 Using blueprint utilities its super simple to create common workflow actions.
 
 > [!Danger] Transactions
