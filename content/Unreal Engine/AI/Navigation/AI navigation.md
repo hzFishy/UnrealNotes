@@ -4,6 +4,7 @@
 - [Unreal Engine Code Analysis- Static NavMesh Generation](https://www.unrealdoc.com/p/navigation-mesh-static-gen): More detail about how static navmesh generation works
 - [[Nav Links]]
 - [[Nav Modifiers]]
+- [[Navigation Data]]
 
 # In-depth
 ## Pathfinding

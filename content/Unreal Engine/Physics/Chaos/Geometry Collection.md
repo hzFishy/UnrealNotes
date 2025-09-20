@@ -27,6 +27,9 @@ Commands sent to `UGeometryCollectionComponent::DispatchFieldCommand` will end u
 Which is iterated inside `FGeometryCollectionPhysicsProxy::FieldParameterUpdateCallback`.
 For example calling AddImpulse will result in `FieldVectorParameterUpdate` being eventually called.
 
+## Anchor
+See `SetAnchoredXXXX` functions.
+
 ## Change collision profile on broken parts/per particle
 Use `SetPerParticleCollisionProfileName`. This will update `CollisionProfilePerParticle` which is read in `UGeometryCollectionComponent::LoadCollisionProfiles`.
 
@@ -54,7 +57,7 @@ Do `const FBox Box = PhysicsObjectInterface.GetBounds({PhysicsObject});` (there 
 UGeometryCollectionComponent* GCC = Data.Key.Get();  
 TArray<Chaos::FPhysicsObject*> PhysicsObjects = GCC->GetAllPhysicsObjects();  
 for (auto& PhysicsObject : PhysicsObjects)  
-{  
+{
     const FBox Box = PhysicsObjectInterface.GetWorldBounds({PhysicsObject});  
     
     const Chaos::FReal Volume = Box.GetVolume();  
