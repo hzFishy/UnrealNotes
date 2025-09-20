@@ -8,13 +8,14 @@
 ```mermaid
 flowchart TD
 %%{ init : {'flowchart': {'nodeSpacing': 100, 'rankSpacing': 100, "curve" : "step"}} }%%
-    TPhysicsProxy --> IPhysicsProxyBase
-    FSingleParticlePhysicsProxy --> IPhysicsProxyBase
+
+    IPhysicsProxyBase --> TPhysicsProxy
+    IPhysicsProxyBase --> FSingleParticlePhysicsProxy
     FPhysicsObject
-    FGeometryCollectionPhysicsProxy --> TPhysicsProxy
-    TThreadedSingleParticlePhysicsProxyBase --> FSingleParticlePhysicsProxy
-    FGeometryParticleHandle[FGeometryParticleHandle TGeometryParticleHandle, TGeometryParticleHandleImp] --> TParticleHandleBase
-    FSkeletalMeshPhysicsProxy --> TPhysicsProxy
+    TPhysicsProxy --> FGeometryCollectionPhysicsProxy
+    FSingleParticlePhysicsProxy --> TThreadedSingleParticlePhysicsProxyBase
+    TParticleHandleBase --> FGeometryParticleHandle[FGeometryParticleHandle TGeometryParticleHandle, TGeometryParticleHandleImp]
+    TPhysicsProxy --> FSkeletalMeshPhysicsProxy
 ```
 
 

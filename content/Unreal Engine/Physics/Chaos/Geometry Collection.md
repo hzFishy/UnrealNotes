@@ -21,6 +21,8 @@ GCC events such as breaks and other collision events are handled by the `EventDi
 It is created in the GCC constructor so there is 1 event dispatcher actor instance per GCC.
 
 ## Field Commands
+For fields see [[Chaos Fields]]
+
 Commands sent to `UGeometryCollectionComponent::DispatchFieldCommand` will end up in `FGeometryCollectionPhysicsProxy::BufferFieldCommand_Internal` inside a `FFieldData`.
 Which is iterated inside `FGeometryCollectionPhysicsProxy::FieldParameterUpdateCallback`.
 For example calling AddImpulse will result in `FieldVectorParameterUpdate` being eventually called.

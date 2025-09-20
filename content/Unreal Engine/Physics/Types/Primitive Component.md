@@ -1,4 +1,6 @@
 # About
+Implements `IPhysicsComponent` which has a few methods used to access the `FPhysicsObject`s it might holds.
+
 It holds a `FBodyInstance BodyInstance` initialized in `UPrimitiveComponent::OnCreatePhysicsState`.
 Most (all?) of their physic settings are in `BodyInstance` and `FBodyInstanceCore`.
 
