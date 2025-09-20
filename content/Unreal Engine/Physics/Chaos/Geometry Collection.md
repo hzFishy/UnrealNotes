@@ -2,15 +2,32 @@
 # Geometry Collection Component
 
 ## About the physics
-All particles (also called physic objects) exists one the physic state is created.
+All particles (also called physic objects) exists once the physic state is created.
+The proxy type is `FGeometryCollectionPhysicsProxy`.
+The event dispatcher is `UChaosGameplayEventDispatcher`.
+The GCC inherits `IChaosNotifyHandlerInterface`.
 
 ## Access to physics
 - Get `FGeometryCollectionPhysicsProxy` with `GeometryCollectionComponent->GetPhysicsProxy()`
-- Get Read/Write physics interface `Chaos::FReadPhysicsObjectInterface_Internal PhysicsObjectInterface = Chaos::FPhysicsObjectInternalInterface::GetRead();` (watch out there is a internal and external version)
-- Get `Chaos::FPhysicsObjectHandle` of a particle with `GCC->GetAllPhysicsObjects()[ParticleIndex]`
+- Get Read/Write physics interface `Chaos::FReadPhysicsObjectInterface_Internal PhysicsObjectInterface = Chaos::FPhysicsObjectInternalInterface::GetRead();` (watch out there is a internal and external version, use internal if you are on the physic thread)
+- Get `Chaos::FPhysicsObjectHandle` of a particle with `GCC->GetAllPhysicsObjects()`
+
+## Collision
+See `CollisionProfilePerParticle` and `CollisionProfilePerLevel`.
+See `UGeometryCollectionComponent::LoadCollisionProfiles`.
+
+## Events
+GCC events such as breaks and other collision events are handled by the `EventDispatcher` (`UChaosGameplayEventDispatcher`).
+It is created in the GCC constructor so there is 1 event dispatcher actor instance per GCC.
+
+## Field Commands
+Commands sent to `UGeometryCollectionComponent::DispatchFieldCommand` will end up in `FGeometryCollectionPhysicsProxy::BufferFieldCommand_Internal` inside a `FFieldData`.
+Which is iterated inside `FGeometryCollectionPhysicsProxy::FieldParameterUpdateCallback`.
+For example calling AddImpulse will result in `FieldVectorParameterUpdate` being eventually called.
 
 ## Change collision profile on broken parts/per particle
-Use `SetPerParticleCollisionProfileName`
+Use `SetPerParticleCollisionProfileName`. This will update `CollisionProfilePerParticle` which is read in `UGeometryCollectionComponent::LoadCollisionProfiles`.
+
 Basic setup
 ```c++
 void ABPGDestructibleBase::OnChaosBreakEvent(const FChaosBreakEvent& BreakEvent)

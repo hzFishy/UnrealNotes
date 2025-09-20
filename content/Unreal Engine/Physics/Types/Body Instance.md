@@ -1,25 +1,40 @@
 
-# Body Instance
+# About
+
+## Basics
 See [[Primitive Component]] for extra info on how they work together.
 
 A important parent class of the BI is `FBodyInstanceCore`
 The body instance seems to be mostly used from `UPrimitiveComponent`.
 It also seems that a lot of physic functions are running from `FBodyInstance`.
-
-Most of the functions will register a physic command using `ApplyAsyncPhysicsCommand`, that has a function call-back that's using `FPhysicsInterface` (a typedef of `FPhysInterface_Chaos`).
-
 BIs are initialized using a `UBodySetup`.
+
+## Physics Core
+See [[Physics types]] for more detailed info on some types
+
+Most of the functions will register a physic command using `ApplyAsyncPhysicsCommand`, that has a function call-back that's using `FPhysicsInterface` (a typedef of `FPhysInterface_Chaos` which inherits `FChaosEngineInterface` and `FGenericPhysicsInterface`).
+
 A BI holds a `FPhysicsActorHandle ActorHandle` which is the "Internal physics representation of our body instance".
 
+In some functions such as `AddImpulse` the params will be redirected to `FChaosEngineInterface` where either `FRigidBodyHandle_Internal` or `FRigidBodyHandle_External` handle is used (this is taken from the `FPhysicsActorHandle` BI handle).
+By "internal" we mean that we are running the code on the physics thread, external would be if we are on the game thread.
+Both of these handle are based on `TThreadedSingleParticlePhysicsProxyBase` which holds the interface to update physics properties on the particle such as (in this example) the linear velocity.
 
-## Miscs
+# Miscs
 
-### Gravity
+## Sleeping and wake
+`WakeInstance` and `PutInstanceToSleep` will *at some point* call `SetObjectState` in `TPBDRigidParticle`.
+
+Inside `SetObjectState` it is written than when we put an object to sleep, its velocity is zeroed and buffered (*"in case the velocity is queried during sleep, or in case the object is woken up again"*).
+After that its said that *"If another force is added after the object is put to sleep, the old forces*  
+*will remain and the new ones will accumulate and re-dirty the dynamic properties which will*  
+*wake the body."*
+
+## Gravity
 > [!Warning] Warning
 > If you enable gravity the BI will wake up
 
-
-### Changing collision
+## Changing collision
 For some reason`SetCollisionEnabled(NewState)` doesn't work as expected, you can use `SetShapeCollisionEnabled(0, NewState)` instead.
 For more detailed collision setting, there are many functions like `SetResponseToChannel` and `SetResponseToAllChannels`.
 
@@ -27,7 +42,7 @@ For more detailed collision setting, there are many functions like `SetResponseT
 > `SetShapeCollisionEnabled` calls `UpdatePhysicsFilterData`, which will wake up the BI
 
 See also [[Collisions|Collisions]]
-### Constraint
+## Constraint
 When you select a PrimitiveComponent, you can set Constraints <br>
 ![[Pasted image 20250318220101.png]]<br>
 **These constraint settings are ONLY applied on the first body instance of this component**
@@ -52,17 +67,7 @@ for (int i = 0; i < Bodies.Num(); ++i)
 }
 ```
 
-
-### Sleeping and wake
-`WakeInstance` and `PutInstanceToSleep` will *at some point* call `SetObjectState` in `TPBDRigidParticle`.
-
-Inside `SetObjectState` it is written than when we put an object to sleep, its velocity is zeroed and buffered (*"in case the velocity is queried during sleep, or in case the object is woken up again"*).
-After that its said that *"If another force is added after the object is put to sleep, the old forces*  
-*will remain and the new ones will accumulate and re-dirty the dynamic properties which will*  
-*wake the body."*
-
-
-### Set body transform
+## Set body transform
 If called on a dynamic (not kinematic) body, it will eventually call `SetGlobalPose_AssumesLocked`. And it seems that the new scale is not used there.
 
 As mentioned in [this](https://itscai.us/blog/post/ue-physics-framework/#2-scene-tick) blog post section (see `FPushPhysicsData`) `FBodyInstance::SetBodyTransform` will eventually call `FSingleParticlePhysicsProxy::SetXBase`.
