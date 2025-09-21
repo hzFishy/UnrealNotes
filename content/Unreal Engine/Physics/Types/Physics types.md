@@ -106,6 +106,9 @@ The events are then registered by the solver event manager in `UChaosGameplayEve
 **Collision events**
 `UChaosGameplayEventDispatcher::HandleCollisionEvents` is called from `FChaosScene::EndFrame` -> `FPBDRigidsSolver::SyncEvents_GameThread` -> `FEventManager::DispatchEvents` -> `HandleEvent` (in `TRawEventHandler`).
 
+**Breaking events**
+See `FRigidClustering`.
+
 # Collisions
 
 ## `FCollisionEventData`
@@ -129,6 +132,16 @@ One entry in the array of collision notifications pending execution at the end o
 
 
 # Breaking
+
+## `FRigidClustering`
+The Chaos Destruction System allows artists to define exactly how geometry will break and separate during the simulations. Artists construct the simulation assets using pre-fractured geometry and utilize dynamically generated rigid constraints to model the structural connections during the simulation. The resulting objects within the simulation can separate from connected structures based on interactions with environmental elements, like fields and collisions.  
+
+The destruction system relies on an internal clustering model (aka Clustering) which controls how the rigidly attached geometry is simulated. Clustering allows artists to initialize sets of geometry as  a single rigid body, then dynamically break the objects during the simulation. At its core, the clustering system will simply join the mass and inertia of each connected element into one larger single rigid body.  
+
+At the beginning of the simulation a connection graph is initialized  based on the rigid body’s nearest neighbors. Each connection between the bodies represents a rigid constraint within the cluster and is given initial strain values. During the simulation, the strains within the  connection graph are evaluated. The connections can be broken when collision constraints, or field evaluations, impart an impulse on the rigid body that exceeds the connections limit. Fields can also be used to decrease the internal strain values of the connections, resulting in a weakening of the  internal structure.
+
+The breaking events are sent when inside `FRigidClustering::AdvanceClustering` -> `FRigidClustering::BreakingModel` -> `FRigidClustering::ReleaseClusterParticles` -> `FRigidClustering::ReleaseClusterParticlesImpl` -> `FRigidClustering::SendBreakingEvent`.
+
 ## `FBreakingEventData`
 Holds a `FAllBreakingData` and `FIndicesByPhysicsProxy`.
 
