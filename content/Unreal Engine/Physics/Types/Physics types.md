@@ -6,11 +6,16 @@ Low level Chaos scene used when building custom simulations that don't exist in 
 In constructor it creates a new solver.
 
 ## `FPhysScene_Chaos`
+### About
 Child of `FChaosScene`.
 Low level Chaos scene used when building custom simulations that don't exist in the main world physics scene.
 
-This is created in the `AChaosSolverActor` constructor.
+This is created in the `AChaosSolverActor` constructor or `UWorld::CreatePhysicsScene`.
 
+Using `GetOwningComponent` (which uses `PhysicsProxyToComponentMap`) you can get the primitive component that created the given `IPhysicsProxyBase`. 
+
+`FChaosScene::EndFrame` is called from `UWorld::FinishPhysicsSim`.0
+### Events
 It manages the collisions and other events and sends them to gameplay objects if needed.
 They are registered in the constructor with the event manager and `RegisterHandler`.
 The events types are:
@@ -19,7 +24,20 @@ The events types are:
 - Removal (see `FPhysScene_Chaos::HandleRemovalEvents`)
 - Crumbling (see `FPhysScene_Chaos::HandleCrumblingEvents`)
 
-Using `GetOwningComponent` (which uses `PhysicsProxyToComponentMap`) you can get the primitive component that created the given `IPhysicsProxyBase`. 
+All primitive components that enabled `bNotifyRigidBodyCollision` are listed in the `CollisionEventRegistrations` array (so only primitives with a body instance). See `FPhysScene_Chaos::RegisterForCollisionEvents`.
+
+All Geometry Collection Components that enabled `bNotifyGlobalCollisions` are listed in the `GlobalCollisionEventRegistrations` array. See `FPhysScene_Chaos::RegisterForGlobalCollisionEvents`.
+
+**Collision Events**
+After the solver event manager calls `FPhysScene_Chaos::HandleCollisionEvents`, which will call `FPhysScene_Chaos::HandleEachCollisionEvent`, `FPhysScene_Chaos::DispatchPendingCollisionNotifies` and `FPhysScene_Chaos::HandleGlobalCollisionEvent`.
+
+`FPhysScene_Chaos::HandleCollisionEvents` is called from `FChaosScene::EndFrame` -> `FPBDRigidsSolver::SyncEvents_GameThread` -> `FEventManager::DispatchEvents` -> `HandleEvent` (in `TRawEventHandler`).
+`HandleEachCollisionEvent` will iterate all collisions of a given body and create a new entry in the `PendingCollisionNotifies` array using `FPhysScene_Chaos::GetPendingCollisionForContactPair`.
+
+`DispatchPendingCollisionNotifies` will use the `PendingCollisionNotifies` array that we previously filled and call `UPhysicsCollisionHandler::HandlePhysicsCollisions_AssumesLocked` on the world `PhysicsCollisionHandler` (if any) and for each collision notify call `AActor::DispatchPhysicsCollisionHit`.
+
+`HandleGlobalCollisionEvent` will iterate the Collision Data and try to find if any collision was caused/received by a primitive component listed in the `GlobalCollisionEventRegistrations` array. If yes we make a new `FCollisionChaosEvent` entry. At the end we send all the new entries to the scene `ChaosEventRelay` by calling `UChaosEventRelay::DispatchPhysicsCollisionEvents`.
+
 
 # Solvers
 ## `FPhysicsSolverBase`
@@ -33,8 +51,40 @@ It is by default created in `FChaosSolversModule::CreateSolver`, which is done i
 
 
 # Event Listeners
+
 ## `FEventManager`
 Owned by a `FPBDRigidsSolver`.
+Created in the constructor.
+
+When using `RegisterHandler` we store a new `TRawEventHandler` in `EventContainers`.
+Before the events are sent they need to be filled. This is done via `FPhysicsSolverAdvanceTask::AdvanceSolver` -> `FPBDRigidsSolver::AdvanceSolverBy` -> `AdvanceOneTimeStepTask::DoWork` -> `FEventManager::FillProducerData` outside the game thread. This calls `InjectProducerData` on the `TEventContainer`, which uses `InjectedFunction` and seems to be `FEventDefaults::RegisterCollisionEvent` (this is the case for collisions, the same path is used for `RegisterBreakingEvent`, `RegisterTrailingEvent`, `RegisterSleepingEvent`, `RegisterRemovalEvent`, `RegisterCrumblingEvent`).
+
+## `FEventDefaults`
+See `FEventManager`.
+`FEventDefaults::RegisterSystemEvents` is called in `FPBDRigidsSolver::Reset` which is called in the `FPBDRigidsSolver` constructor.
+
+## `FSolverEventFilters`
+Container for the Solver Event Filters that have settings exposed through the Solver Actor.
+Owned by a `FPBDRigidsSolver`.
+Created in the constructor.
+
+It holds a collision, breaking, trailing and removal filter.
+See `FSolverCollisionEventFilter`, `FSolverBreakingEventFilter`, `FSolverTrailingEventFilter` and `FSolverRemovalEventFilter`.
+
+## `UPhysicsCollisionHandler`
+A very basic class that a world can have (created in `UWorld::InitWorld`).
+By default it offers to play a sound when two rigid bodies collide with each other.
+
+It has two important virtuals: `HandlePhysicsCollisions_AssumesLocked` and `DefaultHandleCollision_AssumesLocked`. 
+The `FCollisionNotifyInfo` will contain the body index and bone for skeletal meshes, but invalid body index for Geometry Collection Components. This is because for GCCs `SetCollisionInfoFromComp` is used, which will fail to find a body instance for the GCC since it doesn't have one. While for the other types `FPhysScene_Chaos::GetPendingCollisionForContactPair` is used.
+
+**Note:** `UPhysicsCollisionHandler::HandlePhysicsCollisions_AssumesLocked` is called from `UChaosGameplayEventDispatcher::DispatchPendingCollisionNotifies` and `FPhysScene_Chaos::DispatchPendingCollisionNotifies`.
+The `UChaosGameplayEventDispatcher` will send collisions from GCCs and `FPhysScene_Chaos` for the other classic primitive collisions.
+
+## `UChaosEventRelay`
+An object managing events.
+Handle collision, break, removal and crumbling events.
+Created in the `FPhysScene_Chaos` constructor.
 
 ## `UChaosEventListenerComponent`
 Base class for listeners that query and respond to a frame's physics data (collision events, break events, etc).
@@ -53,6 +103,9 @@ List of events this event dispatcher can handle:
 
 The events are then registered by the solver event manager in `UChaosGameplayEventDispatcher::RegisterChaosEvents` with `RegisterHandler`.
 
+**Collision events**
+`UChaosGameplayEventDispatcher::HandleCollisionEvents` is called from `FChaosScene::EndFrame` -> `FPBDRigidsSolver::SyncEvents_GameThread` -> `FEventManager::DispatchEvents` -> `HandleEvent` (in `TRawEventHandler`).
+
 # Collisions
 
 ## `FCollisionEventData`
@@ -66,6 +119,15 @@ It holds a `FCollisionDataArray`, which is an array of `FCollidingData`
 ## `FCollidingData`
 Collision event data stored for use by other systems (e.g. Niagara, gameplay events).
 
+## `FRigidBodyCollisionInfo`
+Information about a specific object involved in a rigid body collision.
+
+## `FCollisionNotifyInfo`
+One entry in the array of collision notifications pending execution at the end of the physics engine run.
+
+## `FSolverCollisionEventFilter`
+
+
 # Breaking
 ## `FBreakingEventData`
 Holds a `FAllBreakingData` and `FIndicesByPhysicsProxy`.
@@ -76,6 +138,9 @@ It holds a `FBreakingDataArray`, which is an array of `FBreakingData`
 
 ## `FBreakingData`
 BreakingData passed from the physics solver to subsystems.
+
+## `FSolverBreakingEventFilter`
+
 
 # Sleeping
 ## `FSleepingEventData`
@@ -95,6 +160,9 @@ It holds a `FRemovalDataArray`, which is an array of `FRemovalData`
 ## `FRemovalData`
 RemovalData passed from the physics solver to subsystems.
 
+## `FSolverRemovalEventFilter`
+
+
 # Crumbling
 ## `FCrumblingEventData`
 Holds a `FAllCrumblingData` and `FIndicesByPhysicsProxy`.
@@ -105,6 +173,11 @@ It holds a `FCrumblingDataArray`, which is an array of `FCrumblingData`
 
 ## `FCrumblingData`
 CrumblingData passed from the physics solver to subsystems.
+
+# Trailing
+
+## `FSolverTrailingEventFilter`
+
 
 # Particles
 See [[Particles]]

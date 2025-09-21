@@ -18,4 +18,5 @@ If you want to contact me for any reason (misspelling, feedback or ideas to impr
 
 **DON'T EMAIL ME FOR HELP, GO ON THE DISCORD**
 
+For more serious inquiries or job offers you can [contact me](https://hzfishy.fr/Contact/).
 More info about me [on my website](https://hzfishy.fr/).
