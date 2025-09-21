@@ -19,6 +19,7 @@ See `UGeometryCollectionComponent::LoadCollisionProfiles`.
 ## Events
 GCC events such as breaks and other collision events are handled by the `EventDispatcher` (`UChaosGameplayEventDispatcher`).
 It is created in the GCC constructor so there is 1 event dispatcher actor instance per GCC.
+More info at [[Physics types#`UChaosGameplayEventDispatcher`]]
 
 ## Field Commands
 For fields see [[Chaos Fields]]

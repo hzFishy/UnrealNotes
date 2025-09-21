@@ -1,51 +1,121 @@
-# Core
-## `FChaosEngineInterface`
+# Scenes
 
-## `FGenericPhysicsInterface`
+## `FChaosScene`
+Low level Chaos scene used when building custom simulations that don't exist in the main world physics scene.
 
+In constructor it creates a new solver.
+
+## `FPhysScene_Chaos`
+Child of `FChaosScene`.
+Low level Chaos scene used when building custom simulations that don't exist in the main world physics scene.
+
+This is created in the `AChaosSolverActor` constructor.
+
+It manages the collisions and other events and sends them to gameplay objects if needed.
+They are registered in the constructor with the event manager and `RegisterHandler`.
+The events types are:
+- Collisions (see `FPhysScene_Chaos::HandleCollisionEvents`)
+- Breaks (see `FPhysScene_Chaos::HandleBreakingEvents`)
+- Removal (see `FPhysScene_Chaos::HandleRemovalEvents`)
+- Crumbling (see `FPhysScene_Chaos::HandleCrumblingEvents`)
+
+Using `GetOwningComponent` (which uses `PhysicsProxyToComponentMap`) you can get the primitive component that created the given `IPhysicsProxyBase`. 
+
+# Solvers
+## `FPhysicsSolverBase`
+
+
+## `FPBDRigidsSolver`
+This holds an Event Manager.
+It is by default created in `FChaosSolversModule::CreateSolver`, which is done in `FChaosScene` constructor.
+
+## `AChaosSolverActor`
+
+
+# Event Listeners
+## `FEventManager`
+Owned by a `FPBDRigidsSolver`.
+
+## `UChaosEventListenerComponent`
+Base class for listeners that query and respond to a frame's physics data (collision events, break events, etc).
+
+Its TickGroup is set to Post Physics.
+
+## `UChaosGameplayEventDispatcher`
+Child of `UChaosEventListenerComponent`.
+
+List of events this event dispatcher can handle:
+- `CollisionEvents` (see `FCollisionEventData` and `RegisterForCollisionEvents`)
+- `BreakingEvents` (see `FBreakingEventData` and `RegisterForBreakEvents`)
+- `SleepingEvents` (see `FSleepingEventData`)
+- `RemovalEvents` (see `FRemovalEventData` and `RegisterForRemovalEvents`)
+- `CrumblingEvents` (see `FCrumblingEventData` and `RegisterForCrumblingEvents`)
+
+The events are then registered by the solver event manager in `UChaosGameplayEventDispatcher::RegisterChaosEvents` with `RegisterHandler`.
+
+# Collisions
+
+## `FCollisionEventData`
+Holds a `FAllCollisionData` and `FIndicesByPhysicsProxy`.
+Used for example in `UChaosGameplayEventDispatcher::HandleCollisionEvents`.
+
+## `FAllCollisionData`
+All the collision events for one frame time stamped with the time for that frame.
+It holds a `FCollisionDataArray`, which is an array of `FCollidingData`
+
+## `FCollidingData`
+Collision event data stored for use by other systems (e.g. Niagara, gameplay events).
+
+# Breaking
+## `FBreakingEventData`
+Holds a `FAllBreakingData` and `FIndicesByPhysicsProxy`.
+
+## `FAllBreakingData`
+All the breaking events for one frame time stamped with the time for that frame.
+It holds a `FBreakingDataArray`, which is an array of `FBreakingData`
+
+## `FBreakingData`
+BreakingData passed from the physics solver to subsystems.
+
+# Sleeping
+## `FSleepingEventData`
+It holds a `FSleepingDataArray`, which is an array of `FSleepingData`
+
+## `FSleepingData`
+Contains the proxy and sleeping state.
+
+# Removal
+## `FRemovalEventData`
+Holds a `FAllRemovalData` and `FIndicesByPhysicsProxy`.
+
+## `FAllRemovalData`
+All the removal events for one frame time stamped with the time for that frame.
+It holds a `FRemovalDataArray`, which is an array of `FRemovalData`
+
+## `FRemovalData`
+RemovalData passed from the physics solver to subsystems.
+
+# Crumbling
+## `FCrumblingEventData`
+Holds a `FAllCrumblingData` and `FIndicesByPhysicsProxy`.
+
+## `FAllCrumblingData`
+All the crumbling events for one frame time stamped with the time for that frame.
+It holds a `FCrumblingDataArray`, which is an array of `FCrumblingData`
+
+## `FCrumblingData`
+CrumblingData passed from the physics solver to subsystems.
 
 # Particles
-```mermaid
-flowchart TD
-%%{ init : {'flowchart': {'nodeSpacing': 100, 'rankSpacing': 100, "curve" : "step"}} }%%
+See [[Particles]]
 
-    IPhysicsProxyBase --> TPhysicsProxy
-    IPhysicsProxyBase --> FSingleParticlePhysicsProxy
-    FPhysicsObject
-    TPhysicsProxy --> FGeometryCollectionPhysicsProxy
-    FSingleParticlePhysicsProxy --> TThreadedSingleParticlePhysicsProxyBase
-    TParticleHandleBase --> FGeometryParticleHandle[FGeometryParticleHandle TGeometryParticleHandle, TGeometryParticleHandleImp]
-    TPhysicsProxy --> FSkeletalMeshPhysicsProxy
-```
+# Miscs
+## `FIndicesByPhysicsProxy`
+Maps PhysicsProxy to list of indices in events arrays.
+For looking up all collisions a particular physics object had this frame.
+The list of indices inside `FIndicesByPhysicsProxy` points to the linked array in the same struct, for example in `FCollisionEventData` this would point to the `FAllCollisionData` array.
+
+## `FChaosEngineInterface`
 
 
-## `FPhysicsActorHandle` (`FSingleParticlePhysicsProxy`)
-Each Body Instance has a reference to a `FPhysicsActorHandle`. See [[Body Instance]].
-From the `FSingleParticlePhysicsProxy` you can get its internal (`GetPhysicsThreadAPI`) and external (`GetGameThreadAPI`) rigid body handle.
-
-It holds an `FParticleHandle`, alias of `FGeometryParticleHandle`.
-
-## `FPhysicsObjectHandle` (`FPhysicsObject`)
-The `FPhysicsObject` is effectively a reference to a single particle in the solver.  
-It maintains this reference indirectly via the physics proxy. This object is meant to be usable on both the game thread and physics thread.
-
-It holds a ref to `IPhysicsProxyBase* Proxy`, `int32 BodyIndex` and `FName BodyName`.
-So for example you can have multiple `FPhysicsObject`s which has the same SKM proxy but have different body indexes and body names.
-
-## `FGeometryParticleHandle` (`TGeometryParticleHandle`, `TGeometryParticleHandleImp`)
-
-## `TParticleHandleBase`
-
-## `IPhysicsProxyBase`
-
-## `TPhysicsProxy`
-Base object interface for solver objects. Defines the expected API for objects, uses CRTP for static dispatch, entire API considered "pure-virtual" and must be defined.  
-Forgetting to implement any of the interface functions will give errors regarding recursion on all control paths for `TPhysicsProxy<T>` where T will be the type that has not correctly implemented the API.  
-
-PersistentTask uses `IPhysicsProxyBase`, so when implementing a new specialized type it is necessary to include its header file in PersistentTask.cpp allowing the linker to properly resolve the new type. 
-
-## `TThreadedSingleParticlePhysicsProxyBase`
-Wrapper class that routes all reads and writes to the appropriate particle data. This is helpful for cases where we want to both write to a particle and a network buffer for example.
-
-## `TThreadParticle` (`FGeometryParticle`, `FGeometryParticleHandle`)
-It is an alias of `FGeometryParticle` if the thread is external or of type `FGeometryParticleHandle` if the thread is internal.
+## `FGenericPhysicsInterface`
