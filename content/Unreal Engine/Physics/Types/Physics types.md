@@ -131,6 +131,26 @@ One entry in the array of collision notifications pending execution at the end o
 ## `FSolverCollisionEventFilter`
 
 
+## `FCollisionObjectQueryParams`
+Used in queries.
+Holds a `int32 ObjectTypesToQuery` (Set of object type queries that it is interested in) and `FMaskFilter IgnoreMask` (Extra filtering done during object query. See declaration for filtering logic).
+
+## `FMaskFilter` (`uint8`)
+This filter allows us to refine queries (channel, object) with an additional level of ignore by tagging entire classes of objects (e.g. "Red team", "Blue team").
+`if (QueryIgnoreMask & ShapeFilter != 0)` filter out.
+
+
+## `FCollisionData`
+Can be found in `FShapeInstanceProxy` in `CollisionData`.
+Holds 2 `FCollisionFilterData`, `QueryData` and `SimData`.
+
+## `FCollisionFilterData`
+Contains 4 `uint32 WordX` variable.
+- **`Word0`:** This seems to contain the Unique Actor ID (from comment in `UWorld::ComponentSweepMultiByChannel`).
+- **`Word1`:** Seems to be the channel (from usage in `FCollisionResponseContainer ExtractQueryCollisionResponseContainer` where it checks it to know if we bloc, overlap or ignore). Setting this to `0xFFFF` seems to mean we collide with everything (see comment in `FActorHandle::CreateParticleHandle`). This is sometimes matching with `ObjectTypesToQuery`.
+- **`Word2`:** This seems to be used in a similar way than `Word1` but to know if we do an overlap or ignore. Also mentionned with `touch`.
+- **`Word3`:** This seems to contain the `EFilterFlags` flags (from `FCollisionFilterData::HasFlag` function behavior).
+
 # Breaking
 
 ## `FRigidClustering`
@@ -192,8 +212,13 @@ CrumblingData passed from the physics solver to subsystems.
 ## `FSolverTrailingEventFilter`
 
 
-# Particles
-See [[Particles]]
+
+# Materials
+## `FMaterialData`
+Can be found in `FShapeInstanceProxy` in `Materials`.
+
+# Particles and shapes
+See [[Particles and shapes]]
 
 # Miscs
 ## `FIndicesByPhysicsProxy`

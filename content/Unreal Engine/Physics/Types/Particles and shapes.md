@@ -1,4 +1,4 @@
-
+# Particles
 ## About
 - `X` represents the location of the particle
 - `R` represents the rotation of the particle.
@@ -50,3 +50,21 @@ Wrapper class that routes all reads and writes to the appropriate particle data.
 
 ## `TThreadParticle` (`FGeometryParticle`, `FGeometryParticleHandle`)
 It is an alias of `FGeometryParticle` if the thread is external or of type `FGeometryParticleHandle` if the thread is internal.
+
+# Shapes
+
+## `FShapeInstanceProxy`
+`FShapeInstanceProxy` is a Game-Thread object.
+
+It contains the per-shape data associated with a single shape on a particle.
+This contains data like the collision / query filters, material properties etc.
+
+Every particle holds one `FShapeInstanceProxy` object for each geometry they use.  
+If the particle has a Union of geometries there will be one `FShapeInstanceProxy` for each geometry in the union. (Except ClusteredUnions - these are not flattened because they contain their own query acceleration structure.)
+
+## `FShapeInstance`
+`FShapeInstance` is a Physics-Thread object.
+
+It contains the per-shape data associated with a single shape on a particle. This contains data like the collision / query filters, material properties etc.  
+
+Every particle holds one `FShapeInstance` object for each geometry they use. If the particle has a Union of geometries there will be one `FShapeInstance` for each geometry in the union. (Except ClusteredUnions - these are not flattened because they contain their own query acceleration structure.)
