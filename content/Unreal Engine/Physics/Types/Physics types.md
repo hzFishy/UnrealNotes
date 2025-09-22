@@ -151,6 +151,26 @@ Contains 4 `uint32 WordX` variable.
 - **`Word2`:** This seems to be used in a similar way than `Word1` but to know if we do an overlap or ignore. Also mentionned with `touch`.
 - **`Word3`:** This seems to contain the `EFilterFlags` flags (from `FCollisionFilterData::HasFlag` function behavior).
 
+# Query
+
+## `UPhysicsQueryHandler`
+Allows custom handling of physics queries. Primarily for handling network/server redirection.
+The World has a `PhysicsQueryHandler`.
+
+## `FHitResult`
+Structure containing information about one hit of a trace, such as point of impact and surface normal at that point.
+
+`int32 Item` (Extra data about item that was hit) is set from the value of `BodyIndex` contained by `FRigidBodyCollisionInfo` or from `InstanceBodyIndex` contained in `FBodyInstance`. See how `OutResult.Item`is set in `SetHitResultFromShapeAndFaceIndex`. This will be valid for classic primitives, SKM and GCC.
+
+`int32 ElementIndex` seems to be set from the `ShapeIndex` of the hit `FPerShapeData`.
+## `FCollisionQueryParams`
+Structure that defines parameters passed into collision function.
+
+# Overlapping
+
+## `FOverlapInfo`
+Overlap info consisting of the primitive and the body that is overlapping.
+
 # Breaking
 
 ## `FRigidClustering`

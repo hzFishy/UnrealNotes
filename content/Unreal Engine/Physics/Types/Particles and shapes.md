@@ -68,3 +68,7 @@ If the particle has a Union of geometries there will be one `FShapeInstanceProxy
 It contains the per-shape data associated with a single shape on a particle. This contains data like the collision / query filters, material properties etc.  
 
 Every particle holds one `FShapeInstance` object for each geometry they use. If the particle has a Union of geometries there will be one `FShapeInstance` for each geometry in the union. (Except ClusteredUnions - these are not flattened because they contain their own query acceleration structure.)
+
+## `FPerShapeData`
+FPerShapeData is going to be deprecated. See FShapeInstance and FShapeInstanceProxy.
+This is still used in engine as 5.6

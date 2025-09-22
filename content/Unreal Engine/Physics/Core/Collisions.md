@@ -1,4 +1,7 @@
 **PhysX isn't taken (fully) into account here, only Chaos as we are taking into considerations UE5+ versions**
+
+See also **Collision** section in [[Physics types]].
+
 # Resources & tips
 - [Collision Data in UE5: Practical Tips for Managing Collision Settings & Queries | Unreal Fest 2023](https://www.youtube.com/watch?v=xIQI6nXFygA)
 

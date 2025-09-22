@@ -1,3 +1,4 @@
+For dataflow see [[Dataflow Graph]].
 
 # Geometry Collection Component
 
@@ -6,6 +7,8 @@ All particles (also called physic objects) exists once the physic state is creat
 The proxy type is `FGeometryCollectionPhysicsProxy`.
 The event dispatcher is `UChaosGameplayEventDispatcher`.
 The GCC inherits `IChaosNotifyHandlerInterface`.
+
+`FGeometryCollectionItemIndex` is used to get the index of the hit proxy body from a hit (See `SetHitResultFromShapeAndFaceIndex`).
 
 ## Access to physics
 - Get `FGeometryCollectionPhysicsProxy` with `GeometryCollectionComponent->GetPhysicsProxy()`

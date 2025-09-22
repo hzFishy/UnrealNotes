@@ -24,3 +24,5 @@ Example: `Chaos::FDebugDrawQueue::GetInstance().DrawDebugSphere(ParticlePoint, 4
 For `p.Chaos.Solver.DebugDrawShapes` the drawing root path is `FPBDRigidsSolver::PostTickDebugDraw` -> `FChaosDDParticle::DrawShapes`.
 See also `FChaosDDParticleShape::Draw`.
 `FChaosDDParticleShape::GetRenderColor` is used if no color is given (default case for engine) and it has multiple checks to know what color to use, most of the case this falls to reading to use `FChaosDebugDrawColorsByState::GetColorFromState` on `DebugDraw::FChaosDebugDrawSettings`.
+
+**This is done outside the game thread.**
