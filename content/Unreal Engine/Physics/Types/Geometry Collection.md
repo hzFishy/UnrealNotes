@@ -80,3 +80,19 @@ for (auto& PhysicsObject : PhysicsObjects)
 }
 ```
 
+## From hit get particle
+```c++
+// not fully tested, WIP code
+
+auto* Proxy = HitGCC->GetPhysicsProxy();
+auto Item = VelocityHitResult.Item;
+
+auto* ParticleAtIndex = Proxy->GetPhysicsObjectByIndex(Item);
+auto* RealPart = ParticleAtIndex->GetParticle<Chaos::EThreadContext::External();
+auto Loc = RealPart->GetX();
+auto Rot = RealPart->GetR();
+
+auto* RigidParticle = RealPart->CastToRigidParticle();
+auto LinearVel = RigidParticle->GetV();
+auto AngularVel = RigidParticle->GetW();
+```
