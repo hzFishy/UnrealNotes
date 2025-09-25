@@ -29,6 +29,7 @@ All primitive components that enabled `bNotifyRigidBodyCollision` are listed in 
 All Geometry Collection Components that enabled `bNotifyGlobalCollisions` are listed in the `GlobalCollisionEventRegistrations` array. See `FPhysScene_Chaos::RegisterForGlobalCollisionEvents`.
 
 **Collision Events**
+
 After the solver event manager calls `FPhysScene_Chaos::HandleCollisionEvents`, which will call `FPhysScene_Chaos::HandleEachCollisionEvent`, `FPhysScene_Chaos::DispatchPendingCollisionNotifies` and `FPhysScene_Chaos::HandleGlobalCollisionEvent`.
 
 `FPhysScene_Chaos::HandleCollisionEvents` is called from `FChaosScene::EndFrame` -> `FPBDRigidsSolver::SyncEvents_GameThread` -> `FEventManager::DispatchEvents` -> `HandleEvent` (in `TRawEventHandler`).
@@ -72,7 +73,7 @@ It holds a collision, breaking, trailing and removal filter.
 See `FSolverCollisionEventFilter`, `FSolverBreakingEventFilter`, `FSolverTrailingEventFilter` and `FSolverRemovalEventFilter`.
 
 ## `UPhysicsCollisionHandler`
-A very basic class that a world can have (created in `UWorld::InitWorld`).
+A very basic class that a world can have (created in `UWorld::InitWorld`), set subclass in world settings `PhysicsCollisionHandlerClass`.
 By default it offers to play a sound when two rigid bodies collide with each other.
 
 It has two important virtuals: `HandlePhysicsCollisions_AssumesLocked` and `DefaultHandleCollision_AssumesLocked`. 
@@ -85,6 +86,9 @@ The `UChaosGameplayEventDispatcher` will send collisions from GCCs and `FPhysSce
 An object managing events.
 Handle collision, break, removal and crumbling events.
 Created in the `FPhysScene_Chaos` constructor.
+
+You are not supposed to subclass this but to get it from the world/scene and subscribe to its delegates.
+You have to enable the "notify global XXX" var.
 
 ## `UChaosEventListenerComponent`
 Base class for listeners that query and respond to a frame's physics data (collision events, break events, etc).
@@ -104,9 +108,11 @@ List of events this event dispatcher can handle:
 The events are then registered by the solver event manager in `UChaosGameplayEventDispatcher::RegisterChaosEvents` with `RegisterHandler`.
 
 **Collision events**
+
 `UChaosGameplayEventDispatcher::HandleCollisionEvents` is called from `FChaosScene::EndFrame` -> `FPBDRigidsSolver::SyncEvents_GameThread` -> `FEventManager::DispatchEvents` -> `HandleEvent` (in `TRawEventHandler`).
 
 **Breaking events**
+
 See `FRigidClustering`.
 
 # Collisions

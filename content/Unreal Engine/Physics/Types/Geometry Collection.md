@@ -96,3 +96,53 @@ auto* RigidParticle = RealPart->CastToRigidParticle();
 auto LinearVel = RigidParticle->GetV();
 auto AngularVel = RigidParticle->GetW();
 ```
+
+# Optimizing
+
+## Nanite
+If your mesh has a lot of polygons try to enable Nanite.
+
+![[Pasted image 20250923165512.png]]
+
+## Root Mesh Proxies
+You can replace your GC with one or multiple static meshes until the GCC breaks.
+
+![[Pasted image 20250923165536.png]]
+
+## Remove On Break
+
+![[Pasted image 20250923165821.png]]
+
+## Remove on sleep
+
+![[Pasted image 20250923165836.png]]
+
+## One way Interaction
+
+![[Pasted image 20250923170058.png]]
+
+## Throttling Mechanisms
+
+![[Pasted image 20250923170255.png]]
+
+- `p.Chaos.Clustering.PerAdvanceBreaksAllowed <count>`
+- `p.Chaos.Clustering.PerAdvanceBreaksRescheduleLimit <nb of frame>`
+
+## Not using fields
+Fields gives you a lot of control but has some overhead that can't be ignored in some cases.
+You can use instead `Apply External Strain` and `Apply Breaking Linear Velocity`/`Apply Breaking Angular Velocity`.
+You can also use internal strain if you want to apply damage over time.
+
+# Miscs
+
+## Make it feel heavier
+See [this section](https://youtu.be/wPgd1J1Tf70?si=s_4aNtHAow4-N4yy&t=1506) of GDC 2025.
+
+## Cause destruction from collision
+
+![[Pasted image 20250923172053.png]]
+
+## Niagara
+Example in the content example project..
+
+![[Pasted image 20250923172401.png]]
