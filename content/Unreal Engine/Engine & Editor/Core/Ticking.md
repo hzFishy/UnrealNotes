@@ -3,11 +3,11 @@
 **To enable ticking in editor**<br>
 For actors: Override `ShouldTickIfViewportsOnly` and return true.
 
-
 ## Performance wise
 - Use `dumpticks` will give you all enabled and disabled tick info for level
 - See the tick section in [Myth-busting "Best Practices" in Unreal Engine](https://dev.epicgames.com/community/learning/tutorials/l3E0/myth-busting-best-practices-in-unreal-engine#don'tusetick?)
 - [Aggregating Ticks to Manage Scale in Sea of Thieves | Unreal Fest Europe 2019 | Unreal Engine](https://www.youtube.com/watch?v=CBP5bpwkO54)
+- **Tick functions not connected** (ghost or not) aren't run starting at 5.6 (see [commit](https://github.com/EpicGames/UnrealEngine/commit/8347b865de87e1c2f42471b32d6f09e2def369d9)).
 
 
 ## Custom ticking

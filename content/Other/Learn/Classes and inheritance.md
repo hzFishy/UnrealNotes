@@ -36,6 +36,10 @@ However, to use/retrieve variables, functions, etc., from a class externally *(f
 > When you cast to a Blueprint class in UE this will **load** the blueprint class and **all its dependencies**
 > This is why important blueprints such as the player one can load a big part of your blueprints in your project (because of all the dependencies).
 > This is why big assets should be referenced as a soft reference.
+> 
+> Check [this](https://www.dr-elliot.com/optimization/thecastscare/) cool article about the misconceptions of casting and more details about how to use it.
+> 
+> Check [this](https://dev.epicgames.com/community/learning/tutorials/l3E0/myth-busting-best-practices-in-unreal-engine#whentocastinblueprints) cool graph to help you know when to use casting or other methods when starting in UE.
 
 **Typical Scenario:**
 Let's imagine that the trap has a reference of type `Actor` that contains an instance of the `Player` class (using `On Component Begin Overlap`).

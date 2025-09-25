@@ -252,6 +252,17 @@ Here is a list of the most used variables types.
 > <br>It's also very useful if you want to get a reference to an actor placed in a level (this would use the actor absolute path in the level).
 > - `Soft Object Reference`: A soft reference to an instance of a object.
 > - `Soft Class Reference`: A soft reference to a class of a object.
+> 
+> See [this](https://www.dr-elliot.com/memory/softreferences/) very cool and short article that gives more examples on what a soft reference is.
+
+> [!error]- Casting warning
+> When you cast to a Blueprint class in UE this will **load** the blueprint class and **all its dependencies**
+> This is why important blueprints such as the player one can load a big part of your blueprints in your project (because of all the dependencies).
+> This is why big assets should be referenced as a soft reference.
+> 
+> Check [this](https://www.dr-elliot.com/optimization/thecastscare/) cool article about the misconceptions of casting and more details about how to use it.
+> 
+> Check [this](https://dev.epicgames.com/community/learning/tutorials/l3E0/myth-busting-best-practices-in-unreal-engine#whentocastinblueprints) cool graph to help you know when to use casting or other methods when starting in UE.
 
 > [!info]- Formatting `Text`
 > When using a text variable, you can easily format it.
@@ -394,7 +405,7 @@ Mainly:
 > 
 > **This means that for all paths you should use the Return node**
 
-For event dispatchers, it's a bit special, in blueprints it's called `Event Dispatchers` but it's known in programming as delegates.
+For **event dispatchers**, it's a bit special, in blueprints it's called `Event Dispatchers` but it's known in programming as delegates.
 See a delegate like a special event that you can "call"  (known as broadcast) and "bind to" (known as subscribe). It's very useful if you want to send an event to anyone interested in it.
 Delegates are **instance dependent** (you subscribe to a delegate of a object instance), they can have multiple inputs and can't return anything.
 
@@ -609,6 +620,10 @@ ScriptStackOnWarnings=true
 
 
 # Miscellaneous
+
+## About Tick
+- You might want to know why tick can be expensive, check [this](https://dev.epicgames.com/community/learning/tutorials/l3E0/myth-busting-best-practices-in-unreal-engine#don'tusetick?) cool section from an article written by Ari Arnbjörnsson.
+- See [[Unreal Engine/Engine & Editor/Core/Ticking|Ticking]].
 
 ## Assets
 
