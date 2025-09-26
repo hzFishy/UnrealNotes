@@ -1,4 +1,8 @@
 For external editor tools see [[Tools & Plugins]].
+
+Check [Begin Play | World Building](https://dev.epicgames.com/community/learning/tutorials/9k9B/unreal-engine-begin-play-world-building) graph (or the video) on world building in UE.
+See also [this](https://dev.epicgames.com/community/learning/tutorials/dXr5/unreal-engine-world-building) page for more details.
+
 # Built-in editor tools
 - [Actor palette](https://unrealdirective.com/tips/the-actor-palette)
 - [Layers Panel](https://dev.epicgames.com/documentation/en-us/unreal-engine/layers-panel-in-unreal-engine)
