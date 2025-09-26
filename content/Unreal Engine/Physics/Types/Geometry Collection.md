@@ -113,7 +113,7 @@ You can replace your GC with one or multiple static meshes until the GCC breaks.
 
 ![[Pasted image 20250923165821.png]]
 
-## Remove on sleep
+## Remove On sleep
 
 ![[Pasted image 20250923165836.png]]
 

@@ -7,4 +7,4 @@
 - [Fast Path, Worker Threads, Performance](https://github.com/Vaei/LocoTips/wiki/Structuring:-Fast-Path,-Worker-Threads,-Performance)
 
 # Quick Settings
-- Disable `Tick Animation on Skeletal Mesh Init` in the Project Settings. This can cause hitches when initializing a lot of SKM at once. Disabling it will cause a T Poe for one frame, you can hide the SKM then show it once initialized.
+- Disable `Tick Animation on Skeletal Mesh Init` in the Project Settings. This can cause hitches when initializing a lot of SKM at once. Disabling it will cause a T Pose for one frame, you can hide the SKM then show it once initialized.
