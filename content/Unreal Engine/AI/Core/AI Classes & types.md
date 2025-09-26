@@ -89,7 +89,8 @@ Does not replace proper avoidance for dynamic obstacles!
 Unique struct made on AI move request.
 
 # Perception
-See also `Perception` folder.
+- See also `Perception` folder.
+- See `AIPerceptionTypes.h`
 
 ## Core
 ### `UAIPerceptionSystem`
@@ -101,15 +102,30 @@ This subsystem holds a list of `Senses`.
 Inside `UAIPerceptionSystem::Tick` it calls `UAISense::Tick` for each `Senses`.
 This function calls `UAISense::Update`, which does something different depending on the sight.
 
+### `UAIPerceptionStimuliSourceComponent`
+Gives owning actor a way to auto-register as perception system's sense stimuli source.
+
+### `UPawnSensingComponent`
+**Deprecated since 5.5.**
+
+### `IAIPerceptionListenerInterface`
+
+
 ## Senses - Base
 See `UAIPerceptionSystem` for more information on how they are used.
 
 ### `UAISense`
 Base class of all sense classes.
 
+### `UAISenseEvent`
+
+
 ## Senses - Sight
 ### `UAISense_Sight`
 Inside `UAISense_Sight::Update`, `UAISense_Sight::ComputeVisibility` is called, which calls `FAISystem::CheckIsTargetInSightCone`.
+
+### `IAISightTargetInterface`
+
 
 ### `FAISightQuery`
 
