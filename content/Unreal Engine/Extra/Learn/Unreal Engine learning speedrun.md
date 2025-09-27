@@ -173,32 +173,32 @@ You can find PIE settings here: <br>
 *[Image source](https://dev.epicgames.com/community/learning/tutorials/ryZ7/unreal-engine-begin-play-blueprints?source=0w)*
 
 > [!example] Actor
-> "Actor is the base class for an Object that can be placed or spawned in a level. Actors may contain a collection of Actor Components, which can be used to control how actors move, how they are rendered, etc." - [UE Docs](https://dev.epicgames.com/documentation/en-us/unreal-engine/API/Runtime/Engine/GameFramework/AActor)
+> "Actor is the base class for an Object that can be placed or spawned in a level. Actors may contain a collection of Actor Components, which can be used to control how actors move, how they are rendered, etc." - [UE Docs](https://dev.epicgames.com/documentation/en-us/unreal-engine/actors-in-unreal-engine)
 
 > [!example] Pawn
-> "Pawn is the base class of all actors that can be possessed by players or AI. They are the physical representations of players and creatures in a level." - [UE Docs](https://dev.epicgames.com/documentation/en-us/unreal-engine/API/Runtime/Engine/GameFramework/APawn)
+> "Pawn is the base class of all actors that can be possessed by players or AI. They are the physical representations of players and creatures in a level." - [UE Docs](https://dev.epicgames.com/documentation/en-us/unreal-engine/pawn-in-unreal-engine)
 
 > [!example] Character
->"Characters are Pawns that have a mesh, collision, and built-in movement logic. They are responsible for all physical interaction between the player or AI and the world, and also implement basic networking and input models." - [UE Docs](https://dev.epicgames.com/documentation/en-us/unreal-engine/API/Runtime/Engine/GameFramework/ACharacter)
+>"Characters are Pawns that have a mesh, collision, and built-in movement logic. They are responsible for all physical interaction between the player or AI and the world, and also implement basic networking and input models." - [UE Docs](https://dev.epicgames.com/documentation/en-us/unreal-engine/characters-in-unreal-engine)
 
 > [!example] Player Controller
-> "Player Controllers are used by human players to control Pawns." - [UE Docs](https://dev.epicgames.com/documentation/en-us/unreal-engine/API/Runtime/Engine/GameFramework/APlayerController)
+> "Player Controllers are used by human players to control Pawns." - [UE Docs](https://dev.epicgames.com/documentation/en-us/unreal-engine/player-controllers-in-unreal-engine)
 
 > [!example] Player State
-> "A Player State is created for every player. Player States should contain game relevant information about the player, such as score, etc." - [UE Docs](https://dev.epicgames.com/documentation/en-us/unreal-engine/API/Runtime/Engine/GameFramework/APlayerState)
+> "A Player State is created for every player. Player States should contain game relevant information about the player, such as score, etc." - [About](https://cedric-neukirchen.net/docs/multiplayer-compendium/common-classes/playerstate/)
 
 > [!example] Game Mode
-> "Defines the game being played. It governs the game rules, scoring, what actors are allowed to exist in this game type, and who may enter the game." - [UE Docs](https://dev.epicgames.com/documentation/en-us/unreal-engine/API/Runtime/Engine/GameFramework/AGameModeBase)
+> "Defines the game being played. It governs the game rules, scoring, what actors are allowed to exist in this game type, and who may enter the game." - [UE Docs](https://dev.epicgames.com/documentation/en-us/unreal-engine/game-mode-and-game-state-in-unreal-engine#gamemodes)
 
 > [!example] Game State
-> "Is a class that manages the game's global state, and is spawned by the Game Mode." -  [UE Docs](https://dev.epicgames.com/documentation/en-us/unreal-engine/API/Runtime/Engine/GameFramework/AGameStateBase)
+> "Is a class that manages the game's global state, and is spawned by the Game Mode." -  [UE Docs](https://dev.epicgames.com/documentation/en-us/unreal-engine/game-mode-and-game-state-in-unreal-engine#gamestate)
 
 > [!example] Game Instance
-> "A high-level manager object for an instance of the running game. Spawned at game creation and not destroyed until game instance is shut down." - [UE Docs](https://dev.epicgames.com/documentation/en-us/unreal-engine/API/Runtime/Engine/Engine/UGameInstance)
+> "A high-level manager object for an instance of the running game. Spawned at game creation and not destroyed until game instance is shut down." - [UE Docs](https://dev.epicgames.com/documentation/en-us/unreal-engine/API/Runtime/Engine/UGameInstance)
 >  > [!tip] *Persists between levels - [More about persistence](https://wizardcell.com/unreal/persistent-data/)*
 
 > [!example] HUD
-> "Base class of the heads-up display. This has a canvas and a debug canvas on which primitives can be drawn." - [UE Docs](https://dev.epicgames.com/documentation/en-us/unreal-engine/API/Runtime/Engine/GameFramework/AHUD) <br>
+> "Base class of the heads-up display. This has a canvas and a debug canvas on which primitives can be drawn." - [UE Docs](https://dev.epicgames.com/documentation/en-us/unreal-engine/user-interfaces-and-huds-in-unreal-engine?application_version=5.5#hud) <br>
 > The HUD class can be used as a isolated area to manage to create, show, hide and destroy UserWidgets.
 
 > [!example] User Widget
@@ -209,7 +209,7 @@ You can find PIE settings here: <br>
 > [!Info] To go further
 > [This](https://www.youtube.com/watch?v=nL4NmaHNaGc) video of less than 10 minutes covers most of the basics of the UE Gameplay Framework very well.
 > 
-> More info can be found on [Cedric's Multiplayer Compendium](https://cedric-neukirchen.net/docs/multiplayer-compendium/common-classes/), [WizardCell's Persistent Data Compendium](https://wizardcell.com/unreal/persistent-data/#gameframework-objects) and the [Official UE C++ API Reference](https://dev.epicgames.com/documentation/en-us/unreal-engine/API/Classes).
+> More info can be found on [Cedric's Multiplayer Compendium](https://cedric-neukirchen.net/docs/multiplayer-compendium/common-classes/)and [WizardCell's Persistent Data Compendium](https://wizardcell.com/unreal/persistent-data/#gameframework-objects).
 > 
 > *More can be found in the [[Unreal Engine learning speedrun#More]] section*
 
@@ -363,15 +363,15 @@ Here is a list of the most used variables types.
 Sometimes you need a piece of code in multiple places. Instead of duplicating it, the best is to transform it into a event, function or macro. But what is the difference ?
 
 Mainly:
-- Events are used for thing that don't return anything and that can execute in parallel.
+- Events are used for things that don't return anything.
 - Functions are used if you need output values.
 - Macros are used if you need to use *time* nodes or if you want multiple exec output pins. 
 
-| Type     | <div style="width:80px">Exec inputs</div> | <div style="width:100px">Variables inputs</div> | <div style="width:100px">Exec outputs</div> | <div style="width:100px">Variables outputs</div> | <div style="width:150px">Access</div>  | <div style="width:250px">Other</div>                                                                         |
-| -------- | ----------------------------------------- | ----------------------------------------------- | ------------------------------------------- | ------------------------------------------------ | -------------------------------------- | ------------------------------------------------------------------------------------------------------------ |
-| Event    | One                                       | One or multiple                                 | None                                        | None                                             | Can be called from anywhere if public. | The execution flow doesn't wait for the "end" of the event, it calls the event then continues.               |
-| Function | One                                       | One or multiple                                 | One                                         | One or multiple                                  | Can be called from anywhere if public. | Cannot contain any *time* nodes *(Delay, Cooldown, ...)*. <br>Can be overridden in parent classes if public. |
-| Macro    | One or multiple                           | One or multiple                                 | One or multiple                             | One or multiple                                  | Can only be called inside the class.   |                                                                                                              |
+| Type     | <div style="width:80px">Exec inputs</div> | <div style="width:100px">Variables inputs</div> | <div style="width:100px">Exec outputs</div> | <div style="width:100px">Variables outputs</div> | <div style="width:150px">Access</div>  | <div style="width:250px">Other</div>                                                                                                                   |
+| -------- | ----------------------------------------- | ----------------------------------------------- | ------------------------------------------- | ------------------------------------------------ | -------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Event    | One                                       | One or multiple                                 | None                                        | None                                             | Can be called from anywhere if public. | The execution flow doesn't wait for the "end" of the event, it calls the event then continues. This acts like a function if you don't have any delays. |
+| Function | One                                       | One or multiple                                 | One                                         | One or multiple                                  | Can be called from anywhere if public. | - Can have local variables.<br>- Cannot contain any *time* nodes *(Delay, Cooldown, ...)*. <br>Can be overridden in parent classes if not private.     |
+| Macro    | One or multiple                           | One or multiple                                 | One or multiple                             | One or multiple                                  | Can only be called inside the class.   | Can have local variables but it's more tricky to use.                                                                                                  |
 
 > [!tip]- Overriding functions
 > You can override a function in a parent class if the function is public and exposed.
