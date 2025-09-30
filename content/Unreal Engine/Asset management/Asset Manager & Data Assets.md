@@ -14,9 +14,19 @@
 > 
 > In other words: *"LoadSync halts all requests in the queue. They can't resume async so SM handles this by sync loading them"*
 
+
+# Asset Manager
+*Thanks to Ramius*
+`LoadPrimaryAssets` returns the stream handle for that polling but also results in the AM having a strong ref to everything loaded by that request.
+`PreloadPrimaryAssets` returns the stream handle, but doesn’t do the AM stronger so you have to keep things loaded by keeping the handle or hard references alive.
+If someone else has a stream handle for the same files, their handle will keep the files loaded even if you release yours.
+
 # Primary Data Asset
 
 Example on why and how to use: [https://www.tomlooman.com/unreal-engine-asset-manager-async-loading/](https://www.tomlooman.com/unreal-engine-asset-manager-async-loading/)
+
+## Incorrect Primary Asset Type?
+If you create the PDA instances in the project, then implement `GetPrimaryAssetId`, you need to resave the PDAs.
 
 ## Filtering PDAs using tags
 *Thanks to Snaps*
@@ -33,8 +43,6 @@ Example on why and how to use: [https://www.tomlooman.com/unreal-engine-asset-ma
 - filter PDAs using tags [Discord message](https://discord.com/channels/187217643009212416/221799439008923648/1248689350674481263)
 
 ## Asset Bundles
-
 See **Asset Bundles** section [here](https://www.tomlooman.com/unreal-engine-asset-manager-async-loading/)
 To include nested asset bundles see [IncludeAssetBundles](https://unreal-garden.com/docs/uproperty/#includeassetbundles)
-
 

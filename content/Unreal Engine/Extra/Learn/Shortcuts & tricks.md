@@ -93,6 +93,8 @@ Fore more see all settings in `Blueprint Editor Settings` and `Graph Editors` in
 **Jump to invalid nodes on compile error**
 > See `Jump to Node Errors` in Editor Settings
 
+**Show access specifier in the My Blueprint View**
+> ![[Pasted image 20250930182102.png]]
 ## Level Editor
 **Reset editor camera to before-PIE location & rotation**
 > Disable `bEnableViewportCameraToUpdateFromPIV` in Editor settings
