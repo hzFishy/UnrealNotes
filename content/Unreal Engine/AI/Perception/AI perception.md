@@ -1,6 +1,7 @@
 
 https://zomgmoz.tv/unreal/AI-Perception/
 
+
 # AI Sense Sight
 By default you will only get a update `OnPerceptionChange` which means `From "visible" to "not visible" or vice versa.`.
 
@@ -13,3 +14,7 @@ To change it to something else like `OnEveryPerception` ("Continuous update when
 
 # Custom sight detection per actor
 See `IAISightTargetInterface` with `CanBeSeenFrom`.
+
+# Miscs
+## Forget target actors if stimulus expired
+Enable `bForgetStaleActors` in AISystem project settings.
