@@ -1,4 +1,7 @@
 
+# Resources
+- [How to lazy load the ASC](https://vorixo.github.io/devtricks/lazy-loading-asc/)
+
 # Delegates
 > See details about each delegate in source code
 - Related to GEs
