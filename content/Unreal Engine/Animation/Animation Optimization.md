@@ -4,6 +4,7 @@
 - [Animation Debugging and Optimization](https://dev.epicgames.com/documentation/en-us/unreal-engine/animation-debugging-and-optimization-in-unreal-engine)
 - [About Standard Blend, Dead Blending and Inertialization](https://github.com/Vaei/LocoTips/wiki/Inertialization)
 - [Fast Path, Worker Threads, Performance](https://github.com/Vaei/LocoTips/wiki/Structuring:-Fast-Path,-Worker-Threads,-Performance)
+- [Performance Tips & Tricks - Animation](https://dev.epicgames.com/community/learning/knowledge-base/xBZp/unreal-engine-performance-tips-tricks-animation)
 
 
 # Miscs

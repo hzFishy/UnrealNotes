@@ -11,7 +11,7 @@ See [[Optimizing Networking]] and [[Character Movement Component]] pages in `Net
 See [[Animation Debugging]]
 
 # Rendering
-See [[Optimizing a scene]] page in `Graphics`
+See [[Optimizing Rendering]] page in `Graphics`
 
 # Physics
 - See [[Optimize physics]]
