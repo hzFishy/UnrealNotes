@@ -33,3 +33,6 @@ struct PREFABSYSTEMEDITOR_API FPSEditorDrawVisualizationPRCPersistentDataBaseKey
     }
 };
 ```
+
+# Struct
+If you are using struct as you have to use the `operator ==` and `WithIdenticalViaEquality` (`TStructOpsTypeTraits`).

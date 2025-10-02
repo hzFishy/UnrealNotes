@@ -8,6 +8,12 @@ A UE plugin that implements common AI perception systems.
 ## Common Interaction System ([Github Repo](https://github.com/hzFishy/CommonInteractionSystem))
 UE5 plugin for common interactions between a source pawn and abstract objects.
 
+## Common Inventory System ([Github Repo](https://github.com/hzFishy/CommonInventorySystem))
+Basic implementation of an inventory system for UE5. Supporting default slots and a separate hotbar. Also adds a crafting system.
+
+## Common Health System ([Github Repo](https://github.com/hzFishy/CommonHealthSystem))
+A simple UE plugin that adds common features related to health systems.
+
 ## Fishy World Space Widgets ([Github Repo](https://github.com/hzFishy/FishyWorldSpaceWidgets))
 A simple UE5 plugin adding more optimized world space widgets.
 
