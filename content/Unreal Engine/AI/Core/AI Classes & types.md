@@ -69,6 +69,13 @@ Created in `UAISystem::PostInitProperties`.
 ### `UNavigationSystemBase`
 
 
+## Agent
+### `INavAgentInterface`
+This is implemented by the Pawn and Controller classes.
+
+### `FNavAgentProperties`
+Properties of representation of an 'agent' (or Pawn) used by AI navigation/pathfinding.
+
 ## Path
 ### `UPathFollowingComponent`
 
@@ -84,7 +91,20 @@ Does not replace proper avoidance for dynamic obstacles!
 
 ### `IPathFollowingAgentInterface`
 
-## Move
+## Movement
+
+### `UNavMovementComponent`
+NavMovementComponent defines base functionality for MovementComponents that move any 'agent' that may be involved in AI pathfinding.
+
+### `INavMovementInterface`
+Interface for navigation movement - should be implemented on movement objects that control an object directly.
+
+### `FMovementProperties`
+Movement capabilities, determining available movement options for Pawns and used by AI for reachability tests.
+
+### `FNavMovementProperties`
+Struct to hold properties a user might set for navigation movement.
+
 ### `FAIMoveRequest`
 Unique struct made on AI move request.
 

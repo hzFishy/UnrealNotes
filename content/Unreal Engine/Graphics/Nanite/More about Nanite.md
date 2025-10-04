@@ -1,2 +1,4 @@
-
-Nanite does the culling on the GPU.
+- [Docs](https://dev.epicgames.com/documentation/en-us/unreal-engine/nanite-virtualized-geometry-in-unreal-engine)
+- Read this super interesting [document](https://advances.realtimerendering.com/s2021/Karis_Nanite_SIGGRAPH_Advances_2021_final.pdf) (155 pages) from an Epic engineer about why and how Nanite was made 
+- [[About Nanite and TAA]]
+- Nanite does the culling on the GPU.
