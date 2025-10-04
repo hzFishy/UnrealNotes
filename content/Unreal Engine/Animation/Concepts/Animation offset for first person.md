@@ -28,3 +28,14 @@ This gives the following result (I moved the components for better visibility):
 ![[Pasted image 20251004192708.png]]
 
 The great thing with that is that you only have to set up your AnimBP once and procedurally update your first person one.
+
+> [!Danger] First Person mesh not animating?
+> This can be caused by an incorrect setting on your base third person mesh, check the value of `VisibilityBasedAnimTickOption`. If your base character doesn't update its bones, your child first person mesh will copy "nothing".
+
+> [!Error] Relative controls
+> In the 5.6 first person template the controls are set at the root, meaning that if you play animations such as crouching your controls will pull your character shoulders and head up because there aren't attached.
+> 
+> I highly suggest moving each control as a child to their respective bone.
+> Example:
+> <br>![[Pasted image 20251004210021.png]] <br>![[Pasted image 20251004205927.png]]
+
