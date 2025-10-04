@@ -1,4 +1,5 @@
-See also [[First Person Rendering]]
+See also [[First Person Rendering]] and [[Owner visibility]].
+
 # Example in 5.6 First Person template
 In the new 5.6 variant first person template, the player character blueprint uses 2 skeletal mesh.
 This is an interesting approach if you have a first person character that can be seen by other players or which should be rendered differently depending on other things such as cinematics.
