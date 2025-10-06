@@ -1,3 +1,6 @@
+
+**State Trees can be used outside AI systems, but for convenience it is located in the `AI` folder**
+
 # Resources
 - [Detailed explanation of State Trees (from Epic dev)](https://www.youtube.com/watch?v=YEmq4kcblj4) *(The content of this video was noted in [[State Tree#General view]])*
 - [Talk on it (from a studio)](https://dev.epicgames.com/community/learning/talks-and-demos/yj09/unreal-engine-exploring-the-new-state-tree-for-ai-unreal-fest-gold-coast-2024)
@@ -5,6 +8,8 @@
 - [Your First 60 Minutes with State Tree](https://dev.epicgames.com/community/learning/tutorials/lwnR/unreal-engine-your-first-60-minutes-with-statetree)
 - [More info about the issues and behaviors of state trees](https://jeanpaulsoftware.com/2024/08/13/state-tree-hell/)
 - [zomg's notes](https://zomgmoz.tv/unreal/State-Tree/)
+	- [Custom StateTree tasks](https://zomgmoz.tv/unreal/State-Tree/Custom-StateTree-tasks)
+
 # General view
 
 > [!info] Note
@@ -59,6 +64,7 @@ Useful default properties on task class <br>
 - To make a variable showed as `CONTEXT`, add the `Context` category.
 - To make a variable showed as `IN` (for input), add the `Input` category. (When marked as input you are forced to bind the value, so if you want to type it yourself you must not mark it)
 - To make a variable showed as `OUT` (for output), add the `Output` category.
+- For other optional var you can use `Parameter`
 ## Transitions
 
 ### In general

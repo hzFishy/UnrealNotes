@@ -28,9 +28,9 @@ struct PREFABSYSTEMEDITOR_API FPSEditorDrawVisualizationPRCPersistentDataBaseKey
     bool operator==(const FPSEditorDrawVisualizationPRCPersistentDataBaseKey& Other) const;
 	
 	friend uint32 GetTypeHash(const FPSEditorDrawVisualizationPRCPersistentDataBaseKey& Self)
-{
+	{
 	    return HashCombineFast(GetTypeHash(Self.OwnerPath), GetTypeHash(Self.ComponentPath));
-    }
+	}
 };
 ```
 
