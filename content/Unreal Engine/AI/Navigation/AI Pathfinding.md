@@ -8,6 +8,9 @@ If `bStartFromPreviousPath` is true on the `FAIMoveRequest` the result of `FindP
 Then it will call `AAIController::RequestMove`.
 `AAIController::RequestMove` calls `UPathFollowingComponent::RequestMove`.
 
+# Cancel
+See `UPathFollowingComponent::AbortMove`.
+
 # Types
 
 ## `FNavigationPath`
