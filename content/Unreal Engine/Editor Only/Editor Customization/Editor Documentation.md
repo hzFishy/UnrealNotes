@@ -24,3 +24,5 @@ Use `![](MyImage.png)`, the file must be in a `Images` folder next to your `.udn
 
 # How it works
 The `FDocumentationModule` has a private var of type `IDocumentation` which seems to keep track of the `SourcePaths` as well as the `LoadedPages`.
+
+See also `GetDocumentationLink` and `GetEnumDocumentationLink` in `PropertyEditorHelpers`.

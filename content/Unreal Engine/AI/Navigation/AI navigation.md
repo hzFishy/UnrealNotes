@@ -7,8 +7,6 @@
 - [[Navigation Data]]
 
 # In-depth
-## Pathfinding
-- `AAIController::FindPathForMoveRequest` calls `UNavigationSystemV1::FindPathSync`
 
 ## `Corridor` and `String` (NavigationPath/Mesh)
 *Thanks Bruno on the Unreal Source Discord*

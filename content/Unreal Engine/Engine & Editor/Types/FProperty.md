@@ -1,5 +1,6 @@
+See also [[IPropertyHandle]]
+Use `CastField` for casting.
 
-Use `CastField`
 # Types
 - `TProperty`
 	- `FBoolProperty`
