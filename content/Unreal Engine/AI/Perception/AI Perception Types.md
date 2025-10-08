@@ -37,6 +37,11 @@ AIPerceptionComponent is used to register as stimuli listener in AIPerceptionSys
 
 `StimuliToProcess` is updated via `UAIPerceptionComponent::RegisterStimulus`
 
+**Available delegates:**
+- `OnPerceptionUpdated`: Called in `UAIPerceptionComponent::ProcessStimuli` with an array of all the actors which were the source of the stimuli.
+- `OnTargetPerceptionForgotten`: this is only called if `bForgetStaleActors` in Project Settings is true. The param is the actor we forgot.
+- `OnTargetPerceptionUpdated`: Notifies all bound objects that perception info has been updated for a given target. The notification is broadcast for any received stimulus or on change of state according to the stimulus configuration. This delegate will not be called if source actor is no longer valid * by the time a stimulus gets processed.
+- `OnTargetPerceptionInfoUpdated`: Notifies all bound objects that perception info has been updated for a given target. The notification is broadcast for any received stimulus or on change of state according to the stimulus configuration. This delegate will not be called if source actor is no longer valid * by the time a stimulus gets processed. This delegate will be called even if source actor is no longer valid * by the time a stimulus gets processed so it is better to use source id for bookkeeping.
 
 ## `UAIPerceptionStimuliSourceComponent`
 Gives owning actor a way to auto-register as perception system's sense stimuli source.
@@ -60,8 +65,17 @@ See `UAIPerceptionSystem` for more information on how they are used.
 ### `FAISenseID`
 Typedef of `FAINamedID<FAISenseCounter>`.
 
+### `UAISenseConfig`
+The config uses `GetSenseImplementation` to get the class of the AI Sense.
+
 ### `UAISense`
 Base class of all sense classes.
+
+**Available delegates:**
+- `OnNewListenerDelegate`: Called when a new FPerceptionListener registers with AIPerceptionSystem.
+- `OnListenerUpdateDelegate`: Called when a registered FPerceptionListener changes.
+- `OnListenerRemovedDelegate`: Called when a FPerceptionListener is removed from AIPerceptionSystem.
+
 
 ### `UAISenseEvent`
 
@@ -104,6 +118,7 @@ Inside `UAISense_Sight::Update`, `UAISense_Sight::ComputeVisibility` is called, 
 
 ## `FStimulusToProcess`
 
+## `FAIStimulus`
 
 # Miscs
 
@@ -117,3 +132,5 @@ Inside `UAISense_Sight::Update`, `UAISense_Sight::ComputeVisibility` is called, 
 Should contain only cached information common to all senses. Sense-specific data needs to be stored by senses themselves.
 
 It holds a weak ref to an `UAIPerceptionComponent`.
+
+## `FActorPerceptionInfo`
