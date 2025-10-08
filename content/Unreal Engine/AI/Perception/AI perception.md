@@ -1,23 +1,17 @@
+# Resources
+- https://zomgmoz.tv/unreal/AI-Perception/
+- [[AI Perception Types]]
+- [[AI Senses]]
 
-https://zomgmoz.tv/unreal/AI-Perception/
+# How stimuli works
+At the end of `UAIPerceptionSystem::Tick`, the perception system will iterate `ListenerContainer`. If the entry is valid and `bHasStimulusToProcess` (in `FPerceptionListener`) is true we call `FPerceptionListener::ProcessStimuli`, which calls `UAIPerceptionComponent::ProcessStimuli`.
 
-
-# AI Sense Sight
-By default you will only get a update `OnPerceptionChange` which means `From "visible" to "not visible" or vice versa.`.
-
-To change it to something else like `OnEveryPerception` ("Continuous update whenever target is perceived") you need to subclass the AI Sense and change the `NotifyType` in the constructor.
-
-> See `EAISenseNotifyType NotifyType` in `UAISense`
-
-> [!Warning] Warning about not using `OnPerceptionChange`
-> if not using that `bWantsToNotifyOnlyOnValueChange` will be false, making `OnTargetPerceptionForgotten` delegate never called when age expired.
-
-# Custom sight detection per actor
-See `IAISightTargetInterface` with `CanBeSeenFrom`.
+This will iterate `StimuliToProcess` and eventually call the available delegates.
+At the end `AAIController::ActorsPerceptionUpdated` is called.
 
 # Miscs
 
-# Disable Pawn auto register as stimulus source
+## Disable Pawn auto register as stimulus source
 In your `DefaultGame.ini` add the following:
 ```init
 [/Script/AIModule.AISense_Sight]
