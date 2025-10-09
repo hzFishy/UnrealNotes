@@ -276,6 +276,6 @@ by default it will create and request a new move each tick (while the task is ac
 
 ## Instant Data
 You cannot store a instance data ptr for long because it may be reallocated on data changes.
-See `TStateTreeInstanceDataStructRef` for mrore info on how to keep the reference.
+See `TStateTreeInstanceDataStructRef` for more info on how to keep the reference.
 
 **Be sure to declare FInstanceDataType BEFORE the task constructor** or you will get hard to debug compiler errors.
