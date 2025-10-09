@@ -3,6 +3,9 @@
 - [[AI Perception Types]]
 - [[AI Senses]]
 
+# Teams
+See [Perception Detection by Affiliation](https://zomgmoz.tv/unreal/AI-Perception/Perception-Detection-by-Affiliation) and  [IGenericTeamAgentInterface](https://zomgmoz.tv/unreal/AI-Perception/IGenericTeamAgentInterface)
+
 # How stimuli works
 At the end of `UAIPerceptionSystem::Tick`, the perception system will iterate `ListenerContainer`. If the entry is valid and `bHasStimulusToProcess` (in `FPerceptionListener`) is true we call `FPerceptionListener::ProcessStimuli`, which calls `UAIPerceptionComponent::ProcessStimuli`.
 

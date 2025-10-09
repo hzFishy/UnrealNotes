@@ -32,16 +32,23 @@ See usages of `UAIPerceptionSystem::OnNewListener`, `UAIPerceptionSystem::OnList
 
 # Components
 ## `UAIPerceptionComponent`
+### About
 Placed on AI Controller.
 AIPerceptionComponent is used to register as stimuli listener in AIPerceptionSystem and gathers registered stimuli. UpdatePerception is called when component gets new stimuli (batched).
 
 `StimuliToProcess` is updated via `UAIPerceptionComponent::RegisterStimulus`
 
-**Available delegates:**
+### Available delegates
 - `OnPerceptionUpdated`: Called in `UAIPerceptionComponent::ProcessStimuli` with an array of all the actors which were the source of the stimuli.
 - `OnTargetPerceptionForgotten`: this is only called if `bForgetStaleActors` in Project Settings is true. The param is the actor we forgot.
 - `OnTargetPerceptionUpdated`: Notifies all bound objects that perception info has been updated for a given target. The notification is broadcast for any received stimulus or on change of state according to the stimulus configuration. This delegate will not be called if source actor is no longer valid * by the time a stimulus gets processed.
 - `OnTargetPerceptionInfoUpdated`: Notifies all bound objects that perception info has been updated for a given target. The notification is broadcast for any received stimulus or on change of state according to the stimulus configuration. This delegate will not be called if source actor is no longer valid * by the time a stimulus gets processed. This delegate will be called even if source actor is no longer valid * by the time a stimulus gets processed so it is better to use source id for bookkeeping.
+
+### Forgotten Actors
+`OnTargetPerceptionForgotten` is called from either `UAIPerceptionComponent::ForgetActor` or `UAIPerceptionComponent::ForgetAll`.
+
+`ForgetAll` is called in `UAIPerceptionComponent::CleanUp`.
+`ForgetActor` is called in `UAIPerceptionComponent::ProcessStimuli` using the local `ActorsToForget` array, which is filled while iterating `StimuliToProcess` if `FAIStimulus::WasSuccessfullySensed` is false, `FAIStimulus::IsExpired` is true and `bForgetStaleActors` is true.
 
 ## `UAIPerceptionStimuliSourceComponent`
 Gives owning actor a way to auto-register as perception system's sense stimuli source.
@@ -119,6 +126,10 @@ Inside `UAISense_Sight::Update`, `UAISense_Sight::ComputeVisibility` is called, 
 ## `FStimulusToProcess`
 
 ## `FAIStimulus`
+`bSuccessfullySensed` is true if the sight query was successful. This means it will be false if the target actor leaves the sight cone.
+
+For example for `UAISense_Sight` different values are given to the `FAIStimulus` constructor.
+See `UAISense_Sight::UpdateQueryVisibilityStatus` and `UAISense_Sight::UnregisterSource`.
 
 # Miscs
 
@@ -134,3 +145,6 @@ Should contain only cached information common to all senses. Sense-specific data
 It holds a weak ref to an `UAIPerceptionComponent`.
 
 ## `FActorPerceptionInfo`
+
+
+## `FActorPerceptionUpdateInfo`
