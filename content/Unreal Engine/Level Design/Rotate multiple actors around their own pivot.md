@@ -1,3 +1,5 @@
-
-See [here](https://forums.unrealengine.com/t/rotating-multiple-objects-about-local-pivot-using-another-object/265407/3?u=hzfishy)
+- Select your actors in the scene
+- Set the pivot to the center (see screenshot)
+	![[Pasted image 20251013181042.png]]
+- Rotate
 
