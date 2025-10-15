@@ -11,6 +11,8 @@
 	- Yellow: Simulated (Active)
 	- Gray: Simulated (Sleeping)
 - `p.Chaos.DebugDraw.MaxLines` (default to 20000)
+- `p.Chaos.Solver.DebugDraw.Cluster.Constraints 1`
+	- For GCC
 
 For more debug draw methods, see `ChaosDebugDraw.cpp` file
 
