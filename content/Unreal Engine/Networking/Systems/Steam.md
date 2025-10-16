@@ -14,3 +14,5 @@ If you use it you need to change the used NetDriverDefinition:
 `+NetDriverDefinitions=(DefName="GameNetDriver",DriverClassName="SteamSockets.SteamSocketsNetDriver",DriverClassNameFallback="OnlineSubsystemUtils.IpNetDriver")`
 
 You also can't use OpenLevel for sessions, use ServerTravel (with seamless travel).
+
+For reason codes see [this Steam SDK docs page](https://partner.steamgames.com/doc/api/steamnetworkingtypes#ESteamNetConnectionEnd) for a list.
