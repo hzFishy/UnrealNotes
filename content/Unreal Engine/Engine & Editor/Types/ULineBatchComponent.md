@@ -13,6 +13,7 @@ Otherwise for single frame draws `LineBatcher` is used.
 
 
 They are all from the same type, and set up the same.
+
 **LineBatcher**
 - Has `bCalculateAccurateBounds` set to false.
 - Is used by Niagara, HUD, Viewport, WorldPartition, SkeletalMeshComponent
@@ -34,6 +35,5 @@ On tick the component updates the lifetime of the batched elements and removed e
 # Render
 - In each `DrawXXX` function `UActorComponent::MarkRenderStateDirty` is called.
 - `FLineBatcherSceneProxy` is the proxy scene type of the line batcher component.
-- All batches points, lines and meshes is has a `uint32 BatchID` that is set to 0 (`INVALID_ID`) by default. Use `ULineBatchComponent::ClearBatch` to clear it.
+- All batches points, lines and meshes has a `uint32 BatchID` that is set to 0 (`INVALID_ID`) by default. Use `ULineBatchComponent::ClearBatch` to clear it.
 - `FLineBatcherSceneProxy::GetDynamicMeshElements` is what draws the points and lines on the PrimitiveDrawInterface.
-

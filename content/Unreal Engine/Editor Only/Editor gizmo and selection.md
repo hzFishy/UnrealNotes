@@ -3,15 +3,22 @@
 The base class `FTypedElementViewportInteractionCustomization` holds logic *"to allow asset editors (such as the level editor) to override the base behavior of viewport interaction"*.
 
 For example, the derived class `FActorElementLevelEditorViewportInteractionCustomization` is used when you try to move around an actor in the level.
+For components `FComponentElementLevelEditorViewportInteractionCustomization` is used.
 
 The main functions are `GizmoManipulationStarted`, `GizmoManipulationDeltaUpdate` and `GizmoManipulationStopped`.
 
 - `GizmoManipulationStarted`
 	- calls `GEditor->BroadcastBeginObjectMovement` (wrapper of `OnBeginObjectTransformEvent`)
+- `GizmoManipulationDeltaUpdate`
+	- This is what updates the moved/rotated/scaled object (for example actor).
+	- It can run `AActor::EditorApplyRotation`, `AActor::EditorApplyTranslation` and `AActor::EditorApplyScale`
 - `GizmoManipulationStopped`
 	- calls `PostEditMove` on the actor (with `bFinished` as true)
 	- calls `GEditor->BroadcastEndObjectMovement` (wrapper of `OnEndObjectTransformEvent`)
 
+> [!Info] Component transform tracking
+> You can use `UEngine::OnComponentTransformChanged` for general updates.
+> And `UEditorEngine::OnEndObjectMovement` to know when the movement finished.
 
 # Selection
 
