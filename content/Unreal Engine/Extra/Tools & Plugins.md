@@ -29,6 +29,7 @@ See also [[My plugins]]
 - [MarkdownAsset](https://github.com/gwaredd/MarkdownAsset) allows you to embed multiple types of markdowns as a new asset type in editor.
 - [Message Log for Blueprints](https://www.fab.com/listings/742876c7-2a32-47d2-9b23-8d0b430e7683) ([Github repo](https://github.com/aquanox/BlueprintMessageLogPlugin)): interactive Message Log for Blueprints
 - [Icon Creator](https://www.fab.com/listings/7edd0c84-f1d5-4b95-bb1a-e4a3a26b78d6)
+- [LazyNavMeshUpdates](https://github.com/ben-mkiv/ST_LazyNavMeshUpdates): Delays nav mesh updates from viewport transform changes until the transform operation was completed.
 
 
 ## ImGui
