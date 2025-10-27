@@ -19,7 +19,7 @@ More details about it (with an example on Unity box collider 6 faces maker) [her
 
 Component visualizer's are used in `UUnrealEdEngine::DrawComponentVisualizers`, see also ` FSCSEditorViewportClient::Draw`.
 
-You can get a component visualize from a component instance using `UUnrealEdEngine::FindComponentVisualizer`, for example: 
+You can get a component visualizer from a component instance using `UUnrealEdEngine::FindComponentVisualizer`, for example: 
 ```c++
 TSharedPtr<FComponentVisualizer> Visualizer = GUnrealEd->FindComponentVisualizer(SplineActor->GetPatrolSplineComponent()->GetClass());
 auto SplineVisualizer = StaticCastSharedPtr<FSplineComponentVisualizer>(Visualizer);

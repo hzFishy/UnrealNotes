@@ -3,3 +3,6 @@
 
 # `OnGetOnScreenMessages`
 Simple example at declaration
+
+# `OnActorLabelChanged`
+

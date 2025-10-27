@@ -2,6 +2,9 @@
 # Gizmo events
 The base class `FTypedElementViewportInteractionCustomization` holds logic *"to allow asset editors (such as the level editor) to override the base behavior of viewport interaction"*.
 
+> [!Info] Here I am giving information collected from the Level Editor gizmo & events
+
+
 For example, the derived class `FActorElementLevelEditorViewportInteractionCustomization` is used when you try to move around an actor in the level.
 For components `FComponentElementLevelEditorViewportInteractionCustomization` is used.
 
@@ -16,7 +19,7 @@ The main functions are `GizmoManipulationStarted`, `GizmoManipulationDeltaUpdate
 	- calls `PostEditMove` on the actor (with `bFinished` as true)
 	- calls `GEditor->BroadcastEndObjectMovement` (wrapper of `OnEndObjectTransformEvent`)
 
-> [!Info] Component transform tracking
+> [!Info] Component transform tracking (Level Editor & Blueprint Editor)
 > You can use `UEngine::OnComponentTransformChanged` for general updates.
 > And `UEditorEngine::OnEndObjectMovement` to know when the movement finished.
 
@@ -55,7 +58,8 @@ GEditor->GetSelectedComponents()->Select(Component);
 ## Selection process
 So, how does the `USelection` knows when we click on a component ?
 
-See [[HitProxy]]
+See [[HitProxy]].
+
 ### In Level Editor Viewport
 When you click, after some `FSlateApplication` functions ran, `SViewport::OnMouseButtonUp` is called.
 This will run `FSceneViewport::OnMouseButtonUp` -> `FLevelEditorViewportClient::InputKey` -> `FEditorViewportClient::Internal_InputKey` -> `FEditorViewportClient::ProcessClickInViewport`.
@@ -72,3 +76,5 @@ More stuff happens next (like selecting the node in the Subobject tree view) but
 
 So, if you spawn yourself an actor inside a blueprint viewport, a hit proxy IS created for you, but nothing will be selected.
 This is because inside `FSCSEditorViewportClient::ProcessClick`, `ActorProxy->Actor == PreviewActor` will fail (since the preview actor is the default BP actor, and yours (`ActorProxy->Actor`) is just another instance you spawned yourself).
+
+The Child Actor Component has a special case where it will recursively look for the clicked element.

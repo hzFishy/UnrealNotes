@@ -29,6 +29,7 @@ All the keys can be changed in the editor settings
 - Move selected object(s) without the 3 arrows: (X: Ctrl + Drag LMB), (Y: Ctrl + Drag RMB), (Z: Ctrl + Drag LMB+RMB)
 - Select all similar (Shift + E) [More details](https://www.cbgamedev.com/blog/quick-dev-tip-54-ue4-ue5-select-all-of-the-same)
 - Current folder feature, any asset dropped in the level from the CB will be placed in this folder (Select folder in Outliner -> Make current folder) [More details](https://forums.unrealengine.com/t/solved-normal-would-love-to-select-the-folder-that-actors-go-in-in-outliner/1168761/2?u=hzfishy)
+- Shift + F2: Bulk rename
 
 ## Other
 - Content Browser `Open the asset of the selected object (if any) in the latest actif content browser tab` (Ctrl + B)
