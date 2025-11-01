@@ -16,7 +16,7 @@ Message->AddToken(FAssetNameToken::Create(GetPathNameSafe(Blueprint),
        *FU_Utilities::GetNameWithoutTemplateSuffix(PRC->GetFName()).ToString()  
 ))));  
   
-// Make a FixeController, this can container multiple fixs
+// Make a FixeController, this can containe multiple fixs
 TSharedRef<FMutuallyExclusiveFixSet> FixController = MakeShareable(new FMutuallyExclusiveFixSet());
 
 // fix function  
