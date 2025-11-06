@@ -5,6 +5,7 @@
 - [About Standard Blend, Dead Blending and Inertialization](https://github.com/Vaei/LocoTips/wiki/Inertialization)
 - [Fast Path, Worker Threads, Performance](https://github.com/Vaei/LocoTips/wiki/Structuring:-Fast-Path,-Worker-Threads,-Performance)
 - [Performance Tips & Tricks - Animation](https://dev.epicgames.com/community/learning/knowledge-base/xBZp/unreal-engine-performance-tips-tricks-animation)
+- [Animation Sharing Plugin](https://dev.epicgames.com/documentation/en-us/unreal-engine/animation-sharing-plugin-in-unreal-engine)
 
 
 # Miscs
