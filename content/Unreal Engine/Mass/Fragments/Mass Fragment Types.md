@@ -1,9 +1,9 @@
+Also see [[Mass Fragment Tags]].
+
 # Base types
 Base struct types to inherit from.
 
 ## `FMassFragment`
-
-## `FMassTag`
 
 ## `FMassConstSharedFragment`
 
@@ -26,6 +26,9 @@ This is a common type for all the wrappers pointing at UObjects used to copy dat
 ## `FAgentRadiusFragment`
 Simply holds a radius variable.
 
+## `FMassAvoidanceEntitiesToIgnoreFragment`
+Usually optional, entities handles to ignore.
+
 
 # Movement
 
@@ -46,3 +49,23 @@ Parameters describing how this mass agent should move.
 The presence of this tag indicates that this mass agent's velocity should be controlled by the `FMassDesiredMovementFragment`.
 For code driven displacement, we want the desired velocity to affect the velocity directly, which is then applied to the character mover.
 For e.g. Root Motion driven displacement, we just need to pipe the DesiredVelocity to the animation system and let it do the test.
+
+# Navigation
+
+## `FMassNavigationEdgesFragment`
+Contains edges, filled by `UMassNavMeshNavigationBoundaryProcessor` and used by other processors.
+
+## `FMassMovingAvoidanceParameters`
+
+## `FMassNavMeshCachedPathFragment`
+Nav mesh query result.
+
+## `FMassNavMeshShortPathFragment`
+Partial data of a nav mesh query result.
+
+# LOD
+## `FMassSimulationLODFragment`
+
+
+# Miscs
+## `FMassSimulationVariableTickFragment`
