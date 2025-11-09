@@ -9,6 +9,7 @@ See also [this](https://dev.epicgames.com/community/learning/tutorials/dXr5/unre
 - [Scene Variants](https://dev.epicgames.com/documentation/en-us/unreal-engine/working-with-scene-variants-in-unreal-engine)
 - [Day sequence](https://www.youtube.com/watch?v=xQKPsQeTcOg)
 - [[Modeling Tools]]
+- [A Quick Guide: Packed Level Actors & Level Instancing in Unreal Engine with KitBash3D](https://help.kitbash3d.com/en/articles/12038349-a-quick-guide-packed-level-actors-level-instancing-in-unreal-engine-with-kitbash3d)
 
 # Editor & Runtime Streaming
 - [Level Instances](https://dev.epicgames.com/documentation/en-us/unreal-engine/level-instancing-in-unreal-engine?application_version=5.5) (See also [[Level Streaming]])
