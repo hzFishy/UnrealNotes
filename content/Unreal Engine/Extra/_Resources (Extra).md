@@ -6,3 +6,6 @@
 - [Riot’s Multi-Game Unreal-Based Development Ecosystem](https://www.youtube.com/watch?v=9xxwQVdwcTQ)
 - [50 Tips and Tricks in Modeling Mode | Unreal Fest 2024](https://www.youtube.com/watch?v=xIMudHNX9JM)
 
+# Math
+- [Math for Game Devs [2022]](https://www.youtube.com/playlist?list=PLImQaTpSAdsArRFFj8bIfqMk2X7Vlf3XF)
+
