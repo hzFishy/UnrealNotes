@@ -27,6 +27,7 @@
 - [Building a Better Centaur: AI at Massive Scale (GDC)](https://www.gdcvault.com/play/1021848/Building-a-Better-Centaur-AI)
 
 ## Networking
+- [Determinism in League of Legends](https://technology.riotgames.com/news/determinism-league-legends-introduction)
 - [Overwatch Gameplay Architecture and Netcode](https://www.youtube.com/watch?v=W3aieHjyNvw) - 💾
 - [I Shot You First: Networking the Gameplay of Halo: Reach](https://www.youtube.com/watch?v=h47zZrqjgLc) - 💾
 - [Deterministic vs. Replicated AI: Building the Battlefield of For Honor](https://www.youtube.com/watch?v=4Z0aUEBp_Os)
