@@ -67,6 +67,10 @@ At the top of this page there are interesting console commands [[Console command
 **Control Asset Open Location**
 > Edit `AssetEditorOpenLocation` in Editor Settings
 
+## Input
+**Don't process initial input on focus/capture**
+> In Project Settings (Engine - Input) set `Default Viewport Mouse Capture Mode` to `Capture Permanently`.
+
 ## Assets
 **Thumbnail 3D rotate in Content Browser**
 > In settings enable thumbnail editing (see [video](https://www.youtube.com/watch?v=raiaGRBD_c4))
