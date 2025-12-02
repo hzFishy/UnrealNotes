@@ -75,6 +75,9 @@ At the top of this page there are interesting console commands [[Console command
 **Thumbnail 3D rotate in Content Browser**
 > In settings enable thumbnail editing (see [video](https://www.youtube.com/watch?v=raiaGRBD_c4))
 
+**Display better Cooker logs**
+> In Project Settings see `Cooker Progress Display Mode`
+
 ## Blueprint
 Fore more see all settings in `Blueprint Editor Settings` and `Graph Editors` in Editor Settings.
 
@@ -126,4 +129,8 @@ See `Grid Snapping -> Advanced` in Editor Settings.
 ## PIE
 **Give Mouse Control**
 > See `Game Gets Mouse Control` in Editor Settings
+
+## Miscs
+**Global Computer .init settings**
+> Add your .ini files in `My Documents/Unreal Engine/Engine/Config`
 
