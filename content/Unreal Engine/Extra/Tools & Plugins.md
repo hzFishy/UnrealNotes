@@ -30,6 +30,8 @@ See also [[My plugins]]
 - [Message Log for Blueprints](https://www.fab.com/listings/742876c7-2a32-47d2-9b23-8d0b430e7683) ([Github repo](https://github.com/aquanox/BlueprintMessageLogPlugin)): interactive Message Log for Blueprints
 - [Icon Creator](https://www.fab.com/listings/7edd0c84-f1d5-4b95-bb1a-e4a3a26b78d6)
 - [LazyNavMeshUpdates](https://github.com/ben-mkiv/ST_LazyNavMeshUpdates): Delays nav mesh updates from viewport transform changes until the transform operation was completed.
+- [Property History](https://www.fab.com/listings/0edd8744-2384-4009-b997-e1ec7795a316): See property history using VCS.
+
 
 
 ## ImGui

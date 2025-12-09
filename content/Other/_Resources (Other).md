@@ -5,6 +5,7 @@
 - Combat
 	- [Authored vs. Systemic: Finding a Balance for Combat AI in Uncharted 4 (GDC)](https://www.youtube.com/watch?v=G8W7EQKBgcg)
 	- [Embracing Push Forward Combat in DOOM (GDC)](https://www.youtube.com/watch?v=2KQNpQD8Ayo)
+	- [Crafting Scalable AI for a AAA Souls-Like Game in Unreal Engine | Unreal Fest Stockholm 2025](https://www.youtube.com/watch?v=XKQfMZOXFv0)
 - General
 	- [Marvel's Spider-Man AI Postmortem (GDC)](https://www.youtube.com/watch?v=LxWq65CZBU8)
 	- [The Last of Us Human Enemy AI (GDC)](https://gdcvault.com/play/1020338/The-Last-of-Us-Human)
