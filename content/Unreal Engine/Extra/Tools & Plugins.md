@@ -20,6 +20,10 @@ See also [[My plugins]]
 - [BlueprintComponentReferencePlugin](https://github.com/aquanox/BlueprintComponentReferencePlugin) - Allows you to reference in editor UI a component inside the owning actor and get it at runtime.
 - [BlueprintTaskForge](https://github.com/CommitAndChill/BlueprintTaskForge): Make tasks without C++
 - [Json](https://github.com/Blueman2/BMJson)
+
+## AI
+- [AI 3D Nav](https://github.com/darbycostello/Nav3D)
+
 ## UI
 - [[Widget property bindings]]
 ## Miscs Editor Only Utilities
@@ -31,8 +35,6 @@ See also [[My plugins]]
 - [Icon Creator](https://www.fab.com/listings/7edd0c84-f1d5-4b95-bb1a-e4a3a26b78d6)
 - [LazyNavMeshUpdates](https://github.com/ben-mkiv/ST_LazyNavMeshUpdates): Delays nav mesh updates from viewport transform changes until the transform operation was completed.
 - [Property History](https://www.fab.com/listings/0edd8744-2384-4009-b997-e1ec7795a316): See property history using VCS.
-
-
 
 ## ImGui
 **Since 5.6 SlateIM is a new slate plugin that acts like ImGui in Unreal, it is way more convenient than ImGui. See [[SlateIM]]**
