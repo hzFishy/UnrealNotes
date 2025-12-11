@@ -12,7 +12,7 @@ See also [[My plugins]]
 - [Physical Layout Tool](https://www.fab.com/listings/a7fb6fcf-596f-48e9-83cc-f584aea316b1) - [Tutorial Video](https://www.youtube.com/watch?v=bn3aDOA1JXA)
 - Prefabs
 	- [Prefabricator (Fab)](https://www.fab.com/listings/57a67b66-2248-48ba-a680-bb3e2e64d7e5) - [Prefabricator (Unknown Worlds updated fork)](https://github.com/unknownworlds/prefabricator-ue5)
-- [Editor Level Selector](https://github.com/BDCPatrick/BDC_LevelSelector)
+- [Editor Level Selector](https://github.com/BDCPatrick/BDC_LevelSelector) (My [improved fork](https://github.com/hzFishy/EditorLevelSelector))
 
 ## VFX
 - [FluidNinja LIVE](https://www.fab.com/listings/80fcf53e-49f7-4635-a71c-ba81280c6618) - Very detailed and modular plugin to use advanced dynamic particle systems. It's paid but on the [Discord](https://discord.gg/rgEtwua2tu) there is an access to a free student version.

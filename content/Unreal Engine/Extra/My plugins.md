@@ -46,3 +46,7 @@ Most of them are in c++ namespaces, I will eventually make Blueprint Function Li
 	- **SelectSameFolderLevel:** In `Select` menu, or with the shortcut (`Shift+Alt+S` by default): Selects all other actors that are in the same root folder than the current selection.
 - Message Dialog Box
 - ...
+
+
+## Editor Level Selector ([Github Repo Fork](https://github.com/hzFishy/EditorLevelSelector))
+![[Pasted image 20251209160119.png]]
