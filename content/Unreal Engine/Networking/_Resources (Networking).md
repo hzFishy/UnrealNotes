@@ -3,6 +3,7 @@
 - [Multiplayer Network Compendium](https://cedric-neukirchen.net/docs/category/multiplayer-network-compendium/)
 - [FAQ: Multiplayer & Networking](https://dev.epicgames.com/community/learning/knowledge-base/ZGZk/unreal-engine-faq-multiplayer-networking)
 - Talks her: [[Other/_Resources (Other)|_Resources (Other)]]
+- [Server-Side Fog of War: Defending Against Wall Hacks | Unreal Fest Stockholm 2025](https://www.youtube.com/watch?v=CK2L7rjp0qk)
 
 
 ## Basic representations of the common Actors types and their replication
