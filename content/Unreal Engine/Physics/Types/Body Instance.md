@@ -1,3 +1,44 @@
+See also [[BodySetup]].
+
+# Create
+
+> [!Info]
+> If you want to see examples on how a FBody Instance can be manually created for a Primitive Component check out [[InstancedStaticMeshComponent]]
+
+```c++
+FBodyInstance* NewBodyInstance = new FBodyInstance();
+EnemyInstance.Pin()->BodyInstance = NewBodyInstance;
+
+// Get transform of the instance
+FTransform InstanceTransform = GetActorTransform();
+
+// TODO: set a tracked id so later on tracing we can get back what enemy instance it is
+NewBodyInstance->InstanceBodyIndex = -2;
+
+NewBodyInstance->CopyBodyInstancePropertiesFrom(CollisionPrimitiveComponent->GetBodyInstance());
+NewBodyInstance->bAutoWeld = false;
+NewBodyInstance->bSimulatePhysics = true;
+
+UBodySetup* NewBodySetup = NewObject<UBodySetup>(CollisionPrimitiveComponent.Get());
+NewBodySetup->DefaultInstance.SetCollisionProfileName(UCollisionProfile::BlockAll_ProfileName);
+
+FKAggregateGeom Geom;
+FKSphereElem TestSphere;
+TestSphere.Center = FVector(0, 0, 0);
+TestSphere.Radius = 20;
+Geom.AddElement(TestSphere);
+NewBodySetup->AddCollisionFrom(Geom);
+NewBodyInstance->InitBody(NewBodySetup, InstanceTransform, CollisionPrimitiveComponent.Get(), GetWorld()->GetPhysicsScene());
+
+```
+
+> [!Danger]
+> Don't forget to clear it!
+> ```c++
+> InstanceBody->TermBody();  
+> delete InstanceBody;  
+> InstanceBody = nullptr;
+> ```
 
 # About
 

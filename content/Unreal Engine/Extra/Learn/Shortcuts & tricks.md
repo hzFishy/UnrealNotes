@@ -53,11 +53,13 @@ All the keys can be changed in the editor settings
 - For Each Loop `Place a For Each Loop node` (F)
 - Delay `Place a Delay node` (D)
 
-
 # Tricks
 
-## Console commands
-At the top of this page there are interesting console commands [[Console commands & variables]]
+## Console
+- At the top of this page there are interesting console commands [[Console commands & variables]]
+- Use `-Log -NewConsole` to have a nice console window that allows for filtering, calling console commands and more.
+- `BugIt` will copy to clipboard a command you can paste to teleport yourself to the location it was ran.
+
 ## Global
 
 **Show 3D Widget on Vector variable**
@@ -66,6 +68,12 @@ At the top of this page there are interesting console commands [[Console command
 
 **Control Asset Open Location**
 > Edit `AssetEditorOpenLocation` in Editor Settings
+
+**Global .ini settings**
+> Go to `My Documents/Unreal Engine/Engine/Config`
+> 
+> ![[Pasted image 20251220120308.png]]
+
 
 ## Input
 **Don't process initial input on focus/capture**
@@ -79,7 +87,7 @@ At the top of this page there are interesting console commands [[Console command
 > In Project Settings see `Cooker Progress Display Mode`
 
 ## Blueprint
-Fore more see all settings in `Blueprint Editor Settings` and `Graph Editors` in Editor Settings.
+For more see all settings in `Blueprint Editor Settings` and `Graph Editors` in Editor Settings.
 
 **Show BP Asset and Function calling Print String**
 > Use `bp.BlamePrintString`
@@ -103,6 +111,10 @@ Fore more see all settings in `Blueprint Editor Settings` and `Graph Editors` in
 
 **Show access specifier in the My Blueprint View**
 > ![[Pasted image 20250930182102.png]]
+
+**AsyncMessageSystem**
+> Plugin to send messages using GameplayTag and Payload struct.
+
 ## Level Editor
 **Reset editor camera to before-PIE location & rotation**
 > Disable `bEnableViewportCameraToUpdateFromPIV` in Editor settings

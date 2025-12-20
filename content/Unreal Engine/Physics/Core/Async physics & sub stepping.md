@@ -1,5 +1,5 @@
 # Enable Async creation state
-For 5.6
+For 5.6 and above
 Use `p.Chaos.EnableAsyncInitBody = true`
 
 ## Info
