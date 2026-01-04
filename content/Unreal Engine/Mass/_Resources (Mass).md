@@ -3,7 +3,8 @@
 - [Large Numbers of Entities with Mass in UE5 | Feature Highlight | State of Unreal 2022](https://www.youtube.com/watch?v=f9q8A-9DvPo)
 - [MassEntity Overview](https://dev.epicgames.com/documentation/en-us/unreal-engine/overview-of-mass-entity-in-unreal-engine)
 - [Megafunk Mass Sample (Project + doc)](https://github.com/Megafunk/MassSample)
-- [Your first 60 minutes with mass](https://dev.epicgames.com/community/learning/tutorials/JXMl/unreal-engine-your-first-60-minutes-with-mass)
+- [LEGACY - Your First 60 Minutes with Mass](https://dev.epicgames.com/community/learning/tutorials/JXMl/unreal-engine-your-first-60-minutes-with-mass)
+- [Your First 60 Minutes with Mass](https://dev.epicgames.com/community/learning/tutorials/6vG6/unreal-engine-your-first-60-minutes-with-mass)
 - [x157 Mass Resources](https://x157.github.io/UE5/Mass/)
 
 # Notes
