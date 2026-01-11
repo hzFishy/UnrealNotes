@@ -21,6 +21,10 @@ This function is only called in `UAIPerceptionComponent::RegisterSenseConfig` an
 ### Stimuli source registration
 `UAIPerceptionStimuliSourceComponent` registers themselves as source of stimuli via `UAIPerceptionSystem::RegisterSourceForSenseClass` which calls `UAIPerceptionSystem::RegisterSource`. This adds a unique `FAISenseID` with it's SourceActor in a temporary array called `SourcesToRegister` (entry is of type `FPerceptionSourceRegistration`).
 
+The engine has already multiple ways to register pawns as sources of stimuli:
+- Auto registration with `bAutoRegisterAllPawnsAsSources` set on `UAISense` and `bAutoRegisterAsSource` on `UAIPerceptionStimuliSourceComponent`.
+- Auto registration with `UAISystem::OnPawnBeginPlay` (which calls `UAIPerceptionSystem::OnNewPawn`)
+
 This array is iterated in `UAIPerceptionSystem::Tick` via `UAIPerceptionSystem::PerformSourceRegistration`.
 If the source actor is still valid and the sense class was already previously registered and added to the `Senses` array this will call `UAISense::RegisterSource` as well as create a new `FPerceptionStimuliSource` entry in the `RegisteredStimuliSources` array.
 
