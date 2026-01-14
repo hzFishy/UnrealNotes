@@ -35,6 +35,7 @@ See also [[My plugins]]
 - [Icon Creator](https://www.fab.com/listings/7edd0c84-f1d5-4b95-bb1a-e4a3a26b78d6)
 - [LazyNavMeshUpdates](https://github.com/ben-mkiv/ST_LazyNavMeshUpdates): Delays nav mesh updates from viewport transform changes until the transform operation was completed.
 - [Property History](https://www.fab.com/listings/0edd8744-2384-4009-b997-e1ec7795a316): See property history using VCS.
+- [Garbage Collector Viewer](https://www.fab.com/listings/89a73edf-cf06-4ce7-b1cb-4a9eaf667198)
 
 ## ImGui
 **Since 5.6 SlateIM is a new slate plugin that acts like ImGui in Unreal, it is way more convenient than ImGui. See [[SlateIM]]**

@@ -12,4 +12,6 @@ To change it to something else like `OnEveryPerception` ("Continuous update when
 > This is setup in the `FAIStimulus` constructor, see how `bWantsToNotifyOnlyOnValueChange` is initialized.
 
 ## Custom sight detection per actor
-See `IAISightTargetInterface` with `CanBeSeenFrom`.
+See `IAISightTargetInterface` with `CanBeSeenFrom`, called from `UAISense_Sight::ComputeVisibility`.
+
+Inside the context struct, `IgnoreActor` is the listener BodyActor (`UAIPerceptionComponent::GetBodyActor`), meaning it should be the AI Owning Controller Pawn.

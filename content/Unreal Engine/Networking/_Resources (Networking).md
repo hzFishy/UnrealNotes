@@ -5,6 +5,5 @@
 - Talks her: [[Other/_Resources (Other)|_Resources (Other)]]
 - [Server-Side Fog of War: Defending Against Wall Hacks | Unreal Fest Stockholm 2025](https://www.youtube.com/watch?v=CK2L7rjp0qk)
 
-
 ## Basic representations of the common Actors types and their replication
 ![[Data/image (5).png]]![[Data/Framework_Network_One-539c3355dc.png]]

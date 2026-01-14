@@ -9,6 +9,7 @@ You can't have `OnlineSubsystemEOS` and `OnlineServicesEOS` enabled or you will 
 # Logging
 - [Info](https://dev.epicgames.com/docs/epic-online-services/eos-get-started/working-with-the-eos-sdk/eossdkc-sharp-getting-started#logging)
 - [Log categoires details](https://dev.epicgames.com/docs/en-US/api-ref/enums/eos-e-log-category)
+
 # Account
 
 > [!info]- Auth Interface VS Connect Interface
