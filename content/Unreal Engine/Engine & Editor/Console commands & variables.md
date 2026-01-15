@@ -18,6 +18,7 @@ You can either:
 - Object console commands list [here](https://dev.epicgames.com/community/learning/tutorials/dXl5/advanced-debugging-in-unreal-engine#objconsolecommand)
 - `ShowDebug [Name]`, by default this will give details about the player pawn/character
 - `ToggleDisplay` : disables all HUD
+	- See also `Slate.GameLayer.ViewportSlotVisible 0` and `Slate.GameLayer.PlayerCanvasVisible 0`
 - `show COLLISION` : displays collisions, works in PIE
 - `slomo <new time dilation>`: changes the world time dilation
 - `listtimers` show all active/paused/pending times.
