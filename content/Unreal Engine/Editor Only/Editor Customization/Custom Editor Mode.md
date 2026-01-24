@@ -14,7 +14,7 @@ Base class for all editor modes.
 Each mode has a `Toolkit` and commands.
 
 # Add custom Editor Mode
-- See `Sample Tools Editor Mode` plugin which is very small and contains a few example on how to implement a new editor mode in UE5+.
+- See `Sample Tools Editor Mode` plugin which is very small and contains an example on how to implement a new editor mode in UE5+.
 
 But basically you make a subclass of `UEdMode` and `FModeToolkit` in a editor module. As well as a `TCommand` class that you will register in your module.
 

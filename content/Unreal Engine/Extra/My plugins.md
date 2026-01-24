@@ -1,10 +1,19 @@
+
+This page can be a few months late since I keep forgetting it.
+You can see all my UE plugins on my [GitHub profile](https://github.com/hzFishy)
+
 ## Unreal Prefabs ([Website](https://hzfishy.gitbook.io/unrealprefabs/))
 The power of Child Actor Components and Unity Prefabs the Unreal way.
 [Fab Link](https://www.fab.com/listings/dc2e38c1-8cf1-4143-8564-f5d9ac2be8d8)
 
+## Point Graph Pathfinding ([Github Repo](https://github.com/hzFishy/PointGraphPathfinding))
+An abstract graph pathfinding plugin for UE5 using 3d points.
+
+## Common AI Behaviors ([Github Repo](https://github.com/hzFishy/CommonAIBehaviors))
+A set of AI behaviors you can use together or separately in your UE5 project.
+
 ## Common Perception System ([Github Repo](https://github.com/hzFishy/CommonPerceptionSystem))
 A UE plugin that implements common AI perception systems.
-
 ## Common Interaction System ([Github Repo](https://github.com/hzFishy/CommonInteractionSystem))
 UE5 plugin for common interactions between a source pawn and abstract objects.
 
