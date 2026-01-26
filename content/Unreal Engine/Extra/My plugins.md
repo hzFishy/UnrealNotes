@@ -10,10 +10,8 @@ The power of Child Actor Components and Unity Prefabs the Unreal way.
 An abstract graph pathfinding plugin for UE5 using 3d points.
 
 ## Common AI Behaviors ([Github Repo](https://github.com/hzFishy/CommonAIBehaviors))
-A set of AI behaviors you can use together or separately in your UE5 project.
+A set of AI behaviors you can use together or separately in your UE5 project. You are free to implement your own behaviors based on the exposed API. This also include an API for a better perception system.
 
-## Common Perception System ([Github Repo](https://github.com/hzFishy/CommonPerceptionSystem))
-A UE plugin that implements common AI perception systems.
 ## Common Interaction System ([Github Repo](https://github.com/hzFishy/CommonInteractionSystem))
 UE5 plugin for common interactions between a source pawn and abstract objects.
 
