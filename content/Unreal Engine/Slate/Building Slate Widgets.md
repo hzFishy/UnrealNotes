@@ -142,4 +142,13 @@ auto PreviewSelectionDrawModeWidget = SNew(SEnumComboBox, StaticEnum<EPSEditorPR
 Use `SScrollBox`.
 
 ## Color Block
-Use ` SColorBlock`. Good for lines to
+Use ` SColorBlock`. Good for lines to.
+
+
+## Asset picker
+
+### SPropertyMenuAssetPicker
+![[Pasted image 20260126212720.png]]
+
+### SObjectPropertyEntryBox 
+![[Pasted image 20260126213124.png]]
