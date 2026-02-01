@@ -51,23 +51,23 @@ At the end of the lightmass process, `FStaticLightingManager::ProcessLightingDat
 This will run `FStaticLightingSystem::FinishLightmassProcess` on the system.
 This function does a number of important things:
 
-**1.`FStaticLightingSystem::InvalidateStaticLighting`** - Invalidates the lighting of the current levels so new lighting can be applied.
+**1.`FStaticLightingSystem::InvalidateStaticLighting`** - Invalidates the lighting of the current levels so new lighting can be applied.<br>
 It iterates all levels for the lightning context world, if it should update the static lightning data it will call `ULevel::ReleaseRenderingResources` and clear `MapBuildData` using `UMapBuildDataRegistry::InvalidateStaticLighting`.
 Some others miscellaneous stuff is done inside the function.
 
-**0.5`FLightmassProcessor::CompleteRun`**
+**0.5`FLightmassProcessor::CompleteRun`**<br>
 A lot of things happens inside, here I will only mention that it can eventually call `FLightmassProcessor::ProcessMapping` which calls `FStaticLightingSystem::ApplyMapping` that internally calls the `Apply` virtual of `FStaticLightingMapping`. In most cases it will be an `FStaticMeshStaticLightingTextureMapping` if its a SM.
 All of this dive to say that `UMapBuildDataRegistry::AllocateMeshBuildData` will be executed to add a `MeshBuildData` entry with an defaulted ("empty") `FMeshMapBuildData`. 
 
-**2.`FStaticLightingSystem::CompleteDeterministicMappings`**
+**2.`FStaticLightingSystem::CompleteDeterministicMappings`**<br>
 Uses the `Mappings` array of item type `FStaticLightingMapping`.
 The `Mappings` variable is used if we have sorting enabled (`GLightmassDebugOptions.bSortMappings`). Otherwise `UnSortedMappings` is used, which its item type is `FStaticLightingMappingSortHelper`.
 In my testing this was skipped so I can't tell much on what it does, check source code for more info.
 
-**3.`FStaticLightingSystem::EncodeTextures`** - After importing, textures need to be encoded to be used.
+**3.`FStaticLightingSystem::EncodeTextures`** - After importing, textures need to be encoded to be used.<br>
 This will run `FLightMap2D::EncodeTextures` and `FShadowMap2D::EncodeTextures`
 
-**4.`FStaticLightingSystem::ApplyNewLightingData`** - Pushes newly collected lightmaps on to the level.
+**4.`FStaticLightingSystem::ApplyNewLightingData`** - Pushes newly collected lightmaps on to the level.<br>
 For each considered level, this will:
 1. Loop 1:
 	- Call `ULevel::OnApplyNewLightingData` (only updates `LightBuildLevelOffset`)
