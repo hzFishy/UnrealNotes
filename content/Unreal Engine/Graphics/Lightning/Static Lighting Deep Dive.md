@@ -22,7 +22,7 @@
 - `FEditorDelegates::OnLightingBuildFailed` - Called when a lighting build has failed (maybe called twice if cancelled)
 - `FEditorDelegates::OnLightingBuildSucceeded` - Called when a lighting build has succeeded
 
-# Static Lightning
+# Static Lighting
 ## Core
 The `FStaticLightingManager` always exists as its Get method creates an instance if none exists.
 
@@ -52,7 +52,7 @@ This will run `FStaticLightingSystem::FinishLightmassProcess` on the system.
 This function does a number of important things:
 
 **1.`FStaticLightingSystem::InvalidateStaticLighting`** - Invalidates the lighting of the current levels so new lighting can be applied.<br>
-It iterates all levels for the lightning context world, if it should update the static lightning data it will call `ULevel::ReleaseRenderingResources` and clear `MapBuildData` using `UMapBuildDataRegistry::InvalidateStaticLighting`.
+It iterates all levels for the Lighting context world, if it should update the static Lighting data it will call `ULevel::ReleaseRenderingResources` and clear `MapBuildData` using `UMapBuildDataRegistry::InvalidateStaticLighting`.
 Some others miscellaneous stuff is done inside the function.
 
 **0.5`FLightmassProcessor::CompleteRun`**<br>
@@ -88,7 +88,7 @@ So now our `UMapBuildDataRegistry` holds our built data. Such as an array `MeshB
 An `FMeshMapBuildData` holds data such as a `FLightMapRef` and a `FShadowMapRef`.
 
 The `FLightMap2D` holds an array of `Textures` of type `ULightMapTexture2D`.
-The first entry is a High Quality (HQ) lightmap and the second is a Low Quality (LQ) lightmap (When loading up a level with Static Lightning you can see a rough quality change after a few seconds when the editor is loading the HQ after using the LQ).
+The first entry is a High Quality (HQ) lightmap and the second is a Low Quality (LQ) lightmap (When loading up a level with Static Lighting you can see a rough quality change after a few seconds when the editor is loading the HQ after using the LQ).
 
 ## Usage
 So ... how is this used ?

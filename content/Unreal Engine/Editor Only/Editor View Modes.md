@@ -2,7 +2,7 @@
 View modes (editor or game) calls `ApplyViewMode` afterwards.
 See also `EViewModeIndex`.
 
-# Lightning Only
+# Lighting Only
 - `LightingOnlyOverride` flag
 - `VMI_LightingOnly`
 
