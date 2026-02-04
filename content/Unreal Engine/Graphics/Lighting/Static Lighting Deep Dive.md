@@ -65,7 +65,9 @@ The `Mappings` variable is used if we have sorting enabled (`GLightmassDebugOpti
 In my testing this was skipped so I can't tell much on what it does, check source code for more info.
 
 **3.`FStaticLightingSystem::EncodeTextures`** - After importing, textures need to be encoded to be used.<br>
-This will run `FLightMap2D::EncodeTextures` and `FShadowMap2D::EncodeTextures`
+This will run `FLightMap2D::EncodeTextures` and `FShadowMap2D::EncodeTextures`.
+This is also where the `ULightMapTexture2D` are created (see `FLightMapPendingTexture::CreateUObjects`).
+
 
 **4.`FStaticLightingSystem::ApplyNewLightingData`** - Pushes newly collected lightmaps on to the level.<br>
 For each considered level, this will:

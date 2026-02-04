@@ -32,7 +32,6 @@ Difference between `CustomizeHeader` and `CustomizeChildren`
 # Miscs
 
 ## `PropertyHandle`
-
 `PropertyHandle` in `CustomizeHeader` and `CustomizeChildren` is always the root property (for example, your struct).
 
 ## Get/Set property
@@ -49,7 +48,6 @@ SelectedSocketProp->SetValue(FName("NewValue"));
 ```
 
 ## `CustomizeChildren`
-
 This will construct default child members for the member props of your type details customization.
 ```c++
 // Thanks to aquanox for the snippet
@@ -74,3 +72,31 @@ Here is how aquanox does for his [BlueprintComponentReference](https://github.co
 
 ## Add new rows
 See `ChildBuilder.AddCustomRow`
+
+## Containers
+
+With TMap you can use `AsMap` on `IPropertyHandle`.
+Then `GetElement` to get a "Pair".
+You can then get they key with `GetKeyHandle`
+
+Use `GetValueData` do get the value data.
+
+Example on how to find back a property handle from a key.
+```c++
+uint32 NumChilds;
+	CachedStructCellsDataPropertyHandle->GetNumChildren(NumChilds);
+	for (uint32 ChildIndex = 0; ChildIndex < NumChilds; ++ChildIndex)
+	{
+		TSharedRef<IPropertyHandle> EntryHandle = CachedStructCellsDataPropertyHandle->AsMap()->GetElement(ChildIndex);
+		TSharedPtr<IPropertyHandle> KeyHandle = EntryHandle->GetKeyHandle();
+		
+		void* KeyRawData;
+		KeyHandle->GetValueData(KeyRawData);
+		FIntVector3* KeyPtr = static_cast<FIntVector3*>(KeyRawData);
+		
+		if (*KeyPtr == Coords)
+		{
+			return EntryHandle;
+		}
+	}
+```
