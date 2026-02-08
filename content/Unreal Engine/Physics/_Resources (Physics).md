@@ -3,5 +3,5 @@
 - [Video showing a use case of constraint motors](https://www.youtube.com/watch?v=thtbUILejXA)
 - [Causing Chaos: The Future of Physics and Destruction | Unreal Fest Europe 2019](https://www.youtube.com/watch?v=mwbSi2R49ZY)
 - [UNREAL ENGINE 5 - Advanced Use of the Fracture Editor (Chaos destruction, Geometry Collections)](https://www.youtube.com/watch?v=SPNRC1rPrBU)
-
+- [Networked Physics and UNetworkPhysicsComponent in Unreal Engine 5.4](https://vorixo.github.io/devtricks/phys-prediction-use/)
 

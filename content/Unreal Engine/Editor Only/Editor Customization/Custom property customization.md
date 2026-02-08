@@ -65,6 +65,31 @@ void FCustomization::CustomizeChildren(TSharedRef<IPropertyHandle> PropertyHandl
 }
 ```
 
+## Custom ReadOnly/Editable override
+Taking the same base snippet as above but we set some specific properties to be readonly (while having EditAnywhere metadata)
+```c++
+uint32 NumberOfChild = 0;  
+		if (PropertyHandle->GetNumChildren(NumberOfChild) == FPropertyAccess::Success)
+		{
+			TArray<FProperty*> MakeConst = {
+				CachedStructRowCountPropertyHandle->GetProperty(),
+				CachedStructColumnCountPropertyHandle->GetProperty(),
+				CachedStructCellsDataPropertyHandle->GetProperty()
+			};
+			
+			for (uint32 Index = 0; Index < NumberOfChild; ++Index)  
+			{
+				TSharedPtr<IPropertyHandle> ChildPropertyHandle = PropertyHandle->GetChildHandle(Index);
+				auto& DetailRow = FragmentGroupBuilder.AddPropertyRow(ChildPropertyHandle.ToSharedRef());
+				
+				if (MakeConst.Contains(ChildPropertyHandle->GetProperty()))
+				{
+					DetailRow.IsEnabled(false);
+				}
+			}
+		}
+```
+
 ## Get context
 You may want to know in what BP/Actor this property is being rendered
 Here is how aquanox does for his [BlueprintComponentReference](https://github.com/aquanox/BlueprintComponentReferencePlugin/blob/main/Source/BlueprintComponentReferenceEditor/BlueprintComponentReferenceCustomization.cpp#L301) plugin

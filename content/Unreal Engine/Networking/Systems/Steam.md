@@ -2,7 +2,6 @@
 # Resources
 - [UE Docs](https://dev.epicgames.com/documentation/en-us/unreal-engine/online-subsystem-steam-interface-in-unreal-engine)
 
-
 # Steam Sockets Plugin
 
 Steam Sockets is useful if you want "P2P" behavior where player connects to each other with their ports without extra configuration on their side.
