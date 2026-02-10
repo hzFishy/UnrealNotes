@@ -1,5 +1,6 @@
 # Resources
 - See `PushModel.h`
+- [Enabling The Push Model Networking](https://www.kierannewland.co.uk/push-model-networking-unreal-engine/)
 
 # Usage
 For a same replicate object, you can use the push model for some replicated variables and the regular UE workflow for other variables (just be sure to set the value of `bIsPushBased` to the desired one before declaring vars in `GetLifetimeReplicatedProps`).
