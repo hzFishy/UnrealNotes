@@ -3,8 +3,10 @@ See also [[My plugins]]
 
 ## General Scripting
 - Flow Graph - [Github](https://github.com/MothCocoon/FlowGraph) - [Video presentation](https://www.youtube.com/watch?v=BAqhccgKx_k)
+- BangoScripts - [Github](https://github.com/HomerJohnston/BangoScripts) - Very nice "instanced" Blueprints and a few special nodes.
 - Conversation (Yap) - [Github](https://github.com/HomerJohnston/UE-FlowYap)
 - [K2PostIt](https://github.com/HomerJohnston/K2PostIt): Adding cool post it comments in BP.
+
 ## Level Design
 - [Voxel plugin](https://voxelplugin.com/) - Very cool and promising voxel plugin. Has a free and paid version.
 - [Scythe](https://scytheeditor.com/) - Promising level design editor but doesn't have a free version (for now).
@@ -38,7 +40,7 @@ See also [[My plugins]]
 - [Garbage Collector Viewer](https://www.fab.com/listings/89a73edf-cf06-4ce7-b1cb-4a9eaf667198)
 
 ## ImGui
-**Since 5.6 SlateIM is a new slate plugin that acts like ImGui in Unreal, it is way more convenient than ImGui. See [[SlateIM]]**
+**Since 5.6 SlateIM is a new slate plugin that acts like ImGui in Unreal, it is way more convenient than ImGui. See [[SlateIM]]**.
 - [DearImGui](https://github.com/ocornut/imgui)
 - [ImGui for UE](https://github.com/VesCodes/ImGui)
 - [UE setup example and demo](https://www.youtube.com/watch?v=qyO38jX5RU8&t=365s)
