@@ -3,6 +3,7 @@
 - [Unreal Engine Game Optimization on a Budget (Tom Looman)](https://www.tomlooman.com/unrealengine-optimization-talk/)
 - [Unreal Performance Optimization Learning Path](https://dev.epicgames.com/community/learning/paths/Rkk/unreal-engine-unreal-performance-optimization-learning-path)
 - [The Great Hitch Hunt: Tracking Down Every Frame Drop | Unreal Fest Orlando 2025](https://www.youtube.com/watch?v=HaVTYSnGvxA)
+- [Profiling with Purpose: Performance Lessons from a Real Unreal Project](https://dev.epicgames.com/community/learning/tutorials/qEzo/unreal-engine-profiling-with-purpose-performance-lessons-from-a-real-unreal-project)
 
 # Networking
 See [[Optimizing Networking]] and [[Character Movement Component]] pages in `Networking/`
@@ -14,7 +15,7 @@ See [[Animation Debugging]]
 See [[Optimizing Rendering]] page in `Graphics`
 
 # Physics
-- See [[Optimize physics]]
+See [[Optimize physics]]
 
 # Ticking
 - [[Unreal Engine/Engine & Editor/Core/Ticking|Ticking]]

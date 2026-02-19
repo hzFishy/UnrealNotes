@@ -70,12 +70,11 @@ The `URL`will contain the map already opened in the editor with the following IP
 Inside `UEngine::Browse`, `URL.IsInternal() && GIsClient` will succeed.
 Later on this will call `UPendingNetGame::InitNetDriver`. Which calls `UIpNetDriver::InitConnect`.
 
-*end of the client only par?*
+*end of the client only part?*
 
 ---
 
 At the end if the conditions are met `UEditorEngine::OnAllPIEInstancesStarted` is called.
-
 
 
 # Switching between PIE/SIE (Eject/Possess)
@@ -83,3 +82,21 @@ At the end if the conditions are met `UEditorEngine::OnAllPIEInstancesStarted` i
 This is triggered by the UI button or F8, it calls `FInternalPlayWorldCommandCallbacks::PossessEjectPlayer_Clicked`, which sets `bIsToggleBetweenPIEandSIEQueued` in `UEditorEngine` to true, eventually calling `UEditorEngine::ToggleBetweenPIEandSIE`.
 
 to subscribe to that you have `FEditorDelegates::OnPreSwitchBeginPIEAndSIE` (called at the beginning) and `FEditorDelegates::OnSwitchBeginPIEAndSIE` (running at the end)
+
+
+# Play From Here
+The "Play From Here" option when right clicking in the editor level viewport eventually runs `FPlayWorldCommandCallbacks::StartPlayFromHere`, which basically sets `StartLocation` and `StartRotation` to the request struct then calls `UEditorEngine::RequestPlaySession`.
+
+Later, `UGameInstance::StartPlayInEditorGameInstance` runs, which will try to see if there is a start loc/rot to use with `UEditorEngine::SpawnPlayFromHereStart`. 
+If there is `UEditorEngine::SpawnPlayFromHereStart` will be called and spawn a PlayerStart (see `PlayFromHerePlayerStartClassName` in `LevelEditorPlaySettings` to change it). 
+
+```ini
+# DefaultEditorPerProjectUserSettings.ini
+[/Script/UnrealEd.LevelEditorPlaySettings]
+PlayFromHerePlayerStartClassName=/Script/Engine.PlayerStartPIE
+```
+
+`bIsPIEPlayerStart` is set to true on the spawned instance.
+This will also call `AActor::OnPlayFromHere` on the actor that was clicked when using "Play From Here".
+
+Then, the default implementation of `AGameModeBase::ChoosePlayerStart` will check if the found player start actor is a `APlayerStartPIE`. If yes it will use that as the "best" player start (skipping the other available player starts.
