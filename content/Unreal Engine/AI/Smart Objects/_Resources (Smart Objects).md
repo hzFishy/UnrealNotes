@@ -6,4 +6,5 @@
 
 # Important classes
 - `USmartObjectSubsystem`
+	- You can get it from world using `World->GetSubsystem<USmartObjectSubsystem>()` or with the static method `USmartObjectSubsystem::GetCurrent(World)`
 - `USmartObjectBlueprintFunctionLibrary`

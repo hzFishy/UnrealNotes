@@ -28,6 +28,7 @@ When walking, when you move (or tick?) CMC will eventually run the following:
 
 # Debug
 You can visualize basic CMC info using `p.VisualizeMovement 1`
+See more [here](https://dev.epicgames.com/community/learning/tutorials/ywD1/unreal-engine-best-practices-for-networked-movement-abilities-cmc#4movementdebugging)
 
 # Client Auth
 *Thanks to Jambax*

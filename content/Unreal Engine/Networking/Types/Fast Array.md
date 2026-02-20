@@ -1,3 +1,8 @@
+
+
+> [!Error] Iris notice
+> See [[Iris Fast Array]]
+
 # Resources
 - See `FastArraySerializer.h` (Explanation of why and how + code examples)
 - See [this article](https://ikrima.dev/ue4guide/networking/network-replication/fast-tarray-replication/)

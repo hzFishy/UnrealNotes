@@ -1,3 +1,7 @@
+
+> [!Error] Iris notice
+> Actor Channels aren't used anymore with Iris, they were "replaced" by what is called a Replication Bridge
+
 # Resources
 - See `NetDriver.h`
 - See also [[NetDriver]]
