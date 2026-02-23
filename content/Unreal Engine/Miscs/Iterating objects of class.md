@@ -34,7 +34,7 @@ for (auto It = TActorIterator<AActor>(World); It; ++It)
 for (TActorIterator<AActor> It(World); It; ++It)
 ```
 
-**How it works**
+**How it works**<br>
 This is the interesting part of the declaration of the actor iterator: `class TActorIterator : public TActorIteratorBase<TActorIterator<ActorType>>`.
 
 The iteration process happens in `TActorIteratorBase` when using the `++` operator (see `void operator++()`). This is a while loop that uses the `LocalObjectArray = State->ObjectArray` array.
