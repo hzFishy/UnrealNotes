@@ -19,7 +19,7 @@ for (auto It = TObjectIterator<UPSPrefabReferenceComponentBase>(EObjectFlags::RF
 Recommended to read [this article section](https://dev.epicgames.com/community/learning/tutorials/l3E0/myth-busting-best-practices-in-unreal-engine#let%E2%80%99stalkaboutgetallactorsofclass).
 
 ## `GetAllActorsOfClass`
-This uses the `TActorIterator` if a subclass is diven.
+This uses the `TActorIterator` if a subclass is given.
 
 ## `GetAllActorsWithInterface` & `GetAllActorsWithTag`
 This is slow if you have a big world, because it will check if ALL actors in the world has the interface/tag.
