@@ -10,14 +10,13 @@
 - See [this](https://easycomplex-tech.com/blog/Unreal/AssetEditor/UEAssetEditorDev-AssetEditorAppMode/) for information about application modes
 - See [this](https://easycomplex-tech.com/blog/Unreal/AssetEditor/UEAssetEditorDev-AssetEditorMenuToolbar/) for examples on how to add specific tabs/toolbars/menu to your custom asset
 - See [[Summoners (Tabs)]]
+- See [[Custom Content Browser Menu]]
 
 # Engine menu creation
-- Level Editor Toolbar: `FLevelEditorToolBar::RegisterLevelEditorToolBar(`
+- Level Editor Toolbar: `FLevelEditorToolBar::RegisterLevelEditorToolBar`
 # Add something to a toolbar
 
 ## Default way
-
-==TODO==: 
 
 ```c++
 UToolMenu* ToolbarMenu = UToolMenus::Get()->ExtendMenu("Kismet.SubobjectEditorContextMenu");  

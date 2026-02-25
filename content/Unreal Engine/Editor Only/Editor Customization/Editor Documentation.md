@@ -15,8 +15,8 @@ As far I saw:
 (Thanks to Hojo)
 
 > [!Error] Not working?
-> Be sure to have a "default" tooltip set on your class/struct/property!
-> In some cases the documentation tooltip widget will not be used if there isn't a default tooltip text set (see `FDocumentation::CreateToolTip` for the default behavior).
+> - Be sure to have a "default" tooltip set on your class/struct/property! In some cases the documentation tooltip widget will not be used if there isn't a default tooltip text set (see `FDocumentation::CreateToolTip` for the default behavior).
+> - Only works on "item" properties (if you are doing a property tooltip). So you cannot have a udn tooltip on Arrays, Maps or Sets properties.
 
 1. Get a template from `UE_5.X\Engine\Documentation\Source\Shared`. For example `UE_5.X\Engine\Documentation\Source\Shared\Types\UActorComponent\UActorComponent.INT.udn`
 2. Use a toll such a VSCode to have a live markdown preview.
@@ -37,3 +37,6 @@ See also `GetDocumentationLink` and `GetEnumDocumentationLink` in `PropertyEdito
 See also `FUDNParser`.
 For property tooltips see `FPropertyEditor::GetDocumentationLink` and `FPropertyEditor::GetDocumentationExcerptName` and `SDocumentationToolTip`.
 
+
+# Miscs
+For images `FSlateRenderer::GenerateDynamicImageResource` is what is used to get the desired size (which should point to `FSlateRHIRenderer::GenerateDynamicImageResource`).
