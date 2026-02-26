@@ -51,12 +51,13 @@ FContentBrowserModule& ContentBrowserModule = FModuleManager::LoadModuleChecked<
 
 # Creating an asset
 
+**Note:** You cannot create multiple assets in one "go" because on how UE handles asset creation (you will get a ensure if you try to do so). But they are ways to work around that.
+
 Basically you need a package name (Folder destination), an asset name (file name) and a factory (used to create the asset).
 
 Here is an example to create a Blueprint Asset and a Data Asset.
 
 ```c++
-
 // Here the BasePath (or Path) used comes from the SelectedPaths param that FContentBrowserMenuExtender_SelectedPaths returns.
 // The first entry should always be valid so its safe to cache it early as FString Path = SelectedPaths[0].
 
