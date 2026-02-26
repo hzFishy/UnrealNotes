@@ -55,8 +55,7 @@ Basically you need a package name (Folder destination), an asset name (file name
 
 Here is an example to create a Blueprint Asset and a Data Asset.
 
-```
-c++
+```c++
 
 // Here the BasePath (or Path) used comes from the SelectedPaths param that FContentBrowserMenuExtender_SelectedPaths returns.
 // The first entry should always be valid so its safe to cache it early as FString Path = SelectedPaths[0].
