@@ -142,7 +142,7 @@ auto PreviewSelectionDrawModeWidget = SNew(SEnumComboBox, StaticEnum<EPSEditorPR
 Use `SScrollBox`.
 
 ## Color Block
-Use ` SColorBlock`. Good for lines to.
+Use `SColorBlock`. Good for lines to.
 
 ## Grid Panel
 The `SGridPanel` origin is Top Left (Columns go right and Rows down).

@@ -13,3 +13,7 @@ Mandatory
 Then you can override other functions depending on your needs, like `GetThumbnailBrush` or `GetIconBrush`.
 
 **Custom icon in Content Browser ?** -> Override `GetThumbnailBrush` and `GetIconBrush` (latter can just call  `GetThumbnailBrush`, same params). See [this](https://github.com/MagForceSeven/Starfire/blob/ebceb1e4b523b9926c6e3a043b19374a439d6ea4/StarfireAssets/Source/StarfireAssetsEditor/Private/DataDefinition_AssetDefinition.cpp#L37) for an example of storing the slate brush with texture.
+
+# Miscs
+
+When you open an asset `FAssetDefinitionProxy::OpenAssetEditor` is called from `UAssetEditorSubsystem::OpenEditorForAsset`.
