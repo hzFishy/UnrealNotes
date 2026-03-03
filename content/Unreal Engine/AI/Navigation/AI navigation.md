@@ -30,6 +30,12 @@ to change the AI braking you have on the Nav Component (can be CMC)
 - `bUseFixedBrakingDistanceForPaths`
 - `FixedPathBrakingDistance`
 
+# Custom Path Following Points
+
+You can have your AI use a custom array of world locations with `UPathFollowingComponent::RequestMove`.
+For that you have to create a `FNavigationPath` shared ptr and use the following constructor `FNavigationPath(const TArray<FVector>& Points, AActor* Base = NULL)`
+
+Before calling `RequestMove` don't forget to call `MarkReady` on it or it will fail later in the process.
 
 # `MoveTo` params
 
