@@ -5,3 +5,5 @@
 - [Gameplay Ability System - Best Practices for Setup (by Zhi Kang Shao)](https://dev.epicgames.com/community/learning/tutorials/DPpd/unreal-engine-gameplay-ability-system-best-practices-for-setup)
 - [Gameplay Ability System - Modifier Evaluation Channels (by Zhi Kang Shao)](https://dev.epicgames.com/community/learning/tutorials/JG2a/unreal-engine-gameplay-ability-system-modifier-evaluation-channels)
 - [Building an RPG with Gameplay Ability System](https://dev.epicgames.com/community/learning/courses/QQv/unreal-engine-building-an-rpg-with-gameplay-ability-system/zBvq/unreal-engine-introduction-to-building-an-rpg-with-gameplay-ability-system)
+- [Gameplay Ability System - Modifier Evaluation Channels](https://dev.epicgames.com/community/learning/tutorials/JG2a/unreal-engine-gas-customize-modifier-aggregation-with-mod-evaluation-channels)
+
