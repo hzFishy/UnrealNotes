@@ -33,6 +33,7 @@ See [[Debugging Graphics]]
 
 ## Cheat Scripts
 You can make a special console commands that can run multiple commands. See [docs](https://dev.epicgames.com/documentation/en-us/unreal-engine/animation-shortcuts-and-tips-unreal-engine#cheatscripts).
+See also [Cheat Console Cheat Scripts](https://unreal-garden.com/tutorials/cheat-console-scripts/)
 
 ## `Exec`
 - Check [how to use `Exec` meta attribute for supported classes](https://unreal-garden.com/docs/ufunction/#exec) and [how to add it to other objects](https://unreal.gg-labs.com/wiki-archives/common-pitfalls/exec-functions#how-do-i-get-other-classes-to-support-exec-functions)
