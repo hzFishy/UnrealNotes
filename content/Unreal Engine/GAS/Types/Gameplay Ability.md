@@ -8,3 +8,9 @@ You cannot really store any data inside a Gameplay Ability once its granted to g
 # Activation
 Here we will follow the path of `UAbilitySystemComponent::TryActivateAbility` to see when we check for the requirements.
 `UAbilitySystemComponent::TryActivateAbility` calls `UAbilitySystemComponent::InternalTryActivateAbility` which calls `UGameplayAbility::CanActivateAbility`. This function will run a lof of checks including `UGameplayAbility::DoesAbilitySatisfyTagRequirements` which calls the `CheckForRequired` and `CheckForBlocked` lambdas.
+
+# Cost
+
+Cost is mainly checked within `UGameplayAbility::CommitCheck`  with `UGameplayAbility::CheckCost`, which runs `FActiveGameplayEffectsContainer::CanApplyAttributeModifiers`.
+
+The only modifier operation that is used is **additive** so your cost GE will not work as expected if you use something else.

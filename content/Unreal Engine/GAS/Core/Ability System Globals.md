@@ -32,3 +32,7 @@ ActivateFailTagsMissingTag=(TagName="Activation.Fail.MissingTags")
 
 > [!Info] You can see those tags being used on the second ability system category
 
+
+# Ignore Cooldowns & Costs
+
+See `AbilitySystem.IgnoreCooldowns` and `AbilitySystem.IgnoreCosts`.

@@ -30,3 +30,7 @@
 # Granting Abilities
 You can grant an ability before the ASC was initialized with an avatar and owning actor.
 Abilities are stored in `ActivatableAbilities`.
+
+# Custom Gameplay Effect blocking
+
+You can use `GameplayEffectApplicationQueries` (see `UImmunityGameplayEffectComponent` for an example) to block GEs that are about to be applied.
