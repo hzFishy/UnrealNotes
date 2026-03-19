@@ -9,6 +9,11 @@ See `FActiveGameplayEffectsContainer::ExecuteActiveEffectsFrom`.
 ## Periodic execution
 See `UAbilitySystemComponent::ExecutePeriodicEffect` and `FActiveGameplayEffectsContainer::ExecutePeriodicGameplayEffect`.
 
+# Stacking
+When calling `UAbilitySystemComponent::ApplyGameplayEffectSpecToTarget` or `UAbilitySystemComponent::ApplyGameplayEffectSpecToSelf` it will eventually call `FActiveGameplayEffectsContainer::ApplyGameplayEffectSpec` which will try to find a stackable effect with `FActiveGameplayEffectsContainer::FindStackableActiveGameplayEffect`.
+
+This means that the returned `FActiveGameplayEffectHandle` will be pointing to the already applied GE if it was stacked, otherwise its a "new" handle pointing to a "new" active GE.
+
 # Miscs
 See `UGameplayEffectCreationMenu` to add custom menu entries in the Content Browser for your gameplay effects.
 
