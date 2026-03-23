@@ -14,6 +14,9 @@ When calling `UAbilitySystemComponent::ApplyGameplayEffectSpecToTarget` or `UAbi
 
 This means that the returned `FActiveGameplayEffectHandle` will be pointing to the already applied GE if it was stacked, otherwise its a "new" handle pointing to a "new" active GE.
 
+> [!Warning] Warning
+> The new GE Spec you passed to `ApplyGameplayEffectSpecToSelf` will override the previous GE spec of the already active GE.
+
 # Miscs
 See `UGameplayEffectCreationMenu` to add custom menu entries in the Content Browser for your gameplay effects.
 
