@@ -1,6 +1,8 @@
 
+# Resources
 - [zomg's page](https://zomgmoz.tv/unreal/Unreal-Insights)
 - [Docs](https://dev.epicgames.com/documentation/en-us/unreal-engine/unreal-insights-in-unreal-engine)
+- [Adding Counters & Traces to Unreal Insights & Stats System](https://tomlooman.com/unreal-engine-profiling-stat-commands/)
 
 # Shortcuts
 - Press `F` to focus your selected frame
