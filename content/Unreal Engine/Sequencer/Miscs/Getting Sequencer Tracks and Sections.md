@@ -19,7 +19,7 @@ Very broad note for now, here is some working code to get an absolute 3d transfo
 					if (auto* TransformTrack = Cast<UMovieScene3DTransformTrack>(MovieSceneTrack))
 					{
 						const auto& AllTrackSections = TransformTrack->FindAllSections(FFrameNumber(0));
-
+						
 						// get absolute section
 						for (const auto& Section : AllTrackSections)
 						{
