@@ -15,3 +15,6 @@ For example `FSlateApplication::ProcessMouseButtonUpEvent` will call `HandleMous
 The first processor that returns `true` will break the loop and override the default slate app behavior for that event.
 If its not overridden it will go to `FSlateApplication::RoutePointerUpEvent`, which in this example will call `SViewport::OnMouseButtonUp` and `FSceneViewport::OnMouseButtonUp`.
 
+The EnhancedInputSubsystem registers its `FEnhancedInputWorldProcessor`.
+
+`FAnalogCursor` is an `IInputProcessor`.
