@@ -34,7 +34,7 @@ Interface for objects that are to be ticked by the tick manager.
 Movie scene animation for Actors.
 
 ### `ULevelSequencePlayer`
-ULevelSequencePlayer is used to actually "play" an level sequence asset at runtime.
+`ULevelSequencePlayer` is used to actually "play" an level sequence asset at runtime.
 This class keeps track of playback state and provides functions for manipulating an level sequence while its playing.
 
 ### `ISequencer`
@@ -49,7 +49,20 @@ Provides information for playback of a movie scene
 Implements a movie scene asset.
 
 ### `UMovieSceneDecorationContainerObject`
+N/A.
 
+### `UMovieSceneClock`
+N/A.
+
+## Bindings
+
+### `UMovieSceneCustomBinding`
+A custom binding. Allows users to define their own binding resolution types, including dynamic "Replaceable" bindings with previews in editor, as well as Spawnable types.
+It has many child classes.
+
+### `UMovieSceneReplaceableBindingBase`
+The base class for custom replaceable bindings.
+Check source for detailed description.
 
 ## Miscs
 
@@ -83,6 +96,8 @@ Implements a factory for `ULevelSequence` objects.
 Sequencer is the editing tool for MovieScene assets.
 Is responsible for the creation of `SSequencer` (see `SequencerWidget`).
 It is marked as `final` so it cannot be subclassed.
+It is created in `FSequencerModule::CreateSequencer`, there is 2 delegates (`OnPreSequencerInit` and `OnSequencerCreated`) that allows you to inject stuff, check the Register functions for public access .
+Note: `InitSequencer` calls `BindCommands`.
 
 ### `FSequencerUtilities`
 N/A.
