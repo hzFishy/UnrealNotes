@@ -1,4 +1,5 @@
 
+# Editor 
 When you click on "create new endpoint" `FMovieSceneDirectorBlueprintEndpointCustomization::CreateEndpoint` is called.
 The callback is bound from a lambda in `FMovieSceneConditionCustomization::FillDirectorBlueprintConditionSubMenu`.
 
@@ -22,6 +23,7 @@ Inside a lambda declared in `HandleGenerateFunctionGraphs`, `FMovieSceneDirector
 
 Later in the same function the real runtime `TObjectPtr<UFunction> Function` var is set on the dynamic binding struct using `UClass::FindFunctionByName`.
 
+# Runtime
 To check how the endpoint is called at runtime, I played my sequencer in game.
 After the same common functions that are called when calling Play on the sequence player (see [[Play Level Sequence internals]]) `FBoundObjectTask::ForEachAllocation` will call `FSharedPlaybackState::FindBoundObjects` -> `FMovieSceneObjectCache::FindBoundObjects` -> `FMovieSceneObjectCache::UpdateBindings` -> `ULevelSequencePlayer::ResolveBoundObjects` -> `FMovieSceneBindingReferences::ResolveBinding` -> `UMovieSceneReplaceableBindingBase::ResolveBinding`.
 
@@ -34,3 +36,7 @@ Note that `FMovieSceneBindingReference` holds a `CustomBinding` var which is a `
 This is inside `FMovieSceneBindingReferences`.
 
 Another side note is that `ResolveRuntimeBindingInternal` in `UMovieSceneReplaceableBindingBase` is the actual C++ function that returns the resolved binding result.
+
+There is also a `UMovieSceneBindingOverrides` class.
+The `ALevelSequenceActor` has one.
+Which is edited by the many binding functions, and ultimately queried with `ALevelSequenceActor::RetrieveBindingOverrides` (an `IMovieScenePlaybackClient` virtual).

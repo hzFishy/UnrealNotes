@@ -15,7 +15,8 @@ Actor responsible for controlling a specific level sequence in the world.
 Also check `AReplicatedLevelSequenceActor`.
 
 ### `IMovieScenePlaybackClient`
-N/A.
+Movie scene binding overrides interface.
+`ALevelSequenceActor` and `UActorSequenceComponent` implements it.
 
 ### `IMovieSceneBindingOwnerInterface`
 N/A.
@@ -54,6 +55,13 @@ N/A.
 ### `UMovieSceneClock`
 N/A.
 
+### `FSharedPlaybackState`
+A structure that stores playback state for an entire sequence hierarchy.
+
+### `FSequenceInstance`
+A sequence instance represents a specific instance of a currently playing sequence, either as a top-level sequence in an `IMovieScenePlayer`, or as a sub sequence.
+Any given sequence asset may have any number of instances created for it at any given time depending on how many times it is referenced by playing sequences
+
 ## Bindings
 
 ### `UMovieSceneCustomBinding`
@@ -63,6 +71,11 @@ It has many child classes.
 ### `UMovieSceneReplaceableBindingBase`
 The base class for custom replaceable bindings.
 Check source for detailed description.
+
+### `UMovieSceneBindingOverrides`
+A one-to-many definition of movie scene object binding IDs to overridden objects that should be bound to that binding.
+
+### `FMovieSceneBindingOverrideData`
 
 ## Miscs
 
@@ -107,6 +120,10 @@ N/A.
 
 ### `ISequencerEditorObjectBinding`
 Only child is `FLevelSequenceEditorActorBinding`.
+
+### `FObjectBindingTagCache`
+Owned by an `FSequencer` instance, this class tracks tags for object bindings, and maintains a reverse lookup map from binding to tag(s) along with other information for the tags such as color tints.
+See [[Sequence tags]] for more info.
 
 ### `FSubTrackEditor`
 Tools for subsequences.

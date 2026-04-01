@@ -44,3 +44,11 @@ With `bOverrideInstanceData` true `ALevelSequenceActor::GetInstanceData()` (from
 
 
 The transform origin is used by `FGatherTransformOrigin::Run`, which uses `IMovieSceneTransformOrigin` with `NativeGetTransformOrigin`.
+
+The `IMovieScenePlaybackClient` is taken from `FSharedPlaybackState::FindCapability`.
+The capability is added in `IMovieScenePlayer::InitializeRootInstance` with `FSharedPlaybackState::AddCapabilityRaw`.
+
+For the `UMovieSceneSequencePlayer`, `IMovieScenePlayer::GetPlaybackClient` returns a cached `PlaybackClient` which is set with `UMovieSceneSequencePlayer::SetPlaybackClient` by `ALevelSequenceActor::PostInitProperties`.
+
+`ALevelSequenceActor` implements the `IMovieScenePlaybackClient` interface.
+Same for `UActorSequenceComponent`.
