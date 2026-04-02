@@ -148,6 +148,9 @@ A track that holds consecutive sub sequences.
 ### `UTemplateSequenceTrack`
 N/A.
 
+## `UMovieSceneEventTrack`
+Implements a movie scene track that triggers discrete events during playback.
+
 # Sections
 
 ## `UMovieScene3DTransformSection`
@@ -166,6 +169,19 @@ Implements a cinematic shot section.
 
 ### `UTemplateSequenceSection`
 Defines the section for a template sequence track.
+
+## `UMovieSceneEventSection`
+Implements a section in movie scene event tracks.
+Seems weird that this exists since `UMovieSceneEventSectionBase` is here to but they don't seem related.
+
+## `UMovieSceneEventSectionBase`
+Base class for all event sections. Manages dirtying the section and track on recompilation of the director blueprint.
+
+### `UMovieSceneEventRepeaterSection`
+Event section that will trigger its event exactly once, every time it is evaluated.
+
+### `UMovieSceneEventTriggerSection`
+Event section that triggers specific timed events.
 
 ## Miscs
 ### `IMovieSceneEntityProvider`
