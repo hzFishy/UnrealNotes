@@ -1,8 +1,31 @@
 For dataflow see [[Dataflow Graph]].
 
+# Dump of Geometry Collection internal types
+
+## `FGeometryCollectionPhysicsProxy`
+Class to manage sharing data between the game thread and the simulation thread.
+
+## `FGeometryCollection`
+Derived from `FTransformCollection`, derived from `FManagedArrayCollection`.
+Hold in a `UGeometryCollection` which is the **Rest Collection** in the GCC.
+
+## `FGeometryDynamicCollection`
+Managed arrays for simulation data used by the GeometryCollectionProxy
+Stores per instance data for simulation level information.
+Derived from `FTransformDynamicCollection`, derived from `FManagedArrayCollection`.
+
+The GCC holds the passed `FGeometryDynamicCollection`.
+
+## `FGeometryCollectionEmbeddedExemplar`
+Hard to understand what exactly this is, used to build embedded ISMs in `UGeometryCollectionComponent::InitializeEmbeddedGeometry`.
+
+## `UGeometryCollection`
+UObject wrapper for the `FGeometryCollection`.
+
 # Geometry Collection Component
 
 ## About the physics
+Also check above category.
 All particles (also called physic objects) exists once the physic state is created.
 The proxy type is `FGeometryCollectionPhysicsProxy`.
 The event dispatcher is `UChaosGameplayEventDispatcher`.
@@ -14,6 +37,13 @@ The GCC inherits `IChaosNotifyHandlerInterface`.
 - Get `FGeometryCollectionPhysicsProxy` with `GeometryCollectionComponent->GetPhysicsProxy()`
 - Get Read/Write physics interface `Chaos::FReadPhysicsObjectInterface_Internal PhysicsObjectInterface = Chaos::FPhysicsObjectInternalInterface::GetRead();` (watch out there is a internal and external version, use internal if you are on the physic thread)
 - Get `Chaos::FPhysicsObjectHandle` of a particle with `GCC->GetAllPhysicsObjects()`
+
+## COPY_ON_WRITE_ATTRIBUTE
+Some autocompleted functions on `UGeometryCollectionComponent` will point to the `COPY_ON_WRITE_ATTRIBUTES` macro which is a list of `COPY_ON_WRITE_ATTRIBUTE` macro declarations.
+Those are deprecated for GCC since 5.4 and therefore cannot be used.
+If you want to access those attributes, you need to use the "Attribute" methods on `FManagedArrayCollection` (for engine usage examples, go to the list of static FName declared in `FGeometryCollection`, for example `FGeometryCollection::VerticesGroup`).
+
+`FGeometryDynamicCollection` also has its own declared static attributes name.
 
 ## Collision
 See `CollisionProfilePerParticle` and `CollisionProfilePerLevel`.
@@ -96,6 +126,10 @@ auto* RigidParticle = RealPart->CastToRigidParticle();
 auto LinearVel = RigidParticle->GetV();
 auto AngularVel = RigidParticle->GetW();
 ```
+
+## Cache
+See `ACacheManager` and `AChaosCachePlayer`.
+Playback is done with a `FComponentCacheAdapter`, see derived class such as `FGeometryCollectionCacheAdapter`.
 
 # Optimizing
 

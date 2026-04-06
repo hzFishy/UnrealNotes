@@ -87,6 +87,15 @@ You can change how the default "possessing" of the new camera is done with `OnCa
 ### `UCineCameraComponent`
 A specialized version of a camera component, geared toward cinematic usage.
 
+### `FEntityBuilder`
+Derived from `TEntityBuilder`.
+
+### `TEntityBuilder`
+See source code for detailed description.
+
+### `FBuiltInComponentTypes`
+Pre-defined built in component types.
+
 ## Editor Only
 
 ### `ULevelSequenceEditorSettings`
