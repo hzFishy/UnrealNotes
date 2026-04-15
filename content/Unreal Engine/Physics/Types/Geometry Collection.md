@@ -13,7 +13,7 @@ Hold in a `UGeometryCollection` which is the **Rest Collection** in the GCC.
 Managed arrays for simulation data used by the GeometryCollectionProxy
 Stores per instance data for simulation level information.
 Derived from `FTransformDynamicCollection`, derived from `FManagedArrayCollection`.
-
+The proxy generates it in `FGeometryCollectionPhysicsProxy::InitializeDynamicCollection`.
 The GCC holds the passed `FGeometryDynamicCollection`.
 
 ## `FGeometryCollectionEmbeddedExemplar`
