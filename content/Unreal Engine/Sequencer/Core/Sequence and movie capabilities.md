@@ -12,3 +12,12 @@ Playback capability for sequences that have a director blueprint.
 
 ### `FMovieSceneEvaluationState`
 Provides runtime evaluation functions with the ability to look up state from the main game environment.
+
+### `FMovieSceneSpawnRegister`
+Class responsible for managing spawnables in a movie scene.
+
+### `FCameraCutPlaybackCapability`
+Playback capability for sequences that can run camera cuts.
+
+### `IEventContextsPlaybackCapability`
+Playback capability for controlling how events are triggered.

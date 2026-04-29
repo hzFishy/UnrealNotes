@@ -57,10 +57,17 @@ N/A.
 
 ### `FSharedPlaybackState`
 A structure that stores playback state for an entire sequence hierarchy.
+As of 5.6 this struct has only 2 constructors, one using an `UMovieSceneEntitySystemLinker` (usages only shows result in MovieScenePreAnimatedStateTests.cpp) and the second one a `UMovieSceneSequence` root sequence a the `FSharedPlaybackStateCreateParams` struct.
+
+### `FSharedPlaybackStateCreateParams`
+Parameter structure for initializing a new shared playback state.
+The `PlaybackContext` seems to always be an `UWorld` from the engine write access, but it is unclear if its mandatory (feels like its just a "World Context" object; so as long as `GetWorld` on it is correctly implemented you should be fine).
 
 ### `FSequenceInstance`
 A sequence instance represents a specific instance of a currently playing sequence, either as a top-level sequence in an `IMovieScenePlayer`, or as a sub sequence.
 Any given sequence asset may have any number of instances created for it at any given time depending on how many times it is referenced by playing sequences
+
+Note: `MovieSceneHelpers::CreateTransientSharedPlaybackState` can be used to create temporary playback states (Keep in mind this creates a very basic and "fake" playback state so it only holds a `FMovieSceneEvaluationState` capability).
 
 ## Bindings
 
@@ -78,6 +85,12 @@ A one-to-many definition of movie scene object binding IDs to overridden objects
 ### `FMovieSceneBindingOverrideData`
 
 ## Miscs
+
+### `UMovieSceneSequenceExtensions`
+Contains many interesting helper functions exposed to blueprints.
+
+### `MovieSceneHelpers`
+Contains many interesting c++ only helper functions.
 
 ### `ACineCameraActor`
 A CineCameraActor is a CameraActor specialized to work like a cinematic camera.
