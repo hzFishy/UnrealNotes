@@ -19,6 +19,9 @@ auto* DirectorCapability = SharedPlaybackState->FindCapability<UE::MovieScene::F
 auto* DirectorObject = DirectorCapability->GetOrCreateDirectorInstance(SharedPlaybackState, MovieSceneSequenceID::Root);
 ```
 
+> [!Info]
+> From the few engine usages of `AddCapability<FSequenceDirectorPlaybackCapability>()` it seems safe to add yourself the capability if it doesn't exist.
+
 They seem to be stored in a `FDirectorInstanceCache` in a `DirectorInstances` TSortedMap.
 
 The editor "Open director blueprint" calls `FMovieSceneSequenceEditor::GetOrCreateDirectorBlueprint`.

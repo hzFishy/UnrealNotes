@@ -15,6 +15,7 @@ Provides runtime evaluation functions with the ability to look up state from the
 
 ### `FMovieSceneSpawnRegister`
 Class responsible for managing spawnables in a movie scene.
+Has derived classes, common child is `FLevelSequenceSpawnRegister`.
 
 ### `FCameraCutPlaybackCapability`
 Playback capability for sequences that can run camera cuts.
