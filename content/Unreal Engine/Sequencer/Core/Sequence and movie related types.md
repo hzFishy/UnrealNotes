@@ -158,6 +158,10 @@ Handles manipulation of component transforms in a movie scene.
 ## `UMovieSceneCommonAnimationTrack`
 N/A.
 
+## `UMovieSceneSkeletalAnimationTrack`
+Child of `UMovieSceneCommonAnimationTrack`.
+Handles animation of skeletal mesh actors.
+
 ### `UMovieSceneSkeletalAnimationTrack`
 Handles animation of skeletal mesh actors.
 

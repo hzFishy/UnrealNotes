@@ -1,2 +1,3 @@
 
 - `LogMovieScene`
+- `LogMovieSceneECS`
