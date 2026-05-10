@@ -27,7 +27,7 @@ You can either:
 See [[Debugging Graphics]]
 
 ### Physics
-- See [[Console commands & debugging|Console commands & debugging]] (in `/Physics/`)
+See [[Console commands & debugging|Console commands & debugging]]
 
 # Making your own console commands and variables
 
@@ -35,8 +35,10 @@ See [[Debugging Graphics]]
 You can make a special console commands that can run multiple commands. See [docs](https://dev.epicgames.com/documentation/en-us/unreal-engine/animation-shortcuts-and-tips-unreal-engine#cheatscripts).
 See also [Cheat Console Cheat Scripts](https://unreal-garden.com/tutorials/cheat-console-scripts/)
 
-## `Exec`
+## `Exec` and `FSelfRegisteringExec`
 - Check [how to use `Exec` meta attribute for supported classes](https://unreal-garden.com/docs/ufunction/#exec) and [how to add it to other objects](https://unreal.gg-labs.com/wiki-archives/common-pitfalls/exec-functions#how-do-i-get-other-classes-to-support-exec-functions)
+- For a super simple example of `FSelfRegisteringExec` being implemented see `UAvoidanceManager` and `UAvoidanceManager::Exec_Dev`
+- Inside `FExec` there is `Exec_Runtime`, `Exec_Editor` and `Exec_Dev`
 
 ## Statics
 - For static variables (int32, float, bool, FString) see `FAutoConsoleVariableRef`
