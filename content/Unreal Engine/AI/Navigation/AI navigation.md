@@ -5,6 +5,7 @@
 - [[Nav Links]]
 - [[Nav Modifiers]]
 - [[Navigation Data]]
+- [Nav3D plugin](Nav3D)
 
 # In-depth
 

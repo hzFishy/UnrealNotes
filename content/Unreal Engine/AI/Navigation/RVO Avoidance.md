@@ -1,4 +1,6 @@
 
+RVO stands for **Reciprocal Velocity Obstacles**
+
 # Types
 
 ## `UAvoidanceManager`
