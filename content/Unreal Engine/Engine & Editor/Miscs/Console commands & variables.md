@@ -14,14 +14,20 @@ You can either:
 - or simply add the cvar under `[ConsoleVariables]` section in the correct `.ini` file
 
 ## List of existing commands and variables
-### Miscs
-- Object console commands list [here](https://dev.epicgames.com/community/learning/tutorials/dXl5/advanced-debugging-in-unreal-engine#objconsolecommand)
+
+### Core
+- `stat game`
+ - Object console commands list [here](https://dev.epicgames.com/community/learning/tutorials/dXl5/advanced-debugging-in-unreal-engine#objconsolecommand)
 - `ShowDebug [Name]`, by default this will give details about the player pawn/character
 - `ToggleDisplay` : disables all HUD
 	- See also `Slate.GameLayer.ViewportSlotVisible 0` and `Slate.GameLayer.PlayerCanvasVisible 0`
-- `show COLLISION` : displays collisions, works in PIE
+
+### Player
+- `Teleport`: teleports the player to the crosshair position 
+
+### Miscs
 - `slomo <new time dilation>`: changes the world time dilation
-- `listtimers` show all active/paused/pending times.
+- `listtimers`: show all active/paused/pending times.
 
 ### Rendering
 See [[Debugging Graphics]]

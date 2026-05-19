@@ -2,7 +2,9 @@
 # Resources
 - [RenderDoc plugin](https://dev.epicgames.com/documentation/en-us/unreal-engine/using-renderdoc-with-unreal-engine)
 
-# Comands and more
+# Commands and more
+- `stat gpu`
+- `state scenerendering`
 - `r.VisualizeOccludedPrimitives 1`
 ![[Pasted image 20250730054408.png]]
 - `FreezeRendering`, good to use with `ToggleDebugCamera`, allows you to see how culling works, with extra stuff like seeing the POV of different steps of rendering (press B)
@@ -11,3 +13,7 @@
 - `ProfileGPU` panel, also named "GPU Visualizer"
 - `r.Streaming.PoolSize XXX`
 - `r.VisualizeOccludedPrimitives` and `r.AllowOcclusionQueries`
+
+## Lumen
+- `r.Lumen.DiffuseIndirect.Allow` Allows you to turn on or off lumen GI.
+
