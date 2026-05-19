@@ -3,6 +3,7 @@
 - [RenderDoc plugin](https://dev.epicgames.com/documentation/en-us/unreal-engine/using-renderdoc-with-unreal-engine)
 
 # Commands and more
+- `ProfileGPU`
 - `stat gpu`
 - `state scenerendering`
 - `r.VisualizeOccludedPrimitives 1`
