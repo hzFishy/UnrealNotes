@@ -2,6 +2,7 @@
 ## General
 - [UE5 GPU Optimization Tips & Tricks (Dark Ruins) by Tom Looman](https://www.youtube.com/watch?app=desktop&v=c2MH20OPSw0)
 - [Optimizing UE5: Advanced Rendering, Graphics Performance, and Memory Management | Unreal Fest 2024](https://dev.epicgames.com/community/learning/talks-and-demos/eBJZ/unreal-engine-optimizing-ue5-advanced-rendering-graphics-performance-and-memory-management-unreal-fest-2024)
+- [Optimizing GPU Performance for “Far Far West” (UE5 Indie Game)](https://www.youtube.com/watch?v=3qgd4glfIR0)
 
 ## Occlusion & Culling
 - [[Rendering Occlusion]]

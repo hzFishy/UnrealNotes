@@ -1,4 +1,4 @@
-# Main
+# Core
 ## Processors
 See [[About Mass Processors]] and `Mass/Processors` folder.
 

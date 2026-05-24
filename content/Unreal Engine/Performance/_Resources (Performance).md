@@ -18,7 +18,7 @@ See [[Optimizing Rendering]] page in `Graphics`
 See [[Optimize physics]]
 
 # Ticking
-- [[Unreal Engine/Engine & Editor/Core/Ticking|Ticking]]
+[[Unreal Engine/Engine & Editor/Core/Ticking|Ticking]]
 # UI
 See [[Performance (UI)]]
 
