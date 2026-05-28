@@ -1,4 +1,6 @@
 
+Also check [[Nav Mesh Registration & Generation]].
+
 # About
 The nav data seems to be built using the `INavRelevantInterface` interface with `GetNavigationData`.
 For example `UPrimitiveComponent` implements it, as well as the parent of `UNavModifierComponent`, `UNavRelevantComponent`.
@@ -30,6 +32,15 @@ flowchart TD
     FNavigationElement
     FNavigationElementHandle
 ```
+
+## `UNavCollisionBase`
+
+## `UNavCollision`
+
+## `FNavigableGeometryExport`
+
+## `FRecastGeometryExport`
+Class that handles geometry exporting for Recast navmesh generation.
 
 ## `FNavigationElement`
 Structure registered in the navigation system that holds the required properties and delegates to gather navigation data (navigable geometry, NavArea modifiers, NavLinks, etc.) and be stored in the navigation octree. 

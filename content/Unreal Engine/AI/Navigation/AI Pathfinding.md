@@ -1,4 +1,4 @@
-See also [[AI navigation]].
+See also [[AI Navigation]].
 
 # About
 `AAIController::FindPathForMoveRequest` (called from `AAIController::MoveTo`) calls `UNavigationSystemV1::FindPathSync`.

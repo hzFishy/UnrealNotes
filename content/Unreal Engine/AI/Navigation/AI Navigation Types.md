@@ -1,5 +1,17 @@
 
+See also [[Navigation Data]].
+
 ## Core
+
+### `UNavigationSystemBase`
+
+
+### `UNavigationSystemV1`
+
+
+### `UNavigationObjectRepository`
+World subsystem dedicated to store different types of navigation related elements that the NavigationSystem needs to access.
+
 ### `UNavLocalGridManager`
 Manager for local navigation grids.
 Builds non overlapping grid from multiple sources, that can be used later for pathfinding.  
@@ -7,7 +19,8 @@ Check also: `UGridPathFollowingComponent`, `FNavLocalGridData`.
 
 Created in `UAISystem::PostInitProperties`.
 
-### `UNavigationSystemBase`
+## Data
+Each world settings can hold a `UNavigationSystemConfig`.
 
 
 ## Agent
