@@ -5,6 +5,8 @@ Also check [[Nav Mesh Registration & Generation]] and [[AI Navigation Types]].
 The nav data seems to be built using the `INavRelevantInterface` interface with `GetNavigationData`.
 For example `UPrimitiveComponent` implements it, as well as the parent of `UNavModifierComponent`, `UNavRelevantComponent`.
 
+`DoCustomNavigableGeometryExport` is called before `GetNavigationData`.
+
 # Classes
 
 ## Global overview
