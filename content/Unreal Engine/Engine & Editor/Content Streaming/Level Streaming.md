@@ -1,4 +1,5 @@
 # Resources
+- [Level Streaming Deep Dive](https://dev.epicgames.com/community/learning/knowledge-base/qB5K/unreal-engine-level-streaming-deep-dive)
 - [[Networked Streamed levels]]
 - [[_Resources (Level Design)]]
 - [ikrima notes](https://ikrima.dev/ue4guide/networking/network-replication/sublevellevel-instance-streaming-replication/)
