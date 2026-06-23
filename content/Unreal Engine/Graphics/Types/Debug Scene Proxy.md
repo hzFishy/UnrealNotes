@@ -29,4 +29,7 @@ Override and implement `CalcBounds`.
 See `FDebugDrawDelegateHelper` (implementation code example at `UDebugDrawComponent` declaration).
 
 By default the text is drawn in `Game` mode, you can change that by editing the `ViewFlagName` variable (see `FDebugDrawDelegateHelper::RegisterDebugDrawDelegateInternal`).
+The var is set in `FDebugDrawDelegateHelper::InitDelegateHelper` from the proxy `ViewFlagName` var so you should set the `ViewFlagName` in the proxy and not directly in the delegate helper.
+
+To setup a custom show flag see [[Custom show flag]].
 
