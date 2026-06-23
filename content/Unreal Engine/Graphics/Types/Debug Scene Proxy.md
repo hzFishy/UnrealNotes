@@ -24,3 +24,9 @@ Subclass `UDebugDrawComponent`.
 Override and implement `CreateDebugSceneProxy`.
 
 Override and implement `CalcBounds`.
+
+## Render text
+See `FDebugDrawDelegateHelper` (implementation code example at `UDebugDrawComponent` declaration).
+
+By default the text is drawn in `Game` mode, you can change that by editing the `ViewFlagName` variable (see `FDebugDrawDelegateHelper::RegisterDebugDrawDelegateInternal`).
+
