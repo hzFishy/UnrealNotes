@@ -11,9 +11,6 @@
 Double click on an event will highlight all similar
 <br>![[Pasted image 20250618232705.png]]
 
-# Game thread named events
-- `GameThreadWaitForTask`
-
 # Add your custom event
 Use `TRACE_CPUPROFILER_EVENT_SCOPE(MyAwesomeevent);` (comment says we shouldn't give a string)
 
