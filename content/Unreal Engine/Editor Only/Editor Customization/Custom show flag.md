@@ -45,3 +45,5 @@ You can use this console command in editor and in SIE/PIE to change the state of
 > - `ShowFlag.MyFlag 0` will **FORCE** disable the flag
 > - `ShowFlag.MyFlag 1` will **FORCE** enable the flag
 > - `ShowFlag.MyFlag 2` will sync the flag state to the editor "Show" tab value (used by default)
+
+`FEngineShowFlags::OnCustomShowFlagRegistered` is called when a custom show flag is registered.
