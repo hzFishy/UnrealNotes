@@ -1,4 +1,7 @@
 
+# Resources
+- [Make Rot from X? Y? Z?](https://make-study.hatenablog.com/entry/2024/05/16/143133) (Japanese, use translator)
+
 ## Rotate an object around another
 
 ```c++
