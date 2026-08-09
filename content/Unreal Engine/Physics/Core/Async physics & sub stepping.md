@@ -1,6 +1,7 @@
 # Enable Async creation state
 For 5.6 and above
 Use `p.Chaos.EnableAsyncInitBody = true`
+Also check `p.EnableDeferredPhysicsCreation`
 
 ## Info
 - `Substepping Async` is not used anymore and should be deprecated.

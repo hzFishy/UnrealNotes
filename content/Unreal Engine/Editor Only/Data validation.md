@@ -56,6 +56,7 @@ Context.AddMessage(Message);
 Result:
 ![[Pasted image 20250708001418.png]]
 
+Check `IMessageToken` derived classes for all possible tokens.
 
 # Validate project
 
