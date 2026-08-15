@@ -6,14 +6,18 @@
 
 
 
-> [!Error]- Danger of `LoadSynchronous`
-> Example of why `LoadSynchronous` is very bad and shouldn't be used in shipped builds (Thanks to Northstar)
+> [!Error] Danger of `LoadSynchronous`
+> Example of why `LoadSynchronous` is very bad and shouldn't be used in shipped builds (Thanks to Northstar and Jambax)
 > > [!Quote] Northstar
 > > 
 > > *"Let's say you're loading a map async. It's a big map and it's taking a while. Then you call LoadSynchronous on a DA or something. Map load gets cancelled, DA blocks game thread to load, Map starts loading all over again but blocking the game thread"*
 > 
-> In other words: *"LoadSync halts all requests in the queue. They can't resume async so SM handles this by sync loading them"*
-
+> In other words: *"`LoadSynchronous` halts all requests in the queue. They can't resume async so SM handles this by sync loading them"*
+> So `LoadSynchronous` flushes the entire streaming queue. Which means that it will sync load anything that was running async, then it will load the object you requested.
+> 
+> But `FStreamableManager::RequestSyncLoad` isn't exactly the same:
+> - if you call RequestSyncLoad and other async requests have higher priority, nothing is flushed*
+> - *StreamableManager also does other things like check if assets are already being load via another request etc, blocking on that request instead. So if you've already loaded something async as part of a batch, then want to load an item sync anyway - the entire batch will be "flushed" and waited on
 
 # Asset Manager
 *Thanks to Ramius*

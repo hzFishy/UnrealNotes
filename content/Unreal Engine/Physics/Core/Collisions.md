@@ -183,6 +183,8 @@ Full details:
 ## About Generate Overlap Events
 If you don't need the Begin/End overlap events to be called, you can disable this. Your overlap collision responses will still work on the physics scene.
 
+To trigger overlap events, both overlapping components needs to have the property enabled.
+
 ## Per actor ignore
 You can use `MoveIgnoreActors` and `MoveIgnoreComponents`
 
