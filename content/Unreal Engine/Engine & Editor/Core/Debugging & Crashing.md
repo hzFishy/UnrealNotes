@@ -2,6 +2,7 @@
 ## Resources
 - [Advanced Debugging in Unreal Engine](https://dev.epicgames.com/community/learning/tutorials/dXl5/advanced-debugging-in-unreal-engine)
 - [Crashing With Style in Unreal Engine](https://www.youtube.com/watch?v=qT3E--_px28) (See also Handle crashing for shipping builds)
+- [Crash Reporting (Official Docs)](https://dev.epicgames.com/documentation/unreal-engine/crash-reporting-in-unreal-engine)
 
 ## Asserts
 - `check`
