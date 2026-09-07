@@ -6,6 +6,8 @@
 - [Profiling with Purpose: Performance Lessons from a Real Unreal Project](https://dev.epicgames.com/community/learning/tutorials/qEzo/unreal-engine-profiling-with-purpose-performance-lessons-from-a-real-unreal-project)
 - [A Frame’s Life: Frame Timing, Synchronization, and Latency in UE | Unreal Fest Chicago 2026 (Video)](https://www.youtube.com/watch?v=dKSHw_8vz3I) - [A Frame’s Life: Frame Timing, Synchronization, and Latency in UE | Unreal Fest Chicago 2026 (Text)](https://dev.epicgames.com/community/learning/tutorials/DEwL/unreal-engine-a-frame-s-life)
 
+# Memory
+- [[UE5] How to Use Memory Insights and Display Asset Usage](https://zenn.dev/kta552/articles/ue-memory-insights-how-to-use?locale=en)
 # Networking
 See [[Optimizing Networking]] and [[Character Movement Component]] pages in `Networking/`
 
