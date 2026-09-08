@@ -1,4 +1,23 @@
 
+# Edit Gizmo
+
+```c++
+void SetEditorGizmoTransform(const FTransform& NewTransform)
+{
+	auto* EditorViewportClient = static_cast<FEditorViewportClient*>(GEditor->GetActiveViewport()->GetClient());
+	FEditorModeTools* ModeTools = EditorViewportClient->GetModeTools();
+	
+	if (ModeTools->AllowWidgetMove())
+	{
+		ModeTools->PivotLocation = NewTransform.GetLocation();
+		ModeTools->SnappedLocation = NewTransform.GetLocation();
+	}
+	
+	ModeTools->TranslateRotateXAxisAngle = NewTransform.Rotator().Yaw;
+	ModeTools->TranslateRotate2DAngle = NewTransform.Rotator().Pitch;
+}
+```
+
 # Gizmo events
 The base class `FTypedElementViewportInteractionCustomization` holds logic *"to allow asset editors (such as the level editor) to override the base behavior of viewport interaction"*.
 
