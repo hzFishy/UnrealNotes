@@ -1,7 +1,6 @@
 *thanks to BDC_Patrick*
 
 Each container has different draw call count
-
 - A `VerticalBox` or `SizeBox` or such do have 1 Draw call.
 - An `Overlay` uses 2, cause of z Sorting
 - A `Canvas` uses 3 up to 5 depending on Anchoring, pivot and z sorting 
