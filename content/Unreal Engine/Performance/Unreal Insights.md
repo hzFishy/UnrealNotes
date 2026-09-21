@@ -5,8 +5,8 @@ Dump of tracing categories:
 - `log`
 - `bookmark`
 - `Loading`
+- `AssetLoadTime`
 - `File`
 - `memory`
 - `metadata`
 - `assetmetadata`
-
