@@ -3,7 +3,7 @@ When using the `Can Blend` feature of a camera cut, it isn't lerping a real scen
 
 With blending enabled, `UMovieSceneCameraCutTrackInstance::OnAnimate` will call `FCameraCutAnimator::AnimateBlendedCameraCut`.
 
-This will eventually call `FCameraCutGameHandler::SetCameraCut` which calls `APlayerCameraManager::SetViewTarget`.
+This will eventually call `FCameraCutGameHandler::SetCameraCut` which calls `APlayerCameraManager::SetViewTarget` via `FCameraCutGameHandler`.
 
 In the transition params, `bLockPreviousCamera` is copied to `bLockOutgoing`.
 
