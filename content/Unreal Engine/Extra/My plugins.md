@@ -6,6 +6,9 @@ You can see all my UE plugins on my [GitHub profile](https://github.com/hzFishy)
 The power of Child Actor Components and Unity Prefabs the Unreal way.
 [Fab Link](https://www.fab.com/listings/dc2e38c1-8cf1-4143-8564-f5d9ac2be8d8)
 
+## Unreal Google Analytics ([Github Repo](https://github.com/hzFishy/UnrealGoogleAnalytics))
+An UE5 plugin capable of sending events to Google Analytics through HTTP requests.
+
 ## Point Graph Pathfinding ([Github Repo](https://github.com/hzFishy/PointGraphPathfinding))
 An abstract graph pathfinding plugin for UE5 using 3d points.
 
