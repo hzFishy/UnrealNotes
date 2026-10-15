@@ -3,6 +3,7 @@
 - Check `UI_UMG` level in the Content Examples project.
 - [UMG Slate Compendium](https://github.com/YawLighthouse/UMG-Slate-Compendium)
 - [UE BeginPlay UMG](https://dev.epicgames.com/community/learning/tutorials/zrVZ/unreal-engine-begin-play-umg?source=0w)
+- [External UI framework (Folio)](https://github.com/Fogspire/Folio)
 
 # Specific examples
 
