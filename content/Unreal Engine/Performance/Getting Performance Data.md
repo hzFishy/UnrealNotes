@@ -12,5 +12,7 @@ Double click on an event will highlight all similar
 <br>![[Pasted image 20250618232705.png]]
 
 # Add your custom event
-Use `TRACE_CPUPROFILER_EVENT_SCOPE(MyAwesomeevent);` (comment says we shouldn't give a string)
+Use `TRACE_CPUPROFILER_EVENT_SCOPE(MyAwesomeevent);` (comment says we shouldn't give a string) this is slower than using classic counters.
+
+See also `QUICK_SCOPE_CYCLE_COUNTER` (needs stats named events enabled).
 
