@@ -109,6 +109,26 @@ See source code for detailed description.
 ### `FBuiltInComponentTypes`
 Pre-defined built in component types.
 
+### `FMoviePlayerProxy`
+This provides a mechanism to connect the engine (the client) to a movie player (the server).
+Engine code can call BlockingStarted/Tick/Finished around blocking areas.
+The movie player can call RegisterServer/UnregisterServer so it can receive the calls from the engine.
+
+### `FMoviePlayerProxyBlock`
+This is a helper class for FMoviePlayerProxy. You can just add an instance of this somewhere like `FMoviePlayerProxyBlock MoviePlayerBlock;`. It will automatically call `FMoviePlayerProxy::BlockingStarted` and then call `FMoviePlayerProxy::BlockingFinished` when it goes out of scope. You can also manually call Finish if you want to trigger this earlier.
+
+### `IMoviePlayerProxyServer`
+Implement this interface if you want to handle what happens when the engine interacts with the MoviePlayer, etc when the game thread is blocked.
+
+### `IGameMoviePlayer`
+An interface to the movie player we will use for loading screens and gameplay movies.
+
+### `FNullGameMoviePlayer`
+An placeholder implementation of the movie player for the editor.
+
+### `FDefaultGameMoviePlayer`
+An implementation of the movie player/loading screen we will use.
+
 ## Editor Only
 
 ### `ULevelSequenceEditorSettings`
