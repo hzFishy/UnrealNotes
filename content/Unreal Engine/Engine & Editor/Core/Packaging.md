@@ -1,3 +1,5 @@
+# Resources
+- [UnrealPak](https://unrealpak.com/)
 
 # Debug package
 You can use `UnrealPak.exe` at `Engine/Binaries/Win64` to debug/extract the `.pak`, `.utoc`, `.ucas` file(s).
