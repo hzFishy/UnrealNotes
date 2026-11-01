@@ -1,4 +1,6 @@
 # General tutorials 
+- [The Hidden Cost of Unreal Engine Defaults (Part-1)](https://medium.com/@GroundZer0/the-hidden-cost-of-unreal-engine-defaults-part-1-199bd591e858)
+- [The Hidden Cost of Unreal Engine Defaults (Part-2)](https://medium.com/@GroundZer0/the-hidden-cost-of-unreal-engine-defaults-part-2-603ca04d014b)
 - [How to Optimize Performance (From tech lead at Valorant)](https://www.youtube.com/watch?v=lfjG3z5VVIw)
 - [Unreal Engine Game Optimization on a Budget (Tom Looman)](https://www.tomlooman.com/unrealengine-optimization-talk/)
 - [Unreal Performance Optimization Learning Path](https://dev.epicgames.com/community/learning/paths/Rkk/unreal-engine-unreal-performance-optimization-learning-path)
@@ -7,24 +9,4 @@
 - [A Frame’s Life: Frame Timing, Synchronization, and Latency in UE | Unreal Fest Chicago 2026 (Video)](https://www.youtube.com/watch?v=dKSHw_8vz3I) - [A Frame’s Life: Frame Timing, Synchronization, and Latency in UE | Unreal Fest Chicago 2026 (Text)](https://dev.epicgames.com/community/learning/tutorials/DEwL/unreal-engine-a-frame-s-life)
 
 # Memory
-- [[UE5] How to Use Memory Insights and Display Asset Usage](https://zenn.dev/kta552/articles/ue-memory-insights-how-to-use?locale=en)
-# Networking
-See [[Optimizing Networking]] and [[Character Movement Component]] pages in `Networking/`
-
-# Animations
-See [[Animation Debugging]]
-
-# Rendering
-See [[Optimizing Rendering]] page in `Graphics`
-
-# Physics
-See [[Optimize physics]]
-
-# Ticking
-[[Unreal Engine/Engine & Editor/Core/Ticking|Ticking]]
-# UI
-See [[Performance (UI)]]
-
-# Miscs
-- [C++ Move Semantics in Unreal Engine 4](https://jonasreich.de/blog/001-ue4-move-semantics.html)
-- [CDPR talk (Unreal Fest 2024)](https://www.youtube.com/watch?v=JaCf2Qmvy18)
+- [UE5 How to Use Memory Insights and Display Asset Usage](https://zenn.dev/kta552/articles/ue-memory-insights-how-to-use?locale=en)

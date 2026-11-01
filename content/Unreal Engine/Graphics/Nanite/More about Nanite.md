@@ -2,3 +2,7 @@
 - Read this super interesting [document](https://advances.realtimerendering.com/s2021/Karis_Nanite_SIGGRAPH_Advances_2021_final.pdf) (155 pages) from an Epic engineer about why and how Nanite was made 
 - [[About Nanite and TAA]]
 - Nanite does the culling on the GPU.
+- [Nanite: Epic’s Practical Implementation of Virtualized Geometry](https://medium.com/@GroundZer0/nanite-epics-practical-implementation-of-virtualized-geometry-e6a9281e7f52)
+- [Nanite Streaming and Memory Budgets: Managing Geometry at Scale](https://medium.com/@GroundZer0/nanite-streaming-and-memory-budgets-managing-geometry-at-scale-4c54bfa5d5b1)
+- [Asset Authoring for Nanite: Building Geometry That Scales](https://medium.com/@GroundZer0/asset-authoring-for-nanite-building-geometry-that-scales-e32c4d3613a1)
+- [Nanite Optimizations in Unreal Engine 5: Diving into Nanite Performance](https://medium.com/@GroundZer0/nanite-optimizations-in-unreal-engine-5-diving-into-nanite-performance-a5e6cd19920c)
