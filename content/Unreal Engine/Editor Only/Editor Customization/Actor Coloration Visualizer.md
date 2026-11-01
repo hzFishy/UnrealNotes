@@ -2,6 +2,9 @@
 # Resources
 - [Visualizing EVERYTHING in Unreal’s Editor Viewport](https://haukethiessen.com/visualizing-everything-in-unreals-editor-viewport/) (and the [git repo](https://codeberg.org/HaukeThiessen/AdditionalDebugViews/src/branch/main/Source/AdditionalDebugViews/Private/AdditionalDebugViewsSubsystem.cpp))
 
+# Core
+To get `ENABLE_ACTOR_PRIMITIVE_COLOR_HANDLER` use `#include "GameFramework/ActorPrimitiveColorHandler.h"`.
+
 # Examples
 
 ```c++
