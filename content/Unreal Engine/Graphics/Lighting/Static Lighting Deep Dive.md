@@ -1,9 +1,10 @@
 
-# Resources
-## Important types
+# Types and Vars
+## Miscs types
+- `FStaticLightingSystemInterface`
 - `FStaticLightingManager` - Manages systems
 - `FStaticLightingSystem` - Runs Lightmass processor and handles the start/process/end of applying build data.
-- `FLightmassProcessor`
+- `FLightmassProcessor` / `FLightmassExporter`
 - `FStaticLightingBuildContext` - Created along `FStaticLightingSystem`
 - `UMapBuildDataRegistry` - Per level, the actual asset you can see in the Content Browser.
 - `FMeshMapBuildData`
@@ -11,16 +12,38 @@
 - `FShadowMap2D` (and `FShadowMap`)
 - `ULightMapTexture2D`
 - `FLightmapResourceCluster`
-- `FStaticLightingTextureMapping`
+-  `FStaticLightingMapping` / `FStaticLightingTextureMapping` / `FStaticLightingTextureMapping_InstancedStaticMesh` / `FBSPSurfaceStaticLighting` / `FStaticLightingGlobalVolumeMapping` / `FStaticMeshStaticLightingTextureMapping` / `FLandscapeStaticLightingGlobalVolumeMapping` / `FLandscapeStaticLightingTextureMapping`
+- `FStaticLightingMesh`
+- `FStaticLightingPrimitiveInfo`
+- `ALightmassImportanceVolume` (A bounding volume outside of which Lightmass photon emissions are decreased) / `ALightmassCharacterIndirectDetailVolume` (Defines areas where Lightmass should place more indirect lighting samples than normal) / `AVolumetricLightmapDensityVolume` ( Provides local control over volumetric lightmap density.  Only convex shapes supported) / `ULightmassPortalComponent`.
+- `FLightPrimitiveInteraction`
 
-## Important functions
+## Miscs Globals
+- `FDebugLightingOutput GDebugStaticLightingInfo` (Initialized in `FStaticLightingSystem::BeginLightmassProcess`)`
+- `GLightmapCounter` `GNumLightmapTotalTexels`, `GNumLightmapTotalTexelsNonPow2`, `GNumLightmapTextures`, `GNumLightmapMappedTexels`, `GNumLightmapUnmappedTexels`, `GLightmapTotalSize`, `GLightmapTotalStreamingSize`, `GNumShadowmapTotalTexels`, `GNumShadowmapTextures`, `GNumShadowmapMappedTexels`, `GNumShadowmapUnmappedTexels`, `GShadowmapTotalSize`, `GShadowmapTotalStreamingSize`, `GLightingBuildQuality`, `GCurrentSelectedLightmapSample` are all initialized in `FStaticLightingSystem::BeginLightmassProcess`.
+- `GPurgeOldLightmaps` is controlled by `PurgeOldLightmaps` console var. 1 by default.
+
+## Miscs functions
 - `UWorld::GetLightMapsAndShadowMaps`
 
-## Important delegates
+## Miscs delegates
 - `FEditorDelegates::OnLightingBuildStarted` - Called when a lighting build has started
 - `FEditorDelegates::OnLightingBuildKept` - Called when a lighting build has been kept
 - `FEditorDelegates::OnLightingBuildFailed` - Called when a lighting build has failed (maybe called twice if cancelled)
 - `FEditorDelegates::OnLightingBuildSucceeded` - Called when a lighting build has succeeded
+
+- `FStaticLightingSystemInterface::OnPrimitiveComponentRegistered`
+- `FStaticLightingSystemInterface::OnPrimitiveComponentUnregistered`
+- `FStaticLightingSystemInterface::OnLightComponentRegistered`
+- `FStaticLightingSystemInterface::OnLightComponentUnregistered`
+- `FStaticLightingSystemInterface::OnStationaryLightChannelReassigned`
+- `StaticLightingSystemInterface::OnLightmassImportanceVolumeModified`
+- `FStaticLightingSystemInterface::OnMaterialInvalidated`
+- `FStaticLightingSystemInterface::OnSkyAtmosphereModified`
+
+# Tools
+You can see the baked light static mesh info here.<br>
+![[Pasted image 20261113032955.png]]
 
 # Static Lighting
 ## Core
@@ -31,15 +54,175 @@ The `FStaticLightingManager` always exists as its Get method creates an instance
 ## Building
 ### Start
 To build light `UEditorEngine::BuildLighting` is called.
+
 One of the paths to run it is `ULevelEditorSubsystem::BuildLightMaps`.
 After creating a new `FStaticLightingSystem`, `FStaticLightingSystem::BeginLightmassProcess` is called.
 
-Inside this function a lot of process is done, `Lights` array is filled by getting all `ULightComponentBase` that is contained in the built world.
-The light component also needs to be affecting the world, as well as allowing static shadowing or static lightening.
+#### `FStaticLightingSystem::BeginLightmassProcess`
 
-`FStaticLightingSystem::GatherStaticLightingInfo` is also called inside.
+Inside this function a lot of process is done. 
 
-`FStaticLightingSystem::GatherScene` is later called as well as `FStaticLightingSystem::InitiateLightmassProcessor`.
+---
+
+First all `UPrimitiveComponent` with a valid `VisibilityId` are added to a `PackagesToDirty` array. Which later is iterated to mark them as dirty.
+
+---
+
+Then a `TMap<FGuid, ULevel*> LevelGuids` map is filled. **IT IS ONLY USED TO CHECK THAT EACH LEVEL HAS A UNIQUE `LevelBuildDataId`**
+For each `ULevels` stored in the built main world `ShouldOperateOnLevel` (Check if the level is valid, if  `LightingContext.ShouldIncludeLevel` passes and if the level is `bIsVisible`) and `ShouldBuildLightingForLevel` (Checks if the level is valid, checks for `bOnlyBuildCurrentLevel` and `bOnlyBuildSelectedLevels`) is ran to know if it should include it later for the build process.
+The `FGuid` taken is `ULevel::LevelBuildDataId`. This id is initialized in `ULevel::PostInitProperties`.
+
+---
+
+Next a `SkippedLevels` string is filled depending on a set of rules and `GatherBuildDataResourcesToKeep`. This seems to only be relevant with lighting scenarios. It interacts with `BuildDataResourcesToKeep`
+
+---
+
+Next some special options for World Partition (`bApplyDeferedActorMappingPass` and `bVolumetricLightmapFinalizerPass`) are used to do some extra work if set. It interacts with `BuildDataResourcesToKeep`
+
+---
+
+Next streaming levels are iterated. For each level it will be ignored if its not loaded or not visible in editor. Other than that the streaming level world asset package name is appended to the `SkippedLevels` string.
+
+---
+
+At this point a warning message will inform the user than some levels are skipped if `SkippedLevels` is not empty.
+
+---
+
+Next we have some settings being read.
+
+The system gets `r.AllowStaticLighting`.
+
+The system gets `bForceNoPrecomputedLighting` in the world settings.
+
+The system reads `Engine.ini`, in `TextureStreaming` section the `MaxLightmapRadius` var and write it to `GMaxLightmapRadius`.
+
+The system reads `Engine.ini`, in `TextureStreaming` section the `AllowStreamingLightmaps` var and write it to `GAllowStreamingLightmaps`.
+
+The system reads `Engine.ini`, in `DevOptions.StaticLighting` section the `bUseBilinearFilterLightmaps` var and write it to `GUseBilinearLightmaps`.
+
+The system reads `Engine.ini`, in `DevOptions.StaticLighting` section the `bAllowCropping` var and write it to `GAllowLightmapCropping`.
+
+The system reads `Engine.ini`, in `DevOptions.StaticLighting` section the `bRebuildDirtyGeometryForLighting` var and write it to `bRebuildDirtyGeometryForLighting`.
+
+The system reads `Engine.ini`, in `DevOptions.StaticLighting` section the `bCompressLightmaps` var and write it to `GCompressLightmaps`.
+
+---
+
+Next, if `bOnlyBuildVisibility` in the option isn't true we do 2 things.
+
+1: 
+We delete all `AGeneratedMeshAreaLight` actors, this seems to be old engine feature than isn't used now.
+
+2: 
+We iterate all `ULightComponentBase` objects that aren't garbage or CDOs, we filter them to be sure to only have the lights that our world holds and that their owner actor is valid.
+We check again for `ShouldOperateOnLevel` on the owner actor level.
+
+The light component is added to the `Lights` array if all previous conditions passes and if `bAffectsWorld` is true, and either `ULightComponentBase::HasStaticShadowing` or `ULightComponentBase::HasStaticLighting` returns true (Those just check for `Mobility`).
+
+---
+
+Next, `FStaticLightingSystem::GatherStaticLightingInfo` is called. This function alone is huge so it will be detailed in its separate section.
+
+---
+
+Next if `GLightmassDebugOptions.bSortMappings` is true we will sort the `UnSortedMappings` into `Mappings`. (Those mapping are filled by `GatherStaticLightingInfo`).
+
+---
+
+If `bForceNoPrecomputedLighting` is true `FStaticLightingSystem::InvalidateStaticLighting` is called.
+This basically invalidates anything that could be set by a previous computation (`Level->MapBuildData->InvalidateStaticLighting`, `Level->PrecomputedVisibilityHandler`,  `Level->PrecomputedVolumeDistanceField` and `MarkPlatformDataTransient` for all `ULightMapTexture2D` that has the `Level->MapBuildData` as outer package, all of those are called for each level in the main world).
+
+If `bForceNoPrecomputedLighting` is false `FStaticLightingSystem::CreateLightmassProcessor` is called (this just create a `FLightmassProcessor* LightmassProcessor`) as well as `FStaticLightingSystem::GatherScene` and `FStaticLightingSystem::InitiateLightmassProcessor`. Check their own sections for more info.
+
+#### `FStaticLightingSystem::GatherStaticLightingInfo`
+
+In here we iterate all levels hold by the main world and check for `ShouldOperateOnLevel`.
+
+It checks if it should call `UEditorEngine::RebuildMap`  with rebuild type `EMapRebuildType::MRT_AllDirtyForLighting` depending on `Level->bGeometryDirtyForLighting` and `bRebuildDirtyGeometryForLighting`
+
+---
+
+Next BSP and Models will be iterated, I won't go into details here since BSP are kind of deprecated in UE5.
+
+---
+
+Next HLOD actors (`ALODActor`) are iterated, we fill a `PrimitiveActorMap` and `PrimitiveSubStaticMeshMap` multi map.
+
+---
+
+Next we iterate all actors. Multiple things happens here:
+
+For each actor we get its primitive components. And we check if `PrimitiveActorMap` contains the actor (meaning the actor was the `SubActor` of another `ALODActor`). Also if the actor is a `ALODActor` we add it to the `LODActors` array. If the actor is a `AWorldPartitionHLOD` we add it to the `WorldPartitionHLODActors` array.
+
+For each primitive component we iterate the previously filled `Lights` array and for each `ULightComponent` that passes `ULightComponent::AffectsPrimitive` we store it in `PrimitiveRelevantLights`.
+
+Then we call `UPrimitiveComponent::GetStaticLightingInfo` and we pass the `PrimitiveRelevantLights` array. This outputs a `FStaticLightingPrimitiveInfo PrimitiveInfo`.
+
+If `bPrecomputeVisibility` is true in the world settings some extra stuff is done with the primitive `VisibilityId`.
+
+Each `PrimitiveInfo.Meshes` is added to the `ActorMeshMap` multi map.
+
+`FStaticLightingSystem::AddPrimitiveStaticLightingInfo` is called.
+
+---
+
+Next for each `LODActors` we call `FStaticLightingSystem::UpdateStaticLightingHLODTreeIndices`.
+
+And for each `WorldPartitionHLODActors` we call `FStaticLightingSystem::UpdateStaticLightingWorldPartitionHLODTreeIndices`.
+
+##### `UStaticMeshComponent::GetStaticLightingInfo`
+
+*Incomplete*
+
+We iterate each `GetStaticMesh()->GetRenderData()->LODResources` (`FStaticMeshLODResources`).
+
+We then call `UStaticMeshComponent::UpdateStaticLightingData` which calls `FStaticMeshComponentLODInfo::CreateMapBuildDataId`. And we call `UStaticMeshComponent::UpdateMapBuildDataId` afterwards.
+
+We then fill the `Meshes` and `Mapping` arrays.
+
+##### `FStaticLightingSystem::AddPrimitiveStaticLightingInfo`
+
+For each `PrimitiveInfo.Meshes` we:
+- Add the `PrimitiveInfo.VisibilityId` to `Mesh->VisibilityIds`.
+- Add the Mesh to the `Meshes` array.
+- Add the `Mesh->BoundingBox` to `LightingMeshBounds`.
+- If `Mesh->bCastShadow` we call `FStaticLightingSystem::UpdateAutomaticImportanceVolumeBounds` which just updates the `AutomaticImportanceVolumeBounds` `FBox`.
+
+For each `PrimitiveInfo.Mappings` we:
+- Add it to the `Mappings` array.
+
+#### `FStaticLightingSystem::GatherScene`
+
+This function is all about getting the Lightmass Exporter and filling it from all the scene data we got until now.
+It also sets its level settings and quality level.
+
+---
+
+Then if we aren't a world partitioned world, we add all `ALightmassImportanceVolume` in the world to the Lightmass Exporter. Otherwise we manually enter a importance volume bounding box using volumetric light map grid desc (`FVolumetricLightMapGridDesc`).
+
+---
+
+Next we iterate all `ALightmassCharacterIndirectDetailVolume` actor in the world and add it to the Lightmass Exporter.
+
+Next we iterate all `AVolumetricLightmapDensityVolume` actor in the world and add it to the Lightmass Exporter.
+
+Next we iterate all `ULightmassPortalComponent` component in the world and add it to the Lightmass Exporter.
+
+Next we iterate all `USkyAtmosphereComponent` component in the world and we ONLY add the first one found to the Lightmass Exporter.
+
+---
+
+The system reads `Engine.ini`, in `DevOptions.StaticLightingSceneConstants` section the `MinimumImportanceVolumeExtentWithoutWarning` var and write it to `MinimumImportanceVolumeExtentWithoutWarning`.
+
+We will use that to warn the user if the level is to big and we have no importance volume actor.
+
+---
+
+Next for each `Meshes` we call `FStaticLightingMesh::ExportMeshInstance`. Internally (for example for a `FStaticMeshStaticLightingMesh`) this add the `RelevantLights` to the exporter, as well as the static meshes and materials.
+
+Next for each `Mappings` we call `FStaticLightingMapping::ExportMapping`.
 
 ### Running
 On each `UEditorEngine::UpdateBuildLighting` call, `FStaticLightingManager::UpdateBuildLighting` runs `FStaticLightingSystem::UpdateLightingBuild` on the active system.
