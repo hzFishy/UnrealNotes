@@ -1,4 +1,7 @@
 
+# Resources
+- Check [[_Resources (Lighting)]]
+
 # Types and Vars
 ## Miscs types
 - `FStaticLightingSystemInterface`
