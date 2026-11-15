@@ -1,8 +1,18 @@
 
+> [!Warning] Important
+> This page mostly talks about how `CPU Lightmass` works.
+> Check [[GPU Lightmass]].
+
+
 # Resources
 - Check [[_Resources (Lighting)]]
 
-# Types and Vars
+# Sources
+
+# Misc files
+- `StaticLightingSystem.cpp`
+- `StaticMeshLight.cpp`
+
 ## Miscs types
 - `FStaticLightingSystemInterface`
 - `FStaticLightingManager` - Manages systems
@@ -270,6 +280,17 @@ For each considered level, this will:
 	- Get `UMapBuildDataRegistry` using `FStaticLightingBuildContext::GetRegistryForLevel`
 	- Runs `UMapBuildDataRegistry::SetupLightmapResourceClusters` on the registry.
 	- Runs `ULevel::InitializeRenderingResources`
+
+## Editor runtime preview for unbuilt lights
+
+Inside `FSceneRenderer::CreateDynamicShadows` `bShouldCreateShadowToPreviewStaticLight` is set. 
+This is true if: `ULightComponent::HasStaticShadowing` was true, `ULightComponent::CastShadows` was true,  `ULightComponentBase::CastStaticShadows` was true and `ULightComponent::IsPrecomputedLightingValid` was false.
+
+There is also `bCreateShadowToPreviewStaticLight` which is true if `bShouldCreateShadowToPreviewStaticLight` is true, `ULightComponent::HasStaticShadowing` was true, if we aren't a point/rect light OR `r.SupportPointLightWholeSceneShadows` is true. And if we aren't on mobile OR if the light is directional.
+
+If we are allowed to create a "dynamic light shadow" `FSceneRenderer::CreateWholeSceneProjectedShadow` is called (this is also done for Movable lights).
+
+
 
 ## More on `UMapBuildDataRegistry`
 So now our `UMapBuildDataRegistry` holds our built data. Such as an array `MeshBuildData` holding `FMeshMapBuildData`, and an array `LightBuildData` of holding `FLightComponentMapBuildData`.
