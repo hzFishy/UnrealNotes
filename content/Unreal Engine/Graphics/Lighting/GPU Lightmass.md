@@ -28,14 +28,14 @@ The goal of this part is to trigger GPULM callbacks such as `FGPULightmass::OnPr
 
 For example for a static mesh this will call `FStaticMeshInstance::AllocateLightmaps``.
 
-# Tick
+## Tick
 
 GPULightmass is ticked on the GT using `GEngine->OnPostEditorTick`, binding it to `FStaticLightingSystemInterface::GameTick`.
 This calls `FStaticLightingSystemInterface::EditorTick` which will try to call `IStaticLightingSystemImpl::EditorTick`.
 
 `FGPULightmassModule::EditorTick` calls for each `StaticLightingSystems` `FGPULightmass::EditorTick` and if `LightBuildPercentage` reached 100 and the mode isn't `EGPULightmassMode::BakeWhatYouSee` it will call `UGPULightmassSubsystem::Stop`.
 
-# End
+## End
 
 See **Tick** section.
 
