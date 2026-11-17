@@ -26,7 +26,9 @@ When a new GPULM instance is made it will register to a bunch of Game Thread eve
 If the GPULM instance is valid, we call `FStaticLightingSystemInterface::OnPrimitiveComponentRegistered` on all `UPrimitiveComponent` and `FStaticLightingSystemInterface::OnLightComponentRegistered` on all `ULightComponentBase`.
 The goal of this part is to trigger GPULM callbacks such as `FGPULightmass::OnPrimitiveComponentRegistered`, which calls `FScene::AddGeometryInstanceFromComponent`.
 
-For example for a static mesh this will call `FStaticMeshInstance::AllocateLightmaps``.
+For example for a static mesh this will call `FStaticMeshInstance::AllocateLightmaps`.
+
+Note: GPULM bakes light for all levels, but hidden `UPrimitiveComponent` and `ULightComponentBase` will not be taken into account since its filtered out in `FGPULightmass::OnPrimitiveComponentRegistered` / `FGPULightmass::OnLightComponentRegistered`. So if you hide a sublevel, it will be ignored.
 
 ## Tick
 
