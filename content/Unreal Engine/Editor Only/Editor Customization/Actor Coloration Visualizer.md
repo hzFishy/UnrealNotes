@@ -8,25 +8,39 @@ To get `ENABLE_ACTOR_PRIMITIVE_COLOR_HANDLER` use `#include "GameFramework/Actor
 # Examples
 
 ```c++
-FActorPrimitiveColorHandler::Get().RegisterPrimitiveColorHandler(
+// add
+
+#if ENABLE_ACTOR_PRIMITIVE_COLOR_HANDLER
+	FActorPrimitiveColorHandler::Get().RegisterPrimitiveColorHandler(
 		NAME_MobilityColor,
-		LOCTEXT("MobilityColor", "Mobility"),
-		[](const UPrimitiveComponent* InPrimitiveComponent) -> FLinearColor {
-			const float Variation = FMath::FRand() * 0.2 - 0.1;
+		INVTEXT("FU: Mobility"),
+		[this] (const UPrimitiveComponent* InPrimitiveComponent) -> FLinearColor 
+		{
 			FLinearColor OutColor = FLinearColor::Gray;
+			
 			switch (InPrimitiveComponent->GetMobility())
 			{
-			case EComponentMobility::Stationary:
-				OutColor = FLinearColor::Yellow;
-				break;
-			case EComponentMobility::Movable:
-				OutColor = FLinearColor::Red;
-				break;
+				case EComponentMobility::Stationary:
+					{
+						OutColor = FLinearColor::Yellow;
+					   break;
+					}
+				case EComponentMobility::Movable:
+					{
+						OutColor = FLinearColor::Red;
+					   break;
+					}
+				default:
+					break;
 			}
-			return OutColor + FLinearColor(Variation, Variation, Variation);
+			return OutColor + GetColorVariation();
 		},
 		[]() {},
-		LOCTEXT(
-			"MobilityColor_ToolTip",
-			"Colorize primitives to show their mobility. Gray = Static, Yellow = Stationary, Red = Movable."));
+		INVTEXT("Colorize primitives to show their mobility. Gray = Static, Yellow = Stationary, Red = Movable.")
+	);
+
+// remove
+FActorPrimitiveColorHandler::Get().UnregisterPrimitiveColorHandler(NAME_MobilityColor);
+
+#endif
 ```
