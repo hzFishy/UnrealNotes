@@ -18,6 +18,9 @@ See also [[My plugins]]
 
 ## VFX
 - [FluidNinja LIVE](https://www.fab.com/listings/80fcf53e-49f7-4635-a71c-ba81280c6618) - Very detailed and modular plugin to use advanced dynamic particle systems. It's paid but on the [Discord](https://discord.gg/rgEtwua2tu) there is an access to a free student version.
+- [TransitionFX_Dev (Github)](https://github.com/EmbarrassingMoment/TransitionFX_Dev)/ [Fab](https://www.fab.com/listings/82f9a51f-52e6-4a01-a637-43a4dac76c0a?lang=en) - Unreal Engine 5 plugin providing various screen transition effects (Fade, Iris, Pixelate, etc.).
+- [LoadingFX_Dev (Github)](https://github.com/EmbarrassingMoment/LoadingFX_Dev) / [Fab](https://www.fab.com/listings/8907b7ec-4db6-4bd4-9f98-2052f3f23032)- Development and sample project for LoadingFX, a UE5 loading spinner / loading icon plugin.
+
 ## Utilities
 - [BlueprintComponentReferencePlugin](https://github.com/aquanox/BlueprintComponentReferencePlugin) - Allows you to reference in editor UI a component inside the owning actor and get it at runtime.
 - [BlueprintTaskForge](https://github.com/CommitAndChill/BlueprintTaskForge): Make tasks without C++
