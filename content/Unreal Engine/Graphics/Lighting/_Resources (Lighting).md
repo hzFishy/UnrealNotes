@@ -8,3 +8,4 @@
 - [Unreal Engine 4 Tutorial - Game Art - Lighting - How it Works](https://www.youtube.com/watch?v=32r28R-ktDA)
 - [UE5LightingHacks](https://unofficial-modding-guide.com/posts/UE5LightingHacks/)
 - [Real-World UE5 Optimization: Lighting & Shadows](https://www.youtube.com/watch?v=1uFR9lXrpyQ)
+- [Light Baking and Lightmaps: A Step-by-Step UE Guide](https://dev.epicgames.com/community/learning/tutorials/KPOx/unreal-engine-light-baking-and-lightmaps-a-step-by-step-ue-guide)

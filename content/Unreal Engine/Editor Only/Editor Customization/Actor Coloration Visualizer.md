@@ -5,6 +5,8 @@
 # Core
 To get `ENABLE_ACTOR_PRIMITIVE_COLOR_HANDLER` use `#include "GameFramework/ActorPrimitiveColorHandler.h"`.
 
+You can use `ShowFlag.Wireframe 1` to force wireframe mode, combined with a selected Actor Coloration. Or use `ShowFlag.Lighting 0` to disable any baked lighting for a "unlit" view.
+
 # Examples
 
 ```c++
@@ -44,3 +46,8 @@ FActorPrimitiveColorHandler::Get().UnregisterPrimitiveColorHandler(NAME_Mobility
 
 #endif
 ```
+
+# Source
+## How it works
+It calls `UPrimitiveComponent::PushPrimitiveColorToProxy` to the iterated primitives.
+Which basically calls `FPrimitiveSceneProxy::SetPrimitiveColor_GameThread` which sets `PrimitiveColor` and requests a GPU update.
